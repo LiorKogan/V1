@@ -68,7 +68,7 @@ Feedback, questions, corrections, and suggestions are welcome.
 
 ## Introduction
 
-The _property graph_ is an increasingly popular data model. An important task when dealing with property graphs is to define and match patterns. Given a property graph schema _S_, a property graph _G_, and a query pattern _P_, all expressed in some language _L=_(_L<sub>S</sub>, L<sub>G</sub>, L<sub>P</sub>, L<sub>R</sub>_), _pattern matching_ is the process of finding, merging, and annotating subgraphs of _G_ that match _P_. The syntaxes of sublanguages _L<sub>S</sub>_, _L<sub>G</sub>_, _L<sub>P</sub>_, and _L<sub>R</sub>_ define what and how symbols may be combined to create well-formed schemas, graphs, patterns, and query results, respectively. A semantics of _L<sub>P</sub>_ is a mapping (_S, G, P_) → _R_: which subgraphs of _G_ match _P_ and how to merge and annotate them. Expressive pattern languages support topological constraints, property value constraints, negations, quantifications, aggregations, and path semantics. _Calculated properties_ may be defined for vertices, edges, and subgraphs, and constraints may be imposed on their evaluation result.
+The _property graph_ is an increasingly popular data model. An important task when dealing with property graphs is to construct patterns and find matches. Given a property graph schema _S_, a property graph _G_, and a query pattern _P_, all expressed in some language _L=_(_L<sub>S</sub>, L<sub>G</sub>, L<sub>P</sub>, L<sub>R</sub>_), _pattern matching_ is the process of finding, merging, and annotating subgraphs of _G_ that match _P_. The syntaxes of sublanguages _L<sub>S</sub>_, _L<sub>G</sub>_, _L<sub>P</sub>_, and _L<sub>R</sub>_ define what and how symbols may be combined to create well-formed schemas, graphs, patterns, and query results, respectively. A semantics of _L<sub>P</sub>_ is a mapping (_S, G, P_) → _R_: which subgraphs of _G_ match _P_ and how to merge and annotate them. Expressive pattern languages support topological constraints, property value constraints, negations, quantifications, aggregations, and path semantics. _Calculated properties_ may be defined for vertices, edges, and subgraphs, and constraints may be imposed on their evaluation result.
 
 Query posers (e.g., analysts, investigators, researchers) would like to construct patterns with minimal effort and minimal trial and error. They would like to construct complex queries in a manner that is coherent with the way they think. The ability to express patterns in a way that is aligned with their mental processes is crucial to the flow of their work and to the quality of the insights they can draw. Many potential query posers will not use textual query languages (e.g., [Gremlin](https://arxiv.org/abs/1508.03843), [GSQL](https://arxiv.org/abs/1901.08248), [Cypher](https://dl.acm.org/citation.cfm?id=3190657), [PGQL](https://dl.acm.org/citation.cfm?id=2960421), [G-CORE](https://arxiv.org/abs/1712.01550), and the proposed [GQL](https://gql.today/)), as the learning curve may be too sharp for someone with little or no prior experience in programming. Moreover, even experienced query posers who do use textual query languages often spend much time on the technicalities and may be distracted from their line of inquiry.
 
@@ -239,7 +239,7 @@ Pattern languages differ in many aspects, including:
 * _[Expressive power](https://en.wikipedia.org/wiki/Expressive_power_(computer_science))_ - The breadth of patterns that can be expressed. Formal pattern languages are always limited in a Gödelian sense
 * _Receptivity_ and _Productivity_ (i.e., _readability_ and _writability_) - How simple and intuitive is it to understand existing patterns and to construct new ones
 * _Conciseness_ - The fewness of symbols and symbol-types required for expressing patterns
-* _Aesthetics_ - The quality of queries being visually appealing
+* _Aesthetics_ - The quality of patterns being visually appealing
 
 V1 introduces the concept of _calculated properties_ - non-inherent properties of graph-entities, graph-relationships, and subgraphs, defined as part of a pattern. Each calculated property's evaluation result is part of the reported query results, extending V1 capabilities beyond 'simple' pattern matching. For example, _The average number of horse ownerships per person_ - a calculated property of the set of all graph-entities of type _Person_ can be defined as part of a pattern. See Q356).
 
@@ -3179,7 +3179,7 @@ Note that {1}, {2}, {3} and {4} are defined right of an 'O', hence evaluated to 
 
 ## Aggregator Sequences
 
-Multiple aggregators may appear along a sequence. Here are some examples:
+Multiple aggregators may appear along a _sequence_. Along a sequence, aggregator's constraints are evaluated from right to left, except where a constraint depends on the evaluation result of a constraint on its left (see Q376).
 
 _**Q128:** Any person A and A's three offspring who own horses of the largest number of colors_
 
