@@ -1,0 +1,35 @@
+{
+  "schema": "Dragons",
+  "name": "Q053-2",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 1,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Path",
+      "con": {
+        "op": "≤",
+        "expr": "3"
+      },
+      "next": 3
+    },
+    {
+      "elNum": 3,
+      "type": "Concrete",
+      "eTag": "B",
+      "eID": "12345679",
+      "eType": 1,
+      "eName": "Rogar Bolton"
+    }
+  ]
+}

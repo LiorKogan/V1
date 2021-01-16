@@ -1,0 +1,96 @@
+{
+  "schema": "Dragons",
+  "name": "Q031-1",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 2,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        3,
+        5
+      ]
+    },
+    {
+      "elNum": 3,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 4
+    },
+    {
+      "elNum": 4,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 2
+    },
+    {
+      "elNum": 5,
+      "type": "Rel",
+      "rType": 2,
+      "dir": "O",
+      "next": 6
+    },
+    {
+      "elNum": 6,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 2,
+      "next": 7
+    },
+    {
+      "elNum": 7,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        8,
+        10
+      ]
+    },
+    {
+      "elNum": 8,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 9
+    },
+    {
+      "elNum": 9,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 2
+    },
+    {
+      "elNum": 10,
+      "type": "Rel",
+      "rType": 2,
+      "dir": "O",
+      "next": 11
+    },
+    {
+      "elNum": 11,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 2
+    }
+  ],
+  "order": [
+    [
+      "A",
+      "B"
+    ]
+  ]
+  
+}

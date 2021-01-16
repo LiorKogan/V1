@@ -1,0 +1,35 @@
+{
+  "schema": "Dragons",
+  "name": "Q038",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 1,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "next": 3
+    },
+    {
+      "elNum": 3,
+      "type": "Untyped",
+      "eTag": "B",
+      "valid": false,      
+      "eTypes": [
+        2,
+        3
+      ]
+    }
+  ]
+}

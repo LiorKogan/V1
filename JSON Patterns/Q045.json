@@ -1,0 +1,45 @@
+{
+  "schema": "Dragons",
+  "name": "Q044",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Concrete",
+      "eTag": "A",
+      "eID": "1235",
+      "eType": 2,
+      "eName": "Vhagar",
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Path",
+      "rTypes": [
+        {
+          "rType": 3
+        },
+        {
+          "rType": 2
+        }
+      ],
+      "con": {
+        "op": "≤",
+        "expr": "4"
+      },
+      "next": 3
+    },
+    {
+      "elNum": 3,
+      "type": "Concrete",
+      "eTag": "B",
+      "eID": "1234",
+      "eType": 2,
+      "eName": "Balerion"
+    }
+  ]
+}

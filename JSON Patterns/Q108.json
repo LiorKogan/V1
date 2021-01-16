@@ -1,0 +1,52 @@
+{
+  "schema": "Dragons",
+  "name": "Q108",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        2,
+        4
+      ]
+    },     
+    {
+      "elNum": 2,
+      "type": "Concrete",
+      "eTag": "A",
+      "eID": "12345678",
+      "eType": 1,
+      "eName": "Brandon Stark",
+      "next": 3
+    },
+    {
+      "elNum": 3,
+      "type": "EExpr",
+      "EAtag": 1,
+      "expr": "$(4)"
+    },     
+    {
+      "elNum": 4,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 1,
+      "next": 5
+    },
+    {
+      "elNum": 5,
+      "type": "EExpr",
+      "EAtag": 2,
+      "expr": "$(4)",
+      "con": {
+        "op": "=",
+        "expr": "${1}"
+      }
+    }     
+  ]
+}

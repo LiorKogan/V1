@@ -1,0 +1,486 @@
+{
+  "schema": "Dragons",
+  "version": "0.9.0",
+  "categoricalTypes": [
+    {
+      "cType": "gender",
+      "ordinal": false,
+      "values": [
+        {
+          "val": 1,
+          "display": "female"
+        },
+        {
+          "val": 2,
+          "display": "male"
+        },
+        {
+          "val": 3,
+          "display": "other"
+        }
+      ]
+    },
+    {
+      "cType": "color",
+      "ordinal": false,
+      "values": [
+        {
+          "val": 1,
+          "display": "black"
+        },
+        {
+          "val": 2,
+          "display": "white"
+        },
+        {
+          "val": 3,
+          "display": "red"
+        },
+        {
+          "val": 4,
+          "display": "blue"
+        },
+        {
+          "val": 5,
+          "display": "gold"
+        },
+        {
+          "val": 6,
+          "display": "silver"
+        }
+      ]
+    }
+  ],
+  "compositeTypes": [
+    {
+      "cType": "dateframe",
+      "properties": [
+        {
+          "pType": 1,
+          "type": "date",
+          "DBpName": "since",
+          "display": "since"
+        },
+        {
+          "pType": 2,
+          "type": "date",
+          "DBpName": "till",
+          "display": "till"
+        }
+      ]
+    },
+    {
+      "cType": "datetimeframe",
+      "properties": [
+        {
+          "pType": 1,
+          "type": "datetime",
+          "DBpName": "since",
+          "display": "since"
+        },
+        {
+          "pType": 2,
+          "type": "datetime",
+          "DBpName": "till",
+          "display": "till"
+        }
+      ]
+    },
+    {
+      "cType": "personName",
+      "properties": [
+        {
+          "pType": 1,
+          "type": "string",
+          "DBpName": "first",
+          "display": "first"
+        },
+        {
+          "pType": 2,
+          "type": "string",
+          "DBpName": "last",
+          "display": "last"
+        }
+      ]
+    }
+  ],
+  "entityTypes": [
+    {
+      "eType": 1,
+      "DBeName": "Person",
+      "display": "Person",
+      "properties": [
+        {
+          "pType": 1,
+          "type": "personName",
+          "DBpName": "name",
+          "display": "name",
+          "report": [
+            "raw(first)",
+            "raw(last)"
+          ]
+        },
+        {
+          "pType": 3,
+          "type": "TYPE_Gender",
+          "DBpName": "gender",
+          "display": "gender"
+        },
+        {
+          "pType": 4,
+          "type": "date",
+          "DBpName": "birth",
+          "display": "birth date",
+          "report": [
+            "raw"
+          ]
+        },
+        {
+          "pType": 5,
+          "type": "date",
+          "DBpName": "death",
+          "display": "death date"
+        },
+        {
+          "pType": 6,
+          "type": "int",
+          "DBpName": "height",
+          "display": "height",
+          "units": "cm",
+          "report": [
+            "raw"
+          ]
+        }
+      ],
+      "displayFormat": [
+        "%1 %2",
+        "%4",
+        "%6"
+      ]
+    },
+    {
+      "eType": 2,
+      "DBeName": "Dragon",
+      "display": "Dragon",
+      "properties": [
+        {
+          "pType": 1,
+          "type": "string",
+          "DBpName": "name",
+          "display": "name",
+          "report": [
+            "raw"
+          ]
+        },
+        {
+          "pType": 2,
+          "type": "TYPE_Color",
+          "DBpName": "color",
+          "display": "color",
+          "report": [
+            "raw"
+          ]
+        }
+      ],
+      "displayFormat": [
+        "name: %1"
+      ]
+    },
+    {
+      "eType": 3,
+      "DBeName": "Horse",
+      "display": "Horse",
+      "properties": [
+        {
+          "pType": 1,
+          "type": "string",
+          "DBpName": "name",
+          "display": "name",
+          "report": [
+            "raw"
+          ]
+        },
+        {
+          "pType": 2,
+          "type": "TYPE_Color",
+          "DBpName": "color",
+          "display": "color",
+          "report": [
+            "raw"
+          ]
+        },
+        {
+          "pType": 3,
+          "type": "int",
+          "DBpName": "weight",
+          "display": "weight",
+          "units": "Kg",
+          "report": [
+            "raw"
+          ]
+        }
+      ],
+      "displayFormat": [
+        "%1",
+        "%2",
+        "%3"
+      ]
+    },
+    {
+      "eType": 4,
+      "DBeName": "Guild",
+      "display": "Guild",
+      "properties": [
+        {
+          "pType": 1,
+          "type": "string",
+          "DBpName": "name",
+          "display": "name",
+          "report": [
+            "raw"
+          ]
+        }
+      ],
+      "displayFormat": [
+        "%1"
+      ]
+    },
+    {
+      "eType": 5,
+      "DBeName": "Kingdom",
+      "display": "Kingdom",
+      "properties": [
+        {
+          "pType": 1,
+          "type": "string",
+          "DBpName": "name",
+          "display": "name",
+          "report": [
+            "raw"
+          ]
+        }
+      ],
+      "displayFormat": [
+        "%1"
+      ]
+    },
+    {
+      "eType": 6,
+      "DBeName": "Landmark",
+      "display": "Landmark",
+      "properties": [
+        {
+          "pType": 1,
+          "type": "string",
+          "DBpName": "name",
+          "display": "name",
+          "report": [
+            "raw"
+          ]
+        },
+        {
+          "pType": 2,
+          "type": "location",
+          "DBpName": "location",
+          "display": "loc",
+          "report": [
+            "raw"
+          ]
+        }
+      ],
+      "displayFormat": [
+        "%1"
+      ]
+    }
+  ],
+  "relationshipTypes": [
+    {
+      "rType": 1,
+      "DBrName": "own",
+      "display": "owns",
+      "directional": true,
+      "ePairs": [
+        {
+          "eTypeA": 1,
+          "eTypeB": 2
+        },
+        {
+          "eTypeA": 1,
+          "eTypeB": 3
+        },
+        {
+          "eTypeA": 4,
+          "eTypeB": 2
+        },
+        {
+          "eTypeA": 4,
+          "eTypeB": 3
+        }
+      ],
+      "properties": [
+        {
+          "pType": 1,
+          "type": "dateframe",
+          "DBpName": "df",
+          "display": "df",
+          "report": [
+            "min(since)",
+            "max(since)",
+            "min(till)",
+            "max(till)"
+          ]
+        }
+      ]
+    },
+    {
+      "rType": 2,
+      "DBrName": "fires",
+      "display": "fires at",
+      "directional": true,
+      "ePairs": [
+        {
+          "eTypeA": 2,
+          "eTypeB": 2
+        }
+      ],
+      "properties": [
+        {
+          "pType": 1,
+          "type": "datetime",
+          "DBpName": "time",
+          "display": "time",
+          "report": [
+            "raw"
+          ]
+        }
+      ]
+    },
+    {
+      "rType": 3,
+      "DBrName": "freezes",
+      "display": "freezes",
+      "directional": true,
+      "ePairs": [
+        {
+          "eTypeA": 2,
+          "eTypeB": 2
+        }
+      ],
+      "properties": [
+        {
+          "pType": 1,
+          "type": "datetimeframe",
+          "DBpName": "tf",
+          "display": "tf",
+          "report": [
+            "raw(since)",
+            "raw(till)"
+          ]
+        }
+      ]
+    },
+    {
+      "rType": 4,
+      "DBrName": "offspring",
+      "display": "offspring of",
+      "directional": true,
+      "ePairs": [
+        {
+          "eTypeA": 1,
+          "eTypeB": 1
+        }
+      ]
+    },
+    {
+      "rType": 5,
+      "DBrName": "knows",
+      "display": "knows",
+      "directional": false,
+      "ePairs": [
+        {
+          "eTypeA": 1,
+          "eTypeB": 1
+        }
+      ],
+      "properties": [
+        {
+          "pType": 1,
+          "type": "date",
+          "DBpName": "since",
+          "display": "since",
+          "report": [
+            "raw"
+          ]
+        }
+      ]
+    },
+    {
+      "rType": 6,
+      "DBrName": "member",
+      "display": "member of",
+      "directional": true,
+      "ePairs": [
+        {
+          "eTypeA": 1,
+          "eTypeB": 4
+        }
+      ],
+      "properties": [
+        {
+          "pType": 1,
+          "type": "dateframe",
+          "DBpName": "time",
+          "display": "df",
+          "report": [
+            "raw(since)",
+            "raw(till)"
+          ]
+        }
+      ]
+    },
+    {
+      "rType": 7,
+      "DBrName": "subject",
+      "display": "subject of",
+      "directional": true,
+      "ePairs": [
+        {
+          "eTypeA": 1,
+          "eTypeB": 5
+        }
+      ]
+    },
+    {
+      "rType": 8,
+      "DBrName": "spotted",
+      "display": "spotted",
+      "directional": true,
+      "ePairs": [
+        {
+          "eTypeA": 1,
+          "eTypeB": 2
+        }
+      ],
+      "properties": [
+        {
+          "pType": 1,
+          "type": "datetime",
+          "DBpName": "time",
+          "display": "time",
+           "report": [
+            "raw"
+          ]
+        },
+        {
+          "pType": 2,
+          "type": "location",
+          "DBpName": "location",
+          "display": "loc",
+           "report": [
+            "raw"
+          ]
+        }
+      ]
+    }
+  ]
+}

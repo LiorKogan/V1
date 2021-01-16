@@ -1,0 +1,83 @@
+{
+  "schema": "Dragons",
+  "name": "Q196",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Concrete",
+      "eTag": "A",
+      "eID": "12345678",
+      "eType": 1,
+      "eName": "Brandon Stark",
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "next": 3
+    },
+    {
+      "elNum": 3,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 2,
+      "next": 4
+    },
+    {
+      "elNum": 4,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 6,
+      "chained": 5
+    },
+    {
+      "elNum": 5,
+      "type": "M1",
+      "per": {
+        "eTags": [
+        "<"
+        ]
+      },
+      "k": 3,
+      "els": {
+        "eTags": [
+          ">"
+        ]
+      },
+      "op": "max",
+      "eTags": [
+        [
+          "D"
+        ]
+      ]
+    },
+    {
+      "elNum": 6,
+      "type": "Typed",
+      "eTag": "C",
+      "eType": 2,
+      "next": 7
+    },
+    {
+      "elNum": 7,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 8
+    },
+    {
+      "elNum": 8,
+      "type": "Typed",
+      "eTag": "D",
+      "eType": 2
+    }
+  ]
+}

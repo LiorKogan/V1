@@ -1,0 +1,65 @@
+{
+  "schema": "Dragons",
+  "name": "Q264",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "chained": 1,
+      "next": 3
+    },
+    {
+      "elNum": 1,
+      "type": "A3",
+      "EAtag": 3,
+      "per": {
+        "exprs": [
+          "${1}"
+        ]
+      },
+      "aggOp": "avg",
+      "expr": "${2}",
+      "chained": 2
+    },
+    {
+      "elNum": 2,
+      "type": "M3",
+      "k": 3,
+      "els": {
+        "exprs": [
+          "${1}"
+        ]
+      },
+      "op": "max",
+      "expr": "${3}"
+    },
+    {
+      "elNum": 3,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 3,
+      "next": 4
+    },
+    {
+      "elNum": 4,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        5,
+        6
+      ]
+    },
+    {
+      "elNum": 5,
+      "type": "EExpr",
+      "EAtag": 1,
+      "expr": "$(2)"
+    },
+    {
+      "elNum": 6,
+      "type": "EExpr",
+      "EAtag": 2,
+      "expr": "$(3)"
+    }
+  ]
+}

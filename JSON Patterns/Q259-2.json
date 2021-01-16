@@ -1,0 +1,78 @@
+{
+  "schema": "Dragons",
+  "name": "Q259-2",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 1,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        3,
+        7
+      ]
+    },
+    {
+      "elNum": 3,
+      "type": "Rel",
+      "wrapper": "O",      
+      "rType": 1,
+      "dir": "O",
+      "chained": 4,
+      "next": 6
+    },
+    {
+      "elNum": 4,
+      "type": "RExpr",
+      "EAtag": 1,
+      "expr": "$(1).$(.1).year",
+      "con": {
+        "op": "≥",
+        "expr": "1011"
+      },
+      "chained": 5
+    },
+    {
+      "elNum": 5,
+      "type": "A1",
+      "EAtag": 2,
+      "per": {
+        "eTags": [
+          "<"
+        ]
+      },
+      "eTags": [
+        [
+          ">"
+        ]
+      ]
+    },
+    {
+      "elNum": 6,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 3
+    },
+    {
+      "elNum": 7,
+      "type": "EExpr",
+      "EAtag": 2,
+      "expr": "${2}",
+      "con": {
+        "op": "≤",
+        "expr": "4"
+      }
+    }
+  ]
+}

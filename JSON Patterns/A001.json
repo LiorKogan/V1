@@ -1,0 +1,137 @@
+{
+  "pattern": {
+    "schema": "Dragons",
+    "name": "Q1",
+    "elements": [
+      {
+        "eNum": 0,
+        "type": "Start",
+        "next": 1
+      },
+      {
+        "eNum": 1,
+        "type": "EConcrete",
+        "eTag": "A",
+        "eID": "12345678",
+        "eType": 1,
+        "eName": "Brandon Stark",
+        "next": 2
+      },
+      {
+        "eNum": 2,
+        "type": "Rel",
+        "rType": 1,
+        "dir": "R",
+        "next": 3
+      },
+      {
+        "eNum": 3,
+        "type": "ETyped",
+        "eTag": "B",
+        "eType": 2
+      }
+    ]
+  },
+  "assignments": [
+    {
+      "entities": [
+        {
+          "eTag": [
+            "A"
+          ],
+          "eID": "12345678",
+          "eType": 1,
+          "properties": [
+		    {
+              "pType": "1",
+              "subProp": [
+            {
+              "pType": "1",
+              "agg": "raw",
+              "value": "Brandon"
+            },
+            {
+              "pType": "2",
+              "agg": "raw",
+              "value": "Stark"
+            },
+			  
+               ]
+			},
+            {
+              "pType": "4",
+              "agg": "raw",
+              "value": "980-05-08"
+            },
+            {
+              "pType": "6",
+              "agg": "raw",
+              "value": 187
+            }
+          ],
+          "attachedProperties": []
+        },
+        {
+          "eTag": [
+            "B"
+          ],
+          "eID": "1234",
+          "eType": 2,
+          "properties": [
+            {
+              "pType": "1",
+              "agg": "raw",
+              "value": "Balerion"
+            }
+          ],
+          "attachedProperties": []
+        }
+      ],
+      "relationships": [
+        {
+          "rID": "555",
+          "agg": true,
+          "rType": 1,
+          "directional": true,
+          "eID1": "12345678",
+          "eTag1": "A",
+          "eID2": "1234",
+          "eTag2": "B",
+          "properties": [
+            {
+              "pType": "1",
+              "agg": "raw",
+              "value": "994-08-22"
+            },
+            {
+              "pType": "2",
+              "agg": "raw",
+              "value": "995-02-13"
+            }
+          ],
+          "attachedProperties": []
+        },
+        {
+          "rID": "556",
+          "agg": true,
+          "rType": 1,
+          "directional": true,
+          "eID1": "12345678",
+          "eID2": "1234",
+          "properties": [
+            {
+              "pType": "1",
+              "agg": "raw",
+              "value": "997-02-28"
+            },
+            {
+              "pType": "2",
+              "agg": "raw"
+            }
+          ],
+          "attachedProperties": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "schema": "Dragons",
+  "name": "Q259-1",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 1,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Quant",
+      "qType": "some",
+      "next": [
+        3,
+        6
+      ]
+    },
+    {
+      "elNum": 3,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "chained": 4,
+      "next": 8
+    },
+    {
+      "elNum": 4,
+      "type": "RExpr",
+      "EAtag": 1,
+      "expr": "$(1).$(.1).year",
+      "con": {
+        "op": "≥",
+        "expr": "1011"
+      },
+      "chained": 5
+    },
+    {
+      "elNum": 5,
+      "type": "A1",
+      "EAtag": 2,
+      "per": {
+        "eTags": [
+          "<"
+        ]
+      },
+      "eTags": [
+        [
+          ">"
+        ]
+      ],
+      "con": {
+        "op": "≤",
+        "expr": "4"
+      }
+    },    
+    {
+      "elNum": 6,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "wrapper": "X",
+      "chained": 7,
+      "next": 8
+    },
+    {
+      "elNum": 7,
+      "type": "RExpr",
+      "EAtag": 3,
+      "expr": "$(1).$(.1).year",
+      "con": {
+        "op": "≥",
+        "expr": "1011"
+      }
+    },
+    {
+      "elNum": 8,
+      "type": "Comb",
+      "next": 9
+    },
+    {
+      "elNum": 9,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 3
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema": "Dragons",
+  "name": "Q009",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 2,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        3,
+        6
+      ]
+    },
+    {
+      "elNum": 3,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 4,
+      "chained": 5
+    },
+    {
+      "elNum": 4,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 2
+    },
+    {
+      "elNum": 5,
+      "type": "RExpr",
+      "EAtag": 1,
+      "expr": "$(1).$(.1)",
+      "con": {
+        "op": "∈",
+        "expr": "[datetime('980-01-01T00:00') .. datetime('981-01-01T00:00:00.000'))"
+      }
+    },
+    {
+      "elNum": 6,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 7,
+      "chained": 8
+    },
+    {
+      "elNum": 7,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 2
+    },
+    {
+      "elNum": 8,
+      "type": "RExpr",
+      "EAtag": 2,
+      "expr": "$(1).$(.1)",
+      "con": {
+        "op": "∈",
+        "expr": "[datetime('984-01-01T00:00:00.000') .. datetime('985-01-01T00:00:00'))"
+      }
+    }
+  ]
+}

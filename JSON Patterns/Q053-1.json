@@ -1,0 +1,125 @@
+{
+  "schema": "Dragons",
+  "name": "Q053-1",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 1,      
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Quant",
+      "qType": "some",
+      "next": [
+        3,
+        4,
+        7
+      ]
+    },     
+    {
+      "elNum": 3,
+      "type": "Rel",
+      "dir": "-",      
+      "next": 12
+    },
+    {
+      "elNum": 4,
+      "type": "Rel",
+      "dir": "-",      
+      "next": 5
+    },
+    {
+      "elNum": 5,
+      "type": "Untyped",
+      "eTag": "B",
+      "next": 6
+    },
+    {
+      "elNum": 6,
+      "type": "Rel",
+      "dir": "-",      
+      "next": 12
+    },
+    {
+      "elNum": 7,
+      "type": "Rel",
+      "dir": "-",      
+      "next": 8
+    },
+    {
+      "elNum": 8,
+      "type": "Untyped",
+      "eTag": "C",
+      "next": 9
+    },
+    {
+      "elNum": 9,
+      "type": "Rel",
+      "dir": "-",      
+      "next": 10
+    },
+    {
+      "elNum": 10,
+      "type": "Untyped",
+      "eTag": "D",
+      "next": 11
+    },
+    {
+      "elNum": 11,
+      "type": "Rel",
+      "dir": "-",      
+      "next": 12
+    },
+    {
+      "elNum": 12,
+      "type": "Comb",
+      "next": 13
+    }, 
+    {
+      "elNum": 13,
+      "type": "Concrete",
+      "eTag": "E",
+      "eID": "12345679",
+      "eType": 1,
+      "eName": "Rogar Bolton"
+    }
+  ],
+  "nonidentical": [
+    [
+      "B",
+      "A"
+    ],
+    [
+      "B",
+      "E"
+    ],
+    [
+      "C",
+      "A"
+    ],
+    [
+      "C",
+      "E"
+    ],
+    [
+      "D",
+      "A"
+    ],
+    [
+      "D",
+      "C"
+    ],
+    [
+      "D",
+      "E"
+    ]
+  ]   
+}

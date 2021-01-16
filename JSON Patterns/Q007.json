@@ -1,0 +1,155 @@
+{
+  "schema": "Dragons",
+  "name": "Q007",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 1,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        3,
+        9,
+        11
+      ]
+    },
+    {
+      "elNum": 3,
+      "type": "Rel",
+      "rType": 4,
+      "dir": "O",
+      "next": 4
+    },
+    {
+      "elNum": 4,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 1,
+      "next": 5
+    },
+    {
+      "elNum": 5,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "next": 6
+    },
+    {
+      "elNum": 6,
+      "type": "Typed",
+      "eTag": "C",
+      "eType": 2,
+      "next": 7
+    },
+    {
+      "elNum": 7,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 8
+    },
+    {
+      "elNum": 8,
+      "type": "Typed",
+      "eTag": "D",
+      "eType": 2
+    },
+    {
+      "elNum": 9,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "next": 10
+    },
+    {
+      "elNum": 10,
+      "type": "Typed",
+      "eTag": "D",
+      "eType": 2
+    },
+    {
+      "elNum": 11,
+      "type": "Rel",
+      "rType": 4,
+      "dir": "O",
+      "next": 12
+    },
+    {
+      "elNum": 12,
+      "type": "Typed",
+      "eTag": "E",
+      "eType": 1,
+      "next": 13
+    },
+    {
+      "elNum": 13,
+      "type": "Quant",
+      "qType": "some",
+      "next": [
+        14,
+        18
+      ]
+    },
+    {
+      "elNum": 14,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "next": 15
+    },
+    {
+      "elNum": 15,
+      "type": "Typed",
+      "eTag": "F",
+      "eType": 2,
+      "next": 16
+    },
+    {
+      "elNum": 16,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 17
+    },
+    {
+      "elNum": 17,
+      "type": "Typed",
+      "eTag": "D",
+      "eType": 2
+    },
+    {
+      "elNum": 18,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "next": 19
+    },
+    {
+      "elNum": 19,
+      "type": "Typed",
+      "eTag": "C",
+      "eType": 2
+    }
+  ],
+  "nonidentical": [
+    [
+      "B",
+      "E"
+    ],
+    [
+      "C",
+      "F"
+    ]
+  ]
+}

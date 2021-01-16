@@ -1,0 +1,47 @@
+{
+  "schema": "Dragons",
+  "name": "Q002",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Concrete",
+      "eTag": "A",
+      "eID": "12345678",
+      "eType": 1,
+      "eName": "Brandon Stark",
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "next": 3
+    },
+    {
+      "elNum": 3,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 2,
+      "next": 4
+    },
+    {
+      "elNum": 4,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 5
+    },
+    {
+      "elNum": 5,
+      "type": "Typed",
+      "eTag": "C",
+      "eType": 2
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "schema": "Dragons",
+  "name": "G008",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        2,
+        5
+      ]
+    },
+    {
+      "elNum": 2,
+      "type": "Concrete",
+      "eTag": "A",
+      "eID": "6667",
+      "eType": 6,
+      "eName": "Dragonmont Peak",
+      "next": 3
+    },
+    {
+      "elNum": 3,
+      "type": "EExpr",
+      "EAtag": 1,
+      "expr": "$(2)"
+    },
+    {
+      "elNum": 5,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 1,
+      "next": 6
+    },
+    {
+      "elNum": 6,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        7,
+        9,
+        15
+      ]
+    },
+    {
+      "elNum": 7,
+      "type": "Rel",
+      "rType": 7,
+      "dir": "O",
+      "next": 8
+    },
+    {
+      "elNum": 8,
+      "type": "Concrete",
+      "eTag": "C",
+      "eID": "7667",
+      "eType": 5,
+      "eName": "Sarnor"
+    },
+    {
+      "elNum": 9,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "next": 10
+    },
+    {
+      "elNum": 10,
+      "type": "Typed",
+      "eTag": "D",
+      "eType": 2,
+      "next": 11
+    },
+    {
+      "elNum": 11,
+      "type": "Rel",
+      "rType": 8,
+      "dir": "I",
+      "next": 12,
+      "chained": 13
+    },
+    {
+      "elNum": 12,
+      "type": "Untyped",
+      "eTag": "E"
+    },
+    {
+      "elNum": 13,
+      "type": "RExpr",
+      "EAtag": 2,
+      "expr": "$(2).dist(${1})",
+      "con": {
+        "op": "≤",
+        "expr": "5"
+      },
+      "chained": 14
+    },
+    {
+      "elNum": 14,
+      "type": "RExpr",
+      "EAtag": 3,
+      "expr": "$(1)"
+    },
+    {
+      "elNum": 15,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "chained": 16,
+      "next": 17
+    },
+    {
+      "elNum": 16,
+      "type": "A1",
+      "EAtag": 6,
+      "per": {
+        "eTags": [
+          "<"
+        ]
+      },
+      "eTags": [
+        [
+          ">"
+        ]
+      ],
+      "con": {
+        "op": "≥",
+        "expr": "3"
+      }
+    },
+    {
+      "elNum": 17,
+      "type": "Typed",
+      "eTag": "F",
+      "eType": 2,
+      "next": 18
+    },
+    {
+      "elNum": 18,
+      "type": "Rel",
+      "rType": 8,
+      "dir": "I",
+      "next": 19,
+      "chained": 20
+    },
+    {
+      "elNum": 19,
+      "type": "Untyped",
+      "eTag": "G"
+    },
+    {
+      "elNum": 20,
+      "type": "RExpr",
+      "EAtag": 4,
+      "expr": "$(2).dist(${1})",
+      "con": {
+        "op": "≤",
+        "expr": "5"
+      },
+      "chained": 21
+    },
+    {
+      "elNum": 21,
+      "type": "RExpr",
+      "EAtag": 5,
+      "expr": "$(1)",
+      "con": {
+        "op": "∈",
+        "expr": "[ ${3} .. ${3}+days(1)]"
+      }
+    }
+  ]
+}

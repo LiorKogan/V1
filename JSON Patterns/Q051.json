@@ -1,0 +1,56 @@
+{
+  "schema": "Dragons",
+  "name": "Q051",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 1,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        3,
+        4
+      ]
+    },
+    {
+      "elNum": 3,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "next": 5
+    },
+    {
+      "elNum": 4,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "next": 6
+    },
+    {
+      "elNum": 5,
+      "type": "Untyped",
+      "eTag": "B",
+      "ett": 1
+    },
+    {
+      "elNum": 6,
+      "type": "Untyped",
+      "valid": false,
+      "eTag": "C",
+      "etts": [
+        1
+      ]
+    }
+  ]
+}

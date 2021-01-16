@@ -1,0 +1,135 @@
+{
+  "schema": "Dragons",
+  "name": "Q049",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 2,
+      "next": 3
+    },
+    {
+      "elNum": 3,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        4,
+        6
+      ]
+    },
+    {
+      "elNum": 4,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "I",
+      "wrapper": "O",
+      "next": 5
+    },
+    {
+      "elNum": 5,
+      "type": "Untyped",
+      "eTag": "B"
+    },
+    {
+      "elNum": 6,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 7
+    },
+    {
+      "elNum": 7,
+      "type": "Typed",
+      "eTag": "E",
+      "eType": 2,
+      "next": 8
+    },
+    {
+      "elNum": 8,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        9,
+        11
+      ]
+    },
+    {
+      "elNum": 9,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "I",
+      "wrapper": "O",
+      "next": 10
+    },
+    {
+      "elNum": 10,
+      "type": "Untyped",
+      "eTag": "C"
+    },
+    {
+      "elNum": 11,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 12
+    },
+    {
+      "elNum": 12,
+      "type": "Typed",
+      "eTag": "F",
+      "eType": 2,
+      "next": 13
+    },
+    {
+      "elNum": 13,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        14,
+        16
+      ]
+    },
+    {
+      "elNum": 14,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "I",
+      "wrapper": "O",
+      "next": 15
+    },
+    {
+      "elNum": 15,
+      "type": "Untyped",
+      "eTag": "D"
+    },
+    {
+      "elNum": 16,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 17
+    },
+    {
+      "elNum": 17,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 2
+    }
+  ],
+ "order": [
+    [
+      "A",
+      "E"
+    ],
+    [
+      "A",
+      "F"
+    ]
+  ]
+}

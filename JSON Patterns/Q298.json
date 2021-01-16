@@ -1,0 +1,200 @@
+{
+  "schema": "Dragons",
+  "name": "Q298",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 2,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        4,
+        7,
+        10,
+        13,
+        16,
+        19
+      ],
+      "chained": 3
+    },
+    {
+      "elNum": 3,
+      "type": "A1",
+      "EAtag": 7,
+      "per": {
+        "eTags": [
+          "<"
+        ]
+      },
+      "eTags": [
+        [
+          ">"
+        ]
+      ],
+      "con": {
+        "op": "≥",
+        "expr": "10"
+      }
+    },
+    {
+      "elNum": 4,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 5
+    },
+    {
+      "elNum": 5,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 2,
+      "next": 6
+    },
+    {
+      "elNum": 6,
+      "type": "EExpr",
+      "EAtag": 1,
+      "expr": "$(2)",
+      "con": {
+        "op": "=",
+        "expr": "#color(1)"
+      }
+    },
+    {
+      "elNum": 7,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "wrapper": "N",
+      "next": 8
+    },
+    {
+      "elNum": 8,
+      "type": "Typed",
+      "eTag": "C",
+      "eType": 2,
+      "next": 9
+    },
+    {
+      "elNum": 9,
+      "type": "EExpr",
+      "EAtag": 2,
+      "expr": "$(2)",
+      "con": {
+        "op": "=",
+        "expr": "#color(2)"
+      }
+    },
+    {
+      "elNum": 10,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "wrapper": "O",
+      "next": 11
+    },
+    {
+      "elNum": 11,
+      "type": "Typed",
+      "eTag": "D",
+      "eType": 2,
+      "next": 12
+    },
+    {
+      "elNum": 12,
+      "type": "EExpr",
+      "EAtag": 3,
+      "expr": "$(2)",
+      "con": {
+        "op": "=",
+        "expr": "#color(3)"
+      }
+    },
+    {
+      "elNum": 13,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "wrapper": "ON",
+      "next": 14
+    },
+    {
+      "elNum": 14,
+      "type": "Typed",
+      "eTag": "E",
+      "eType": 2,
+      "next": 15
+    },
+    {
+      "elNum": 15,
+      "type": "EExpr",
+      "EAtag": 4,
+      "expr": "$(2)",
+      "con": {
+        "op": "=",
+        "expr": "#color(4)"
+      }
+    },
+    {
+      "elNum": 16,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "wrapper": "X",
+      "next": 17
+    },
+    {
+      "elNum": 17,
+      "type": "Typed",
+      "eTag": "F",
+      "eType": 2,
+      "next": 18
+    },
+    {
+      "elNum": 18,
+      "type": "EExpr",
+      "EAtag": 5,
+      "expr": "$(2)",
+      "con": {
+        "op": "=",
+        "expr": "#color(5)"
+      }
+    },
+    {
+      "elNum": 19,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "wrapper": "XN",
+      "next": 20
+    },
+    {
+      "elNum": 20,
+      "type": "Typed",
+      "eTag": "G",
+      "eType": 2,
+      "next": 21
+    },
+    {
+      "elNum": 21,
+      "type": "EExpr",
+      "EAtag": 6,
+      "expr": "$(2)",
+      "con": {
+        "op": "=",
+        "expr": "#color(6)"
+      }
+    }
+  ]
+}

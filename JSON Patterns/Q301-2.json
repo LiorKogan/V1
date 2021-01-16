@@ -1,0 +1,78 @@
+{
+  "schema": "Dragons",
+  "name": "Q301-2",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 2,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 3,
+      "chained": 4
+    },
+    {
+      "elNum": 3,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 2
+    },
+    {
+      "elNum": 4,
+      "type": "HQuant",
+      "qType": "some",
+      "chained": [
+        5,
+        6
+      ]
+    },
+    {
+      "elNum": 5,
+      "type": "RExpr",
+      "EAtag": 2,
+      "expr": "$(1).$(.1)",
+      "con": {
+        "op": ">",
+        "expr": "date('980-1-1')"
+      },
+      "chained": 7
+    },
+    {
+      "elNum": 6,
+      "type": "RExpr",
+      "EAtag": 3,
+      "expr": "$(1).$(.2)",
+      "con": {
+        "op": "<",
+        "expr": "date('980-2-1')"
+      },
+      "chained": 7
+    },
+    {
+      "elNum": 7,
+      "type": "HComb",
+      "chained": 8
+    },
+    {
+      "elNum": 8,
+      "type": "RExpr",
+      "EAtag": 1,
+      "expr": "$(1).duration",
+      "con": {
+        "op": ">",
+        "expr": "duration('PT10M')"
+      }
+    }
+  ]
+}

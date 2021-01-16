@@ -1,0 +1,52 @@
+{
+  "schema": "Dragons",
+  "name": "Q070",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 1,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Path",
+      "con": {
+        "op": "≤",
+        "expr": "4"
+      },
+      "next": 3,
+      "chained": 4
+    },
+    {
+      "elNum": 3,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 1
+    },
+    {
+      "elNum": 4,
+      "type": "M1",
+      "k": 5,
+      "els": {
+        "eTags": [
+          [
+            "<"
+          ]
+        ]
+      },
+      "op": "min",
+      "eTags": [
+        [
+          ">"
+        ]
+      ]
+    }
+  ]
+}

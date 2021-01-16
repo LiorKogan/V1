@@ -1,0 +1,42 @@
+{
+  "schema": "Dragons",
+  "name": "Q209",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Untyped",
+      "eTag": "A",
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "next": 3,
+      "chained": 4
+    },
+    {
+      "elNum": 3,
+      "type": "Untyped",
+      "eTag": "B",
+      "ett": 1
+    },
+    {
+      "elNum": 4,
+      "type": "M2",
+      "k": 3,
+      "els": {
+        "etts": [
+          1
+        ]
+      },
+      "op": "max"
+    }
+  ]
+}

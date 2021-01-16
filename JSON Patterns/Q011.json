@@ -1,0 +1,138 @@
+{
+  "schema": "Dragons",
+  "name": "Q011",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 1,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        3,
+        6
+      ]
+    },
+    {
+      "elNum": 3,
+      "type": "Rel",
+      "rType": 6,
+      "dir": "O",
+      "next": 5,
+      "chained": 4
+    },
+    {
+      "elNum": 4,
+      "type": "RExpr",
+      "EAtag": 1,
+      "expr": "$(1).$(.2)",
+      "con": {
+        "op": "is null"
+      }
+    },
+    {
+      "elNum": 5,
+      "type": "Concrete",
+      "eTag": "B",
+      "eID": "22345670",
+      "eType": 4,
+      "eName": "Masons"
+    },
+    {
+      "elNum": 6,
+      "type": "Rel",
+      "rType": 5,
+      "dir": "O",
+      "next": 8,
+      "chained": 7
+    },
+    {
+      "elNum": 7,
+      "type": "RExpr",
+      "EAtag": 2,
+      "expr": "$(1)",
+      "con": {
+        "op": "≥",
+        "expr": "datetime('1011-01-01T00:00:00.000')"
+      }
+    },
+    {
+      "elNum": 8,
+      "type": "Typed",
+      "eTag": "C",
+      "eType": 1,
+      "next": 9
+    },
+    {
+      "elNum": 9,
+      "type": "Quant",
+      "qType": "some",
+      "next": [
+        10,
+        13
+      ]
+    },
+    {
+      "elNum": 10,
+      "type": "Rel",
+      "rType": 6,
+      "dir": "O",
+      "next": 12,
+      "chained": 11
+    },
+    {
+      "elNum": 11,
+      "type": "RExpr",
+      "EAtag": 3,
+      "expr": "$(1).$(.2)",
+      "con": {
+        "op": "≥",
+        "expr": "datetime('1010-06-01T00:00:00')"
+      }
+    },
+    {
+      "elNum": 12,
+      "type": "Concrete",
+      "eTag": "D",
+      "eID": "22345671",
+      "eType": 4,
+      "eName": "Saddlers"
+    },
+    {
+      "elNum": 13,
+      "type": "Rel",
+      "rType": 6,
+      "dir": "O",
+      "next": 15,
+      "chained": 14
+    },
+    {
+      "elNum": 14,
+      "type": "RExpr",
+      "EAtag": 4,
+      "expr": "$(1).$(.2)",
+      "con": {
+        "op": "≥",
+        "expr": "datetime('1010-06-01T00:00')"
+      }
+    },
+    {
+      "elNum": 15,
+      "type": "Concrete",
+      "eTag": "E",
+      "eID": "22345672",
+      "eType": 4,
+      "eName": "Blacksmiths"
+    }
+  ]
+}

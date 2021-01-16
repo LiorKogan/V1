@@ -1,0 +1,78 @@
+{
+  "schema": "Dragons",
+  "name": "Q055",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Untyped",
+      "eTag": "A",
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        3,
+        5,
+        7
+      ]
+    },     
+    {
+      "elNum": 3,
+      "type": "Path",
+      "con": {
+        "op": "≤",
+        "expr": "3"
+      },
+      "next": 4
+    },
+    {
+      "elNum": 4,
+      "type": "Concrete",
+      "eTag": "B",
+      "eID": "12345679",
+      "eType": 1,
+      "eName": "Rogar Bolton"
+    },
+    {
+      "elNum": 5,
+      "type": "Path",
+      "con": {
+        "op": "≤",
+        "expr": "3"
+      },
+      "next": 6
+    },
+    {
+      "elNum": 6,
+      "type": "Concrete",
+      "eTag": "C",
+      "eID": "12345680",
+      "eType": 1,
+      "eName": "Robin Arryn"
+    },
+    {
+      "elNum": 7,
+      "type": "Path",
+      "con": {
+        "op": "≤",
+        "expr": "3"
+      },
+      "next": 8
+    },
+    {
+      "elNum": 8,
+      "type": "Concrete",
+      "eTag": "D",
+      "eID": "12345681",
+      "eType": 1,
+      "eName": "Arrec Durrandon"
+    }
+  ]
+}

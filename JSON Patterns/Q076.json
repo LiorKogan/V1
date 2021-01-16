@@ -1,0 +1,48 @@
+{
+  "schema": "Dragons",
+  "name": "0Q76",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 2,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 3,
+      "chained": 4
+    },
+    {
+      "elNum": 3,
+      "type": "Concrete",
+      "eTag": "B",
+      "eID": "1234",
+      "eType": 2,
+      "eName": "Balerion"
+    },
+    {
+      "elNum": 4,
+      "type": "A2",
+      "EAtag": 1,
+      "per": {
+        "eTags": [
+          "<>"
+        ]
+      },
+      "con": {
+        "op": "∈",
+        "expr": "[8..10]"
+      }
+    }
+  ]
+}

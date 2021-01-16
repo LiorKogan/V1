@@ -1,0 +1,57 @@
+{
+  "schema": "Dragons",
+  "name": "Q021-2",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 3,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Quant",
+      "qType": "notall",
+      "next": [
+        3,
+        5
+      ]
+    },
+    {
+      "elNum": 3,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "I",
+      "next": 4
+    },
+    {
+      "elNum": 4,
+      "type": "Concrete",
+      "eTag": "B",
+      "eID": "12345679",
+      "eType": 1,
+      "eName": "Rogar Bolton"      
+    },
+    {
+      "elNum": 5,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "I",
+      "next": 6
+    },
+    {
+      "elNum": 6,
+      "type": "Concrete",
+      "eTag": "C",
+      "eID": "12345681",
+      "eType": 1,
+      "eName": "Arrec Durrandon"
+    }
+  ]
+}

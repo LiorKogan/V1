@@ -1,0 +1,6 @@
+theme: jekyll-theme-slate
+show_downloads: false
+google_analytics: UA-89133312-1
+
+title: V1
+description: A Visual Query Language for Property Graphs

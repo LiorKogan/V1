@@ -1,0 +1,79 @@
+{
+  "schema": "Dragons",
+  "name": "Q046",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Concrete",
+      "eTag": "E",
+      "eID": "12345679",
+      "eType": 1,
+      "eName": "Rogar Bolton",
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "next": 3
+    },
+    {
+      "elNum": 3,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 2,
+      "next": 4
+    },
+    {
+      "elNum": 4,
+      "type": "Path",
+      "rTypes": [
+        {
+          "rType": 3,
+          "con": {
+            "op": "≤",
+            "expr": "2"
+          }
+        }
+      ],
+      "con": {
+        "op": "≤",
+        "expr": "4"
+      },
+      "eTypes": [
+        {
+          "eType": 2
+        }
+      ],
+      "next": 5
+    },
+    {
+      "elNum": 5,
+      "type": "Typed",
+      "eTag": "C",
+      "eType": 2,
+      "next": 6
+    },
+    {
+      "elNum": 6,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "I",
+      "next": 7
+    },
+    {
+      "elNum": 7,
+      "type": "Concrete",
+      "eTag": "G",
+      "eID": "12345680",
+      "eType": 1,
+      "eName": "Robin Arryn"
+    }
+  ]
+}

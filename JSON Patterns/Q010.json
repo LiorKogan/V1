@@ -1,0 +1,178 @@
+{
+  "schema": "Dragons",
+  "name": "Q010",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 1,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        3,
+        4
+      ]
+    },
+    {
+      "elNum": 3,
+      "type": "EExpr",
+      "EAtag": 1,
+      "expr": "$(1).$(.1)",
+      "con": {
+        "op": "=",
+        "expr": "'Brandon'"
+      }
+    },
+    {
+      "elNum": 4,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "next": 5
+    },
+    {
+      "elNum": 5,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 2,
+      "next": 6
+    },
+    {
+      "elNum": 6,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 9,
+      "chained": 7
+    },
+    {
+      "elNum": 7,
+      "type": "RExpr",
+      "EAtag": 2,
+      "expr": "$(1).$(.1)",
+      "con": {
+        "op": "≥",
+        "expr": "datetime('1010-01-01T00:00')"
+      },
+      "chained": 8
+    },
+    {
+      "elNum": 8,
+      "type": "RExpr",
+      "EAtag": 3,
+      "expr": "$(1).duration",
+      "con": {
+        "op": ">",
+        "expr": "duration('PT100M')"
+      }
+    },
+    {
+      "elNum": 9,
+      "type": "Typed",
+      "eTag": "C",
+      "eType": 2,
+      "next": 10
+    },
+    {
+      "elNum": 10,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        11,
+        15
+      ]
+    },
+    {
+      "elNum": 11,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "I",
+      "next": 12
+    },
+    {
+      "elNum": 12,
+      "type": "Typed",
+      "eTag": "D",
+      "eType": 1,
+      "next": 13
+    },
+    {
+      "elNum": 13,
+      "type": "Rel",
+      "rType": 4,
+      "dir": "O",
+      "next": 14
+    },
+    {
+      "elNum": 14,
+      "type": "Concrete",
+      "eTag": "E",
+      "eID": "12345679",
+      "eType": 1,
+      "eName": "Rogar Bolton"
+    },
+    {
+      "elNum": 15,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "next": 16
+    },
+    {
+      "elNum": 16,
+      "type": "Typed",
+      "eTag": "F",
+      "eType": 2,
+      "next": 17
+    },
+    {
+      "elNum": 17,
+      "type": "Quant",
+      "qType": "some",
+      "next": [
+        18,
+        20
+      ]
+    },
+    {
+      "elNum": 18,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "I",
+      "next": 19
+    },
+    {
+      "elNum": 19,
+      "type": "Concrete",
+      "eTag": "G",
+      "eID": "12345680",
+      "eType": 1,
+      "eName": "Robin Arryn"
+    },
+    {
+      "elNum": 20,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "I",
+      "next": 21
+    },
+    {
+      "elNum": 21,
+      "type": "Concrete",
+      "eTag": "H",
+      "eID": "12345681",
+      "eType": 1,
+      "eName": "Arrec Durrandon"
+    }
+  ]
+}

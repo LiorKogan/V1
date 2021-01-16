@@ -1,0 +1,42 @@
+{
+  "schema": "Dragons",
+  "name": "Q190-2",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 1,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "next": 3,
+      "chained": 4
+    },
+    {
+      "elNum": 3,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 2
+    },
+    {
+      "elNum": 4,
+      "type": "RExpr",
+      "EAtag": 1,
+      "expr": "$(1).$(.1).year",
+      "con": {
+        "op": "≥",
+        "expr": "1011"
+      }
+    }
+  ]
+}

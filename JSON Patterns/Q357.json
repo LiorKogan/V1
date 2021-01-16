@@ -1,0 +1,39 @@
+{
+  "schema": "Dragons",
+  "name": "Q357",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 2,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Rel",
+      "rType": 3,
+      "dir": "O",
+      "wrapper": "N",
+      "next": 3
+    },
+    {
+      "elNum": 3,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 2
+    }
+  ],
+  "nonidentical": [
+    [
+      "A",
+      "B"
+    ]
+  ]
+  
+}

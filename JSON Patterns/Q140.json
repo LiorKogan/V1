@@ -1,0 +1,114 @@
+{
+  "schema": "Dragons",
+  "name": "Q140",
+  "elements": [
+    {
+      "elNum": 0,
+      "type": "Start",
+      "next": 1
+    },
+    {
+      "elNum": 1,
+      "type": "Typed",
+      "eTag": "A",
+      "eType": 1,
+      "next": 2
+    },
+    {
+      "elNum": 2,
+      "type": "Rel",
+      "rType": 4,
+      "dir": "I",
+      "chained": 3,
+      "next": 5
+    },
+    {
+      "elNum": 3,
+      "type": "M3",
+      "per": {
+        "eTags": [
+          "<"
+        ]
+      },
+      "k": 3,
+      "els": {
+        "eTags": [
+          ">"
+        ]
+      },
+      "op": "min",
+      "expr": "${2}",
+      "chained": 4
+    },
+    {
+      "elNum": 4,
+      "type": "A3",
+      "EAtag": 4,
+      "per": {
+        "eTags": [
+          "<"
+        ]
+      },
+      "aggOp": "distinct",
+      "expr": "${3}",
+      "con": {
+        "op": "=",
+        "expr": "3"
+      }    
+    },
+    {
+      "elNum": 5,
+      "type": "Typed",
+      "eTag": "B",
+      "eType": 1,
+      "next": 6
+    },
+    {
+      "elNum": 6,
+      "type": "Quant",
+      "qType": "all",
+      "next": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "elNum": 7,
+      "type": "EExpr",
+      "EAtag": 1,
+      "expr": "$(3)",
+      "con": {
+        "op": "=",
+        "expr": "#gender(2)"
+      }
+    },
+    {
+      "elNum": 8,
+      "type": "EExpr",
+      "EAtag": 2,
+      "expr": "$(4)"
+    },
+    {
+      "elNum": 9,
+      "type": "Rel",
+      "rType": 1,
+      "dir": "O",
+      "wrapper": "O",
+      "next": 10
+    },
+    {
+      "elNum": 10,
+      "type": "Typed",
+      "eTag": "C",
+      "eType": 3,
+      "next": 11
+    },
+    {
+      "elNum": 11,
+      "type": "EExpr",
+      "EAtag": 3,
+      "expr": "$(2)"
+    }
+  ]
+}
