@@ -72,7 +72,7 @@ The _property graph_ is an increasingly popular data model. Pattern construction
 
 Query posers (e.g., analysts, investigators, researchers) would like to construct patterns with minimal effort, minimal trial and error, and in a manner that is coherent with the way they think. The ability to express patterns in a way that is aligned with their mental processes is crucial to the flow of their work and to the quality of the insights they can draw. Many potential query posers will not use textual query languages (e.g., [Gremlin](https://arxiv.org/abs/1508.03843), [GSQL](https://arxiv.org/abs/1901.08248), [Cypher](https://dl.acm.org/citation.cfm?id=3190657), [PGQL](https://dl.acm.org/citation.cfm?id=2960421), [G-CORE](https://arxiv.org/abs/1712.01550), and the proposed [GQL](https://gql.today/)), as the learning curve may be too sharp for someone with little or no prior experience in programming. Moreover, even experienced query posers who do use textual query languages often spend much time on the technicalities and may be distracted from their line of inquiry.
 
-Since the capabilities of the human visual system with respect to pattern perception are remarkable, it is a matter of course that query patterns were to be expressed visually. Indeed, five of the abovementioned languages use ASCII-art syntax for expressing topological constraints. Needless to say, this type of 'visualization' is quite limited. While the use of ASCII-art declined in the 1990s in favor of graphical images, query languages began to adopt ASCII-art only recently. Visual (graphical, diagrammatic) query languages have the potential to be much more 'user-friendly' than their textual counterparts in the sense that patterns may be constructed and understood much more quickly and with much less mental effort. Given a schema, interactive visual query building tools can allow query posers to compose valid patterns by selecting  entity-types, relationship-types, and properties, hence, composing valid patterns with minimal typing. A long-standing challenge is to design a visual query language that is generic, has rich expressive power, and is highly receptive and productive. V1 attempts to answer this challenge.
+Since the capabilities of the human visual system with respect to pattern perception are remarkable, it is a matter of course that query patterns were to be expressed visually. Indeed, five of the abovementioned languages use ASCII-art syntax for expressing topological constraints. Needless to say, this type of 'visualization' is quite limited. While the use of ASCII-art declined in the 1990s in favor of graphical images, query languages began to adopt ASCII-art only recently. Visual (graphical, diagrammatic) query languages have the potential to be much more 'user-friendly' than their textual counterparts in the sense that patterns may be constructed and understood much more quickly and with much less mental effort. Given a schema, interactive tools can allow query posers to construct valid patterns with minimal typing. A long-standing challenge is to design a visual query language that is generic, has rich expressive power, and is highly receptive and productive. V1 attempts to answer this challenge.
 
 V1 is a declarative visual pattern query language for schema-based property graphs. V1 supports property graphs with mixed (both directed and undirected) edges and unary edges, with multivalued and composite properties, and with _null_ property values. V1 supports temporal data types, operators, and functions and can be extended to support additional data types, operators, and functions (one spatiotemporal model is presented). V1 is generic, concise, has rich expressive power, and is highly receptive and productive.
 
@@ -1775,7 +1775,7 @@ Self or circular references are invalid:
 
 ![V1](Pictures/Illegal-Tag02-2.png)
 
-_**Q111:** Any person who is not a friend of someone with a birth date similar to his_
+_**Q111:** Any person A who has no friends with whom A shares a birthdate_
 
 ![V1](Pictures/Q111.png)
 
@@ -2109,7 +2109,7 @@ _**Q247:** Any dragon C that more than ten dragons froze dragons that froze it_
 
 ![V1](Pictures/Q247.png)
 
-_**Q113:** Any person who is a friend of at least five people with a birth date similar to his_
+_**Q113:** Any person A who has at least five friends with whom A shares a birthdate_
 
 ![V1](Pictures/Q113.png)
 
