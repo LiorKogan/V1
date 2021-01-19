@@ -80,7 +80,7 @@ V1 is a declarative visual pattern query language for schema-based property grap
 
 A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) consists of a set of _vertices_ (nodes) _V_ and a set of _binary edges_ (_edges_) _E_. A graph may be _directed_ (i.e., _digraph_), where each edge consists of an ordered pair (_u,v_) ∈ _V²_, *undirected*, where each edge consists of an unordered pair {_u,v_} ∈ _V²_, or _mixed_ where both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed. Sometimes _unary edges_ (_half-edges_ - edges attached to only one vertex) are allowed as well.
 
-An _attributed graph_ is a graph where nodes and/or edges are annotated with attributes or sets of attributes (i.e., _multi-attributed graph_). Attributes can be nominal, ordinal, key-value pairs, and so on. (The term _'attributes'_ is sometimes used in a limited scope to refer only to key-value pairs, while the term _'labels'_ is used to refer to nominal attributes).
+An _attributed graph_ is a graph where nodes and/or edges are annotated with attributes or sets of attributes (i.e., _multi-attributed graph_). Attributes can be nominal, ordinal, key-value pairs, and so on. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
 A _property graph_ (also called _labeled property graph_) is a multi-attributed pseudograph where
 
