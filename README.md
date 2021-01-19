@@ -92,7 +92,7 @@ Labels are usually strings - for example, _Person_ and _member of_. The set of v
 
 Each property has a distinct nominal name (key), usually a string, and a value of a certain data type (e.g., _string_, _integer_, _float_). For example: _weight_: _integer_ = 450.
 
-_Multivalued properties_ (ordered or unordered, with or without duplicates) and _composite properties_ are sometimes supported as well. Composite properties are composed of a set of sub-properties, each has a name and a value of a certain data type. For example: _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). 
+Multivalued and composite properties are sometimes supported as well. _Multivalued properties_ (ordered or unordered, with or without duplicates) contains multiple values, all of the same data type. For example: _titles_: set(_string_) = {"Lady", "Queen"}. Composite properties are composed of a set of sub-properties, each has a name and a value of a certain data type. For example: _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). 
 
 _null_ is a valid value for any _nullable property_ and sub-property regardless of its data type.
 
