@@ -2078,14 +2078,9 @@ For each assignment to A:
 Hence, for each assignment to A:
 
 * A froze at least ten dragons, and either (i) only one dragon froze A - which is not one of those, or (ii) at least two dragons froze A
-
-and also
-
 * At least ten dragons froze A, and either (i) A froze only one dragon - which is not one of those, or (ii) A froze at least two dragons
 
-Hence:
-
-* A froze at least ten dragons, and at least ten dragons froze A
+Hence, A froze at least ten dragons, and at least ten dragons froze A
 
 _**Q101:** Any person who owns at least five white horses_
 
