@@ -358,7 +358,7 @@ _expr_ is an entity's expression, a relationship's expression, or a Cartesian pr
 
 - A _Cartesian product's expression_
 
-  The expression is composed of or depends on properties (inherent or calculated) of at least two entities (see {3} in Q207, {2}, {3} and {4} in Q340), at least two relationships (see {2} in Q267v2), or at least one entity and one relationship (see {2} and {4} in G3).
+  The expression is composed of or depends on properties (inherent or calculated) of at least two entities (see {3} in Q207, {2}, {3} and {4} in Q340), at least two relationships (see {2} in Q267v2), or at least one entity and one relationship (see {1} in Q115v2, {2} and {4} in G3).
   
   The green rectangle is connected to one of the entities/relationships or appears on the same level as the leftmost entities (when there is no single leftmost entity) (see Q207).
   
