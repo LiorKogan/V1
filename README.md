@@ -2117,6 +2117,8 @@ _**Q114:** Any person who owns at least five horses of the same color_ (version 
 
 ![V1](Pictures/Q114-1.png)
 
+B is explicit latent to avoid redundant results. Were B not latent, each pattern assignment would have one of A's dragons assigned to B and all A's dragons of the same color assigned to C. When B is latent, all such reported results are identical, hence, reported only once.
+
 _**Q218:** Any person who owns at least five entities of the same type_ (version 1)
 
 ![V1](Pictures/Q218-1.png)
