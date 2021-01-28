@@ -2052,13 +2052,9 @@ _**Q178:** Any dragon A frozen by at least ten dragons and either (i) A froze on
 
 First, any dragon triplet (A, B, C) matching the pattern excluding the aggregator is found. Then, the aggregation constraint is checked:
 
-For each assignment to A:
+For each assignment to A, there are at least ten assignments to B such that (B froze A, and A froze a dragon that is not B)
 
-* There are at least ten assignments to B such that (B froze A, and A froze a dragon that is not B)
-
-Hence, for each assignment to A:
-
-* At least ten dragons froze A, and either (i) A froze only one dragon - which is not one of those, or (ii) A froze at least two dragons
+Hence, for each assignment to A, at least ten dragons froze A, and either (i) A froze only one dragon - which is not one of those, or (ii) A froze at least two dragons
 
 _**Q85:** Any dragon that froze at least ten dragons and was frozen by at least ten dragons_ (two versions)
 
