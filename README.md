@@ -1745,7 +1745,7 @@ Expression-tags may be referenced:
 * in an entity, relationship, or Cartesian product's expression (see Q267v2, Q308, Q349)
 * in an entity, relationship, or Cartesian product's expression constraint (see Q108, Q109)
 * in a path length constraint
-* in an extended aggregator _per_ clause (see Q114v2, Q270)
+* in an extended aggregator _per_ clause (see Q114v3, Q270)
 * in an A3 aggregator "aggop ..." clause (see Q116)
 *	in an extended M1/M2/M3 aggregator "[all but] _k_ ..." clause (see Q220, Q262)
 * in an M3 aggregator "with min/max ..." clause (see Q130)
@@ -2113,11 +2113,15 @@ _**Q113:** Any person A who has at least five friends with whom A shares a birth
 
 ![V1](Pictures/Q113.png)
 
-_**Q114:** Any person who owns at least five horses of the same color_ (version 1)
+_**Q114:** Any person who owns at least five horses of the same color_ (versions 1, 2)
 
 ![V1](Pictures/Q114-1.png)
 
 B is explicit latent to avoid redundant results. Were B not latent, each pattern assignment would have one of A's dragons assigned to B and all A's dragons of the same color assigned to C. When B is latent, all such reported results are identical, hence, reported only once.
+
+The following pattern avoids redundant results as well:
+
+![V1](Pictures/Q114-2.png)
 
 _**Q218:** Any person who owns at least five entities of the same type_ (version 1)
 
@@ -3352,9 +3356,9 @@ _**Q217:** Any dragon and the dragons it froze - on days it froze between one an
 
 ![V1](Pictures/Q217.png)
 
-_**Q114:** Any person who owns at least five horses of the same color_ (version 2)
+_**Q114:** Any person who owns at least five horses of the same color_ (version 3)
 
-![V1](Pictures/Q114-2.png)
+![V1](Pictures/Q114-3.png)
 
 _**Q218:** Any person who owns at least five entities of the same type_ (version 2)
 
