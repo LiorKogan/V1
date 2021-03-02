@@ -23,6 +23,7 @@
       "eID": "6667",
       "eType": 6,
       "eName": "Dragonmont Peak",
+      "expLatent": true,      
       "next": 3
     },
     {
@@ -61,7 +62,8 @@
       "eTag": "C",
       "eID": "7667",
       "eType": 5,
-      "eName": "Sarnor"
+      "eName": "Sarnor",
+      "expLatent": true      
     },
     {
       "elNum": 9,
