@@ -393,8 +393,8 @@
     },
     {
       "rType": 5,
-      "DBrName": "knows",
-      "display": "knows",
+      "DBrName": "friend of",
+      "display": "friend of",
       "directional": false,
       "ePairs": [
         {
