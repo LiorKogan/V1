@@ -539,7 +539,7 @@ _It_ denotes a interval of ordinal type _t_
 | *                                | _int_ * _int_ → _int_ <br> _float_ * _float_ → _float_ <br> _float_ * _duration_ → _duration_ <br> _duration_ * _float_ → _duration_ <br> If one or both operands are _null_ - the result is _null_
 | /                                | _int_ / _int_ → _int_ (truncated towards zero) <br> _float_ / _float_ → _float_ <br> _duration_ / _float_ → _duration_ <br> If one or both operands are _null_ - the result is _null_
 | % (modulo)                       | _int_ % _int_ → _int_ (reminder has the same sign as the dividend) <br> If one or both operands are _null_ - the result is _null_
-| ∪, ∩, -, △ <br> (union, intersection, difference, symmetric difference) | _St op St_ → _St_ (_t_ is any type) <br> _Bt op Bt_ → _Bt_ (_t_ is any type) <br> If one or both operands are _null_ - the result is _null_
+| ∪, ∩, -, △ <br> (union, intersection, difference, symmetric difference) | _St op St_ → _St_ (_t_ is any type) <br> _Bt op Bt_ → _Bt_ (_t_ is any type) (see Q377) <br> If one or both operands are _null_ - the result is _null_
 | ∥ (concatenation)                | string ∥ string → string. _s_ ∥ _null_ = _null_ ∥ _s_ = _null_ <br> _Lt_ ∥ _Lt_ → _Lt_ (_t_ is any type). _null_ ∥ _L_ = _L_ ∥ _null_ = _null_ <br> _t_ ∥ _Lt_ → _Lt_ (_t_ is any type). _null_ ∥ _L_ = (_null_, ...). _L_. _t_ ∥ _null_ = _null_ <br> _Lt_ ∥ _t_ → _Lt_ (_t_ is any type). _L_ ∥ _null_  = (..., _null_). _null_ ∥ _t_ = _null_
 
 **Constraint Operators:**
@@ -701,7 +701,7 @@ Functions over _bag_ expressions:
 | _min_(_Bt_) → _t_ <br> _max_(_Bt_) → _t_ | _t_ is an ordinal type <br> _null_ when _Bt_ is _null_ or when it is empty
 | _avg_(_Bt_) → _t_ or _float_ | _t_ is an ordinal type <br> if _t_ is _int_ - the result is _float_ <br> _null_ when _Bt_ is _null_ or when it is empty 
 | _sum_(_Bt_) → _t_                 | _t_ is _int_ / _float_ / _duration_ (not _date_ / _time_ / _datetime_) <br> _null_ when _Bt_ is _null_; zero when it is empty
-| _min_(_Bt, n_) → _Bt_ <br> _max_(_Bt, n_) → _Bt_ | _t_ is an ordinal type <br> bag of (up to) _n_ smallest/largest values <br> _null_ when _Bt_ is _null_, [] when it is empty
+| _min_(_Bt, n_) → _Bt_ <br> _max_(_Bt, n_) → _Bt_ | _t_ is an ordinal type <br> bag of (up to) _n_ smallest/largest values (see Q377) <br> _null_ when _Bt_ is _null_, [] when it is empty
 | _overlap_(_Bdateframe_) → _duration_ <br> _overlap_(_Bdatetimeframe_) → _duration_ | The duration of the overlap between all members of _B_ <br> Always non-negative
 | _union_(_BSt_) → _St_ <br> _union_(_BBt_) → _Bt_ | The union of all members of a bag of sets/bags (_t_ is any type)
 | intersection(_BSt_) → _St_ <br> intersection(_BBt_) → _Bt_ | The intersection of all members of a bag of sets/bags (_t_ is any type)
@@ -3173,6 +3173,10 @@ _**Q317:** Any dragon that the time difference between the earliest time it froz
 ![V1](Pictures/Q317.png)
 
 Note that {1}, {2}, {3} and {4} are defined right of an 'O', hence evaluated to _null_ when the optional part has no assignment. Since _min_({...}) and _max_({...}) ignore _nulls_, the pattern would yield the expected results even when dragon A froze no dragon or when dragon A fired at no dragon.
+
+_**Q377:** Any dragon and the three earliest times it froze/fired at some dragon_
+
+![V1](Pictures/Q377.png)
 
 ## Aggregator Sequences
 
