@@ -108,8 +108,6 @@ More about property graphs can be found [here](https://arxiv.org/pdf/1006.2361.p
 
 The term _property graph_ was popularized by [Rodriguez](https://markorodriguez.com/) and Neubauer (see the first two links above), though other terms were used for similar data models. [Tsai and Fu's](https://ieeexplore.ieee.org/document/4310127) _attributed relational graph_ is a directed multigraph where both nodes and edges have labels, and each label defines a set of numerical or logical attributes. [Shaw et al.](https://ieeexplore.ieee.org/abstract/document/7953521) used the term _Heterogeneous graph_ for the same construct. [Gallagher](http://www.aaai.org/Papers/Symposia/Fall/2006/FS-06-02/FS06-02-007.pdf) used the term _data graph_ to refer to graphs where vertices and/or edges may be typed and/or attributed. [Singh et al.](http://ieeexplore.ieee.org/abstract/document/4272051/) used the term _M*3_ (multi-modal, multi-relational, multifeatured) _network_ to refer to graphs with multiple entity-types, multiple relationship-types, and multiple descriptive features for nodes and edges. [Krause et al.](https://link.springer.com/chapter/10.1007/978-3-319-40530-8_10)  used the term _typed graph_ to refer to graphs with typed nodes, typed edges, and typed node properties.
 
-Though most suggested property graph definitions have much in common, to date, there is neither a de jure nor a de facto standard definition. Property graph definitions may vary in many aspects, including:
-
 Various extensions were proposed, including support of schema-level and data-level _metaproperties_ (properties of properties - e.g., units of measure, accuracy, and reliability).
 
 ## The Property Graph Schema
@@ -128,7 +126,7 @@ It is much easier to define patterns when the information is presented consisten
 * For the _Horse_ entity-type, define a _color_ property with a nominal data type
 * Ensure that all the information is structured accordingly
 
-Though suggested property graph schema definitions have much in common (See [Angles](http://ceur-ws.org/Vol-2100/paper26.pdf), [Wu](https://arxiv.org/abs/1810.08755), [Hartig and Hidders](https://dl.acm.org/citation.cfm?id=3327964.3328495), and [Thakkar et al.](https://ieeexplore.ieee.org/document/9088985)), to date, there is neither a de jure nor a de facto standard definition (and hence, no standard property graph schema definition language). 
+Though suggested property graph and property graph schema definitions have much in common (See [Angles](http://ceur-ws.org/Vol-2100/paper26.pdf), [Wu](https://arxiv.org/abs/1810.08755), [Hartig and Hidders](https://dl.acm.org/citation.cfm?id=3327964.3328495), and [Thakkar et al.](https://ieeexplore.ieee.org/document/9088985)), to date, there is neither a de jure nor a de facto standard definition (and hence, no standard property graph schema definition language). 
 
 The following _property graph schema model_ (i.e., _property graph metamodel_) is assumed in this paper:
 
