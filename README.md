@@ -208,7 +208,9 @@ Here are two examples:
 
 The terms _entity_ and _relationship_ denote both pattern elements and graph elements. When the context may be ambiguous, we use the terms _pattern-entity_ and _pattern-relationship_ to refer to pattern elements, and the terms _graph-entity_ and _graph-relationship_ to refer to graph elements.
 
-Given a property graph schema _S_, a property graph _G_, and a query pattern _P_, all expressed in some language _L=_{_L<sub>S</sub>, L<sub>G</sub>, L<sub>P</sub>_}, _pattern matching_ is the process of finding, merging, and annotating subgraphs of _G_ that match _P_. Any valid subgraph that matches the pattern is called _an assignment_. We use _assignment to X_ where _X_ is a pattern-entity, a pattern-relationship or a set of thereof, to denote the graph-entity, the graph-relationship, or the set of thereof that matches _X_ as part of an assignment.
+Given a property graph schema _S_, a property graph _G_, and a query pattern _P_, all expressed in some language _L=_(_L<sub>S</sub>, L<sub>G</sub>, L<sub>P</sub>, L<sub>R</sub>_), _pattern matching_ is the process of finding, merging, and annotating subgraphs of _G_ that match _P_. The syntaxes of sublanguages _L<sub>S</sub>_, _L<sub>G</sub>_, _L<sub>P</sub>_, and _L<sub>R</sub>_ define what and how symbols may be combined to create well-formed schemas, graphs, patterns, and query results, respectively. A semantics of _L<sub>P</sub>_ is a mapping (_S, G, P_) → _R_: which subgraphs of _G_ match _P_ and how to merge and annotate them. 
+
+Any valid subgraph that matches the pattern is called _an assignment_. We use _assignment to X_ where _X_ is a pattern-entity, a pattern-relationship or a set of thereof, to denote the graph-entity, the graph-relationship, or the set of thereof that matches _X_ as part of an assignment.
 
 In the patterns given below, unless otherwise stated, each reported assignment should include the graph-entity assigned to each mentioned pattern-entity and the graph-relationship assigned to each mentioned pattern-relationship. Hence, any reported assignment to _P1_ should be composed of:
   
