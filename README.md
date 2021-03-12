@@ -181,7 +181,7 @@ Here are two examples:
   _P1_ defines the set of (sub)graphs where 
 
   - There is a vertex _p_ with a label _Person_
-  - There are at least five vertices _h₁..hₙ_, each with a label _Horse_
+  - There are _n_>5 vertices _h₁..hₙ_, each with a label _Horse_
   - Each of _h₁..hₙ_ has a _color_ property, and its value is _white_
   - There are relationships from _p_ to _h₁..hₙ_, each with a label _owns_
 
@@ -197,14 +197,14 @@ Here are two examples:
   - There is at least one vertex _d_ with a label _Dragon_
   - There is a relationship from _p_ to _d_ with a label _owns_
   - _d_ has a _name_ property with a value that starts with 'M'
-  - There are at least three vertices _d₁..dₙ_, each with a label _Dragon_
-  - There are relationships from _d_ to any of _d₁..dₙ_, each with a label _freezes_
+  - There are _m_>3 vertices, _d₁..dₘ_, each with a label _Dragon_
+  - There are relationships from _d_ to any of _d₁..dₘ_, each with a label _freezes_
   - Each of these relationships has a _tf_ property (stands for "time frame") with a _since_ sub-property whose value is in the range [_now_() - _months_(3) .. _now_()]
-  - There is at least one vertex _g_ with a label _Guild_
+  - There is a vertex _g_ with a label _Guild_
   - _g_ has a _name_ property, and its value is _Masons_
-  - There are one or more vertices _p₁..pₙ_, each with a label _Person_
-  - There are relationships from any of _p₁..pₙ_ to _g_, each with a label _member of_
-  - There are relationships from each of _p₁..pₙ_ to one or more of _d₁..dₙ_, each with a label _owns_. Each of _d₁..dₙ_ is connected by at least one of these relationships
+  - There are _n_≥1 vertices _q₁..qₙ_, each with a label _Person_
+  - There are relationships from each of _q₁..qₙ_ to _g_, each with a label _member of_
+  - There are relationships from each of _q₁..qₙ_ to one or more of _d₁..dₘ_, each with a label _owns_. Each of _d₁..dₘ_ is connected by at least one of these relationships
 
 The terms _entity_ and _relationship_ denote both pattern elements and graph elements. When the context may be ambiguous, we use the terms _pattern-entity_ and _pattern-relationship_ to refer to pattern elements, and the terms _graph-entity_ and _graph-relationship_ to refer to graph elements.
 
@@ -222,6 +222,7 @@ Consider the following alternative patterns:
 
 * _P1': Any person who owns at least five white horses. Report only the person_
 * _P1'': Any person who owns at least five white horses. Report only the horses_
+* _P1''': Any person who owns at least five white horses. Report the person and five of his horses_
 
 An answer to a query pattern may be:
 
