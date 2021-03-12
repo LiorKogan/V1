@@ -197,12 +197,12 @@ Here are two examples:
   - There is at least one vertex _d_ with a label _Dragon_
   - There is a relationship from _p_ to _d_ with a label _owns_
   - _d_ has a _name_ property with a value that starts with 'M'
-  - There are _m_>3 vertices, _d₁..dₘ_, each with a label _Dragon_
+  - There are _m_ > 3 vertices, _d₁..dₘ_, each with a label _Dragon_
   - There are relationships from _d_ to any of _d₁..dₘ_, each with a label _freezes_
   - Each of these relationships has a _tf_ property (stands for "time frame") with a _since_ sub-property whose value is in the range [_now_() - _months_(3) .. _now_()]
   - There is a vertex _g_ with a label _Guild_
   - _g_ has a _name_ property, and its value is _Masons_
-  - There are _n_≥1 vertices _q₁..qₙ_, each with a label _Person_
+  - There are _n_ ≥ 1 vertices _q₁..qₙ_, each with a label _Person_
   - There are relationships from each of _q₁..qₙ_ to _g_, each with a label _member of_
   - There are relationships from each of _q₁..qₙ_ to one or more of _d₁..dₘ_, each with a label _owns_. Each of _d₁..dₘ_ is connected by at least one of these relationships
 
