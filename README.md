@@ -228,7 +228,7 @@ A query result may be:
 
 * A set of subgraphs of _G_. Each subgraph is an assignment
 * A set of subgraphs of _G_. Each subgraph is a union of assignments, e.g., the union of all assignments with identical assignments to all entities (and different assignments to relationships)
-* A single subgraph of _G_, composed of the union of all assignments. This is sometimes preferred since it avoids exponential or factorial explosion for many queries (e.g., if a person owns ten white horses, any subset of five or more horses compose an assignment to P1'''). However, for some patterns, individual assignments cannot be deduced from their union.
+* A single subgraph of _G_, composed of the union of all assignments. This is sometimes preferred since it avoids exponential or factorial explosion for many queries (e.g., if a person owns ten white horses, any subset of five of the person's horses compose an assignment to P1'''). However, for some patterns, individual assignments cannot be deduced from their union.
 
 Implementations may support one or more of the above.
 
