@@ -224,11 +224,11 @@ Consider the following alternative patterns:
 * _P1'': Any person who owns at least five white horses. Report only the horses_
 * _P1''': Any person who owns at least five white horses. Report the person and five of his horses_
 
-An answer to a query pattern may be:
+A query result may be:
 
-* The set of all assignments
-* The set of all entity assignments, but for each assignment - the union of all relationship assignments
-* The union of all assignments. This is sometimes preferred since it avoids exponential or factorial explosion for many queries (e.g., if a person owns ten white horses, any subset of five or more horses compose an assignment to _P1'''_). However, for some patterns, individual assignments cannot be derived from their union.
+* A set of subgraphs of _G_. Each subgraph is an assignment
+* A set of subgraphs of _G_. Each subgraph is a union of assignments, e.g., the union of all assignments with identical assignments to all entities (and different assignments to relationships)
+* A single subgraph of _G_, composed of the union of all assignments. This is sometimes preferred since it avoids exponential or factorial explosion for many queries (e.g., if a person owns ten white horses, any subset of five or more horses compose an assignment to P1'''). However, for some patterns, individual assignments cannot be deduced from their union.
 
 Implementations may support one or more of the above.
 
