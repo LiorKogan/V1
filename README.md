@@ -1,7 +1,6 @@
 ## V1: A Visual Query Language for Property Graphs
 
 Copyright © 2017-2021 [Lior Kogan](https://www.linkedin.com/in/liorkogan) (koganlior1 [at] gmail [dot] com)
-
 ---
 
 The V1 language, all the content of [https://github.com/LiorKogan/V1](https://github.com/LiorKogan/V1), and all the content of [http://v1.ms/](http://v1.ms/) are licensed under the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/). Commercial license and software tools are also available.
@@ -1249,7 +1248,7 @@ _**Q33:** Any dragon A that froze some dragon B, froze some dragon that froze B,
 
 ![V1](Pictures/Q033.png)
 
-Different branches may be combined with different quantifiers.
+Different branches may be combined with different combiners.
 
 _**Q34:** Any dragon A that froze some dragon B, froze some dragon that froze B, fired at some dragon D, and fired at some dragon that fired at D (B and D may be the same dragon or different dragons)_
 
