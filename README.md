@@ -493,9 +493,9 @@ All V1's operators and all functions are well-defined when one or more of the op
 
 ## Data Types, Operators, and Functions
 
-One design goal of V1 is to make it applicable with many property graph database management systems. Therefore, we do not define a formal type system nor a formal set of operators and functions. 
+One design goal of V1 is to make it applicable with many property graph database management systems. Implementation may support different data types, operators, and functions than those presented here. 
 
-To present V1, we use the following loosely-defined type system:
+To present V1, we use the following data types, operators, and functions:
 
 **Built-in basic data types:**
 
