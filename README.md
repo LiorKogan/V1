@@ -762,7 +762,7 @@ _**Q304:** Any person who owns a white horse and who owns a horse weighing more 
 
 ![V1](Pictures/Q304.png)
 
-Note that the same graph-entity can match more than one pattern-entity. Either the same horse or different horses may be assigned to B and C (this can be avoided: see *identicality, nonidenticality*, and *order constraints* later on).
+The same graph-entity may match more than one pattern-entity. Either the same horse or different horses may be assigned to B and C (this can be avoided: see *identicality, nonidenticality*, and *order constraints* later on).
 
 A vertical quantifier has one connection on its left side and zero or more branches on its right side. On its left side, there is an entity, a quantifier, or the pattern's start. Except at the pattern's start, a quantifier may be wrapped with an 'O' (see Q147, Q149).
 
@@ -779,9 +779,14 @@ When a quantifier is directly left of an entity, each branch may start with:
 * A Cartesian product's expression (see Q340), or
 * A quantifier (see Q8)
 
+The following branches do not affect the quantifier's evaluation:
+
+* branches composed of an entity's expression with no constraint (see Q109)
+* branches that start with an 'O' (see Q144)
+
 A quantifier's branch composed of an entity's expression with no constraint does not affect the quantifier's evaluation (see Q109).
 
-Let _b_ denote the number of branches, excluding branches composed of entity's expression with no constraint and excluding branches that start with an 'O'.
+All other branches affect the quantifier's evaluation. Let _b_ denote the number of such branches.
 
 We will name the left side of the quantifier _the left component_, and anything that follows a branch, up to the branch's end, _a right component_.
 
