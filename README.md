@@ -451,7 +451,7 @@ For untyped entities, expressions can be composed only of properties that are co
 
 A sub-property of a composite property is denoted as _property-name.sub-property-name_ (e.g., _name.first_, _tf.since_).
 
-_**Q3:** Any person who owns a dragon and whose first name is Brandon_ (version 1)
+_**Q3:** Any person whose first name is Brandon who owns a dragon_ (version 1)
 
 ![V1](Pictures/Q003-1.png)
 
@@ -750,7 +750,7 @@ A **vertical purple rectangle** represents a _vertical quantifier_. It contains 
 
 Vertical quantifiers (or simply 'quantifiers') can be used when there is a need to satisfy more than one constraint.
 
-_**Q3:** Any person who owns a dragon and whose first name is Brandon_ (version 2)
+_**Q3:** Any person whose first name is Brandon who owns a dragon_ (version 2)
 
 ![V1](Pictures/Q003-2.png)
 
