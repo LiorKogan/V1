@@ -6,7 +6,7 @@ Copyright © 2017-2021 [Lior Kogan](https://www.linkedin.com/in/liorkogan) (koga
 
 The V1 language, all the content of [https://github.com/LiorKogan/V1](https://github.com/LiorKogan/V1), and all the content of [http://v1.ms/](http://v1.ms/) are licensed under the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/). Commercial license and software tools are also available.
 
-This page contains the description and the specifications of the V1 language. This content is periodically release in [arXiv](https://arxiv.org/abs/1710.04470v1).
+This page contains the description and the specifications of the V1 language. This content is periodically released in [arXiv](https://arxiv.org/abs/1710.04470v1).
 
 V1 is named after the primary visual cortex in our brain, which is also known as visual area one (V1).
 
