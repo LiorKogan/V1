@@ -782,7 +782,7 @@ When a quantifier is directly left of an entity, each branch may start with:
 The following branches do not affect the quantifier's evaluation:
 
 * branches composed of an entity's expression with no constraint (see Q109)
-* branches that start with an 'O' (see Q144)
+* branches that start with an 'O' (see Q148)
 
 A quantifier's branch composed of an entity's expression with no constraint does not affect the quantifier's evaluation (see Q109).
 
