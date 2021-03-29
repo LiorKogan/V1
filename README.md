@@ -1771,7 +1771,7 @@ For any quantifier except _All_ - an EA-tag defined in a branch that affects the
 
 An EA-tag defined in a branch of a horizontal quantifier's branch that affects the quantifier's evaluation can only be referenced in that branch.
 
-For each entity/relationship/Cartesian product - if the same expression is used more than once - only one expression-tag will be assigned (see also Q311):
+For each entity/relationship/Cartesian product - if the same expression is used more than once - the same expression-tag will be assigned (see also Q311):
 
 ![V1](Pictures/Illegal-Tag01-1.png)
 
