@@ -1295,6 +1295,8 @@ On its bottom, there zero or more branches. Each branch starts with either
 * a relationship's expression, or
 * a horizontal quantifier
 
+A branch composed of relationship's expressions with no constraints does not affect the quantifier's evaluation.
+
 A horizontal combiner may be used to combine two or more consecutive branches of the same horizontal quantifier. Each branch ends with either
 
 * A relationship's expressions, or
