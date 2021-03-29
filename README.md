@@ -1763,11 +1763,11 @@ _**Q108:** Any person who has the same birth date as Brandon Stark_
 
 {1} is a property of the only assignment to A. {2} is a property of each unique assignment to B.
 
-For any quantifier except _All_ - an EA-tag defined in a branch can only be referenced in that branch.
+For any quantifier except _All_ - an EA-tag defined in a branch that affects the quantifier's evaluation can only be referenced in that branch.
 
 ![V1](Pictures/Illegal-Tag06.png)
 
-An EA-tag defined in a branch of a horizontal quantifier can only be referenced in that branch.
+An EA-tag defined in a branch of a horizontal quantifier's branch that affects the quantifier's evaluation can only be referenced in that branch.
 
 For each entity/relationship/Cartesian product - if the same expression is used more than once - only one expression-tag will be assigned (see also Q311):
 
