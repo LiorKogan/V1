@@ -1,6 +1,7 @@
 ## V1: A Visual Query Language for Property Graphs
 
 Copyright © 2017-2021 [Lior Kogan](https://www.linkedin.com/in/liorkogan) (koganlior1 [at] gmail [dot] com)
+
 ---
 
 The V1 language, all the content of [https://github.com/LiorKogan/V1](https://github.com/LiorKogan/V1), and all the content of [http://v1.ms/](http://v1.ms/) are licensed under the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/). Commercial license and software tools are also available.
