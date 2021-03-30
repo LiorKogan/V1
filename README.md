@@ -3684,17 +3684,17 @@ _**Q307:** Any person that has a nickname containing an 'a'_
 
 {1} is a _multivalued expression_. For each person, {1} is evaluated for each non-null nickname. If at least one nickname satisfies the constraint - this person is a valid assignment.
 
+_**Q316:** Any pair of people with a common nickname_
+
+![V1](Pictures/Q316.png)
+
+{1} is evaluated for each non-null nickname of A. {2} is evaluated for each non-null nickname of B. All combinations are evaluated.
+
 _**Q308:** Any person that has a nickname containing both (an 'a' or an 'A') and (a 'b' or a 'B')_ 
 
 ![V1](Pictures/Q308.png)
 
 For each person, {1} is evaluated for each nickname. {2} and {3} are evaluated for each value of {1}. If {2} and {3} satisfies the constraints for at least one evaluation of {1} - the person is a valid assignment. A person with no non-null nicknames will not be evaluated.
-
-Consider a multivalued composite property, _names_, where each name has two sub-properties: (_first_: _string_, _last_: _string_):
-
-_**Q316:** Any person with a name (first: 'John', last: 'Doe')_
-
-![V1](Pictures/Q316.png)
 
 _**Q309:** Any person that has at least two nicknames_ (two versions)
 
