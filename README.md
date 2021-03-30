@@ -3672,9 +3672,9 @@ A _multivalued function_ is a function that may have more than one value in its 
 V1 supports the following multivalued functions:
 
 * _el_(_St_) → _t_  - a single element of a set; has no evaluations when _St_ is empty
-* _subset_(_St_) → _t_  - a single subset of a set; has no evaluations when _St_ is empty
+* _subset_(_St_) → _t_  - a single nonempty subset of a set; has no evaluations when _St_ is empty
 * _el_(_Bt_) → _t_  - a single element of a bag; has no evaluations when _Bt_ is empty
-* _subbag_(_Bt_) → _t_  - a single subbag of a bag; has no evaluations when _Bt_ is empty
+* _subbag_(_Bt_) → _t_  - a single nonempty subbag of a bag; has no evaluations when _Bt_ is empty
 
 In the following examples, _Person_ has the following property: _nicknames_: _set(string)_.
 
