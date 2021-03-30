@@ -1422,11 +1422,11 @@ When tags right of an 'O' have no assignments:
 - The number of assignments to an entity type-tag defined right of an 'O' is zero
 - The number of assignments to a relationship type-tag defined right of an 'O' is zero
 
-_**Q359:** Any dragon A where (i) there is no black dragon A froze (ii) there is no white dragon A did not freeze, (iii) there is at least one gold dragon A froze, and (iv) there is at least one silver dragon A did not freeze_
+_**Q359:** Any dragon A where (i) there is no black dragon A froze (ii) there is no white dragon A did not freeze, (iii) there is at least one gold dragon A froze, and (iv) there is at least one silver dragon A did not freeze. Also report any red dragon that A froze and any blue dragon that A did not freeze_
 
 ![V1](Pictures/Q359.png)
 
-Note that any red dragon that A froze and any blue dragon that A did not freeze is reported. Assignments to optional branches are reported regardless of the quantifier type.
+Assignments to optional branches are reported regardless of the quantifier type.
 
 ## Untyped Entities
 
