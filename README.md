@@ -3682,19 +3682,13 @@ _**Q307:** Any person that has a nickname containing an 'a'_
 
 ![V1](Pictures/Q307.png)
 
-{1} is a _multivalued expression_. For each person, {1} is evaluated for each nickname. If at least one nickname satisfies the constraint - this person is a valid assignment.
+{1} is a _multivalued expression_. For each person, {1} is evaluated for each non-null nickname. If at least one nickname satisfies the constraint - this person is a valid assignment.
 
 _**Q308:** Any person that has a nickname containing both (an 'a' or an 'A') and (a 'b' or a 'B')_ 
 
 ![V1](Pictures/Q308.png)
 
-For each person, {1} is evaluated for each nickname. {2} is a multivalued expression as well and is evaluated for each value of {1}. If {1}, {2} and {3} satisfies the constraints for at least one nickname - the person is a valid assignment.
-
-An A3 aggregator can be used for aggregating the evaluations of a multivalued expression:
-- The aggregator appears below an _All_ quantifier-input
-- The per clause is '←'
-- There are only entity's expressions right of the quantifier
-- There is exactly one multivalued expression right of the quantifier
+For each person, {1} is evaluated for each nickname. {2} and {3} are evaluated for each value of {1}. If {2} and {3} satisfies the constraints for at least one evaluation of {1} - the person is a valid assignment. A person with no non-null nicknames will not be evaluated.
 
 Consider a multivalued composite property, _names_, where each name has two sub-properties: (_first_: _string_, _last_: _string_):
 
@@ -3708,11 +3702,15 @@ _**Q309:** Any person that has at least two nicknames_ (two versions)
 
 The _count_ function returns the number of values a multivalued expression has. {1} is a single-valued expression.
 
-Aggregate constraints can be defined over the number of distinct _non-null_ values of a multivalued expression:
+An A3 aggregator can be used for aggregating the evaluations of a multivalued expression:
+- The aggregator appears below an _All_ quantifier-input
+- The per clause is '←'
+- There are only entity's expressions right of the quantifier
+- There is exactly one multivalued expression right of the quantifier
 
 ![V1](Pictures/Q309-2.png)
 
-Aggregate constraints can also be defined over the number of distinct values of a multivalued expression that satisfies a constraint:
+{2} is assigned with the number of distinct non-null evaluations of {1}.
 
 _**Q310:** Any person that has at least two nicknames - each contains an 'a'_ (two versions)
 
