@@ -1795,7 +1795,7 @@ _**Q353:** Any person A that in the day A turned two years old - at least one pe
 
 ![V1](Pictures/Q353-1.png)
 
-A relationship's expression defined directly right of a relationship-negator can only be referenced in that chain.
+A relationship's expression defined below a relationship-negator can only be referenced in that chain.
 
 ![V1](Pictures/Q353-2.png)
 
