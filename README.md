@@ -3694,7 +3694,7 @@ _**Q308:** Any person that has a nickname containing both (an 'a' or an 'A') and
 
 ![V1](Pictures/Q308.png)
 
-For each person, {1} is evaluated for each nickname. {2} and {3} are evaluated for each value of {1}. If {2} and {3} satisfies the constraints for at least one evaluation of {1} - the person is a valid assignment. A person with no non-null nicknames will not be evaluated.
+For each person, {1} is evaluated for each non-null nickname. {2} and {3} are evaluated for each value of {1}. If {2} and {3} satisfies the constraints for at least one evaluation of {1} - the person is a valid assignment. A person with no non-null nicknames will not be evaluated.
 
 _**Q309:** Any person that has at least two nicknames_ (two versions)
 
