@@ -361,7 +361,7 @@ _expr_ is an entity's expression, a relationship's expression, or a Cartesian pr
 
   The expression is composed of or depends on properties (inherent or calculated) of at least two entities (see {3} in Q207, {2}, {3} and {4} in Q340), at least two relationships (see {2} in Q267v2), or at least one entity and one relationship (see {1} in Q115v2, {2} and {4} in G3).
   
-  The green rectangle is connected to one of the entities/relationships or appears on the same level as the leftmost entities (when there is no single leftmost entity) (see Q207).
+  The green rectangle is connected to one of the entities/relationships or located at the same level as the leftmost entities (when there is no single leftmost entity) (see Q207).
   
   An expression-tag of a Cartesian product's expression is _a property of_ each unique assignment to the Cartesian product.
   
@@ -371,7 +371,7 @@ _expr_ is an entity's expression, a relationship's expression, or a Cartesian pr
 
   The expression is composed of and depends on no entity's expression, relationship's expression, nor Cartesian product's expressions.
   
-  The green rectangle appears on the same level as the leftmost entities (see Q375).
+  The green rectangle is located at the same level as the leftmost entities (see Q375).
   
   A global expression is a _global property_.
 
@@ -933,7 +933,7 @@ Note that the constraint '_member of df.till is null_' is based on the assumptio
 
 The letter in the top-left corner of each entity rectangle (concrete, typed, and untyped) is called an _entity-tag_.
 
-Entity-tags appear in query results as well: any graph-entity in a query result is annotated with the same tag as the pattern-entity to which it was assigned so that the query poser can understand why any given entity is part of the result. As part of the result, a graph-entity may be annotated with more than one entity-tag, as it may be assigned to several pattern-entities (in the same assignment or in different assignments - when assignments are merged).
+Entity-tags are included in query results as well: any graph-entity in a query result is annotated with the same tag as the pattern-entity to which it was assigned so that the query poser can understand why any given entity is part of the result. As part of the result, a graph-entity may be annotated with more than one entity-tag, as it may be assigned to several pattern-entities (in the same assignment or in different assignments - when assignments are merged).
 
 Entity-tags may be referenced:
 
