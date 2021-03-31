@@ -784,7 +784,7 @@ The following branches do not affect the quantifier's evaluation:
 * Any branch composed of an entity's expression with no constraint (see Q109)
 * Any branch that start with an 'O' (see Q148)
 
-Such branches are marked with a white triangle.
+Each such branch is marked with a **white triangle**.
 
 All other branches affect the quantifier's evaluation. Let _b_ denote the number of such branches.
 
