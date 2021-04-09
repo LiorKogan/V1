@@ -1033,7 +1033,7 @@ _**Q13:** Any horse not owned by a person_
 
 ![V1](Pictures/Q013.png)
 
-_**Q14:** Sweetfoot - if a person does not own it_
+_**Q14:** Sweetfoot - if no person owns it_
 
 ![V1](Pictures/Q014.png)
 
