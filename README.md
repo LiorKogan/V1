@@ -746,7 +746,7 @@ Implementations may support _[opaque data types](https://en.wikipedia.org/wiki/O
 
 ## Quantifiers
 
-A **vertical purple rectangle** represents a _vertical quantifier_. It contains a quantifier type.**
+A **vertical purple rectangle** represents a _vertical quantifier_. It contains a quantifier type.
 
 Vertical quantifiers (or simply 'quantifiers') can be used when there is a need to satisfy more than one constraint.
 
@@ -1280,7 +1280,7 @@ _**Q10:** Any person whose first name is Brandon, who owns some dragon B which f
 
 ![V1](Pictures/Q010.png)
 
-A **horizontal purple rectangle** represents a _horizontal quantifier_. It contains a quantifiers type.
+A **horizontal purple rectangle** represents a _horizontal quantifier_. It contains a quantifier type.
 
 Eleven horizontal quantifier types are defined (as for vertical quantifiers, except the _All_ quantifier). Their semantics are similar to those of vertical quantifiers. _All_ can be implemented by chaining relationship's expressions or by using vertical quantifiers (see Q100).
 
@@ -1426,7 +1426,7 @@ _**Q359:** Any dragon A where (i) there is no black dragon A froze (ii) there is
 
 ![V1](Pictures/Q359.png)
 
-Assignments to optional branches are reported regardless of the quantifier type.
+Assignments to optional branches are reported regardless of the quantifier type, but only when there is an assignment to the pattern.
 
 ## Untyped Entities
 
@@ -1434,7 +1434,7 @@ A relationship-type may hold between different pairs of entity-types (e.g., owns
  
  **A red rectangle** represents an _untyped entity_. Graph-entities of different types may be assigned to an untyped pattern-entity.
  
- An **empty red rectangle** represents an entity with no explicit type constraints:
+ An **empty red rectangle** represents an entity with no explicit entity-type constraint.
 
 _**Q36:** Any person who owns something_
 
@@ -1442,7 +1442,7 @@ _**Q36:** Any person who owns something_
 
 B assignments are _implicitly type-constrained_ to things that a person can own.
 
-_Implicit entity-type constraints_ are inferred from the pattern (including from identicality/nonidenticality/order constraints).
+_Implicit entity-type constraints_ are inferred from the pattern, including from identicality, nonidenticality and order constraints.
 
 _**Q49:** Any three dragons with a cyclic freeze pattern and their owners (if any)_
 
