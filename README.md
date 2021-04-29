@@ -3355,6 +3355,10 @@ _**Q284:** Any person who owned the same five horses - for at least ten consecut
 
 ![V1](Pictures/Q284-1.png)
 
+_**Q378:** Any relationship type that holds between more than 1000 pairs of dragons_
+
+![V1](Pictures/Q378.png)
+
 _**Q217:** Any dragon and the dragons it froze - on days it froze between one and five dragons_
 
 ![V1](Pictures/Q217.png)
