@@ -1230,7 +1230,7 @@ Note that the implied identicality is redundant.
 
 ![V1](Pictures/Q029-3.png)
 
-See also note under Q121 - combiner right of an A1 aggregator.
+See also note under Q121v1 - combiner right of an A1 aggregator.
 
 _**Q31:** Any pair of dragons (A, B) where A froze B, A fired at B, B froze A, and B fired at A_ (version 2)
 
@@ -1999,7 +1999,7 @@ A1 location:
   A relationship/path with an A1 below it may have a relationship/path-negator (see Q63-Q66) and may be wrapped with an 'O' (see Q82v2, Q126).
 - Below a quantifier-input (excluding quantifier at the start of the pattern)
 
-  See Q305v1, Q121, Q122. A quantifier-input with an A1 below it may be wrapped with an 'O'.
+  See Q305v1, Q121v1, Q122. A quantifier-input with an A1 below it may be wrapped with an 'O'.
   
 - Below the pattern's start (even when followed by a quantifier)
 
@@ -2203,11 +2203,13 @@ _**Q305:** Any person that the number of horses A owns plus the number of dragon
 ![V1](Pictures/Q305-1.png)
 ![V1](Pictures/Q305-2.png)
 
-_**Q121:** Any dragon that froze or fired at at least ten dragons_
+_**Q121:** Any dragon that froze or fired at at least ten dragons_  (two versions)
 
-![V1](Pictures/Q121.png)
+![V1](Pictures/Q121-1.png)
 
 ('→' is the entity directly right of the combiner (in this example - B))
+
+![V1](Pictures/Q121-2.png)
 
 Note that any dragon that was both frozen and fired at - would be counted only once.
 
