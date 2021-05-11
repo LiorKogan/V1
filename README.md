@@ -2207,7 +2207,7 @@ _**Q121:** Any dragon that froze or fired at at least ten dragons_  (two version
 
 ![V1](Pictures/Q121-1.png)
 
-('→' is the entity directly right of the combiner (in this example - B))
+'→' is the entity directly right of the combiner.
 
 ![V1](Pictures/Q121-2.png)
 
