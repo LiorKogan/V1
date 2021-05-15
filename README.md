@@ -2130,7 +2130,7 @@ _**Q292:** Any person A that at least 80% of A's horses are black_
 
 ![V1](Pictures/Q292.png)
 
-_**Q63:** Any Masons Guild member who more than five Masons Guild members are not friends of_
+_**Q63:** Any Masons Guild member who more than fifty Masons Guild members are not friends of_
 
 ![V1](Pictures/Q063.png)
 
