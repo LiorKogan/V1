@@ -288,13 +288,14 @@ The following sections describe the syntax and the semantics of the V1 language.
 ![V1](Pictures/BB04.png)
 
 Patterns are generally read from left to right. Each pattern starts with **a small black diamond**, denoting the pattern start. The most straightforward patterns are structured as a sequence of rectangles, where consecutive rectangles are connected with an arrow or a line.
-Yellow, blue, and red rectangles represent _concrete_, _typed_ and _untyped_ pattern-entities, respectively.
+
+Yellow, blue, and red rectangles represent _concrete_, _typed_ and _untyped_ pattern-entities, respectively. The terms _concrete entity_, _typed entity_, and _untyped entity_ refer only to pattern elements.
 
 **A yellow rectangle** represents a _concrete entity_: a specific person, a specific horse, etc. A concrete entity has a single assignment - a specific graph-entity. The text inside the rectangle denotes the entity-type and the value of a _visualization expression_ defined for this entity-type. For example, the visualization-expression for the _Person_ entity-type may be: _name.first_ ∥ ' ' ∥ _name.last_ and its value, for a specific graph-entity, would be 'Brandon Stark'.
 
 **A blue rectangle** represents a _typed entity_: The text inside the rectangle denotes an entity-type. Only graph-entities of this type may be assigned to the pattern-entity. 
 
-**A red rectangle** represents an _untyped entity_: Graph-entities of different types may be assigned to an untyped pattern-entity (subject to _type constraints_. See [Untyped Entities](#untyped-entities)).
+**A red rectangle** represents an _untyped entity_: Graph-entities of different types may be assigned to an untyped entity (subject to _type constraints_. See [Untyped Entities](#untyped-entities)).
 
 Two consecutive rectangles can be connected with:
 
@@ -302,7 +303,9 @@ Two consecutive rectangles can be connected with:
 * A horizontal **black line**, representing either a _bidirectional typed relationship_ or a directional typed relationship where either direction is acceptable,
 * A horizontal **red arrow**, representing an _untyped directional relationship_ (See [Untyped Relationships](#untyped-relationships)),
 * A horizontal **red line**, representing either an _untyped bidirectional relationship_ or an _untyped directional relationship_ where either direction is acceptable, or
-* A horizontal **blue line**, representing a _path_ (See [Paths](#paths))
+* A horizontal **blue line**, representing a _pattern-path_ (See [Paths](#paths))
+
+The terms _typed relationship_ and _untyped relationship_ refer only to pattern elements. The term _path_ may refer to both _graph-path_ and _pattern-path_.
 
 Each black arrow/line has a label on top. The label denotes a relationship-type. For arrows - the label is aligned to the arrow's origin. For lines - the label is centered. Only graph-relationships of this type can match the pattern-relationship.
 
@@ -931,7 +934,7 @@ Note that the constraint '_member of df.till is null_' is based on the assumptio
 
 ## Entity-Tags
 
-The letter in the top-left corner of each entity rectangle (concrete, typed, and untyped) is called an _entity-tag_.
+The letter in the top-left corner of each pattern-entity rectangle (concrete, typed, and untyped) is called an _entity-tag_.
 
 Entity-tags are included in query results as well: any graph-entity in a query result is annotated with the same tag as the pattern-entity to which it was assigned so that the query poser can understand why any given entity is part of the result. As part of the result, a graph-entity may be annotated with more than one entity-tag, as it may be assigned to several pattern-entities (in the same assignment or in different assignments - when assignments are merged).
 
@@ -943,8 +946,8 @@ Entity-tags may be referenced:
 * in an M1 aggregator "with min/max ..." clause (see Q196)
 
 ***Identicality constraints*** can be used when the same graph-entity should be assigned to:
-- Several typed pattern-entities of the same type 
-- Several untyped pattern-entities
+- Several typed entities of the same type 
+- Several untyped entities
 
 _**Q4:** Any person A whose dragon was frozen by a dragon owned by (at least) one of A's parents_
 
@@ -960,7 +963,7 @@ _**Q9:** Any pair of dragons (A, B) where A froze B in both 980 and 984_
 
 The same visual notation is also used when the same concrete entity appears more than once (see Q25v2, Q26v2)
 
-***Nonidenticality constraint*** can be used when different graph-entities should be assigned to typed pattern-entities of the same type or to untyped pattern-entities.
+***Nonidenticality constraint*** can be used when different graph-entities should be assigned to typed entities of the same type or to untyped entities.
 
 _**Q5:** Any person A whose dragon was frozen by a dragon owned by two of A's parents_ (version 1)
 
@@ -988,7 +991,7 @@ Consider Q5v1, Q6, Q7, and Q24. For any given assignment, there is another assig
 
 Also, consider the following pattern: _Any three persons A, B, and C, who are pairwise friends_. If persons (A1, B1, C1) compose an assignment, so do (A1, C1, B1), (B1, A1, C1), and all other permutations. Such a factorial increase in the number of assignments is usually undesired. Using _order constraints_, we can express patterns such as _Any three persons A<B<C, who are pairwise friends_.
 
-***Order constraints*** can be used when graph-entities should be orderly assigned to either typed pattern-entities of the same type or untyped pattern-entities.
+***Order constraints*** can be used when graph-entities should be orderly assigned to either typed entities of the same type or untyped entities.
 
 _**Q31:** Any pair of dragons (A, B) where A froze B, A fired at B, B froze A, and B fired at A_ (version 1)
 
@@ -1335,7 +1338,7 @@ _Implicit latent pattern-entities_ are pattern-entities that appear
 - right of a negator (see Q12, Q22, Q288)
 - right of a _None_ quantifier, except branches (or sub-branch of a sequence of quantifiers that follows the _None_ quantifier) that starts with an 'O' (see Q359)
 
-Such typed and untyped pattern-entities are required to have no assignments; hence, trivially, no assignments would be reported. Such concrete pattern-entities would not be reported as well (see Q20).
+Such typed and untyped entities are required to have no assignments; hence, trivially, no assignments would be reported. Such concrete entities would not be reported as well (see Q20).
 
 Implicit latent pattern-entities are depicted with a **gray 'no report' icon** on their top-right. These icons are automatically added by the interactive pattern builder/visualizer tool and may not be added/removed by the pattern composer.
 
@@ -1432,7 +1435,7 @@ Assignments to optional branches are reported regardless of the quantifier type,
 
 A relationship-type may hold between different pairs of entity-types (e.g., owns: {(_Person_, _Dragon_), (_Guild_, _Dragon_), (_Null_, _Dragon_)}). _Untyped entities_ can be used to express patterns such as _Any dragon and its owners_, where the owner can be either a person, a guild, or _Null_.
  
- **A red rectangle** represents an _untyped entity_. Graph-entities of different types may be assigned to an untyped pattern-entity.
+ **A red rectangle** represents an _untyped entity_. Graph-entities of different types may be assigned to an untyped entity.
  
  An **empty red rectangle** represents an entity with no explicit entity-type constraint.
 
@@ -1533,7 +1536,7 @@ An entity type-tag defined right of an 'O' can only be referenced right of that 
 
 Multiple relationship-types may hold between a pair of entity-types (e.g., _freezes_: {(Dragon, Dragon)}, _fires at_: {(Dragon, Dragon)}. Untyped relationships can be used to express patterns such as _Any pair of dragons with at least one relationship_, where the relationship type can be either _freezes_ or _fires at_.
 
-A red arrow/line with no type label or with type constraints represents an _untyped relationship_. Graph-relationships of different types may be assigned to an untyped pattern-relationship.
+A red arrow/line with no type label or with type constraints represents an _untyped relationship_. Graph-relationships of different types may be assigned to an untyped relationship.
 
 A red arrow/line with no label represents a relationship with no explicit type constraints:
 
@@ -1614,7 +1617,7 @@ Since each graph-entity of type _Null_ is connected by exactly one relationship,
 * Its entity-tag is not reused (no identicality, nonidenticality, nor order constraints)
 
 As part of a pattern:
-* Concrete pattern-entities may not be of type _Null_
+* Concrete entities may not be of type _Null_
 * Typed entities may be of type _Null_ if there are no implicit type constraints that disallow it
 * For untyped entities, type _Null_ may be explicitly allowed or disallowed only when there are no implicit type constraints that disallow it
 
@@ -1633,7 +1636,7 @@ Each graph-path has a length. The _path length_ is equal to the number of graph-
 
 A _pattern-path_ connects two pattern-entities - like a pattern-relationship. However, while a pattern-relationships are assigned with graph-relationships, pattern-paths are assigned with simple graph-paths minus the first and last entities, which are not considered a part of the assignment. Thus, pattern-paths are assigned with at least one graph-relationship.
 
-A **blue line** between two pattern-entities represents a path. Above the line is a _constraint on the path length_. An upper bound on the path length must be defined, hence the constraint must be defined using one of the following constraint types: = _expr_, < _expr_, ≤ _expr_, in _set-expr_, in _bag-expr_, in _list-expr_ or in _interval-expr_, where all expressions or interval bounds evaluate to positive integers.
+A **blue line** between two pattern-entities represents a pattern-path. Above the line is a _constraint on the path length_. An upper bound on the path length must be defined, hence the constraint must be defined using one of the following constraint types: = _expr_, < _expr_, ≤ _expr_, in _set-expr_, in _bag-expr_, in _list-expr_ or in _interval-expr_, where all expressions or interval bounds evaluate to positive integers.
 
 _**Q53:** Any person with a path of length up to three to Rogar Bolton_ (version 2)
 
@@ -2335,7 +2338,7 @@ The lower part of an A2 aggregator contains the following elements:
 
   When A2 appears below a relationship/path - card(_R_) = 1; _R[1]_ = the relationship/path.
 
-  When A2 appears below a quantifier-input - each element in _R_ is the relationship/path that follows one branch of the quantifier, excluding relationships/paths wrapped with a negator or a relationship/path-negator.
+  When A2 appears below a quantifier-input - each element in _R_ is the relationship/path that follows one branch of the quantifier, excluding relationships/paths wrapped with a negator or a relationship/path-negator (see Q123, Q358).
 
   Let ___RA(n, o)___ denote the list of all assignments to _R[o]_ in _S(n)_. 
 
