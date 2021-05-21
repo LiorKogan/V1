@@ -289,7 +289,7 @@ The following sections describe the syntax and the semantics of the V1 language.
 
 Patterns are generally read from left to right. Each pattern starts with **a small black diamond**, denoting the pattern start. The most straightforward patterns are structured as a sequence of rectangles, where consecutive rectangles are connected with an arrow or a line.
 
-Yellow, blue, and red rectangles represent _concrete_, _typed_ and _untyped_ pattern-entities, respectively. The terms _concrete entity_, _typed entity_, and _untyped entity_ refer only to pattern elements.
+Yellow, blue, and red rectangles represent _concrete_, _typed_ and _untyped_ entities, respectively. The terms _concrete entity_, _typed entity_, and _untyped entity_ refer only to pattern elements.
 
 **A yellow rectangle** represents a _concrete entity_: a specific person, a specific horse, etc. A concrete entity has a single assignment - a specific graph-entity. The text inside the rectangle denotes the entity-type and the value of a _visualization expression_ defined for this entity-type. For example, the visualization-expression for the _Person_ entity-type may be: _name.first_ ∥ ' ' ∥ _name.last_ and its value, for a specific graph-entity, would be 'Brandon Stark'.
 
