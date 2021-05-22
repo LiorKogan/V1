@@ -289,7 +289,7 @@ The following sections describe the syntax and the semantics of the V1 language.
 
 Patterns are generally read from left to right. Each pattern starts with **a small black diamond**, denoting the pattern start. The most straightforward patterns are structured as a sequence of rectangles, where consecutive rectangles are connected with an arrow or a line.
 
-Yellow, blue, and red rectangles represent _concrete_, _typed_ and _untyped_ entities, respectively. The terms _concrete entity_, _typed entity_, and _untyped entity_ refer only to pattern elements.
+Yellow, blue, and red rectangles represent _concrete_, _typed_ and _untyped_ entities, respectively. The terms _concrete entity_, _typed entity_, and _untyped entity_ refer to pattern entities only (and not to graph entities).
 
 **A yellow rectangle** represents a _concrete entity_: a specific person, a specific horse, etc. A concrete entity has a single assignment - a specific graph-entity. The text inside the rectangle denotes the entity-type and the value of a _visualization expression_ defined for this entity-type. For example, the visualization-expression for the _Person_ entity-type may be: _name.first_ ∥ ' ' ∥ _name.last_ and its value, for a specific graph-entity, would be 'Brandon Stark'.
 
@@ -305,7 +305,7 @@ Two consecutive rectangles can be connected with:
 * A horizontal **red line**, representing either an _untyped bidirectional relationship_ or an _untyped directional relationship_ where either direction is acceptable, or
 * A horizontal **blue line**, representing a _pattern-path_ (See [Paths](#paths))
 
-The terms _typed relationship_ and _untyped relationship_ refer only to pattern elements. The term _path_ may refer to both _graph-path_ and _pattern-path_.
+The terms _typed relationship_ and _untyped relationship_ refer only to pattern relationships. The term _path_ may refer to both _graph-path_ and _pattern-path_.
 
 Each black arrow/line has a label on top. The label denotes a relationship-type. For arrows - the label is aligned to the arrow's origin. For lines - the label is centered. Only graph-relationships of this type can match the pattern-relationship.
 
@@ -724,8 +724,8 @@ Functions over _list_ expressions (_t_):
 | _avg_(_Lt_) → _t_ or _float_ | _t_ is an ordinal type <br> if _t_ is _int_ - the result is _float_ <br> _null_ values are ignored <br> _null_ when _Lt_ is _null_ or when it contains no _non-null_ elements 
 | _sum_(_Lt_) → _t_                 | _t_ is _int_ / _float_ / _duration_ (not _date_ / _time_ / _datetime_) <br> _null_ values are ignored <br> zero when _Lt_ is _null_ or when it contains no _non-null_ elements
 | _min_(_Lt, n_) → _Lt_ <br> _max_(_Lt, n_) → _Lt_ | _t_ is an ordinal type <br> _null_ values are ignored <br> list of (up to) _n_ smallest/largest values <br> _null_ when _Lt_ is _null_, () when it contains no _non-null_ elements
-| _sort_(_Lt_) → _Lt_               | _t_ is an ordinal type <br> Sorted list
-| _invsort_(_Lt_) → _Lt_            | _t_ is an ordinal type <br> Inverse-sorted list
+| _sort_(_Lt_) → _Lt_               | Sorted list <br> _t_ is an ordinal type
+| _invsort_(_Lt_) → _Lt_            | Inverse-sorted list <br> _t_ is an ordinal type
 
 Functions over _interval_ expressions:
 
