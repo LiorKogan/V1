@@ -1474,9 +1474,9 @@ _**Q42:** Any entity of a type that can own something but owns nothing_
 In addition to the implicit entity-type constraints, *explicit entity-type constraints* can be enforced using:
 
 * a type equality constraint ('= ⟨ _ett_ ⟩') (see Q50),
-* a type inequality constraint ('≠ _entity type_' (see Q43) or '≠ ⟨ _ett_ ⟩' (see Q51))
-* a set of at least two allowed entity types and/or type-tags ('∈ {...}') (see Q37), or
-* a set of at least two disallowed entity types and/or type-tags ('∉ {...}') (see Q52)
+* a type inequality constraint ('≠ _entity-type_' (see Q43) or '≠ ⟨ _ett_ ⟩' (see Q51))
+* a set of at least two allowed entity-types and/or type-tags ('∈ {...}') (see Q37), or
+* a set of at least two disallowed entity-types and/or type-tags ('∉ {...}') (see Q52)
 
 _**Q43:** Any dragon that all of its owners (if any) are people_
 
@@ -1539,7 +1539,7 @@ An entity type-tag defined right of an 'O' can only be referenced right of that 
 
 ## Untyped Relationships
 
-Multiple relationship-types may hold between a pair of entity-types (e.g., _freezes_: {(Dragon, Dragon)}, _fires at_: {(Dragon, Dragon)}. Untyped relationships can be used to express patterns such as _Any pair of dragons with at least one relationship_, where the relationship type can be either _freezes_ or _fires at_.
+Multiple relationship-types may hold between a pair of entity-types (e.g., _freezes_: {(Dragon, Dragon)}, _fires at_: {(Dragon, Dragon)}. Untyped relationships can be used to express patterns such as _Any pair of dragons with at least one relationship_, where the relationship-type can be either _freezes_ or _fires at_.
 
 A red arrow/line with no type label or with type constraints represents an _untyped relationship_. Graph-relationships of different types may be assigned to an untyped relationship.
 
@@ -1564,9 +1564,9 @@ _**Q360:** Any dragon that (froze or fired at) all other dragons. **Alternative 
 In addition to the implicit relationship-type constraints, _explicit relationship-type constraints_ can be enforced using:
 
 * a type equality constraint ('= ⟪ _rtt_ ⟫') (see Q367),
-* a type inequality constraint ('≠ _relationship type_' (see Q364) or '≠ ⟪ _rtt_ ⟫' (see Q365))
-* a set of at least two allowed relationship types and/or type-tags ('∈ {...}') (see Q121v2), or
-* a set of at least two disallowed relationship types and/or type-tags ('∉ {...}') (see Q368)
+* a type inequality constraint ('≠ _relationship-type_' (see Q364) or '≠ ⟪ _rtt_ ⟫' (see Q365))
+* a set of at least two allowed relationship-types and/or type-tags ('∈ {...}') (see Q121v2), or
+* a set of at least two disallowed relationship-types and/or type-tags ('∉ {...}') (see Q368)
 
 _**Q364:** Any person and an entity that have a relationship of a type other than 'friend of'_
 
@@ -3370,7 +3370,7 @@ _**Q284:** Any person who owned the same five horses - for at least ten consecut
 
 ![V1](Pictures/Q284-1.png)
 
-_**Q378:** Any relationship type that holds between more than 1000 pairs of dragons_
+_**Q378:** Any relationship-type that holds between more than 1000 pairs of dragons_
 
 ![V1](Pictures/Q378.png)
 
