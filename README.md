@@ -1471,12 +1471,12 @@ _**Q42:** Any entity of a type that can own something but owns nothing_
 
 ![V1](Pictures/Q042.png)
 
-In addition to the implicit type constraints, *explicit type constraints* can be enforced using:
+In addition to the implicit entity-type constraints, *explicit entity-type constraints* can be enforced using:
 
 * a type equality constraint ('= ⟨ _ett_ ⟩') (see Q50),
-* a type inequality constraint ('≠ _enbtity type_' (see Q43) or '≠ ⟨ _ett_ ⟩' (see Q51))
-* a nonempty set of allowed entity types and entity type tags ('∈ {...}') (see Q37), or
-* a nonempty set of disallowed entity types and entity type tags ('∉ {...}') (see Q52)
+* a type inequality constraint ('≠ _entity type_' (see Q43) or '≠ ⟨ _ett_ ⟩' (see Q51))
+* a nonempty set of allowed entity types and/or type-tags ('∈ {...}') (see Q37), or
+* a nonempty set of disallowed entity types and/or type-tags ('∉ {...}') (see Q52)
 
 _**Q43:** Any dragon that all of its owners (if any) are people_
 
@@ -1561,7 +1561,12 @@ _**Q360:** Any dragon that (froze or fired at) all other dragons. **Alternative 
 
 ![V1](Pictures/Q360-4.png)
 
-In addition to the implicit relationship-type constraints, _explicit relationship-type constraints_ can be enforced using a type equality constraint ('='), a type inequality constraint ('≠'), a set of allowed types ('∈ {…}'), or a set of disallowed types ('∉ {…}').
+In addition to the implicit relationship-type constraints, _explicit relationship-type constraints_ can be enforced using:
+
+* a type equality constraint ('= ⟪ _rtt_ ⟫') (see Q367),
+* a type inequality constraint ('≠ _relationship type_' (see Q364) or '≠ ⟪ _rtt_ ⟫' (see Q365))
+* a nonempty set of allowed relationship types and/or type-tags ('∈ {...}') (see Q121v2), or
+* a nonempty set of disallowed relationship types and/or type-tags ('∉ {...}') (see Q368)
 
 _**Q364:** Any person and an entity that have a relationship of a type other than 'friend of'_
 
