@@ -1471,7 +1471,12 @@ _**Q42:** Any entity of a type that can own something but owns nothing_
 
 ![V1](Pictures/Q042.png)
 
-In addition to the implicit type constraints, *explicit type constraints* can be enforced using a type equality constraint ('='), a type inequality constraint ('≠'), a set of allowed types ('∈ {...}'), or a set of disallowed types ('∉ {...}').
+In addition to the implicit type constraints, *explicit type constraints* can be enforced using:
+
+* a type equality constraint ('= ⟨ _ett_ ⟩') (see Q50),
+* a type inequality constraint ('≠ _enbtity type_' (see Q43) or '≠ ⟨ _ett_ ⟩' (see Q51))
+* a nonempty set of allowed entity types and entity type tags ('∈ {...}') (see Q37), or
+* a nonempty set of disallowed entity types and entity type tags ('∉ {...}') (see Q52)
 
 _**Q43:** Any dragon that all of its owners (if any) are people_
 
