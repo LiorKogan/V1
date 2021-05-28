@@ -1475,8 +1475,8 @@ In addition to the implicit entity-type constraints, *explicit entity-type const
 
 * a type equality constraint ('= ⟨ _ett_ ⟩') (see Q50),
 * a type inequality constraint ('≠ _entity type_' (see Q43) or '≠ ⟨ _ett_ ⟩' (see Q51))
-* a nonempty set of allowed entity types and/or type-tags ('∈ {...}') (see Q37), or
-* a nonempty set of disallowed entity types and/or type-tags ('∉ {...}') (see Q52)
+* a set of at least two allowed entity types and/or type-tags ('∈ {...}') (see Q37), or
+* a set of at least two disallowed entity types and/or type-tags ('∉ {...}') (see Q52)
 
 _**Q43:** Any dragon that all of its owners (if any) are people_
 
@@ -1565,8 +1565,8 @@ In addition to the implicit relationship-type constraints, _explicit relationshi
 
 * a type equality constraint ('= ⟪ _rtt_ ⟫') (see Q367),
 * a type inequality constraint ('≠ _relationship type_' (see Q364) or '≠ ⟪ _rtt_ ⟫' (see Q365))
-* a nonempty set of allowed relationship types and/or type-tags ('∈ {...}') (see Q121v2), or
-* a nonempty set of disallowed relationship types and/or type-tags ('∉ {...}') (see Q368)
+* a set of at least two allowed relationship types and/or type-tags ('∈ {...}') (see Q121v2), or
+* a set of at least two disallowed relationship types and/or type-tags ('∉ {...}') (see Q368)
 
 _**Q364:** Any person and an entity that have a relationship of a type other than 'friend of'_
 
