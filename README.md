@@ -3697,11 +3697,17 @@ V1 supports the following multivalued functions:
 
 In the following examples, _Person_ has the following property: _nicknames_: _set(string)_.
 
+_**Q379:** Any person that has at least one nickname_
+
+![V1](Pictures/Q379.png)
+
+Even though {1} has no implicit constraints it must have at least one assignment.
+
 _**Q307:** Any person that has a nickname containing an 'a'_
 
 ![V1](Pictures/Q307.png)
 
-{1} is a _multivalued expression_. For each person, {1} is evaluated for each non-null nickname. If at least one nickname satisfies the constraint - this person is a valid assignment.
+{1} is a _multivalued expression_. For each person, {1} is evaluated for each nickname. If at least one nickname satisfies the constraint - this person is a valid assignment.
 
 _**Q316:** Any pair of people with a common nickname_
 
