@@ -3701,7 +3701,7 @@ _**Q379:** Any person that has at least one nickname_
 
 ![V1](Pictures/Q379.png)
 
-Even though {1} has no implicit constraints it must have at least one assignment.
+Even though {1} has no explicit constraints it must have at least one assignment.
 
 _**Q307:** Any person that has a nickname containing an 'a'_
 
