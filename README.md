@@ -2211,7 +2211,7 @@ _**Q206:** Any dragon A that for each of no more than four Sarnorians C there is
 
 ![V1](Pictures/Q206.png)
 
-_**Q305:** Any person that the number of horses A owns plus the number of dragons A owns - is at least ten_ (two versions)
+_**Q305:** Any person A that the number of horses A owns plus the number of dragons A owns - is at least ten_ (two versions)
 
 ![V1](Pictures/Q305-1.png)
 ![V1](Pictures/Q305-2.png)
@@ -3697,13 +3697,13 @@ V1 supports the following multivalued functions:
 
 In the following examples, _Person_ has the following property: _nicknames_: _set(string)_.
 
-_**Q379:** Any person that has at least one nickname_
+_**Q379:** Any person who has at least one nickname_
 
 ![V1](Pictures/Q379.png)
 
-Even though {1} has no explicit constraints it must have at least one assignment.
+Even though {1} has no explicit constraints, it must have at least one assignment.
 
-_**Q307:** Any person that has a nickname containing an 'a'_
+_**Q307:** Any person who has a nickname containing an 'a'_
 
 ![V1](Pictures/Q307.png)
 
@@ -3715,13 +3715,13 @@ _**Q316:** Any pair of people with a common nickname_
 
 {1} is evaluated for each non-null nickname of A. {2} is evaluated for each non-null nickname of B. All combinations are evaluated.
 
-_**Q308:** Any person that has a nickname containing both (an 'a' or an 'A') and (a 'b' or a 'B')_ 
+_**Q308:** Any person who has a nickname containing both (an 'a' or an 'A') and (a 'b' or a 'B')_ 
 
 ![V1](Pictures/Q308.png)
 
 For each person, {1} is evaluated for each non-null nickname. {2} and {3} are evaluated for each value of {1}. If {2} and {3} satisfies the constraints for at least one evaluation of {1} - the person is a valid assignment. A person with no non-null nicknames will not be evaluated.
 
-_**Q309:** Any person that has at least two nicknames_ (two versions)
+_**Q309:** Any person who has at least two nicknames_ (two versions)
 
 ![V1](Pictures/Q309-1.png)
 
@@ -3737,13 +3737,13 @@ An A3 aggregator can be used for aggregating the evaluations of a multivalued ex
 
 {2} is assigned with the number of distinct non-null evaluations of {1}.
 
-_**Q310:** Any person that has at least two nicknames - each contains an 'a'_ (two versions)
+_**Q310:** Any person who has at least two nicknames - each contains an 'a'_ (two versions)
 
 ![V1](Pictures/Q310-1.png)
 
 ![V1](Pictures/Q310-2.png)
 
-_**Q311:** Any person that has at least five nicknames - each contains either an 'a' or a 'b'_
+_**Q311:** Any person who has at least five nicknames - each contains either an 'a' or a 'b'_
 
 ![V1](Pictures/Q311.png)
 
@@ -3757,7 +3757,7 @@ _**Q313:** Any person A that has at least one nickname and all A's nicknames con
 
 ![V1](Pictures/Q313.png)
 
-_**Q314:** Any person that has at least one nickname, but none of its nicknames contain an 'a'_
+_**Q314:** Any person who has at least one nickname, but none of its nicknames contain an 'a'_
 
 ![V1](Pictures/Q314.png)
 
