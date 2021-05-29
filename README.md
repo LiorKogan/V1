@@ -2266,7 +2266,7 @@ _**Q329:** Any Sarnorian who has paths of length up to six to more than five Omb
 
 ![V1](Pictures/Q329.png)
 
-_**Q295:** Any person tA hat the number of dragons A owns plus the number of dragons A does not own that A's dragons fired at - is at least ten_
+_**Q295:** Any person A that the number of dragons A owns plus the number of dragons A does not own that A's dragons fired at - is at least ten_
 
 ![V1](Pictures/Q295.png)
 
