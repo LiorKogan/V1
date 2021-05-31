@@ -470,13 +470,13 @@ _**Q190:** Any person who become a dragon owner at 1011 or later_ (two versions)
 
 _year_ is a function (see next section).
 
-All V1 constraint operators are first evaluated using [Kleene's three-valued logic](https://www.jstor.org/stable/2267778) (3VL) and then mapped to a two-valued logic: the constraint is either _satisfied_ or _not satisfied_.
+All V1 constraint operators, except _is null_ and _not null_, are first evaluated using [Kleene's three-valued logic](https://www.jstor.org/stable/2267778) (3VL) and then mapped to a two-valued logic: the constraint is either _satisfied_ or _not satisfied_.
 
 - _null_ values are considered unknowns
 - Each constraint is evaluated to _true_, _false_, or _unknown_
-- For all constraint operators except _is null_ and _not null_: if one or both operands are _null_ - the result is _unknown_. The result of 5 = _null_ is _unknown_. The result of _null_ = _null_ is also _unknown_
+- If one or both operands are _null_ - the result is _unknown_. E.g., The result of 5 = _null_ is _unknown_; the result of _null_ = _null_ is _unknown_
 
-Each constraint operator except _is null_ and _not null_ can be either blue or red.
+Each constraint operator, except _is null_ and _not null_, can be either blue or red.
 
 ![V1](Pictures/BB10-1.png)
 
@@ -490,9 +490,11 @@ The following constraint operators can be only blue:
 * A _is null_ constraint is satisfied if and only if the expression is evaluated to _null_ 
 * A _not null_ constraint is satisfied if and only if the expression is not evaluated to _null_
 
+When using _is null_ and _not null_, what _null_ values mean (missing or inapplicable) is irrelevant.
+
 See Q8, Q11, Q267
 
-All V1's operators and all functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_ (e.g., 1 + _null_ = _null_, _max_(5, _null_) = _null_). 
+All V1's operators and all functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _null_ values are usually considered unknowns (e.g., 1 + _null_ = _null_, _max_(5, _null_) = _null_). 
 
 ## Data Types, Operators, and Functions
 
