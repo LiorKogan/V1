@@ -490,7 +490,7 @@ The following constraint operators can be only blue:
 * A _is null_ constraint is satisfied if and only if the expression is evaluated to _null_ 
 * A _not null_ constraint is satisfied if and only if the expression is not evaluated to _null_
 
-When using _is null_ and _not null_, what _null_ values mean (missing or inapplicable) is irrelevant.
+When using _is null_ and _not null_, what _null_ values mean – either missing (unknown, classified, etc.) or inapplicable – is irrelevant.
 
 See Q8, Q11, Q267
 
