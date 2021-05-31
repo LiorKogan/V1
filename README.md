@@ -494,7 +494,7 @@ When using _is null_ and _not null_, what _null_ values mean (missing or inappli
 
 See Q8, Q11, Q267
 
-All V1's operators and all functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _null_ values are usually considered unknowns (e.g., 1 + _null_ = _null_, _max_(5, _null_) = _null_). 
+All V1's operators and all functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _null_ values are usually considered unknowns (e.g., 1 + _null_ = _null_; _max_(5, _null_) = _null_). 
 
 ## Data Types, Operators, and Functions
 
