@@ -254,13 +254,13 @@ The engineers started by collecting all queries posed by their master over the l
 
 The schema was composed of the following entity-types (and their properties):
 
-|---------
+|---------|
 | * ***Person***: _name_ {_first_: _string_, _last_: _string_}, _gender_: _nominal {male, female}_, _birthDate_: _date_, _deathDate_: _date_, _height_: _int_ [cm]
 | * ***Dragon***: _name_: _string_, _color_: _nominal {black, white, ...}_
 | * ***Horse***: _name_: _string_, _color_: _nominal {black, white, ...}_, _weight_: _int_ [Kg]
 | * ***Guild***: _name_: _string_
 | * ***Kingdom***: _name_: _string_
-|---------
+|---------|
 
 the following directional relationship-types (and their properties):
 
