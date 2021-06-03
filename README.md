@@ -224,7 +224,7 @@ Consider the following alternative patterns:
 * _P1'': Any person who owns at least five white horses. Report only the horses_
 * _P1''': Any person who owns at least five white horses. Report the person and five of his horses_
 
-A query  may be:
+A query may be:
 
 * A decision query: does at least one assignment exist?
 * A counting query: how many assignments exist?
