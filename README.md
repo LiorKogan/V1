@@ -226,7 +226,10 @@ Consider the following alternative patterns:
 
 A query result may be:
 
-* A set of subgraphs of _G_. Each subgraph is an assignment
+* An answer to the decision problem: does at least one assignment exist?
+* An answer to the counting problem: how many assignments exist?
+* An answer to a counting-decision problem: are there at least _k_ assignments?
+* A set of [all / up to _k_] subgraphs of _G_. Each subgraph is an assignment
 * A set of subgraphs of _G_. Each subgraph is a union of assignments, e.g., the union of all assignments with identical assignments to all entities (and different assignments to relationships)
 * A single subgraph of _G_, composed of the union of all assignments. This is sometimes preferred since it avoids combinatorial explosion for many queries (e.g., if a person owns ten white horses, any subset of five of the person's horses compose an assignment to P1'''). However, for some patterns, individual assignments cannot be deduced from their union.
 
