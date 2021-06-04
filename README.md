@@ -1603,7 +1603,7 @@ _**Q366:** Any pair of dragons that have relationships of at least three types_ 
 
 ![V1](Pictures/Q366-1.png)
 
-Since there are only two relationship-types between a pair of dragons (_freezes_, _fires at_), this pattern would never have assignments. This can be asserted during query analysis.
+Since there are only two relationship-types between a pair of dragons (_freezes_, _fires at_), this pattern would never have assignments. This can be detected during query analysis.
 
 _**Q367:** Any pair of dragons that have a directional relationship of the same type in both directions_
 
@@ -1613,7 +1613,7 @@ _**Q368:** Any pair of dragons that have relationships of at least two types, ne
 
 ![V1](Pictures/Q368.png)
 
-Again, the fact that this pattern would never have assignments can be asserted during query analysis.
+Again, the fact that this pattern would never have assignments can be detected during query analysis.
 
 For any quantifier except _all_ - a relationship type-tag defined in a branch can only be referenced in that branch.
 
