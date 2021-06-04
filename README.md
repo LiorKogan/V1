@@ -1496,7 +1496,7 @@ _**Q38:** Any person who owns something which is neither a horse nor a dragon_
 
 ![V1](Pictures/Q038.png)
 
-For each untyped entity, implicit and explicit type constraints must not nullify the list of valid entity-types. Explicit type constraints must not contradict implicit type constraints. This can be asserted before executing the query.
+For each untyped entity, implicit and explicit type constraints must not nullify the list of valid entity-types. Explicit type constraints must not contradict implicit type constraints. This can be asserted during query analysis.
 
 Since both _horse_ and _dragon_ entity-types have a _name_ property of the same data type (string) - the following pattern is valid:
 
@@ -1580,7 +1580,7 @@ _**Q364:** Any person and an entity that have a relationship of a type other tha
 
 _Implicit relationship-type constraints_ are inferred from the pattern (including from relationships directionality and from entities identicality/nonidenticality/order constraints).
 
-For each untyped relationship, implicit and explicit type constraints must not nullify the list of valid relationship-types. Explicit type constraints must not contradict implicit type constraints. This can be asserted before executing the query.
+For each untyped relationship, implicit and explicit type constraints must not nullify the list of valid relationship-types. Explicit type constraints must not contradict implicit type constraints. This can be asserted during query analysis.
 
 ## Relationship Type-Tags
 
@@ -1603,7 +1603,7 @@ _**Q366:** Any pair of dragons that have relationships of at least three types_ 
 
 ![V1](Pictures/Q366-1.png)
 
-Since there are only two relationship-types between a pair of dragons (_freezes_, _fires at_), this pattern would never have assignments. This can be asserted before executing the query.
+Since there are only two relationship-types between a pair of dragons (_freezes_, _fires at_), this pattern would never have assignments. This can be asserted during query analysis.
 
 _**Q367:** Any pair of dragons that have a directional relationship of the same type in both directions_
 
@@ -1613,7 +1613,7 @@ _**Q368:** Any pair of dragons that have relationships of at least two types, ne
 
 ![V1](Pictures/Q368.png)
 
-Again, the fact that this pattern would never have assignments can be asserted before executing the query.
+Again, the fact that this pattern would never have assignments can be asserted during query analysis.
 
 For any quantifier except _all_ - a relationship type-tag defined in a branch can only be referenced in that branch.
 
