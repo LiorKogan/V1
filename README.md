@@ -236,6 +236,8 @@ A query may be:
 
 Implementations may support one or more of the above.
 
+V1 introduces the concept of _calculated properties_ - non-inherent properties of graph-entities, graph-relationships, and subgraphs, defined as part of a pattern. Each calculated property's evaluation result can be part of the reported query results, extending V1 capabilities beyond 'simple' pattern matching. For example, _The average number of horse ownerships per person_ - a calculated property of the set of all graph-entities of type _Person_ can be defined as part of a pattern. See Q356).
+
 Pattern languages differ in many aspects, including:
 
 * _Genericity_ - [general-purpose](https://en.wikipedia.org/wiki/General-purpose_language) (e.g., schema-driven) vs. [domain-specific](https://en.wikipedia.org/wiki/Domain-specific_language)
@@ -244,9 +246,12 @@ Pattern languages differ in many aspects, including:
 * _Conciseness_ - the fewness of symbols and symbol-types required for expressing patterns
 * _Aesthetics_ - the quality of patterns being visually appealing
 * _Declarative / Imperative_ - _[Declarative](https://en.wikipedia.org/wiki/Declarative_programming)_ languages describe patterns but do not specify how to match them. _[Imperative](https://en.wikipedia.org/wiki/Imperative_programming)_ languages describe patterns in terms of the steps required to match them on a given computational model. Languages may provide both declarative and imperative constructs.
-* _[Expressive power](https://en.wikipedia.org/wiki/Expressive_power_(computer_science))_ - the breadth of patterns that can be expressed. Without extending a pattern language into a Turing-complete programming language (declarative or imperative), there would always be computable patterns that cannot be expressed. 
-
-V1 introduces the concept of _calculated properties_ - non-inherent properties of graph-entities, graph-relationships, and subgraphs, defined as part of a pattern. Each calculated property's evaluation result is part of the reported query results, extending V1 capabilities beyond 'simple' pattern matching. For example, _The average number of horse ownerships per person_ - a calculated property of the set of all graph-entities of type _Person_ can be defined as part of a pattern. See Q356).
+* _[Expressive power](https://en.wikipedia.org/wiki/Expressive_power_(computer_science))_ - the breadth of patterns that can be expressed. 
+  Unless a pattern language (declarative or imperative) is Turing-complete, there would always be computable patterns that cannot be expressed. 
+  
+  There are always tradeoffs. Quoting Perlis' 54th and 55th epigrams of programming [18]: _"Beware of the Turing tar-pit in which everything is possible but nothing of interest is easy._, _"A LISP programmer knows the value of everything, but the cost of nothing."
+  
+  Perlis' 93rd and 26th epigrams are also worth quoting: _"When someone says 'I want a programming language in which I need only say what I wish done,' give him a lollipop."_, _"There will always be things we wish to say in our programs that in all known languages can only be said poorly."_
 
 ## A Song of Ice and Fire
 
