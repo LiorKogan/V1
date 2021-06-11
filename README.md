@@ -249,9 +249,9 @@ Pattern languages differ in many aspects, including:
 * _[Expressive power](https://en.wikipedia.org/wiki/Expressive_power_(computer_science))_ - the breadth of patterns that can be expressed. 
   Unless a pattern language (declarative or imperative) is Turing-complete, there would always be computable patterns that cannot be expressed. 
   
-  There are always tradeoffs. Quoting Perlis' 54th and 55th epigrams of programming [18]: _"Beware of the Turing tar-pit in which everything is possible but nothing of interest is easy._, _"A LISP programmer knows the value of everything, but the cost of nothing."
+There are always tradeoffs. Quoting Perlis' 54th and 55th [epigrams of programming](https://en.wikipedia.org/wiki/Epigrams_on_Programming): _"Beware of the Turing tar-pit in which everything is possible but nothing of interest is easy._, _"A LISP programmer knows the value of everything, but the cost of nothing."
   
-  Perlis' 93rd and 26th epigrams are also worth quoting: _"When someone says 'I want a programming language in which I need only say what I wish done,' give him a lollipop."_, _"There will always be things we wish to say in our programs that in all known languages can only be said poorly."_
+Perlis' 93rd and 26th epigrams are also worth quoting: _"When someone says 'I want a programming language in which I need only say what I wish done,' give him a lollipop."_, _"There will always be things we wish to say in our programs that in all known languages can only be said poorly."_
 
 ## A Song of Ice and Fire
 
