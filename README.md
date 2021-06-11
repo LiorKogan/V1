@@ -507,7 +507,7 @@ All V1's operators and all functions are well-defined when one or more of the op
 
 ## Data Types, Operators, and Functions
 
-One design goal of V1 is to make it applicable with many property graph database management systems. Implementation may support different data types, operators, and functions than those presented here. 
+One design goal of V1 is to make it applicable with many property graph database management systems. Implementations may support different data types, operators, and functions than those presented here. 
 
 To present V1, we use the following data types, operators, and functions:
 
