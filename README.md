@@ -606,7 +606,7 @@ Functions over _float_ expressions:
 |Function                          | Notes 
 |----------------------------------|-----------------------------
 | _trunc_(_float_) → _int_         | truncates toward zero
-| _round_(_float_) → _int_         | rounds to the nearest integer
+| _round_(_float_) → _int_         | rounds to the nearest integer (see G13)
 | _mRound_(_float_, _int_) → _int_ | rounds to the nearest multiple of a given integer (see G9, G10)
 | _seconds_(_float_) → _duration_  | (e.g., _seconds_(6) is a duration of 6 seconds)
 | _minutes_(_float_) → _duration_  | (see G10)
