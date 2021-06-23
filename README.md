@@ -103,10 +103,11 @@ The following semantics is commonly applied:
 -	Unary edges, if allowed, usually represent entities' _actions_ (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label denotes the _action's type_ (e.g., _sleeps_).
 - Properties and sub-properties represent _features_ (_characteristics_) and sub-features of entities (e.g., _name_ for a _Person_ entity), relationships (e.g., _timeframe_ for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action).
 - _Null-valued_ [sub]property indicates that a [sub]property value is missing.
+
   Following the terminology suggested by [Codd](https://dl.acm.org/doi/10.1145/16301.16303), a missing value is either
   - _Applicable missing_ – [currently] unknown, e.g., a value that was not [yet] measured or collected, an answer to a question to which a questionee refused to provide an answer, a value that is classified or otherwise censored.
   - _Inapplicable missing_, e.g., time or place of an event that did not [yet] happened, a value that is inapplicable due to a value of another property, a questionee's answer to a question that was not [yet] asked.
-  - 
+
   For a birth date property, a _null_ value would likely represent an unknown birth date. For a death date property, a _null_ value may represent either that the date on which the person died is unknown (applicable) or that the person is still alive (inapplicable). What a _null_ value means for each _nullable property_ is not always defined as part of the data model. Sometimes, null values represent _applicable missing_ values, while _magic values_ (e.g., '9999-12-31' for dates) represent inapplicable values.
   
   Operators and functions are defined based on a certain _null-value semantics_ (e.g., what should be the result of (yesterday's date < person's death date), when the death date is _null_).
