@@ -106,7 +106,7 @@ The following semantics is commonly applied:
 
   Following the terminology suggested by [Codd](https://dl.acm.org/doi/10.1145/16301.16303), a missing value is either
   - _Applicable missing_ – [currently] unknown, e.g., a value that was not [yet] measured or collected, an answer to a question to which a questionee refused to provide an answer, a value that is classified or otherwise censored.
-  - _Inapplicable missing_, e.g., time or place of an event that did not [yet] happened, a value that is inapplicable due to a value of another property, a questionee's answer to a question that was not [yet] asked.
+  - _Inapplicable missing_, e.g., a time or a place of an event that did not [yet] happened, a value that is inapplicable due to a value of another property, a questionee's answer to a question that was not [yet] asked.
 
   For a birth date property, a _null_ value would likely represent an unknown birth date. For a death date property, a _null_ value may represent either that the date on which the person died is unknown (applicable) or that the person is still alive (inapplicable). What a _null_ value means for each _nullable property_ is not always defined as part of the data model. Sometimes, _null_ values represent _applicable missing_ values, while _magic values_ (e.g., '9999-12-31' for dates) represent inapplicable values.
   
