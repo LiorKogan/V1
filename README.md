@@ -105,12 +105,17 @@ The following semantics is commonly applied:
 - _Null-valued_ [sub]property indicates that a [sub]property value is missing.
 
   Following the terminology suggested by [Codd](https://dl.acm.org/doi/10.1145/16301.16303), a missing value is either
-  - _Applicable missing_ – [currently] unknown, e.g., a value that was not [yet] measured or collected, an answer to a question to which a questionee refused to provide an answer, a value that is classified or otherwise censored.
-  - _Inapplicable missing_, e.g., a time or a place of an event that did not [yet] happened, a value that is inapplicable due to a value of another property, a questionee's answer to a question that was not [yet] asked.
+  - _Applicable missing_ – value at present unknown. E.g., a value that was not [yet] measured or collected; an answer to a question if the questionee refused to answer.
+  - _Inapplicable missing_ - value at present inapplicable. E.g., previous citizenship if there is none; employee ID if not yet assigned to a new hire, direct manager of the CEO; time of an event that did not happen [yet].
 
-  For a birth date property, a _null_ value would likely represent an unknown birth date. For a death date property, a _null_ value may represent either that the date on which the person died is unknown (applicable) or that the person is still alive (inapplicable). What a _null_ value means for each _nullable property_ is not always defined as part of the data model. Sometimes, _null_ values represent _applicable missing_ values, while _magic values_ (e.g., '9999-12-31' for dates) represent inapplicable values.
+  The classification is not always clear-cut. E.g., an answer to a question, if the question was not presented to the questionee, can be considered both applicable missing and inapplicable missing.
   
-  Operators and functions are defined based on a certain _null-value semantics_ (e.g., what should be the result of (yesterday's date < person's death date), when the death date is _null_).
+  For a birth date property, a _null_ value would likely represent an unknown birth date. For a death date property, a _null_ value may represent either that the date on which the person died is unknown (applicable) or that the person is still alive (inapplicable). 
+  
+  What a _null_ value means for each _nullable property_ is not always defined as part of the data model. Yet, operators and functions are defined based on a certain _null-value semantics_ (e.g., what should be the result of (yesterday's date < person's death date), when the death date is _null_).
+  
+  Often, _null_ values represent _applicable missing_ values, while _magic values_ (e.g., '9999-12-31' for dates) represent inapplicable values.
+
 
 More about property graphs can be found [here](https://arxiv.org/pdf/1006.2361.pdf), [here](https://arxiv.org/pdf/1004.1001.pdf), [here](http://tinkerpop.apache.org/docs/current/reference/), and [here](https://neo4j.com/developer/graph-database/).
 
