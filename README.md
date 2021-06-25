@@ -108,7 +108,7 @@ The following semantics is commonly applied:
   - _Applicable missing_ – value at present unknown. E.g., a value that was not [yet] measured or collected; an answer to a question if the questionee refused to answer.
   - _Inapplicable missing_ - value at present inapplicable. E.g., previous citizenship if there is none; employee ID if not yet assigned to a new hire, direct manager of the CEO; time of an event that did not happen [yet].
 
-  The classification is not always clear-cut. E.g., an answer to a question, if the question was not presented to the questionee, can be considered both applicable missing and inapplicable missing.
+  This classification is not always clear-cut. E.g., an answer to a question, if the question was not presented to the questionee, can be considered both applicable missing and inapplicable missing.
   
   For a _birth date_ property, a _null_ value would likely represent an unknown birth date. For a _death date_ property, a _null_ value may represent either that the date on which the person died is unknown (applicable) or that the person is still alive (inapplicable). 
   
