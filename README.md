@@ -126,7 +126,7 @@ A _schema_ is a model for describing the structure of information in a certain d
 
 A property graph may be:
 * _Schema-free_ (_schemaless_, _schema-independent_). A schema-free property graph neither defines nor enforces entity-types or relationships-types; each vertex and edge, regardless of its label, may have properties with any name and of any data type.
-* _Schema-based_ (_schema-driven_, _schema-full_, _schema-dependent_). A schema-based property graph is a property graph that conforms to a given schema.
+* _Schema-based_ (_schema-strict_, _schema-driven_, _schema-full_, _schema-dependent_). A schema-based property graph is a property graph that conforms to a given schema.
 * _Schema-mixed_ (_schema-hybrid_), where a schema is defined, but additional elements (e.g., additional properties) may be used.
 
 It is much easier to define patterns when the information is presented consistently. For example, to match patterns such as _Any person who owns a white horse_, one would first:
