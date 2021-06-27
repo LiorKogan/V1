@@ -105,16 +105,16 @@ The following semantics is commonly applied:
 - _Null-valued_ [sub]property indicates that a [sub]property value is missing.
 
   Several different interpretations can be associated with a _null_ value. Following the terminology suggested by [Codd](https://dl.acm.org/doi/10.1145/16301.16303) and adopted by most authors, a missing value is either
-  - _Applicable missing_ – value at present is applicable, but unknown. E.g., a value that was not [yet] measured or collected; an answer to a question - if the questionee refused to answer.
+  - _Applicable missing_ – value at present is applicable but unknown. E.g., a value that was not [yet] measured or collected; an answer to a question - if the questionee refused to answer.
   - _Inapplicable missing_ - value at present inapplicable. E.g., previous citizenship if there is none; employee ID if not yet assigned to a new hire; direct manager of the CEO; time of an event that did not happen [yet]; an answer to a question - if the question was not presented to the questionee.
 
-  This classification does not capture cases where it is unknown if the unknown value is applicable or not. E.g., an answer to a question when it is unknown if the question was presented to the questionee. [Zaniolo](https://www.sciencedirect.com/science/article/pii/0022000084900801) denotes such values as _no-information missing_.
+  This classification does not capture cases where it is unknown whether the unknown value is applicable or not. E.g., an answer to a question - if it is unknown whether the question was presented to the questionee. [Zaniolo](https://www.sciencedirect.com/science/article/pii/0022000084900801) denotes such values as _no-information missing_.
 
   For a _birth date_ property, a _null_ value would likely represent an unknown birth date. For a _death date_ property, a _null_ value may represent either that the date on which the person died is unknown (applicable) or that the person is still alive (inapplicable). 
   
   What a _null_ value means is not always defined as part of the data model. Yet, operators and functions are well-defined for _null_ values. (What should be the result of (yesterday's date < person's death date), when _death date_ is _null_?)
   
-  Often, _null_ values represent _applicable missing_ values, while _magic values_ (e.g., '9999-12-31' for dates) represent inapplicable values.
+  Several authors suggest using two or more types of null values instead of a generic null, but this approach remains mainly theoretical. In practice, _null_ values often represent _applicable missing_ values, while _magic values_ (e.g., '9999-12-31' for dates) represent inapplicable values.
 
 The term _property graph_ was popularized by [Rodriguez](https://arxiv.org/abs/1006.2361) and [Neubauer](https://arxiv.org/abs/1004.1001), though other terms were used for similar data models. [Tsai and Fu's](https://ieeexplore.ieee.org/document/4310127) _attributed relational graph_ is a directed multigraph where both nodes and edges have labels, and each label defines a set of numerical or logical attributes. [Shao et al.](https://ieeexplore.ieee.org/abstract/document/7953521) used the term _Heterogeneous graph_ for the same construct. [Gallagher](http://www.aaai.org/Papers/Symposia/Fall/2006/FS-06-02/FS06-02-007.pdf) used the term _data graph_ to refer to graphs where vertices and/or edges may be typed and/or attributed. [Singh et al.](http://ieeexplore.ieee.org/abstract/document/4272051/) used the term _M*3_ (multi-modal, multi-relational, multifeatured) _network_ to refer to graphs with multiple entity-types, multiple relationship-types, and multiple descriptive features for nodes and edges. [Krause et al.](https://link.springer.com/chapter/10.1007/978-3-319-40530-8_10)  used the term _typed graph_ to refer to graphs with typed nodes, typed edges, and typed node properties.
 
