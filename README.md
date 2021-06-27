@@ -104,12 +104,12 @@ The following semantics is commonly applied:
 - Properties and sub-properties represent _features_ (_characteristics_) and sub-features of entities (e.g., _name_ for a _Person_ entity), relationships (e.g., _timeframe_ for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action).
 - _Null-valued_ [sub]property indicates that a [sub]property value is missing.
 
-  Following the terminology suggested by [Codd](https://dl.acm.org/doi/10.1145/16301.16303), a missing value is either
-  - _Applicable missing_ – value at present unknown. E.g., a value that was not [yet] measured or collected; an answer to a question if the questionee refused to answer.
-  - _Inapplicable missing_ - value at present inapplicable. E.g., previous citizenship if there is none; employee ID if not yet assigned to a new hire, direct manager of the CEO; time of an event that did not happen [yet].
+  Several different interpretations can be associated with a _null_ value. Following the terminology suggested by [Codd](https://dl.acm.org/doi/10.1145/16301.16303) and adopted by most authors, a missing value is either
+  - _Applicable missing_ – value at present is applicable, but unknown. E.g., a value that was not [yet] measured or collected; an answer to a question - if the questionee refused to answer.
+  - _Inapplicable missing_ - value at present inapplicable. E.g., previous citizenship if there is none; employee ID if not yet assigned to a new hire; direct manager of the CEO; time of an event that did not happen [yet]; an answer to a question - if the question was not presented to the questionee.
 
-  This classification is not always clear-cut. E.g., an answer to a question, if the question was not presented to the questionee, can be considered both applicable missing and inapplicable missing.
-  
+  This classification does not capture cases where it is unknown if the unknown value is applicable or not. E.g., an answer to a question when we do not know if the question was presented the the questionee. [Zaniolo](https://www.sciencedirect.com/science/article/pii/0022000084900801) denotes such values as _no-information missing_.
+
   For a _birth date_ property, a _null_ value would likely represent an unknown birth date. For a _death date_ property, a _null_ value may represent either that the date on which the person died is unknown (applicable) or that the person is still alive (inapplicable). 
   
   What a _null_ value means is not always defined as part of the data model. Yet, operators and functions are well-defined for _null_ values. (What should be the result of (yesterday's date < person's death date), when _death date_ is _null_?)
