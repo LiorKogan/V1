@@ -105,8 +105,8 @@ The following semantics is commonly applied:
 - _Null-valued_ [sub]property indicates that a [sub]property value is missing.
 
   Several different interpretations can be associated with a _null_ value. Following the terminology suggested by [Codd](https://dl.acm.org/doi/10.1145/16301.16303) and adopted by most authors, a missing value is either
-  - _Applicable missing_ – value at present is applicable but unknown. E.g., a value that was not [yet] measured or collected; an answer to a question - if the questionee refused to answer.
-  - _Inapplicable missing_ - value at present inapplicable. E.g., previous citizenship if there is none; employee ID if not yet assigned to a new hire; direct manager of the CEO; time of an event that did not happen [yet]; an answer to a question - if the question was not presented to the questionee.
+  - _Applicable missing_ – the value at present is applicable but unknown. E.g., a value that was not [yet] measured or collected; an answer to a question - if the questionee refused to answer.
+  - _Inapplicable missing_ - the value at present is inapplicable. E.g., previous citizenship when there is none; employee ID when not yet assigned to a new hire; direct manager of the CEO; time of an event that did not happen [yet]; an answer to a question - if the question was not presented to the questionee.
 
   This classification does not capture cases where it is unknown whether the unknown value is applicable or not. E.g., an answer to a question - if it is unknown whether the question was presented to the questionee. [Zaniolo](https://www.sciencedirect.com/science/article/pii/0022000084900801) denotes such values as _no-information missing_.
 
