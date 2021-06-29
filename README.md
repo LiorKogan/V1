@@ -108,7 +108,7 @@ The following semantics is commonly applied:
   - _Applicable missing_ – at present, a value is applicable (applies to the particular entity, relationship, or action) but unknown (whatever the reason, the graph does not have the value). E.g., the temperature 1000 years ago today; a phone number of a person who owns a phone but the number is unknown; an answer to a question – when the questionee refused to answer.
   - _Inapplicable missing_ - at present, no value is applicable. E.g., the temperature tomorrow; previous citizenship when there is none; direct manager of the CEO; new hire's not-yet-assigned employee ID; death date of a person who is still alive; a phone number of a person who does not own a phone; an answer to a question – when the question was not posed to the questionee.
 
-  [Zaniolo](https://www.sciencedirect.com/science/article/pii/0022000084900801) siggested a third basic interpretation of _null_ values:
+  [Zaniolo](https://www.sciencedirect.com/science/article/pii/0022000084900801) suggested a third basic interpretation of _null_ values:
 
   - _No-information missing_ – at present, it is unknown whether the missing value is applicable or not. E.g., a person's phone number – when it is unknown whether the person owns a phone; an answer to a question – when it is unknown if the question was posed to the questionee.
 
