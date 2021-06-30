@@ -110,7 +110,7 @@ The following semantics is commonly applied:
 
   [Zaniolo](https://www.sciencedirect.com/science/article/pii/0022000084900801) proposed a third basic interpretation of _null_ values:
 
-  - _No information missing_ – at present, the applicability of the unspecified value is unknown. E.g., a person's phone number – when it is unknown whether the person owns a phone; an answer to a question – when it is unknown if the question was posed to the questionee.
+  - _No information_ – at present, the applicability of the unspecified value is unknown. E.g., a person's phone number – when it is unknown whether the person owns a phone; an answer to a question – when it is unknown if the question was posed to the questionee.
   
   Codd, Zaniolo, and many others proposed using two or more types of _null_ instead of a 'generic' _null_, but this approach remains mainly theoretical. In practice, _null_ values often have no consistent semantics. For a _birth date_ property, a _null_ value would likely represent an unknown birth date, but for a _death date_ property, a _null_ value may represent that the date on which the person died is unknown (_applicable missing_), that the person is still alive (_inapplicable_), or that it is unknown if the person is still alive (_no information_).
 
