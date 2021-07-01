@@ -549,7 +549,7 @@ To present V1, we use the following data types, operators, and functions:
 |-----------------------------|-----------------------------
 | _integer_                   | 12, -3
 | _float_                     | 3., 3.12, -1.78e-6, NaN, -INF, +INF
-| _string_                    | "abc", 'abc'
+| _string_                    | "", "abc", 'abc'
 
 _St_ denotes a set of elements of type _t_
 
