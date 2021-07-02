@@ -941,7 +941,9 @@ _**Q8:** Any person born before 970 and passed away or whose father was born not
 
 The person's death date is not _null_ (_applicable missing_ or _no information_), nor it is _inapplicable_.
 
-![V1](Pictures/Q008.png)
+![V1](Pictures/Q008-1.png)
+
+![V1](Pictures/Q008-2.png)
 
 _**Q11:** Any current member of the Masons Guild who on or after January 1, 1011, befriended someone who had left the Saddlers guild or the Blacksmiths guild in June 1010 or later_
 
