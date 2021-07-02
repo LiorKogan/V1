@@ -158,7 +158,7 @@ A _property graph schema_ is defined by:
   * A set of pairs of entity-types for which the relationship-type is applicable (e.g., _owns_: {(_Person_, _Horse_), (_Person_, _Dragon_)}. When a pair is of the same type (e.g., (_Dragon_, _Dragon_)), loops can be allowed or disallowed
   * A set of properties - similar to entity-types' properties
   
-Null-valued [sub]properties indicate that the value is missing. '9999-12-31' date indicates that the date is inapplicable.
+Null-valued [sub]properties indicate that the value is missing. "9999-12-31" date indicates that the date is inapplicable.
 
 A predefined property-less entity-type _Null_ serves two purposes:
 * Realizing unary edges (action-types) as edges (relationship-types): an action-type can be realized as a relationship-type that is applicable between some entity-type and the _Null_ entity-type. For example, a _sleeps_: {(_Dragon_, _Null_)} relationship-type realizes a sleep action-type for the _Dragon_ entity-type.
