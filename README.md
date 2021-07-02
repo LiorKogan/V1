@@ -505,9 +505,7 @@ The following constraint operators can be only blue:
 ![V1](Pictures/BB10-2.png)
 
 * A _is null_ constraint is satisfied if and only if the expression is evaluated to _null_ 
-* A _not null_ constraint is satisfied if and only if the expression is not evaluated to _null_
-
-See Q8, Q11, Q267
+* A _not null_ constraint is satisfied if and only if the expression is not evaluated to _null_ (See Q8v1)
 
 All V1's operators and all functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _Null-valued_ [sub]properties are interpreted as _applicable missing_ or _no information_ (e.g., 1 + _null_ = _null_; max(5, _null_) = _null_). The magic value "9999-12-31"  indicatess that a date is _inapplicable_.
 
@@ -786,16 +784,16 @@ The same graph-entity may match more than one pattern-entity. Either the same ho
 
 A vertical quantifier has one connection on its left side and zero or more branches on its right side. On its left side, there is an entity, a quantifier, or the pattern's start. Except at the pattern's start, a quantifier may be wrapped with an 'O' (see Q147, Q149).
 
-When a quantifier is directly left of the pattern start, each branch may start with:
+When a quantifier is directly right of the pattern start, each branch may start with:
 
 * An entity (see Q108),
 * A Cartesian product's expression (see Q207), or
 * A quantifier (see Q332v2)
 
-When a quantifier is directly left of an entity, each branch may start with:
+When a quantifier is directly right of an entity, each branch may start with:
 
 * A relationship/path, optionally with a relationship/path-negator, optionally wrapped with a negator or with an 'O' (see Q358, Q359),
-* An entity's expression (see Q3),
+* An entity's expression (see Q3v2),
 * A Cartesian product's expression (see Q340), or
 * A quantifier (see Q8)
 
@@ -949,7 +947,7 @@ _**Q11:** Any current member of the Masons Guild who on or after January 1, 1011
 
 ![V1](Pictures/Q011.png)
 
-The constraint 'member of df.till = 31/12/9999' means that the membership end date is _inapplicable_, hence the person is currently a member.
+The constraint 'member of df.till = 31/12/9999' means an _inapplicable_ membership end date – the person is currently a member of the Masons guild.
 
 ## Entity-Tags
 
