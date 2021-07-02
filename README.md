@@ -592,7 +592,7 @@ Also, based on any of these coercion rules:
 |From type            | To type                     | Examples
 |---------------------|-----------------------------| -----
 |{} (empty set)       | set(_t2_) of any type _t2_  | {} ∪ {5} → {5}
-|[] (empty bag)       | bag(_t2_) of any type _t2_  | [] ∪ [5] → [5], see Q349
+|[] (empty bag)       | bag(_t2_) of any type _t2_  | [] ∪ [5] → [5] (see Q349)
 |() (empty list)      | list(_t2_) of any type _t2_ | () ∥ (5,) → (5,)
 |set(_t1_)            | set(_t2_)                   | {3, 5, 8} ∪ {3., 8.) → {3., 5., 8.}
 |bag(_t1_)            | bag(_t2_)                   | [3, 5, 8] ∪ [3., 8.] → [3., 3., 5., 8., 8.]
@@ -615,9 +615,9 @@ Functions over _float_ expressions:
 | _round_(_float_) → _int_         | rounds to the nearest integer (see G13)
 | _mRound_(_float_, _int_) → _int_ | rounds to the nearest multiple of a given integer (see G9, G10)
 | _seconds_(_float_) → _duration_  | (e.g., _seconds_(6) is a duration of 6 seconds)
-| _minutes_(_float_) → _duration_  | (see G10)
+| _minutes_(_float_) → _duration_  | See G10
 | _hours_(_float_) → _duration_    |
-| _days_(_float_) → _duration_     | (see Q216, Q289)
+| _days_(_float_) → _duration_     | See Q216, Q289
 | _weeks_(_float_) → _duration_    | One week = 7 days
 | _months_(_float_) → _duration_   | One month = 30.4367 days   (see Q110)
 | _years_(_float_) → _duration_    | One year = 365.24 days   (see Q317)
@@ -626,8 +626,8 @@ Functions over _string_ expressions:
 
 |Function                           | Notes 
 |-----------------------------------|-----------------------------
-| _length_(_string_) → _int_        | (see Q255)
-| _toLower_(_string_) → _string_    | (see Q308)
+| _length_(_string_) → _int_        | See Q255
+| _toLower_(_string_) → _string_    | See Q308
 | _date_(_string_) → _date_         | String format: YYYY-MM-DD (e.g., "2018-04-23") <br> In visual syntax the, function name is omitted, and the string is formatted according to the regional settings.
 | _datetime_(_string_) → _datetime_ | String format: YYYY-MM-DDTHH:MM[:SS[.sss]] <br> (e.g., "2018-04-23T12:34:00") <br> In visual syntax, the function name is omitted, and the string is formatted according to the regional settings.
 | _duration_(_string_) → _duration_ | String format adapted from Cypher: P[nY][nM][nW][nD][T[nH][nM][nS]] <br> (e.g., "P1Y2M10DT12H45M30.25S") <br> Y: years, M: months, W: weeks, D: days, H: hours, M: minutes, S: seconds <br> In visual syntax, the function name is omitted, and the string is formatted.
@@ -636,8 +636,8 @@ Functions over _datetime_ expressions:
 
 |Function                                            | Notes 
 |----------------------------------------------------|------
-| _date_(_datetime_) → _date_                        | (see Q158)
-| _year_(_datetime_) → _int_                         | (see Q185)
+| _date_(_datetime_) → _date_                        | See Q158
+| _year_(_datetime_) → _int_                         | See Q185
 | _month_(_datetime_) → _int_                        | The month of the year (1-12)
 | _day_(_datetime_) → _int_                          | The day of the month (1-31)
 | _hour_(_datetime_) → _int_                         | 0-23 (see G4)
@@ -668,13 +668,13 @@ Functions over _dateframe_ expressions:
 |Function                                            | Notes 
 |----------------------------------------------------|------
 | _duration_(_dateframe_) → _duration_               |
-| _overlap_(_dateframe_, _dateframe_) → _duration_   | Always non-negative <br> (see Q267v2)
+| _overlap_(_dateframe_, _dateframe_) → _duration_   | Always non-negative (see Q267v2)
 
 Functions over _datetimeframe_ expressions:
 
 |Function                                                  | Notes 
 |----------------------------------------------------------|------
-| _duration_(_datetimeframe_) → _duration_                 | (see Q110)
+| _duration_(_datetimeframe_) → _duration_                 | See Q110
 | _overlap_(_datetimeframe_, _datetimeframe_) → _duration_ | Always non-negative
 
 Functions over _duration_ expressions:
@@ -684,7 +684,7 @@ Functions over _duration_ expressions:
 | _years_(_duration_) → _float_                      | One year = 365.24 days
 | _months_(_duration_) → _float_                     | One month = 30.4367 days
 | _weeks_(_duration_) → _float_                      | One week = 7 days
-| _days_(_duration_) → _float_                       | (see Q328)
+| _days_(_duration_) → _float_                       | See Q328
 | _hours_(_duration_) → _float_                      |
 | _minutes_(_duration_) → _float_                    |
 | _seconds_(_duration_) → _float_                    |
