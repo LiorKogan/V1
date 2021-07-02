@@ -1867,7 +1867,7 @@ _**Q267:** Any person who was a member of two guilds at overlapping timeframes_ 
 
 ![V1](Pictures/Q267-2.png)
 
-The following version covers cases where one of {3} or {4} is _null_:
+The following version covers some cases where one membership has a _null_ start date or a _null_ end date:
 
 ![V1](Pictures/Q267-3.png)
 
