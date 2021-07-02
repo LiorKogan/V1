@@ -1861,7 +1861,7 @@ _**Q266:** Any person A who has the same name (first and last) as A's parent_ (t
 
 ![V1](Pictures/Q266-2.png)
 
-_**Q267:** Any person who was a member of two guilds at overlapping timeframes_ (two versions)
+_**Q267:** Any person who was a member of two guilds at overlapping timeframes_ (three versions)
 
 ![V1](Pictures/Q267-1.png)
 
