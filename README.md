@@ -505,7 +505,7 @@ The following constraint operators can be only blue:
 ![V1](Pictures/BB10-2.png)
 
 * A _is null_ constraint is satisfied if and only if the expression is evaluated to _null_ 
-* A _not null_ constraint is satisfied if and only if the expression is not evaluated to _null_ (see Q8v1)
+* A _not null_ constraint is satisfied if and only if the expression is not evaluated to _null_
 
 All V1's operators and all functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _Null-valued_ [sub]properties are interpreted as _applicable missing_ (e.g., 1 + _null_ = _null_; max(5, _null_) = _null_). The magic value "9999-12-31"  indicatess that a date is _inapplicable_.
 
@@ -956,9 +956,7 @@ The constraint 'member of df.till = 31/12/9999' means an _inapplicable_ membersh
 
 ## Entity-Tags
 
-The letter in the top-left corner of each pattern-entity rectangle (concrete, typed, and untyped) is called an _entity-tag_.
-
-Entity-tags are included in query results as well: any graph-entity in a query result is annotated with the same tag as the pattern-entity to which it was assigned so that the query poser can understand why any given entity is part of the result. As part of the result, a graph-entity may be annotated with more than one entity-tag, as it may be assigned to several pattern-entities (in the same assignment or in different assignments - when assignments are merged).
+The letter in the top-left corner of each pattern-entity rectangle (concrete, typed, or untyped) is called an _entity-tag_. Entity-tags are included in query results as well: any graph-entity in a query result is annotated with the same tag as the pattern-entity to which it was assigned so that the query poser can understand why any given entity is part of the result. As part of the result, a graph-entity may be annotated with more than one entity-tag, as it may be assigned to several pattern-entities (in the same assignment or in different assignments - when assignments are merged).
 
 Entity-tags may be referenced:
 
