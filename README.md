@@ -424,7 +424,7 @@ An _expression_ is
 - A _bag expression_ (see Q315), or
 - A _list expression_
 
-An _interval_ can be explicitly constructed using the following syntaxes:
+An [_interval_](https://en.wikipedia.org/wiki/Interval_(mathematics)) can be explicitly constructed using the following syntaxes:
 
 * (_expr1_ .. _expr2_)		- an open interval
 * (_expr1_ .. _expr2_]		- a half-open interval
