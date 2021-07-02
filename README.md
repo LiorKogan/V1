@@ -505,7 +505,7 @@ The following constraint operators can be only blue:
 ![V1](Pictures/BB10-2.png)
 
 * A _is null_ constraint is satisfied if and only if the expression is evaluated to _null_ 
-* A _not null_ constraint is satisfied if and only if the expression is not evaluated to _null_ (See Q8v1)
+* A _not null_ constraint is satisfied if and only if the expression is not evaluated to _null_ (see Q8v1)
 
 All V1's operators and all functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _Null-valued_ [sub]properties are interpreted as _applicable missing_ or _no information_ (e.g., 1 + _null_ = _null_; max(5, _null_) = _null_). The magic value "9999-12-31"  indicatess that a date is _inapplicable_.
 
