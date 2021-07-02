@@ -756,8 +756,8 @@ Functions over _interval_ expressions:
 
 |Function                     | Notes 
 |-----------------------------|-----------------------------
-| _low_(_It_) → _t_           | Lower bound <br> _null_ when _It_ is _null_
-| _high_(_It_) → _t_          | Higher bound <br> _null_ when _It_ is _null_
+| _lb_(_It_) → _t_            | Lower bound <br> _null_ when _It_ is _null_
+| _up_(_It_) → _t_            | Upper bound <br> _null_ when _It_ is _null_
 | _set_(_It_) → _St_          | Interval to set <br> _t_ is discrete (_int_, _datetime_, or another ordinal type) <br> _null_ when _It_ is _null_
 | _bag_(_It_) → _Bt_          | Interval to bag <br> _t_ is discrete (_int_, _datetime_, or another ordinal type) <br> _null_ when _It_ is _null_
 | _list_(_It_) → _Lt_         | Interval to list <br> _t_ is discrete (_int_, _datetime_, or another ordinal type) <br> _null_ when _It_ is _null_
@@ -767,7 +767,7 @@ Other functions:
 |Function                                            | Notes 
 |----------------------------------------------------|------
 | _now_() → _datetime_                               | 
-| _date_(year, month, day) → _date_                  | construct date using three integers (see Q353)
+| _date_(year, month, day) → _date_                  | construct date using three integers (see Q353) <br> _null_ when at least one value is _null_
 | _min_(_t_, _t_, ...) → _t_ <br> _max_(_t_, _t_, ...) → _t_ | one or more values of the same ordinal type <br> _null_ when at least one value is _null_ <br> _min_({_t_, _t_, …})and _max_({_t_, _t_, …}) ignore _null_ values (see Q317)
 
 Implementations may support _[opaque data types](https://en.wikipedia.org/wiki/Opaque_data_type)_ - data types where the internal data representation is not exposed. For each opaque data type - a set of functions and operators may be defined (see _location_ data type in [Application: Spatiotemporality](#application-spatiotemporality)).
