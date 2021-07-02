@@ -209,7 +209,7 @@ Here are two examples:
   - _d_ has a _name_ property with a value that starts with 'M'
   - There are _m_ > 3 vertices, _d₁..dₘ_, each with a label _Dragon_
   - There are relationships from _d_ to any of _d₁..dₘ_, each with a label _freezes_
-  - Each of these relationships has a _tf_ property (stands for "time frame") with a _since_ sub-property whose value is in the range [_now_() - _months_(3) .. _now_()]
+  - Each of these relationships has a _tf_ property (stands for "time frame") with a _since_ sub-property whose value is in the range [_now_ - _months_(3) .. _now_]
   - There is a vertex _g_ with a label _Guild_
   - _g_ has a _name_ property, and its value is _Masons_
   - There are _n_ ≥ 1 vertices _q₁..qₙ_, each with a label _Person_
@@ -415,10 +415,10 @@ An _expression_ is
 - _op expr_, where _op_ is a unary operator (e.g., '- {1}'),
 - _expr op expr_, where _op_ is a binary operator (e.g., '3 + {1}'),
 - (_expr_),
--	'_f_()' where _f_ is a parameterless function (e.g., '_now_()'. See G11),
--	'_f_(e1, e2, ...)' where _f_ is a function and e1, e2, ... are expression (see Q353),
--	'e1._f_' - equivalent to _f_(e1), where _f_ is a function and e1 is an expression,
--	'e1._f_(e2, e3, ...)' - equivalent to _f_(e1, e2, e3, ...), where _f_ is a function and e1, e2, e3, ... are expressions,
+-	'_f_' where _f_ is a parameterless function (e.g., '_now_'. See G11),
+-	'_f_(e1, e2, ...)' where _f_ is a function with at least one parameter and e1, e2, ... are expression (see Q353),
+-	'e1._f_' - equivalent to _f_(e1), where _f_ is a function with one parameter and e1 is an expression,
+-	'e1._f_(e2, e3, ...)' - equivalent to _f_(e1, e2, e3, ...), where _f_ is a function with more than one parameter and e1, e2, e3, ... are expressions,
 - An _interval expression_ (see Q327),
 - A _set expression_ (see Q318),
 - A _bag expression_ (see Q315), or
@@ -433,11 +433,11 @@ An _interval_ can be explicitly constructed using the following syntaxes:
 
   Both _expr1_ and _expr2_ are of the same ordinal data type.
   
-  if _expr2_ < _expr1_ - _expr1_ and _expr2_ are swapped.
-  
-  If either _expr1_ or _expr2_, or both are evaluated to _null_ - the interval is evaluated to _null_.
+  if _expr2_ < _expr1_ - the interval is an _empty interval_.
   
   (_expr1_ .. _expr1_), (_expr1_ .. _expr1_], [_expr1_ .. _expr1_) are _empty intervals_.
+
+  If either _expr1_ or _expr2_, or both are evaluated to _null_ - the interval is evaluated to _null_.
 
 A _set_ is an unordered collection of zero or more _non-null_ values (called _elements_) of the same data type in which each element may occur only once. 
 
