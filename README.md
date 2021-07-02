@@ -939,7 +939,7 @@ The order of the branches does not affect the evaluation result.
 
 _**Q8:** Any person born before 970 and passed away or whose father was born not later than January 1, 950_
 
-The person's death date is not _null_ (applicable missing or no information), nor it is _inapplicable_.
+The person's death date is not _null_ (_applicable missing_ or _no information_), nor it is _inapplicable_.
 
 ![V1](Pictures/Q008.png)
 
