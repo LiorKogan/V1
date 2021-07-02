@@ -756,9 +756,9 @@ Other functions:
 
 |Function                                            | Notes 
 |----------------------------------------------------|------
-| _now_() → _datetime_                               | 
-| _date_(year, month, day) → _date_                  | construct date using three integers (see Q353) <br> _null_ when at least one value is _null_
-| _min_(_t_, _t_, ...) → _t_ <br> _max_(_t_, _t_, ...) → _t_ | one or more values of the same ordinal type <br> _null_ when at least one value is _null_ <br> _min_({_t_, _t_, …})and _max_({_t_, _t_, …}) ignore _null_ values (see Q317)
+| _now_ → _datetime_                                 | See Q8v2, G11
+| _date_(year, month, day) → _date_                  | Construct date using three integers (see Q353) <br> _null_ when at least one value is _null_
+| _min_(_t_, _t_, ...) → _t_ <br> _max_(_t_, _t_, ...) → _t_ | One or more values of the same ordinal type <br> _null_ when at least one value is _null_ <br> _min_({_t_, _t_, …})and _max_({_t_, _t_, …}) ignore _null_ values (see Q317)
 
 Implementations may support _[opaque data types](https://en.wikipedia.org/wiki/Opaque_data_type)_ - data types where the internal data representation is not exposed. For each opaque data type - a set of functions and operators may be defined (see _location_ data type in [Application: Spatiotemporality](#application-spatiotemporality)).
 
