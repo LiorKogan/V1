@@ -433,11 +433,11 @@ An _interval_ can be explicitly constructed using the following syntaxes:
 
   Both _expr1_ and _expr2_ are of the same ordinal data type.
   
-  if _expr2_ < _expr1_ - the interval is an _empty interval_.
+  if _expr1_ > _expr2_ - the interval is an _empty interval_.
   
-  (_expr1_ .. _expr1_), (_expr1_ .. _expr1_], [_expr1_ .. _expr1_) are _empty intervals_.
+  if _expr1_ = _expr2_ - (_expr1_ .. _expr2_), (_expr1_ .. _expr2_], [_expr1_ .. _expr2_) are _empty intervals_.
 
-  If either _expr1_ or _expr2_, or both are evaluated to _null_ - the interval is evaluated to _null_.
+  If _expr1_, _expr2_, or both are evaluated to _null_ - the interval is evaluated to _null_.
 
 A _set_ is an unordered collection of zero or more _non-null_ values (called _elements_) of the same data type in which each element may occur only once. 
 
