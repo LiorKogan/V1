@@ -935,7 +935,7 @@ Otherwise - An assignment matches the pattern if and only if it matches the whol
 
 The order of the branches does not affect the evaluation result.
 
-_**Q8:** Any person born before 970 and passed away or whose father was born not later than January 1, 950_
+_**Q8:** Any person born before 970 and passed away or whose father was born not later than January 1, 950_ (two versions)
 
 The person's death date is not _null_ (_applicable missing_ or _no information_), nor it is _inapplicable_.
 
