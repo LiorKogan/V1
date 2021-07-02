@@ -939,7 +939,7 @@ The order of the branches does not affect the evaluation result.
 
 _**Q8:** Any person born before 970 and passed away or whose father was born not later than January 1, 950_
 
-The following data semantics is assumed: _null_ death date means that the person is still alive.
+The person's death date is not _null_ (applicable missing or no information), nor it is _inapplicable_.
 
 ![V1](Pictures/Q008.png)
 
@@ -947,7 +947,7 @@ _**Q11:** Any current member of the Masons Guild who on or after January 1, 1011
 
 ![V1](Pictures/Q011.png)
 
-Note that the constraint '_member of df.till is null_' is based on the assumption that a _null_ value means that the person is still a member. Alternatively, it could have meant that _df.till_ is unknown. It depends on the semantics of the _till_ sub-property. 
+The constraint 'member of df.till = 31/12/9999' means that the membership end date is _inapplicable_, hence the person is currently a member.
 
 ## Entity-Tags
 
@@ -1863,11 +1863,11 @@ _**Q267:** Any person who was a member of two guilds at overlapping timeframes_ 
 
 ![V1](Pictures/Q267-1.png)
 
-(Assuming that at least one of the _tf.till_ values is not _null_. See also note under Q11). Note the red constraint operator.
-
-Here is another option, but with a different meaning, as the _overlap_ function returns _null_ if either _since_ or _till_ of _df_ or of {1} is _null_:
-
 ![V1](Pictures/Q267-2.png)
+
+The following version covers cases where one of {3} or {4} is _null_:
+
+![V1](Pictures/Q267-3.png)
 
 ## Aggregators
 
