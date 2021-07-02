@@ -937,9 +937,14 @@ The order of the branches does not affect the evaluation result.
 
 _**Q8:** Any person born before 970 and passed away or whose father was born not later than January 1, 950_ (two versions)
 
-The person's death date is not _null_ (_applicable missing_ or _no information_), nor it is _inapplicable_.
-
 ![V1](Pictures/Q008-1.png)
+
+The person's death date is not _null_ (_applicable missing_ or _no information_), nor is it _inapplicable_.
+
+The 'not null' constraint is redundant. When the death date is _null_, 'deathDate ≠ 31/12/9999' is evaluated to _unknown_, and the constraint is not satisfied.
+
+The following version also requires that the death date is not a future date:
+
 
 ![V1](Pictures/Q008-2.png)
 
