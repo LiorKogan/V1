@@ -1343,6 +1343,8 @@ _**Q301:** Any pair of dragons (A, B) where A froze B for more than ten minutes,
 
 ![V1](Pictures/Q301-2.png)
 
+See also Q267v3.
+
 ## Latent Pattern-Entities
 
 ![V1](Pictures/BB11.png)
@@ -1801,7 +1803,7 @@ For any quantifier except _All_ - an EA-tag defined in a branch that affects the
 
 An EA-tag defined in a branch of a horizontal quantifier's branch that affects the quantifier's evaluation can only be referenced in that branch.
 
-For each entity/relationship/Cartesian product - if the same expression is used more than once - the same expression-tag will be assigned (see also Q311):
+For each entity/relationship/Cartesian product - if the same expression is used more than once - the same expression-tag will be assigned (see also Q267v3, Q311):
 
 ![V1](Pictures/Illegal-Tag01-1.png)
 
