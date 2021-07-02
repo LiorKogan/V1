@@ -158,8 +158,6 @@ A _property graph schema_ is defined by:
   * A set of pairs of entity-types for which the relationship-type is applicable (e.g., _owns_: {(_Person_, _Horse_), (_Person_, _Dragon_)}. When a pair is of the same type (e.g., (_Dragon_, _Dragon_)), loops can be allowed or disallowed
   * A set of properties - similar to entity-types' properties
   
-Null-valued [sub]properties indicate that the value is missing. "9999-12-31" date indicates that the date is inapplicable.
-
 A predefined property-less entity-type _Null_ serves two purposes:
 * Realizing unary edges (action-types) as edges (relationship-types): an action-type can be realized as a relationship-type that is applicable between some entity-type and the _Null_ entity-type. For example, a _sleeps_: {(_Dragon_, _Null_)} relationship-type realizes a sleep action-type for the _Dragon_ entity-type.
 * Realizing relationships to unknown or unimportant entities: sometimes a real entity is unknown or unimportant, but the existence of a relationship and the values of the relationship's properties - are important. For example, we may know that some dragons were owned in given timeframes, but we do not know or do not care who/what owned them. Still - we want to be able to store and query such information. _owns_: {(_Person_, _Dragon_), (_Guild_, _Dragon_), (_Null_, _Dragon_)} allows us to realize this.
@@ -493,11 +491,7 @@ _**Q190:** Any person who become a dragon owner at 1011 or later_ (two versions)
 
 _year_ is a function (see next section).
 
-All V1 constraint operators, except _is null_ and _not null_, are first evaluated using [Kleene's three-valued logic](https://www.jstor.org/stable/2267778) (3VL) and then mapped to a two-valued logic: the constraint is either _satisfied_ or _not satisfied_.
-
-- _null_ values are considered unknowns
-- Each constraint is evaluated to _true_, _false_, or _unknown_
-- If one or both operands are _null_ - the result is _unknown_. E.g., The result of 5 = _null_ is _unknown_; the result of _null_ = _null_ is _unknown_
+All V1 constraint operators, except _is null_ and _not null_, are first evaluated using [Kleene's three-valued logic](https://www.jstor.org/stable/2267778) (3VL) to _true_, _false_, or _unknown_, and then mapped to a two-valued logic: the constraint is either _satisfied_ or _not satisfied_.
 
 Each constraint operator, except _is null_ and _not null_, can be either blue or red.
 
@@ -517,7 +511,7 @@ When using _is null_ and _not null_, what _null_ values mean – either missing 
 
 See Q8, Q11, Q267
 
-All V1's operators and all functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _null_ values are usually considered unknowns (e.g., 1 + _null_ = _null_; _max_(5, _null_) = _null_). 
+All V1's operators and all functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _Null-valued_ [sub]properties are interpreted as _applicable missing_ or _no information_ (e.g., 1 + _null_ = _null_; max(5, _null_) = _null_). The magic value "9999-12-31"  indicatess that a date is _inapplicable_.
 
 ## Data Types, Operators, and Functions
 
