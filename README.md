@@ -553,8 +553,8 @@ _It_ denotes a interval of ordinal type _t_
 
 |Operator (_op_)                   | Operands and result type (result may be _null_ as well)
 |----------------------------------|-----------------------------
-| +, - (unary)                     | _op_ _int_ → _int_ <br> _op_ _float_ → _float_ <br> If the operand is _null_ - the result is _null_
-| +, - (binary)                    | _int_ _op_ _int_ → _int_ <br> _float_ _op_ _float_ → _float_ <br> _duration_ _op_ _duration_ → _duration_ <br> _duration_ + _date_ → _date_ <br> _date_ _op_ _duration_ → _date_ <br> _duration_ + _datetime_ → _datetime_ <br> _datetime_ op _duration_ → _datetime_ <br> If one or both operands are _null_ - the result is _null_
+| +, - (unary)                     | _op_ _int_ → _int_ <br> _op_ _float_ → _float_ <br> If the operand is NaN – the result is NaN. Otherwise, If it is _null_ – the result is _null_
+| +, - (binary)                    | _int_ _op_ _int_ → _int_ <br> _float_ _op_ _float_ → _float_ <br> _duration_ _op_ _duration_ → _duration_ <br> _duration_ + _date_ → _date_ <br> _date_ _op_ _duration_ → _date_ <br> _duration_ + _datetime_ → _datetime_ <br> _datetime_ op _duration_ → _datetime_ <br> If one or both operands are NaN – the result in NaN. Otherwise, if one or both operands are _null_ – the result is _null_
 | *                                | _int_ * _int_ → _int_ <br> _float_ * _float_ → _float_ <br> _float_ * _duration_ → _duration_ <br> _duration_ * _float_ → _duration_ <br> If one or both operands are _null_ - the result is _null_
 | /                                | _int_ / _int_ → _int_ (truncated towards zero) <br> _float_ / _float_ → _float_ <br> _duration_ / _float_ → _duration_ <br> If one or both operands are _null_ - the result is _null_
 | % (modulo)                       | _int_ % _int_ → _int_ (reminder has the same sign as the dividend) <br> If one or both operands are _null_ - the result is _null_
