@@ -191,7 +191,7 @@ Here are two examples:
   _P1_ defines the set of (sub)graphs where 
 
   - There is a vertex _p_ with a label _Person_
-  - There are _n_≥5 vertices _h₁..hₙ_, each with a label _Horse_
+  - There are _n_ ≥5 vertices _h₁..hₙ_, each with a label _Horse_
   - Each of _h₁..hₙ_ has a _color_ property, and its value is _white_
   - There are relationships from _p_ to _h₁..hₙ_, each with a label _owns_
 
