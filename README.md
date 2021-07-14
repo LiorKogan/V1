@@ -100,12 +100,12 @@ The following semantics is commonly applied:
 
 -	Graph vertices represent entities. An _entity_ is a physical, conceptual, virtual, or fictional object or 'thing' (e.g., a certain person, a certain guild, or a certain dragon). Any two objects or 'things' are distinguishable. A vertex's label denotes the _entity's type_ (e.g., _Person_, _Guild_, and _Dragon_).
 -	Graph edges represent relationships. A _relationship_ is an _association_ or an _interaction_ between a pair of entities. Each relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity; an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _sibling_ relationship between two _Person_ entities). Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label denotes the _relationship's type_ (e.g., _owns_ and _member of_).
--	Unary edges, if allowed, can represent _events_ related to a single entity (e.g., _sleeps_ event for a _Dragon_ entity). A unary edge's label denotes the _event's type_ (e.g., _sleeps_).
-- Properties and sub-properties represent _features_ (_characteristics_) and sub-features of entities (e.g., _name_ for a _Person_ entity), relationships (e.g., _timeframe_ for an _owns_ association), and events (e.g., _timeframe_ for a _sleeps_ event).
+-	Unary edges, if allowed, can represent _actions_ related to a single entity (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label denotes the _action's type_ (e.g., _sleeps_).
+- Properties and sub-properties represent _features_ (_characteristics_) and sub-features of entities (e.g., _name_ for a _Person_ entity), relationships (e.g., _timeframe_ for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action).
 - _Null-valued_ [sub]property indicates that a [sub]property value is not specified.
 
   Several different interpretations can be associated with a _null_ value. Following the terminology introduced by [Codd](https://dl.acm.org/doi/10.1145/16301.16303) and adopted by many authors, a _null_ value is either
-  - _Applicable missing_ – at present, a value is applicable (applies to the particular entity, relationship, or event) but unknown (whatever the reason, the graph does not have the value). E.g., the temperature 1000 years ago today; a phone number of a person who owns a phone but the number is unknown; an answer to a question – when the questionee refused to answer.
+  - _Applicable missing_ – at present, a value is applicable (applies to the particular entity, relationship, or action) but unknown (whatever the reason, the graph does not have the value). E.g., the temperature 1000 years ago today; a phone number of a person who owns a phone but the number is unknown; an answer to a question – when the questionee refused to answer.
   - _Inapplicable_ - at present, no value is applicable. E.g., the temperature tomorrow; previous citizenship when there is none; direct manager of the CEO; new hire's not-yet-assigned employee ID; a phone number of a person who does not own a phone; an answer to a question – when the question was not posed to the questionee.
 
   [Zaniolo](https://www.sciencedirect.com/science/article/pii/0022000084900801) proposed a third basic interpretation of _null_ values:
@@ -159,7 +159,7 @@ A _property graph schema_ is defined by:
   * A set of properties - similar to entity-types' properties
   
 A predefined property-less entity-type _Null_ serves two purposes:
-* Realizing unary edges (events) as edges (relationships): an event-type can be realized as a relationship-type that is applicable between some entity-type and the _Null_ entity-type. For example, a _sleeps_: {(_Dragon_, _Null_)} relationship-type realizes a _sleeps_ event-type for the _Dragon_ entity-type.
+* Realizing unary edges (actions) as edges (relationships): an action-type can be realized as a relationship-type that is applicable between some entity-type and the _Null_ entity-type. For example, a _sleeps_: {(_Dragon_, _Null_)} relationship-type realizes a _sleeps_ action-type for the _Dragon_ entity-type.
 * Realizing relationships to unknown or unimportant entities: sometimes a real entity is unknown or unimportant, but the existence of a relationship and the values of the relationship's properties - are important. For example, we may know that some dragons were owned in given timeframes, but we do not know or do not care who/what owned them. Still - we want to be able to store and query such information. _owns_: {(_Person_, _Dragon_), (_Guild_, _Dragon_), (_Null_, _Dragon_)} allows us to realize this.
 
 Each entity of type _Null_ is connected by exactly one relationship. A relationship between two _Null_ entities is not allowed.
@@ -1637,7 +1637,7 @@ A relationship type-tag defined right of an 'O' can only be referenced right of 
 
 ## Null Entities
 
-As described above, graph-entities of type _Null_ realize event-types and relationships to unknown/unimportant entities.
+As described above, graph-entities of type _Null_ realize action-types and relationships to unknown/unimportant entities.
 
 Since each graph-entity of type _Null_ is connected by exactly one relationship, there are additional implicit constraints on each typed entity of type _Null_ and on each untyped entity that explicitly allows type _Null_:
 * There is no relationship/path on its right (it is a terminal node), or there is no relationship/path on its left (it starts the pattern)
