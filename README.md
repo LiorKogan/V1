@@ -78,23 +78,23 @@ V1 is a declarative visual pattern query language for schema-based property grap
 
 ## The Property Graph Data Model
 
-A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) consists of a set of _vertices_ (nodes) _V_ and a set of _binary edges_ (_edges_) _E_. A graph may be _directed_ (i.e., _digraph_), where each edge consists of an ordered pair (_u,v_) ∈ _V²_, *undirected*, where each edge consists of an unordered pair {_u,v_} ∈ _V²_, or _mixed_ where both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed. Sometimes _unary edges_ (_half-edges_ - edges attached to only one vertex) are allowed as well.
+A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is a mathematical structure that consists of a set _V_ of _vertices_ (nodes) and a set _E_ of _edges_ (_arcs_). A graph may be _directed_ (i.e., _digraph_), where each edge consists of an ordered pair (_u,v_) ∈ _V²_, *undirected*, where each edge consists of an unordered pair {_u,v_} ∈ _V²_, or _mixed_ where both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed. Sometimes _unary edges_ (_half-edges_ - edges attached to only one vertex) are allowed as well.
 
 An _attributed graph_ is a graph where nodes and/or edges are annotated with attributes or sets of attributes (i.e., _multi-attributed graph_). Attributes can be nominal, ordinal, key-value pairs, and so on. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
-A _property graph_ (also called _labeled property graph_) is a multi-attributed pseudograph where
+A _property graph_ (also called _labeled property graph_, _LPG_) is a multi-attributed pseudograph where
 
-- Each vertex has a nominal attribute called _label_ (_vertex-labeled graph_), or, in some definitions, a set of labels (_vertex multi-labeled graph_)
-- Each edge has a nominal attribute called _label_ (_edge-labeled graph_)
+- Each vertex has a nominal attribute called _label_ (_vertex-labeled graph_), or, in some definitions, a set of labels (_vertex multi-labeled graph_). Each edge has a nominal attribute called _label_ (_edge-labeled graph_).
+- 
+  Both vertex-labels and edge-labels are usually strings - for example, _Person_ and _member of_. The set of vertex-labels and the set of edge-labels are usually disjoint.
+
 - Each vertex, edge, and unary edge has a set of key-value pair attributes called _properties_
 
-Labels are usually strings - for example, _Person_ and _member of_. The set of vertex-labels and the set of edge-labels are usually disjoint.
+  Each property has a distinct nominal name (key), usually a string, and a value of a certain data type (e.g., _string_, _integer_, _float_). For example: _weight_: _integer_ = 450.
 
-Each property has a distinct nominal name (key), usually a string, and a value of a certain data type (e.g., _string_, _integer_, _float_). For example: _weight_: _integer_ = 450.
+  Multivalued and composite properties are sometimes supported as well. A _Multivalued property_ (ordered or unordered, with or without duplicates) contains multiple values of the same data type. For example: _titles_: set(_string_) = {"Her Majesty", "Her Royal Highness"}. A _Composite property_ is composed of a set of sub-properties, each has a name and a value of a certain data type. For example: _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). 
 
-Multivalued and composite properties are sometimes supported as well. A _Multivalued property_ (ordered or unordered, with or without duplicates) contains multiple values of the same data type. For example: _titles_: set(_string_) = {"Her Majesty", "Her Royal Highness"}. A _Composite property_ is composed of a set of sub-properties, each has a name and a value of a certain data type. For example: _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). 
-
-_null_ is a valid value for any _nullable property_ and sub-property regardless of its data type.
+  _null_ is a valid value for any _nullable property_ and sub-property regardless of its data type.
 
 The following semantics is commonly applied:
 
