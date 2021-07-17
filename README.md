@@ -86,7 +86,7 @@ An _attributed graph_ is a graph where nodes and/or edges are annotated with att
 
 A _property graph_ (also called _labeled property graph_, _LPG_) is a multi-attributed mixed pseudograph where
 
-- Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex-labels and the set of edge-labels are usually disjoint.
+- Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex-labels and the set of edge-labels are disjoint.
 
 - Each vertex, each edge, and each unary edge has a set of attributes called _properties_. Each property is an ordered pair (_k_, _v_), where _k_ is the property's name, and _v_ is the property's value.
 
