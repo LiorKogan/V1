@@ -88,7 +88,7 @@ A _property graph_ (also called _labeled property graph_, _LPG_) is a multi-attr
 
 - Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex-labels and the set of edge-labels are disjoint.
 
-- Each vertex, each edge, and each unary edge has a set of attributes called _properties_. Each property is an ordered pair (_k_, _v_), where _k_ is the property's name, and _v_ is the property's value.
+- Each vertex, each edge, and each unary edge has a set of attributes called _properties_. Each property is an ordered pair - the property's name, and _v_ is the property's value.
 
 A _data element_ (i.e., _datum_) is an atomic unit of data. A _data model_ specifies the semantics and the structure of data elements and the relations between data elements. A data model consists of:
 
