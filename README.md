@@ -143,9 +143,9 @@ The property graph data model defines the following structure:
 The term _property graph_ was popularized by [Rodriguez](https://arxiv.org/abs/1006.2361) and [Neubauer](https://arxiv.org/abs/1004.1001), though other terms were used for similar data models. [Tsai and Fu's](https://ieeexplore.ieee.org/document/4310127) _attributed relational graph_ is a directed multigraph where both nodes and edges have labels, and each label defines a set of numerical or logical attributes. [Shao et al.](https://ieeexplore.ieee.org/abstract/document/7953521) used the term _Heterogeneous graph_ for the same construct. [Gallagher](http://www.aaai.org/Papers/Symposia/Fall/2006/FS-06-02/FS06-02-007.pdf) used the term _data graph_ to refer to graphs where vertices and/or edges may be typed and/or attributed. [Singh et al.](http://ieeexplore.ieee.org/abstract/document/4272051/) used the term _M*3_ (multi-modal, multi-relational, multifeatured) _network_ to refer to graphs with multiple entity-types, multiple relationship-types, and multiple descriptive features for nodes and edges. [Krause et al.](https://link.springer.com/chapter/10.1007/978-3-319-40530-8_10)  used the term _typed graph_ to refer to graphs with typed nodes, typed edges, and typed node properties.
 
 Various extensions were proposed, including:
-- Each vertex has a set of labels (_vertex multi-labeled graph_), and entities are _multi-typed_.
+- Each vertex has a set of labels (_vertex multi-labeled graph_), and entities are _multi-typed_
+- _Property hypergraphs_ (_n_-ary edges represent _n_-ary relationships)
 - Schema-level and data-level _metaproperties_ (properties of properties – e.g., units of measure, accuracy, reliability)
-- _Property hypergraphs_ (_n_-ary edges where _n_ ≥ 2)
 
 ## The Property Graph Schema
 
