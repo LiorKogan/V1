@@ -146,7 +146,7 @@ The term _property graph_ was popularized by [Rodriguez](https://arxiv.org/abs/1
 Various extensions were proposed, including:
 - Each vertex has a set of labels (_vertex multi-labeled graph_), and entities are _multi-typed_.
 - Schema-level and data-level _metaproperties_ (properties of properties – e.g., units of measure, accuracy, reliability)
-- _Property hypergraphs_ (_n_-ary edges where _n_≥2)
+- _Property hypergraphs_ (_n_-ary edges where _n_ ≥ 2)
 
 ## The Property Graph Schema
 
