@@ -120,7 +120,7 @@ The _property graph data model_ defines the following concepts:
 
   Though _null_ value semantics is not usually defined as part of the data model, the semantics of operators and functions is well-defined for _null_ values. E.g., what is the result of (yesterday's date < person's death date) when the death date is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable_ values.
   
-- Each entity, each relationship, and each action has a single type (string). Entities of the same type are semantically homogeneous. The same is true also for relationships and for actions. Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Many times types are defined in accordance with the following guidelines:
+- Each entity, each relationship, and each action has a single type (string). Entities of the same type are semantically homogeneous. The same is true also for relationships and for actions. Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Many times types are assigned in accordance with the following guidelines:
   - Repetition of existence: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
   - Repetition of features: entities of the same type have features of the same types. The same is true also for relationships and for actions.
   - Repetitions of actions: entities of the same type 'have' actions of the same types.
