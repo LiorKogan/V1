@@ -78,7 +78,7 @@ V1 is a declarative visual pattern query language for schema-based property grap
 
 ## The Property Graph Data Model
 
-The term _property graph_ refers both to a mathematical structure and to a data model; both are described below.
+The term _property graph_ refers to both a mathematical structure and a data model; both are described below.
 
 A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is a mathematical structure that consists of a set _V_ of _vertices_ (nodes) and a set _E_ of _edges_ (_arcs_). A graph may be _directed_ (i.e., _digraph_), where each edge consists of an ordered pair (_u,v_) ∈ _V²_, *undirected*, where each edge consists of an unordered pair {_u,v_} ∈ _V²_, or _mixed_ where both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed. Sometimes _unary edges_ (_half-edges_ - edges attached to only one vertex) are allowed as well.
 
