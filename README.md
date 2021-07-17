@@ -123,8 +123,9 @@ The _property graph data model_ defines the following concepts:
 - Each entity, each relationship, and each action has a single non-distinct type (string). Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Usually, type assignment is in accordance with the following guidelines:
   - Repetition of existence: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
   - Repetition of features: entities of the same type have features of the same types. The same is true also for relationships and for actions.
-  - Repetition of relationships: pairs of entities of the same pair of entity-types have relationships of the same types.
   - Repetitions of actions: entities of the same type 'have' actions of the same types.
+  - Repetition of relationships: pairs of entities of the same pair of entity-types have relationships of the same types.
+  - Type consistency: an entity's type, a relationship's type, and an action's type do not change over time. 
 
   Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines features. Definitions may be part of a property graph schema (next section).
 
