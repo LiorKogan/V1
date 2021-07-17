@@ -134,7 +134,7 @@ The _property graph data model_ defines the following concepts:
 
 The property graph data model defines the following structure:
 
-  The data is organized in a single property graph.
+  - The data is organized in a single property graph.
   
   - Graph vertices represent entities. A vertex's label denotes the _entity's type_ (e.g., _Person_, _Guild_, or _Dragon_). 
   - Graph edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label denotes the _relationship's type_ (e.g., _owns_ or _member of_).
