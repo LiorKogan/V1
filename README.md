@@ -218,6 +218,8 @@ Here are two examples:
   - Each of _h₁..hₙ_ has a _color_ property, and its value is _white_
   - There are relationships from _p_ to _h₁..hₙ_, each with a label _owns_
 
+  Note that the pattern's description ignores temporal aspects. Maybe a person owned a horse, owns it, or will own it. Assuming that the owns relationship has a timeframe property, a more accurate description would be _Any person who has owns relationships with at least five white horses_. Maybe we are looking for _Any person who currently owns at least five white horses_ or for _Any person who at some timepoint owned at least five white horses_. If, for example, a horse's color may change over time, or if a horse may turn into a unicorn, we may want to rephrase the pattern.
+
 * _P2: Any person whose date of birth is between January 1, 970 and January 1, 980, who owns a white Horse, who owns a dragon whose name starts with 'M' and over the last month froze at least three dragons belonging to members of the Masons Guild_
 
   _P2_ defines the set of (sub)graphs where 
