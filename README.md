@@ -86,19 +86,11 @@ An _attributed graph_ is a graph where nodes and/or edges are annotated with att
 
 A _property graph_ (also called _labeled property graph_, _LPG_) is a multi-attributed mixed pseudograph where
 
-- Each vertex has a nominal attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has a nominal attribute called _label_ (_edge-labeled graph_).
-- 
-  Both vertex-labels and edge-labels are strings - for example, _Person_ and _member of_. The set of vertex-labels and the set of edge-labels are usually disjoint.
+- Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex-labels and the set of edge-labels are usually disjoint.
 
-- Each vertex, edge, and unary edge has a set of attributes called _properties_
+- Each vertex, each edge, and each unary edge has a set of attributes called _properties_. Each property is an ordered pair (_k_, _v_), where _k_ is the property's name, and _v_ is the property's value.
 
-  Each property is a key-value pair: a distinct nominal name (key), usually a string, and a value of a certain data type (e.g., _string_, _integer_, _float_). For example: _weight_: _integer_ = 450.
-
-  Multivalued and composite properties are sometimes supported as well. A _Multivalued property_ can have multiple values of the same data type. For example: _titles_: set(_string_) = {"Her Majesty", "Her Royal Highness"}. The values may be ordered or unordered, with or without duplicates, and with or without _null_ values. A _Composite property_ is composed of a set of sub-properties, each has a name and a value of a certain data type. For example: _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). 
-
-  _null_ is a valid value for any _nullable property_ and sub-property.
-
-A _data element_ is an atomic unit of data. A _data model_ specifies the semantics and the structure of data elements and the relations between data elements. A data model consists of:
+A _data element_ (i.e., _datum_) is an atomic unit of data. A _data model_ specifies the semantics and the structure of data elements and the relations between data elements. A data model consists of:
 
 - A conceptualization: a set of _concepts_ (e.g., _entity_, _relationship_, _property_) used for defining data elements and their relations. The semantics of the concepts could be described, for example, using ontological concepts (e.g., _particular_, _type_, _universal_, _composition_, _relation_, _action_, _quality_).
 - A representation: a _structure_ (e.g., mathematical, diagrammatic) used for representing data elements and their relations.
@@ -108,7 +100,11 @@ The _property graph data model_ defines the following concepts:
 -	An _entity_ is a physical, conceptual, virtual, or fictional particular (e.g., a certain person, a certain guild, or a certain dragon). Any two entities are distinguishable.
 -	A _relationship_ is an _association_ or an _interaction_ between several of entities. A _binary relationship_ is a relationship between a pair of entities or between an entity and itself. Each binary relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity; an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _sibling_ relationship between two _Person_ entities).
 -	An _action_ is an action _of_ an entity or an action _on_ an entity, and no other [known or relevant] entities are concerned  (e.g., _sleeps_ action for a _Dragon_ entity).
-- Each Entity, each relationship, and each action has a set of _features_ (_characteristics_) (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, and _timeframe_ for a _sleeps_ action). Each feature has a distinct name and either a value or a set of sub-features (e.g., a _name_ feature may have a  _first name_ and a _last name_ sub-features). 
+- Each Entity, each relationship, and each action has a set of _features_ (_characteristics_). Each feature has a distinct name (string) (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, and _timeframe_ for a _sleeps_ action), and a value of a certain data type (e.g., _string_, _integer_, _real_), for example, _weight_: _integer_ = 450.
+
+  A _multivalued feature_ is a feature where the value is a _set_, a _bag_, or a _list_ of values of the same data type. For example, titles: _set_(_string_) = {“Her Majesty”, “Her Royal Highness”}.
+  
+  A _composite feature_ is a feature where the value is a set of _sub-features_, each has a name and a value of a certain data type. For example, _name_ = (_first_: _string_ = “Brandon”, _last_: _string_ = “Stark”).
 
   _Null-valued_ [sub]feature indicates that a [sub]feature value is not specified.
 
@@ -124,7 +120,7 @@ The _property graph data model_ defines the following concepts:
 
   Though _null_ value semantics is not usually defined as part of the data model, the semantics of operators and functions is well-defined for _null_ values. E.g., what is the result of (yesterday's date < person's death date) when the death date is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable_ values.
   
-- Each entity, each relationship, and each action has a single type. Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Usually, type assignment is in accordance with the following guidelines:
+- Each entity, each relationship, and each action has a single non-distinct type (string). Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Usually, type assignment is in accordance with the following guidelines:
   - Repetition of existence: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
   - Repetition of features: entities of the same type have features of the same types. The same is true also for relationships and for actions.
   - Repetition of relationships: pairs of entities of the same pair of entity-types have relationships of the same types.
