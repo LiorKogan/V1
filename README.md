@@ -80,7 +80,7 @@ V1 is a declarative visual pattern query language for schema-based property grap
 
 The term _property graph_ refers to both a mathematical structure and a data model; both are described below.
 
-A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is a mathematical structure that consists of a set _V_ of _vertices_ (nodes) and a set _E_ of _edges_ (_arcs_). A graph may be _directed_ (i.e., _digraph_), where each edge consists of an ordered pair (_u,v_) ∈ _V²_, *undirected*, where each edge consists of an unordered pair {_u,v_} ∈ _V²_, or _mixed_ where both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed. Sometimes _unary edges_ (_half-edges_ - edges attached to only one vertex) are allowed as well.
+A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is a mathematical structure consisting of a set _V_ of _vertices_ (nodes) and a set _E_ of _edges_ (_arcs_). A graph may be _directed_ (i.e., _digraph_), where each edge consists of an ordered pair (_u,v_) ∈ _V²_, *undirected*, where each edge consists of an unordered pair {_u,v_} ∈ _V²_, or _mixed_ where both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed. Sometimes _unary edges_ (_half-edges_ - edges attached to only one vertex) are allowed as well.
 
 An _attributed graph_ is a graph where nodes and/or edges are annotated with attributes or sets of attributes (i.e., _multi-attributed graph_). Attributes can be nominal, ordinal, key-value pairs, and so on. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
@@ -150,7 +150,7 @@ A _schema_ is a model for describing the structure of information in a certain d
 
 The property graph data model is _schema-optional_. Each property graph may be:
 * _Schema-free_ (_schemaless_, _schema-independent_). A schema-free property graph neither defines nor enforces entity-types or relationships-types; each vertex and edge, regardless of its label, may have properties with any name and of any data type.
-* _Schema-based_ (_schema-strict_, _schema-driven_, _schema-full_, _schema-dependent_). A schema-based property graph is a property graph that conforms to a given schema.
+* _Schema-based_ (_schema-strict_, _schema-driven_, _schema-full_, _schema-dependent_). A schema-based property graph is a property graph conforming to a given schema.
 * _Schema-mixed_ (_schema-hybrid_), where a schema is defined, but additional elements (e.g., additional properties) may be used.
 
 It is much easier to define patterns when the information is presented consistently. For example, to match patterns such as _Any person who owns a white horse_, one would first:
@@ -318,7 +318,7 @@ and of the following bidirectional relationship-type (and its properties):
 
 _Person_'s name is a composite property. The _date_, _datetime_, _dateframe_, and _datetimeframe_ data types are defined in [Data Types, Operators, and Functions](#data-types-operators-and-functions).
 
-The engineers then represented the whole known history using a property graph that conforms to this schema.
+The engineers then represented the whole known history using a property graph conforming to this schema.
 
 ## V1 Basics
 
