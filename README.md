@@ -1045,7 +1045,7 @@ Without the order constraint, any reported pair of dragons would be reported twi
 
 Property graph data models usually require that each entity and each relationship would be *uniquely identifiable*. To support order constraints, V1 further requires that graph-entities (except _Null_ entities) would also be _ordered_. 
 
-Order constraints are depicted in red ('<X' or '≤X') where X is another entity-tag. Several nonidenticality or order constraints may be defined for the same pattern-entity, e.g., '<A,<B', '≠A,<C' (see Q83).
+Order constraints are depicted in red ('<X' or '≤X'), where X is another entity-tag. Several nonidenticality or order constraints may be defined for the same pattern-entity, e.g., '<A,<B', '≠A,<C' (see Q83).
 
 See also Q49, Q88, Q115v1, Q272, Q337, Q342, Q347, and Q350.
 
