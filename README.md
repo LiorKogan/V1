@@ -72,7 +72,7 @@ The _property graph_ is an increasingly popular data model. Pattern construction
 
 Many query posers are professionals (e.g., researchers, analysts, or investigators) who construct patterns as part of their daily work (e.g., investigative analytics). Such domain experts would like to construct patterns with minimal effort, minimal trial and error, and in a manner that is coherent with the way they think. The ability to express patterns in a way that is aligned with their mental processes is crucial to the flow of their work and to the quality of the insights they can draw. Many of them will not use textual property graph query languages (e.g., [Gremlin](https://arxiv.org/abs/1508.03843), [GSQL](https://arxiv.org/abs/1901.08248), [Cypher](https://dl.acm.org/citation.cfm?id=3190657), [PGQL](https://dl.acm.org/citation.cfm?id=2960421), [G-CORE](https://arxiv.org/abs/1712.01550), and the proposed [GQL](https://gql.today/)) either because it can be too hard for someone with little or no programming or scripting skills, or because it requires them to spend too much time on the technicalities and distracts them from their line of inquiry. As a result, many professionals are forced to use only a predefined set of query templates or work in concert with technical experts. Both solutions are far from satisfying. 
 
-Since the capabilities of the human visual system with respect to pattern perception are remarkable, it is a matter of course that query patterns were to be expressed visually. Indeed, five of the abovementioned languages use 'ASCII-art syntax' for expressing topological constraints. Needless to say, this type of 'visualization' is quite limited. While the use of ASCII-art declined in the 1990s in favor of graphical images, query languages began to adopt ASCII-art only recently. Visual (graphical, diagrammatic) query languages have the potential to be much more 'user-friendly' than their textual counterparts in the sense that patterns may be constructed and understood much more quickly and with much less mental effort. Given a schema, interactive tools can allow query posers to construct valid patterns with minimal typing. A long-standing challenge is to design a visual query language that is generic, has rich expressive power, and is highly receptive and productive. V1 attempts to answer this challenge.
+Since the capabilities of the human visual system with respect to pattern perception are remarkable, it is a matter of course that query patterns were to be expressed visually. Indeed, five of the abovementioned languages use 'ASCII-art syntax' for expressing topological constraints. Needless to say, this type of 'visualization' is quite limited. While the use of ASCII-art declined during the 1990s in favor of graphical images, query languages began to adopt ASCII-art only recently. Visual (graphical, diagrammatic) query languages have the potential to be much more 'user-friendly' than their textual counterparts in the sense that patterns may be constructed and understood much more quickly and with much less mental effort. Given a schema, interactive tools can allow query posers to construct valid patterns with minimal typing. A long-standing challenge is to design a visual query language that is generic, has rich expressive power, and is highly receptive and productive. V1 attempts to answer this challenge.
 
 V1 is a declarative visual pattern query language for schema-based property graphs. V1 supports property graphs with mixed (both directed and undirected) edges and unary edges, with multivalued and composite properties, and with _null_ property values. V1 supports temporal data types, operators, and functions and can be extended to support additional data types, operators, and functions (one spatiotemporal model is presented). V1 is generic, concise, has rich expressive power, and is highly receptive and productive.
 
@@ -135,7 +135,7 @@ The property graph data model defines the following structure:
   - The graph's vertices represent entities. A vertex's label denotes the _entity's type_ (e.g., _Person_, _Guild_, or _Dragon_). 
   - The graph's edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label denotes the _relationship's type_ (e.g., _owns_ or _member of_).
   - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label denotes the _action's type_ (e.g., _sleeps_).
-  - Properties and sub-properties represent_features and sub-features of entities (e.g., _name_ for a _Person_ entity), relationships (e.g., _timeframe_ for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action).
+  - Properties and sub-properties represent features and sub-features of entities (e.g., _name_ for a _Person_ entity), relationships (e.g., _timeframe_ for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action).
 
 The term _property graph_ was introduced by [Rodriguez](https://arxiv.org/abs/1006.2361) and [Neubauer](https://arxiv.org/abs/1004.1001), though other terms were used to describe similar data models. [Tsai and Fu's](https://ieeexplore.ieee.org/document/4310127) _attributed relational graph_ is a directed multigraph where both nodes and edges have labels, and each label defines a set of numerical or logical attributes. [Shao et al.](https://ieeexplore.ieee.org/abstract/document/7953521) used the term _Heterogeneous graph_ for the same construct. [Gallagher](http://www.aaai.org/Papers/Symposia/Fall/2006/FS-06-02/FS06-02-007.pdf) used the term _data graph_ to refer to graphs where vertices and/or edges may be typed and/or attributed. [Singh et al.](http://ieeexplore.ieee.org/abstract/document/4272051/) used the term _M*3_ (multi-modal, multi-relational, multifeatured) _network_ to refer to graphs with multiple entity-types, multiple relationship-types, and multiple descriptive features for nodes and edges. [Krause et al.](https://link.springer.com/chapter/10.1007/978-3-319-40530-8_10)  used the term _typed graph_ to refer to graphs with typed nodes, typed edges, and typed node properties.
 
@@ -3506,7 +3506,7 @@ _**Q338:** Any person who owns at least ten horses, at least half of which are o
 
 ![V1](Pictures/Agg-A2-Extended.png)
 
-_**Q330:** Any day in which more than five horse-ownerships started_
+_**Q330:** Any day during which more than five horse-ownerships started_
 
 ![V1](Pictures/Q330.png)
 
@@ -3518,7 +3518,7 @@ _**Q270:** Any person A and A's horses of the colors for which there are more th
 
 ![V1](Pictures/Agg-A3-Extended.png)
 
-_**Q331:** Any day in which the horse ownerships that started lasted on average for at least ten years_
+_**Q331:** Any day during which the horse ownerships that started lasted on average for at least ten years_
 
 ![V1](Pictures/Q331.png)
 
@@ -3694,11 +3694,11 @@ _**Q222:** Any person A and A's horses of the three colors for which A's average
 
 ![V1](Pictures/Q222.png)
 
-_**Q216:** Any dragon that Balerion froze in the three 30-day timeframes in which it froze dragons the largest number of times_
+_**Q216:** Any dragon that Balerion froze during the three 30-day timeframes during which it froze dragons the largest number of times_
 
 ![V1](Pictures/Q216.png)
 
-_**Q373:** The three 30-day timeframes in which dragons were frozen the largest number of times_
+_**Q373:** The three 30-day timeframes during which dragons were frozen the largest number of times_
 
 ![V1](Pictures/Q373.png)
 
@@ -3843,7 +3843,7 @@ _**Q327:** Any person who at each day of at least ten consecutive days - owned a
 
 ![V1](Pictures/Q327.png)
 
-_**Q318:** Any dragon that Balerion froze/fired at in the three 30-day timeframes in which it froze/fired at dragons the largest number of times_
+_**Q318:** Any dragon that Balerion froze/fired at during the three 30-day timeframes during which it froze/fired at dragons the largest number of times_
 
 ![V1](Pictures/Q318.png)
 
@@ -3851,7 +3851,7 @@ Note that {1} and {2} are defined right of an 'O', hence evaluated to an empty s
 
 {3} is a property of A, but, being an aggregated multivalued expression, must be defined right of the aggregator.
 
-_**Q371:** Any dragon that Balerion froze/fired at in the three **non-overlapping** 30-day timeframes in which it froze/fired at dragons the largest number of times_
+_**Q371:** Any dragon that Balerion froze/fired at during the three **non-overlapping** 30-day timeframes during which it froze/fired at dragons the largest number of times_
 
 ![V1](Pictures/Q371.png)
 
@@ -3907,7 +3907,7 @@ _**G5:** Any dragon observed within 5 Km from Dragonmont Peak in at least five s
 
 ![V1](Pictures/G005.png)
 
-_**G6:** Any week in which at least five dragons were observed within 5 Km from Dragonmont Peak_
+_**G6:** Any week during which at least five dragons were observed within 5 Km from Dragonmont Peak_
 
 ![V1](Pictures/G006.png)
 
