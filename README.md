@@ -80,11 +80,11 @@ V1 is a declarative visual pattern query language for schema-based property grap
 
 The term _property graph_ refers to both a mathematical structure and a data model; both are described below.
 
-A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is a mathematical structure consisting of a set _V_ of _vertices_ (nodes) and a set _E_ of _edges_ (_arcs_). A graph may be _directed_ (i.e., _digraph_), where each edge consists of an ordered pair (_u,v_) ∈ _V²_, *undirected*, where each edge consists of an unordered pair {_u,v_} ∈ _V²_, or _mixed_ where both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed. Sometimes _unary edges_ (_half-edges_ - edges attached to only one vertex) are allowed as well.
+A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is a mathematical structure consisting of a set _V_ of _vertices_ (nodes) and a set _E_ of _edges_ (_arcs_). A graph may be _directed_ (i.e., _digraph_), in which each edge consists of an ordered pair (_u,v_) ∈ _V²_, *undirected*, in which each edge consists of an unordered pair {_u,v_} ∈ _V²_, or _mixed_ in which both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed. Sometimes _unary edges_ (_half-edges_ - edges attached to only one vertex) are allowed as well.
 
-An _attributed graph_ is a graph where nodes and/or edges are annotated with attributes or sets of attributes (i.e., _multi-attributed graph_). Attributes can be nominal, ordinal, key-value pairs, and so on. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
+An _attributed graph_ is a graph in which nodes and/or edges are annotated with attributes or sets of attributes (i.e., _multi-attributed graph_). Attributes can be nominal, ordinal, key-value pairs, and so on. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
-A _property graph_ (also called _labeled property graph_, _LPG_) is a multi-attributed mixed pseudograph where:
+A _property graph_ (also called _labeled property graph_, _LPG_) is a multi-attributed mixed pseudograph in which:
 
 - Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex-labels and the set of edge-labels are disjoint.
 
@@ -99,12 +99,12 @@ The _property graph data model_ defines the following concepts:
 
 -	An _entity_ is a physical, conceptual, virtual, or fictional particular (e.g., a certain person, a certain guild, or a certain dragon). Any two entities are distinguishable.
 -	A _relationship_ is an _association_ or an _interaction_ between several of entities. A _binary relationship_ is a relationship between a pair of entities or between an entity and itself. Each binary relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity; an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _sibling_ relationship between two _Person_ entities).
--	An _action_ is an action _of_ an entity or an action _on_ an entity, where no other [known or relevant] entities are concerned  (e.g., _sleeps_ action for a _Dragon_ entity).
+-	An _action_ is an action _of_ an entity or an action _on_ an entity, and no other [known or relevant] entities are concerned  (e.g., _sleeps_ action for a _Dragon_ entity).
 - Each Entity, each relationship, and each action has a set of _features_ (_characteristics_). Each feature has a distinct name (string) (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, and _timeframe_ for a _sleeps_ action), and a value of a certain data type (e.g., _string_, _integer_, _real_), for example, _weight_: _integer_ = 450.
 
-  A _multivalued feature_ is a feature where the value is a _set_, a _bag_, or a _list_ of values of the same data type. For example, titles: _set_(_string_) = {“Her Majesty”, “Her Royal Highness”}.
+  A _multivalued feature_ is a feature where the value's type is a _set_, a _bag_, or a _list_ of values of the same data type. For example, titles: _set_(_string_) = {“Her Majesty”, “Her Royal Highness”}.
   
-  A _composite feature_ is a feature where the value is a set of _sub-features_, each has a name and a value of a certain data type. For example, _name_ = (_first_: _string_ = “Brandon”, _last_: _string_ = “Stark”).
+  A _composite feature_ is a feature where the value's type is a set of _sub-features_, each has a name and a value of a certain data type. For example, _name_ = (_first_: _string_ = “Brandon”, _last_: _string_ = “Stark”).
 
   _Null-valued_ [sub]feature indicates that a [sub]feature value is not specified.
 
@@ -137,7 +137,7 @@ The property graph data model defines the following structure:
   - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label denotes the _action's type_ (e.g., _sleeps_).
   - Properties and sub-properties represent features and sub-features of entities (e.g., _name_ for a _Person_ entity), relationships (e.g., _timeframe_ for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action).
 
-The term _property graph_ was introduced by [Rodriguez](https://arxiv.org/abs/1006.2361) and [Neubauer](https://arxiv.org/abs/1004.1001), though other terms were used to describe similar data models. [Tsai and Fu's](https://ieeexplore.ieee.org/document/4310127) _attributed relational graph_ is a directed multigraph where both nodes and edges have labels, and each label defines a set of numerical or logical attributes. [Shao et al.](https://ieeexplore.ieee.org/abstract/document/7953521) used the term _Heterogeneous graph_ for the same construct. [Gallagher](http://www.aaai.org/Papers/Symposia/Fall/2006/FS-06-02/FS06-02-007.pdf) used the term _data graph_ to refer to graphs where vertices and/or edges may be typed and/or attributed. [Singh et al.](http://ieeexplore.ieee.org/abstract/document/4272051/) used the term _M*3_ (multi-modal, multi-relational, multifeatured) _network_ to refer to graphs with multiple entity-types, multiple relationship-types, and multiple descriptive features for nodes and edges. [Krause et al.](https://link.springer.com/chapter/10.1007/978-3-319-40530-8_10)  used the term _typed graph_ to refer to graphs with typed nodes, typed edges, and typed node properties.
+The term _property graph_ was introduced by [Rodriguez](https://arxiv.org/abs/1006.2361) and [Neubauer](https://arxiv.org/abs/1004.1001), though other terms were used to describe similar data models. [Tsai and Fu's](https://ieeexplore.ieee.org/document/4310127) _attributed relational graph_ is a directed multigraph in which both nodes and edges have labels, and each label defines a set of numerical or logical attributes. [Shao et al.](https://ieeexplore.ieee.org/abstract/document/7953521) used the term _Heterogeneous graph_ for the same construct. [Gallagher](http://www.aaai.org/Papers/Symposia/Fall/2006/FS-06-02/FS06-02-007.pdf) used the term _data graph_ to refer to graphs in which vertices and/or edges may be typed and/or attributed. [Singh et al.](http://ieeexplore.ieee.org/abstract/document/4272051/) used the term _M*3_ (multi-modal, multi-relational, multifeatured) _network_ to refer to graphs with multiple entity-types, multiple relationship-types, and multiple descriptive features for nodes and edges. [Krause et al.](https://link.springer.com/chapter/10.1007/978-3-319-40530-8_10)  used the term _typed graph_ to refer to graphs with typed nodes, typed edges, and typed node properties.
 
 Various extensions were proposed, including:
 - Each vertex has a set of labels (_vertex multi-labeled graph_), and entities are _multi-typed_
@@ -212,7 +212,7 @@ Here are two examples:
 
 * _P1: Any person who owns at least five white horses_ (See Q101)
 
-  _P1_ defines the set of (sub)graphs where 
+  _P1_ defines the set of (sub)graphs in which 
 
   - There is a vertex _p_ with a label _Person_
   - There are _n_ ≥ 5 vertices _h₁..hₙ_, each with a label _Horse_
@@ -223,7 +223,7 @@ Here are two examples:
 
 * _P2: Any person whose date of birth is between January 1, 970 and January 1, 980, who owns a white Horse, who owns a dragon whose name starts with 'M' and over the last month froze at least three dragons belonging to members of the Masons Guild_
 
-  _P2_ defines the set of (sub)graphs where 
+  _P2_ defines the set of (sub)graphs in which 
 
   - There is a vertex _p_ with a label _Person_
   - _p_ has a _birthDate_ property of type _date_, and its value is between January 1, 970 and January 1, 980
@@ -343,7 +343,7 @@ Yellow, blue, and red rectangles represent _concrete_, _typed_ and _untyped_ ent
 Two consecutive rectangles can be connected with:
 
 * A horizontal **black arrow**, representing a _directional typed relationship_,
-* A horizontal **black line**, representing either a _bidirectional typed relationship_ or a directional typed relationship where either direction is acceptable,
+* A horizontal **black line**, representing either a _bidirectional typed relationship_ or a directional typed relationship for which either direction is acceptable,
 * A horizontal **red arrow**, representing an _untyped directional relationship_ (See [Untyped Relationships](#untyped-relationships)),
 * A horizontal **red line**, representing either an _untyped bidirectional relationship_ or an _untyped directional relationship_ where either direction is acceptable, or
 * A horizontal **blue line**, representing a _pattern-path_ (See [Paths](#paths))
@@ -786,7 +786,7 @@ Other functions:
 | _date_(year, month, day) → _date_                  | Construct date using three integers (see Q353) <br> _null_ when at least one value is _null_
 | _min_(_t_, _t_, ...) → _t_ <br> _max_(_t_, _t_, ...) → _t_ | One or more values of the same ordinal type <br> _null_ when at least one value is _null_ <br> _min_({_t_, _t_, …})and _max_({_t_, _t_, …}) ignore _null_ values (see Q317)
 
-Implementations may support _[opaque data types](https://en.wikipedia.org/wiki/Opaque_data_type)_ - data types where the internal data representation is not exposed. For each opaque data type - a set of functions and operators may be defined (see _location_ data type in [Application: Spatiotemporality](#application-spatiotemporality)).
+Implementations may support _[opaque data types](https://en.wikipedia.org/wiki/Opaque_data_type)_ - data types for which the internal data representation is not exposed. For each opaque data type - a set of functions and operators may be defined (see _location_ data type in [Application: Spatiotemporality](#application-spatiotemporality)).
 
 ## Quantifiers
 
