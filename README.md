@@ -157,7 +157,7 @@ Various extensions were proposed, including:
 - Each vertex has a set of labels (_vertex multi-labeled graph_), and entities are _multi-typed_
 - [_Property hypergraphs_](https://link.springer.com/chapter/10.1007%2F978-3-319-26148-5_21) (_hyperedges_ represent _n_-ary relationships)
 - Schema-level and data-level _metaproperties_ (properties of properties – e.g., units of measure, accuracy, reliability)
-- [EPGM – Extended Property Graph Model](https://dbs.uni-leipzig.de/file/EPGM.pdf), where logical graphs consist of subsets of a shared set of vertices and a shared set of edges. In addition, logical graphs have types and properties.
+- [EPGM – Extended Property Graph Model](https://dbs.uni-leipzig.de/file/EPGM.pdf), in which logical graphs consist of subsets of a shared set of vertices and a shared set of edges. In addition, logical graphs have types and properties.
 
 ## The Property Graph Schema
 
