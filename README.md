@@ -105,8 +105,6 @@ The _property graph data model_ defines the following **concepts**:
 
 -	A (_binary_) _relationship_ is an _association_ or an _interaction_ between a pair of entities or between an entity and itself. Each relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity; an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _sibling_ relationship between two _Person_ entities).
 
-   _n_-ary relationships, where _n_ > 2, are not supported, but this poses no practical limitation. Consider, for example, a ternary relationship, where Person _A_ sells Horse _H_ to Person _B_. Instead, one can reframe this data as a _Sale_ entity _S_, a _seller_ relationship from _S_ to _A_, a _buyer_ relationship from _S_ to _B_, and a _sold_ relationship from _S_ to _H_.
-
 -	An _action_ is an action _of_ an entity or an action _on_ an entity, and no other [known or relevant] entities are concerned  (e.g., _sleeps_ action for a _Dragon_ entity).
 
 - Each Entity, each relationship, and each action has a set of _features_ (_characteristics_). Each feature has a distinct name (string) (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, and _timeframe_ for a _sleeps_ action), and a value of a certain data type (e.g., _string_, _integer_, _real_), for example, _weight_: _integer_ = 450.
@@ -135,6 +133,8 @@ The _property graph data model_ defines the following **concepts**:
   - Repetitions of actions: entities of the same type 'have' actions of the same types.
   - Repetition of relationships: pairs of entities of the same pair of entity-types have relationships of the same types.
   - Type consistency: an entity's type, a relationship's type, and an action's type do not change over time. 
+
+  _n_-ary relationships, where _n_ > 2, are not supported, but this poses no practical limitation. Consider, for example, a ternary relationship, where Person _A_ sells Horse _H_ to Person _B_. Instead, one can reframe this data as a _Sale_ entity _S_, a _seller_ relationship from _S_ to _A_, a _buyer_ relationship from _S_ to _B_, and a _sold_ relationship from _S_ to _H_.
 
   Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines features. Definitions may be part of a property graph schema (next section).
 
