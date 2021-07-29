@@ -107,13 +107,26 @@ The _property graph data model_ defines the following **concepts**:
 
 -	An _action_ is an action _of_ an entity or an action _on_ an entity, and no other [known or relevant] entities are concerned  (e.g., _sleeps_ action for a _Dragon_ entity).
 
-- Each Entity, each relationship, and each action has a set of _features_ (_characteristics_). Each feature has a distinct name (string) (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, and _timeframe_ for a _sleeps_ action), and a value of a certain data type (e.g., _string_, _integer_, _real_), for example, _weight_: _integer_ = 450.
+- Each Entity, each relationship, and each action has a set of _features_ (_characteristics_). Each feature has a distinct name (string) (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action), and a value, for example, _weight_= 450.
+
+The property graph data model defines the following **structure**:
+
+  - The data is organized in a single property graph.
+  - The graph's vertices represent entities. A vertex's label denotes the _entity's type_ (e.g., _Person_, _Guild_, or _Dragon_). 
+  - The graph's edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label denotes the _relationship's type_ (e.g., _owns_ or _member of_).
+  - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label denotes the _action's type_ (e.g., _sleeps_).
+  - Properties and sub-properties represent features and sub-features of entities (e.g., _name_ for a _Person_ entity), relationships (e.g., _timeframe_ for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action).
+  - Each property value can be represented in one of the supported _data types_. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
+
+  The model defines a set of _basic data types_ (e.g., _string_, _integer_, _float_).
+  
+  A _basic feature_ is a feature where the value's data type is one of the basic data types. 
 
   A _multivalued feature_ is a feature where the value's type is a _set_, a _bag_, or a _list_ of values of the same data type. For example, titles: _set_(_string_) = {“Her Majesty”, “Her Royal Highness”}.
   
   A _composite feature_ is a feature where the value's type is a set of _sub-features_, each has a name and a value of a certain data type. For example, _name_ = (_first_: _string_ = “Brandon”, _last_: _string_ = “Stark”).
 
-  _Null-valued_ [sub]feature indicates that a [sub]feature value is not specified.
+  _null_ is a valid value for any _nullable_ property and sub-property, regardless of its data type. _Null-valued_ [sub]feature indicates that a [sub]feature value is not specified.
 
   Several different interpretations can be associated with a _null_ value. Following the terminology introduced by [Codd](https://dl.acm.org/doi/10.1145/16301.16303) and adopted by many authors, a _null_ value is either
   - _Applicable missing_ – at present, a value is applicable (applies to the particular entity, relationship, or action) but unknown (whatever the reason, the graph does not have the value). E.g., the temperature 1000 years ago today; a phone number of a person who owns a phone, but the number is unknown; an answer to a question – when the questionee refused to answer.
@@ -137,14 +150,6 @@ The _property graph data model_ defines the following **concepts**:
   _n_-ary relationships, where _n_ > 2, are not supported, but this poses no practical limitation. Consider, for example, a ternary relationship, where Person _A_ sells Horse _H_ to Person _B_. Instead, one can reframe this data as a _Sale_ entity _S_, a _seller_ relationship from _S_ to _A_, a _buyer_ relationship from _S_ to _B_, and a _sold_ relationship from _S_ to _H_.
 
   Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines features. Definitions may be part of a property graph schema (next section).
-
-The property graph data model defines the following **structure**:
-
-  - The data is organized in a single property graph.
-  - The graph's vertices represent entities. A vertex's label denotes the _entity's type_ (e.g., _Person_, _Guild_, or _Dragon_). 
-  - The graph's edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label denotes the _relationship's type_ (e.g., _owns_ or _member of_).
-  - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label denotes the _action's type_ (e.g., _sleeps_).
-  - Properties and sub-properties represent features and sub-features of entities (e.g., _name_ for a _Person_ entity), relationships (e.g., _timeframe_ for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action).
 
 The term _property graph_ was introduced by [Rodriguez](https://arxiv.org/abs/1006.2361) and [Neubauer](https://arxiv.org/abs/1004.1001), though other terms were used to describe similar data models. [Tsai and Fu's](https://ieeexplore.ieee.org/document/4310127) _attributed relational graph_ is a directed multigraph in which both nodes and edges have labels, and each label defines a set of numerical or logical attributes. [Shao et al.](https://ieeexplore.ieee.org/abstract/document/7953521) used the term _Heterogeneous graph_ for the same construct. [Gallagher](http://www.aaai.org/Papers/Symposia/Fall/2006/FS-06-02/FS06-02-007.pdf) used the term _data graph_ to refer to graphs in which vertices and/or edges may be typed and/or attributed. [Singh et al.](http://ieeexplore.ieee.org/abstract/document/4272051/) used the term _M*3_ (multi-modal, multi-relational, multifeatured) _network_ to refer to graphs with multiple entity-types, multiple relationship-types, and multiple descriptive features for nodes and edges. [Krause et al.](https://link.springer.com/chapter/10.1007/978-3-319-40530-8_10)  used the term _typed graph_ to refer to graphs with typed nodes, typed edges, and typed node properties.
 
