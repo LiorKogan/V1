@@ -82,7 +82,7 @@ V1 is a declarative visual pattern query language for schema-based property grap
 
 The term _property graph_ refers to both a mathematical structure and a data model; both are described below.
 
-A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is a pair of sets consisting of a set _V_ of _vertices_ (nodes) and a set _E_ of _edges_ (_arcs_). A graph may be _directed_ (i.e., _digraph_), in which each edge consists of an ordered pair (_u,v_) ∈ _V²_, *undirected*, in which each edge consists of an unordered pair {_u,v_} ∈ _V²_, or _mixed_ in which both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed. Sometimes _unary edges_ (_half-edges_ - edges attached to only one vertex) are allowed as well.
+A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is a pair of sets consisting of a set _V_ of _vertices_ (nodes) and a set _E_ of _edges_ (_arcs_). A graph may be _directed_ (i.e., _digraph_), in which each edge consists of an ordered pair (_u,v_) ∈ _V_ × _V_, *undirected*, in which each edge consists of an unordered pair {_u,v_} ∈ _V_ × _V_, or _mixed_ in which both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed. Sometimes _unary edges_ (_half-edges_ - edges attached to only one vertex) are allowed as well.
 
 An _attributed graph_ is a graph in which nodes and/or edges are annotated with attributes or sets of attributes (i.e., _multi-attributed graph_). Attributes can be nominal, ordinal, key-value pairs, and so on. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
@@ -155,8 +155,9 @@ The term _property graph_ was introduced by [Rodriguez](https://arxiv.org/abs/10
 
 Various extensions were proposed, including:
 - Each vertex has a set of labels (_vertex multi-labeled graph_), and entities are _multi-typed_
-- _Property hypergraphs_ (_n_-ary edges represent _n_-ary relationships)
+- [_Property hypergraphs_](https://link.springer.com/chapter/10.1007%2F978-3-319-26148-5_21) (_hyperedges_ represent _n_-ary relationships)
 - Schema-level and data-level _metaproperties_ (properties of properties – e.g., units of measure, accuracy, reliability)
+- [EPGM – Extended Property Graph Model](https://dbs.uni-leipzig.de/file/EPGM.pdf), where logical graphs consist of subsets of a shared set of vertices and a shared set of edges. In addition, logical graphs have types and properties.
 
 ## The Property Graph Schema
 
