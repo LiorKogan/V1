@@ -78,9 +78,11 @@ V1 is a declarative visual pattern query language for schema-based property grap
 
 ## The Property Graph Data Model
 
+# Mathematical Structure:
+
 The term _property graph_ refers to both a mathematical structure and a data model; both are described below.
 
-A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is a mathematical structure consisting of a set _V_ of _vertices_ (nodes) and a set _E_ of _edges_ (_arcs_). A graph may be _directed_ (i.e., _digraph_), in which each edge consists of an ordered pair (_u,v_) ∈ _V²_, *undirected*, in which each edge consists of an unordered pair {_u,v_} ∈ _V²_, or _mixed_ in which both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed. Sometimes _unary edges_ (_half-edges_ - edges attached to only one vertex) are allowed as well.
+A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is a pair of sets consisting of a set _V_ of _vertices_ (nodes) and a set _E_ of _edges_ (_arcs_). A graph may be _directed_ (i.e., _digraph_), in which each edge consists of an ordered pair (_u,v_) ∈ _V²_, *undirected*, in which each edge consists of an unordered pair {_u,v_} ∈ _V²_, or _mixed_ in which both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed. Sometimes _unary edges_ (_half-edges_ - edges attached to only one vertex) are allowed as well.
 
 An _attributed graph_ is a graph in which nodes and/or edges are annotated with attributes or sets of attributes (i.e., _multi-attributed graph_). Attributes can be nominal, ordinal, key-value pairs, and so on. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
@@ -88,18 +90,21 @@ A _property graph_ (also called _labeled property graph_, _LPG_) is a multi-attr
 
 - Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex-labels and the set of edge-labels are disjoint.
 
-- Each vertex, each edge, and each unary edge has a set of attributes called _properties_. Each property is an ordered pair - the property's name, and the property's value.
+- Each vertex and each edge (unary or binary) has a set of attributes called _properties_. Each property is an ordered pair: the property's name and the property's value. For each vertex and each edge, all property names are distinct.
 
-A _data element_ (i.e., _datum_) is an atomic unit of data. A _data model_ specifies the semantics and the structure of data elements and the relations between data elements. A data model consists of:
+# Data Model:
+
+A _data element_ (i.e., _datum_) is an atomic unit of data. A _data model_ specifies the structure and the semantics of data elements and the relations between data elements. A data model consists of:
 
 - A conceptualization: a set of _concepts_ (e.g., _entity_, _relationship_, _property_) used for defining data elements and their relations. The semantics of the concepts may be described, for example, using ontological concepts (e.g., _particular_, _type_, _universal_, _composition_, _relation_, _action_, _quality_).
 - A representation: a _structure_ (e.g., mathematical, diagrammatic) used for representing data elements and their relations.
 
-The _property graph data model_ defines the following concepts:
+The _property graph data model_ defines the following **concepts**:
 
 -	An _entity_ is a physical, conceptual, virtual, or fictional particular (e.g., a certain person, a certain guild, or a certain dragon). Any two entities are distinguishable.
--	A _relationship_ is an _association_ or an _interaction_ between several of entities. A _binary relationship_ is a relationship between a pair of entities or between an entity and itself. Each binary relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity; an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _sibling_ relationship between two _Person_ entities).
+-	A _binary relationship_ is an _association_ or an _interaction_ between a pair of entities or between an entity and itself. Each binary relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity; an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _sibling_ relationship between two _Person_ entities).
 -	An _action_ is an action _of_ an entity or an action _on_ an entity, and no other [known or relevant] entities are concerned  (e.g., _sleeps_ action for a _Dragon_ entity).
+  _n_-ary relationships where _n_ > 2 are not supported, but this poses no practical limitation. Consider, for example, a ternary relationship, where Person _A_ sells Horse _H_ to Person _B_. Instead, one can reframe this data as a _Sale_ entity _S_, a _seller_ binary relationship from _S_ to _A_, a _buyer_ binary relationship from _S_ to _B_, and a _sold_ binary relationship from _S_ to _H_.
 - Each Entity, each relationship, and each action has a set of _features_ (_characteristics_). Each feature has a distinct name (string) (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, and _timeframe_ for a _sleeps_ action), and a value of a certain data type (e.g., _string_, _integer_, _real_), for example, _weight_: _integer_ = 450.
 
   A _multivalued feature_ is a feature where the value's type is a _set_, a _bag_, or a _list_ of values of the same data type. For example, titles: _set_(_string_) = {“Her Majesty”, “Her Royal Highness”}.
@@ -129,7 +134,7 @@ The _property graph data model_ defines the following concepts:
 
   Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines features. Definitions may be part of a property graph schema (next section).
 
-The property graph data model defines the following structure:
+The property graph data model defines the following **structure**:
 
   - The data is organized in a single property graph.
   - The graph's vertices represent entities. A vertex's label denotes the _entity's type_ (e.g., _Person_, _Guild_, or _Dragon_). 
