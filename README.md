@@ -96,7 +96,7 @@ A _property graph_ (also called _labeled property graph_, _LPG_) is a multi-attr
 
 A _data element_ (i.e., _datum_) is an atomic unit of data. A _data model_ specifies the structure and the semantics of data elements and the relations between data elements. A data model consists of:
 
-- A conceptualization: a set of _concepts_ (e.g., _entity_, _relationship_, _property_) used for defining data elements and their relations. The semantics of the concepts may be described, for example, using ontological concepts (e.g., _particular_, _type_, _universal_, _composition_, _relation_, _action_, _quality_).
+- A conceptualization: a set of _concepts_ (e.g., _entity_, _relationship_, _feature_) used for defining data elements and their relations. The semantics of the concepts may be described, for example, using ontological concepts (e.g., _particular_, _type_, _universal_, _composition_, _relation_, _action_, _quality_).
 - A representation: a _structure_ (e.g., mathematical, diagrammatic) used for representing data elements and their relations.
 
 The _property graph data model_ defines the following **concepts**:
@@ -116,17 +116,17 @@ The property graph data model defines the following **structure**:
   - The graph's edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label denotes the _relationship's type_ (e.g., _owns_ or _member of_).
   - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label denotes the _action's type_ (e.g., _sleeps_).
   - Properties and sub-properties represent features and sub-features of entities (e.g., _name_ for a _Person_ entity), relationships (e.g., _timeframe_ for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action).
-  - Each property value can be represented in one of the supported _data types_. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
+  - Each feature value is represented using one of the supported _property data types_. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
 
-  The model defines a set of _basic data types_ (e.g., _string_, _integer_, _float_).
+  The model defines a set of _basic property data types_ (e.g., _string_, _integer_, _float_).
   
-  A _basic feature_ is a feature whose value's data type is a basic data type. 
+  A _basic property_ is a property whose value's data type is a basic data type. 
 
-  A _multivalued feature_ is a feature where the value's type is a _set_, a _bag_, or a _list_ of values of the same data type. For example, titles: _set_(_string_) = {“Her Majesty”, “Her Royal Highness”}.
+  A _multivalued property_ is a property where the value's type is a _set_, a _bag_, or a _list_ of values of the same data type. For example, titles: _set_(_string_) = {“Her Majesty”, “Her Royal Highness”}.
   
-  A _composite feature_ is a feature where the value's type is a set of _sub-features_, each has a name and a value of a certain data type. For example, _name_ = (_first_: _string_ = “Brandon”, _last_: _string_ = “Stark”).
+  A _composite property_ is a property where the value's type is a set of _sub-properties_, each has a name and a value of a certain data type. For example, _name_ = (_first_: _string_ = “Brandon”, _last_: _string_ = “Stark”).
 
-  _null_ is a valid value for any _nullable_ property and sub-property, regardless of its data type. _Null-valued_ [sub]feature indicates that a [sub]feature value is not specified.
+  _null_ is a valid value for each _nullable_ property and sub-property, regardless of its data type. _Null-valued_ [sub]properties indicates that a [sub]feature value is not specified.
 
   Several different interpretations can be associated with a _null_ value. Following the terminology introduced by [Codd](https://dl.acm.org/doi/10.1145/16301.16303) and adopted by many authors, a _null_ value is either
   - _Applicable missing_ – at present, a value is applicable (applies to the particular entity, relationship, or action) but unknown (whatever the reason, the graph does not have the value). E.g., the temperature 1000 years ago today; a phone number of a person who owns a phone, but the number is unknown; an answer to a question – when the questionee refused to answer.
@@ -147,7 +147,7 @@ The property graph data model defines the following **structure**:
   - Repetition of relationships: pairs of entities of the same pair of entity-types have relationships of the same types.
   - Type consistency: an entity's type, a relationship's type, and an action's type do not change over time. 
 
-  Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines features. Definitions may be part of a property graph schema (next section).
+  Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines their features. Such definitions may be specified in a property graph schema (see next section).
 
 _n_-ary relationships, where _n_ > 2, are not supported, but this poses no practical limitation, as any _n_-ary relationship, _n_ > 2, can be reframed as an entity and _n_ binary relationships. Consider, for example, a ternary relationship, where Person _A_ sells Horse _H_ to Person _B_. Instead, one can reframe this data as a _Sale_ entity _S_, a _seller_ relationship from _S_ to _A_, a _buyer_ relationship from _S_ to _B_, and a _sold_ relationship from _S_ to _H_.
 
