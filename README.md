@@ -90,7 +90,7 @@ A _property graph_ (also called _labeled property graph_, _LPG_) is a multi-attr
 
 - Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex-labels and the set of edge-labels are disjoint.
 
-- Each vertex and each edge (unary or binary) has a set of attributes called _properties_. Each property is an ordered pair: the property's name and the property's value. For each vertex and each edge, all property names are distinct.
+- Each vertex and each edge (unary or binary) has a set of attributes called _properties_. Each property is an ordered pair: the property's name and the property's value. For each vertex and each edge, the property names are pairwise distinct.
 
 # Data Model:
 
@@ -107,7 +107,7 @@ The _property graph data model_ defines the following **concepts**:
 
 -	An _action_ is an action _of_ an entity or an action _on_ an entity, and no other [known or relevant] entities are concerned  (e.g., _sleeps_ action for a _Dragon_ entity).
 
-- Each Entity, each relationship, and each action has a set of _features_ (_characteristics_). Each feature has a distinct name (string) (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action), and a value, for example, _weight_= 450.
+- Each Entity, each relationship, and each action has a set of _features_ (_characteristics_). Each feature has a name (string) (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action), and a value, for example, _weight_= 450. For each entity, relationship, and action, the feature names are pairwise distinct.
 
 The property graph data model defines the following **structure**:
 
@@ -149,7 +149,7 @@ The property graph data model defines the following **structure**:
 
   Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines features. Definitions may be part of a property graph schema (next section).
 
-_n_-ary relationships, where _n_ > 2, are not supported, but this poses no practical limitation. Consider, for example, a ternary relationship, where Person _A_ sells Horse _H_ to Person _B_. Instead, one can reframe this data as a _Sale_ entity _S_, a _seller_ relationship from _S_ to _A_, a _buyer_ relationship from _S_ to _B_, and a _sold_ relationship from _S_ to _H_.
+_n_-ary relationships, where _n_ > 2, are not supported, but this poses no practical limitation, as any _n_-ary relationship, _n_ > 2, can be reframed as an entity and _n_ binary relationships. Consider, for example, a ternary relationship, where Person _A_ sells Horse _H_ to Person _B_. Instead, one can reframe this data as a _Sale_ entity _S_, a _seller_ relationship from _S_ to _A_, a _buyer_ relationship from _S_ to _B_, and a _sold_ relationship from _S_ to _H_.
 
 The term _property graph_ was introduced by [Rodriguez](https://arxiv.org/abs/1006.2361) and [Neubauer](https://arxiv.org/abs/1004.1001), though other terms were used to describe similar data models. [Tsai and Fu's](https://ieeexplore.ieee.org/document/4310127) _attributed relational graph_ is a directed multigraph in which both nodes and edges have labels, and each label defines a set of numerical or logical attributes. [Shao et al.](https://ieeexplore.ieee.org/abstract/document/7953521) used the term _Heterogeneous graph_ for the same construct. [Gallagher](http://www.aaai.org/Papers/Symposia/Fall/2006/FS-06-02/FS06-02-007.pdf) used the term _data graph_ to refer to graphs in which vertices and/or edges may be typed and/or attributed. [Singh et al.](http://ieeexplore.ieee.org/abstract/document/4272051/) used the term _M*3_ (multi-modal, multi-relational, multifeatured) _network_ to refer to graphs with multiple entity-types, multiple relationship-types, and multiple descriptive features for nodes and edges. [Krause et al.](https://link.springer.com/chapter/10.1007/978-3-319-40530-8_10)  used the term _typed graph_ to refer to graphs with typed nodes, typed edges, and typed node properties.
 
@@ -484,7 +484,7 @@ A _set_ is an unordered collection of zero or more _non-null_ values (called _el
 
 A set can be explicitly constructed using the following syntax:
 
-* {_expr_, _expr_, ...} - zero or more expressions of the same data type. _null_ values are ignored. Duplicate values are merged into one distinct value.
+* {_expr_, _expr_, ...} - zero or more expressions of the same data type. _null_ values are ignored. Duplicate values are merged.
 
   A comma after the last element is optional, except for a single-element set where it is mandatory.
   
@@ -1701,7 +1701,7 @@ See G1-G20.
 
 ## Paths
 
-A _graph-path_ is a sequence of graph-entities and graph-relationships that starts with a graph-entity and ends with a graph entity. A _simple graph-path_ is a graph-path where all entities are distinct, except possibly the first and last.
+A _graph-path_ is a sequence of graph-entities and graph-relationships that starts with a graph-entity and ends with a graph entity. A _simple graph-path_ is a graph-path where all entities are pairwise distinct, except, possibly, the first and last.
 
 Each graph-path has a length. The _path length_ is equal to the number of graph-relationships along the path; hence, a relationship is a path of length 1.
 
