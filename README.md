@@ -117,10 +117,11 @@ The property graph data model defines the following **structure**:
   - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label denotes the _action's type_ (e.g., _sleeps_).
   - Properties and sub-properties represent features and sub-features of entities (e.g., _name_ for a _Person_ entity), relationships (e.g., _timeframe_ for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). Each feature value is represented using one of the supported _property data types_. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
 
-    - The model defines a set of _basic property data types_ (e.g., _string_, _integer_, _float_).
-    - A _basic property_ is a property whose value's data type is a basic data type. 
-    - A _multivalued property_ is a property where the value's type is a _set_, a _bag_, or a _list_ of values of the same data type. For example, titles: _set_(_string_) = {“Her Majesty”, “Her Royal Highness”}.
-    - A _composite property_ is a property where the value's type is a set of _sub-properties_, each has a name and a value of a certain data type. For example, _name_ = (_first_: _string_ = “Brandon”, _last_: _string_ = “Stark”).
+    - The model defines a set of _basic data types_ (e.g., _string_, _integer_, _float_).
+    - A _multivalue_ is a set, a bag, or a list of values of the same basic data type, multivalues of the same type, or composite values.
+    - A _composite value_ is a set of (name, value) pairs, where the names are pairwise distinct, and each value's data type is a basic data type, a multivalue, or a composite.
+
+  A _basic property_ is a property whose value's data type is a basic data type. A _multivalued property_ is a property whose value is a multivalue, e.g., _titles_: _set_(_string_) = {"Her Majesty", "Her Royal Highness"}. A _composite property_ is a property whose value is a composite. Each member of the composite is called a _sub-property_, e.g., _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark").
 
   - _null_ is a valid value for each _nullable_ property and sub-property, regardless of its data type. _Null-valued_ [sub]property indicates that a [sub]feature value is not specified.
 
