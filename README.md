@@ -124,12 +124,12 @@ The property graph data model defines the following **structure**:
   - The graph's vertices represent entities. A vertex's label is a string that denotes the _entity's type_ (e.g., _Person_, _Guild_, or _Dragon_). 
   - The graph's edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label is a string that denotes the _relationship's type_ (e.g., _owns_ or _member of_).
   - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label is a string that denotes the _action's type_ (e.g., _sleeps_).
-  - Properties and sub-properties represent features and sub-features of entities (e.g., _name_ property and _first name_ sub-property for a _Person_ entity), relationships (e.g., _timeframe_ property for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). Each property name is a string that denotes the feature's name, and each property value represents the feature's value.
+  - Properties and sub-properties represent features and sub-features of entities (e.g., _name_ property and _first name_ sub-property for a _Person_ entity), relationships (e.g., _timeframe_ property for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). For each entity, relationship, and action, property names are pairwise distinct strings, each denotes the feature's name, and each property value represents the feature's value.
   - Each feature value is represented using one of the supported _property data types_. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
 
     - The model defines a set of _basic data types_ (e.g., _string_, _integer_, _float_).
     - A _multivalue_ is a set, a bag, or a list of values of the same basic data type, multivalues of the same type (e.g., set(_string_)), or composite values.
-    - A _composite value_ is a set of (name, value) pairs, where the names are pairwise distinct, and each value has a basic data type, is a multivalue, or is a composite value.
+    - A _composite value_ is a set of (name, value) pairs, where the names are pairwise distinct strings, and each value has a basic data type, is a multivalue, or is a composite value.
 
     A _basic property_ is a property whose value's data type is a basic data type. A _multivalued property_ is a property whose value is a multivalue, e.g., _titles_: _set_(_string_) = {"Her Majesty", "Her Royal Highness"}. A _composite property_ is a property whose value is composite, e.g., _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). Each member of a composite property is called a _sub-property_.
 
