@@ -121,7 +121,7 @@ The property graph data model defines the following **structure**:
     - A _multivalue_ is a set, a bag, or a list of values of the same basic data type, multivalues of the same type, or composite values.
     - A _composite value_ is a set of (name, value) pairs, where the names are pairwise distinct, and each value's data type is a basic data type, a multivalue, or a composite.
 
-    A _basic property_ is a property whose value's data type is a basic data type. A _multivalued property_ is a property whose value is a multivalue, e.g., _titles_: _set_(_string_) = {"Her Majesty", "Her Royal Highness"}. A _composite property_ is a property whose value is a composite, e.g., _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). Each member of the composite is called a _sub-property_.
+    A _basic property_ is a property whose value's data type is a basic data type. A _multivalued property_ is a property whose value is a multivalue, e.g., _titles_: _set_(_string_) = {"Her Majesty", "Her Royal Highness"}. A _composite property_ is a property whose value is a composite, e.g., _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). Each member of a composite property is called a _sub-property_.
 
   - _null_ is a valid value for each _nullable_ property and sub-property, regardless of its data type. _Null-valued_ [sub]property indicates that a [sub]feature value is not specified.
 
