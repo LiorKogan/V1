@@ -126,7 +126,7 @@ The property graph data model defines the following **structure**:
   
   A _composite property_ is a property where the value's type is a set of _sub-properties_, each has a name and a value of a certain data type. For example, _name_ = (_first_: _string_ = “Brandon”, _last_: _string_ = “Stark”).
 
-  _null_ is a valid value for each _nullable_ property and sub-property, regardless of its data type. _Null-valued_ [sub]properties indicates that a [sub]feature value is not specified.
+  _null_ is a valid value for each _nullable_ property and sub-property, regardless of its data type. _Null-valued_ [sub]property indicates that a [sub]feature value is not specified.
 
   Several different interpretations can be associated with a _null_ value. Following the terminology introduced by [Codd](https://dl.acm.org/doi/10.1145/16301.16303) and adopted by many authors, a _null_ value is either
   - _Applicable missing_ – at present, a value is applicable (applies to the particular entity, relationship, or action) but unknown (whatever the reason, the graph does not have the value). E.g., the temperature 1000 years ago today; a phone number of a person who owns a phone, but the number is unknown; an answer to a question – when the questionee refused to answer.
