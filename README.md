@@ -78,7 +78,7 @@ V1 is a declarative visual pattern query language for schema-based property grap
 
 ## The Property Graph Data Model
 
-# Mathematical Structure:
+### Mathematical Structure:
 
 The term _property graph_ refers to both a mathematical structure and a data model; both are described below.
 
@@ -92,7 +92,7 @@ A _property graph_ (also called _labeled property graph_, _LPG_) is a multi-attr
 
 - Each vertex and each edge (unary or binary) has a set of attributes called _properties_. Each property is an ordered pair: the property's name and the property's value. For each vertex and each edge, the property names are pairwise distinct.
 
-# Data Model:
+### Data Model:
 
 A _data element_ (i.e., _datum_) is an atomic unit of data. A _data model_ specifies the structure and the semantics of data elements and the relations between data elements. A data model consists of:
 
