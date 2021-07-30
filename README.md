@@ -107,15 +107,25 @@ The _property graph data model_ defines the following **concepts**:
 
 -	An _action_ is an action _of_ an entity or an action _on_ an entity, and no other [known or relevant] entities are concerned  (e.g., _sleeps_ action for a _Dragon_ entity).
 
-- Each Entity, each relationship, and each action has a set of _features_ (_characteristics_). Each feature has a name (string) (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action), and a value, for example, _weight_= 450. For each entity, relationship, and action, the feature names are pairwise distinct.
+- Each Entity, each relationship, and each action has a set of _features_ (_characteristics_). Each feature has a name (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each entity, relationship, and action, the feature names are pairwise distinct.
+
+- Each entity, each relationship, and each action has a single _type_. Entities of the same type are semantically homogeneous. The same is true also for relationships and for actions. Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Many times types are assigned in accordance with the following guidelines:
+  - Repetition of existence: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
+  - Repetition of features: entities of the same type have features of the same types. The same is true also for relationships and for actions.
+  - Repetitions of actions: entities of the same type 'have' actions of the same types.
+  - Repetition of relationships: pairs of entities of the same pair of entity-types have relationships of the same types.
+  - Type consistency: an entity's type, a relationship's type, and an action's type do not change over time. 
+
+  Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines their features. Such definitions may be specified in a property graph schema (see next section).
 
 The property graph data model defines the following **structure**:
 
   - The data is organized in a single property graph.
-  - The graph's vertices represent entities. A vertex's label denotes the _entity's type_ (e.g., _Person_, _Guild_, or _Dragon_). 
-  - The graph's edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label denotes the _relationship's type_ (e.g., _owns_ or _member of_).
-  - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label denotes the _action's type_ (e.g., _sleeps_).
-  - Properties and sub-properties represent features and sub-features of entities (e.g., _name_ for a _Person_ entity), relationships (e.g., _timeframe_ for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). Each feature value is represented using one of the supported _property data types_. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
+  - The graph's vertices represent entities. A vertex's label is a string that denotes the _entity's type_ (e.g., _Person_, _Guild_, or _Dragon_). 
+  - The graph's edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label is a string that denotes the _relationship's type_ (e.g., _owns_ or _member of_).
+  - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label is a string that denotes the _action's type_ (e.g., _sleeps_).
+  - Properties and sub-properties represent features and sub-features of entities (e.g., _name_ property and _first name_ sub-property for a _Person_ entity), relationships (e.g., _timeframe_ property for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). Each property name is a string that denotes the feature's name, and each property value represents the feature's value.
+  - Each feature value is represented using one of the supported _property data types_. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
 
     - The model defines a set of _basic data types_ (e.g., _string_, _integer_, _float_).
     - A _multivalue_ is a set, a bag, or a list of values of the same basic data type, multivalues of the same type, or composite values.
@@ -136,15 +146,6 @@ The property graph data model defines the following **structure**:
     Codd, Zaniolo, and many others proposed using two or more types of _null_ instead of a 'generic' _null_, but this approach remains mainly theoretical. In practice, _null_ values often have no consistent semantics. For a _birth date_ property, a _null_ value would likely represent an unknown birth date, but for a _death date_ property, a _null_ value may represent that the date on which the person died is unknown (_applicable missing_), that the person is still alive (_inapplicable_), or that it is unknown if the person is still alive (_no information_).
 
     Though _null_ value semantics is not usually defined as part of the data model, the semantics of operators and functions is well-defined for _null_ values. E.g., what is the result of (yesterday's date < person's death date) when the death date is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable_ values.
-  
-- Each entity, each relationship, and each action has a single type (string). Entities of the same type are semantically homogeneous. The same is true also for relationships and for actions. Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Many times types are assigned in accordance with the following guidelines:
-  - Repetition of existence: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
-  - Repetition of features: entities of the same type have features of the same types. The same is true also for relationships and for actions.
-  - Repetitions of actions: entities of the same type 'have' actions of the same types.
-  - Repetition of relationships: pairs of entities of the same pair of entity-types have relationships of the same types.
-  - Type consistency: an entity's type, a relationship's type, and an action's type do not change over time. 
-
-  Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines their features. Such definitions may be specified in a property graph schema (see next section).
 
 _n_-ary relationships, where _n_ > 2, are not supported, but this poses no practical limitation, as any _n_-ary relationship, _n_ > 2, can be reframed as an entity and _n_ binary relationships. Consider, for example, a ternary relationship, where Person _A_ sells Horse _H_ to Person _B_. Instead, one can reframe this data as a _Sale_ entity _S_, a _seller_ relationship from _S_ to _A_, a _buyer_ relationship from _S_ to _B_, and a _sold_ relationship from _S_ to _H_.
 
