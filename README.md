@@ -120,7 +120,7 @@ The property graph data model defines the following **structure**:
 
   The model defines a set of _basic data types_ (e.g., _string_, _integer_, _float_).
   
-  A _basic feature_ is a feature where the value's data type is one of the basic data types. 
+  A _basic feature_ is a feature whose value's data type is a basic data type. 
 
   A _multivalued feature_ is a feature where the value's type is a _set_, a _bag_, or a _list_ of values of the same data type. For example, titles: _set_(_string_) = {“Her Majesty”, “Her Royal Highness”}.
   
