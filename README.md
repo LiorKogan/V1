@@ -124,16 +124,16 @@ The property graph data model defines the following **structure**:
   - The graph's vertices represent entities. A vertex's label is a string or an integer identifying the _entity's type_ (e.g., _Person_, _Guild_, or _Dragon_). 
   - The graph's edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label is a string or an integer identifying the _relationship's type_ (e.g., _owns_ or _member of_).
   - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label is a string or an integer identifying the _action's type_ (e.g., _sleeps_).
-  - Properties and sub-properties represent features and sub-features of entities (e.g., _name_ property and _first name_ sub-property for a _Person_ entity), relationships (e.g., _timeframe_ property for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). For each entity, relationship, and action, property names are pairwise distinct strings, each denotes the feature's name, and each property value represents the feature's value.
+  - Properties and subproperties represent features and subfeatures of entities (e.g., _name_ property and _first name_ subproperty for a _Person_ entity), relationships (e.g., _timeframe_ property for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). For each entity, relationship, and action, property names are pairwise distinct strings or integers, each identifying the feature's name, and each property value represents the feature's value.
   - Each feature value is represented using one of the _property data types_ supported by the model. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
 
     - The model defines a set of _basic data types_ (e.g., _string_, _integer_, _float_).
     - A _multivalue_ is a set, a bag, or a list of values. All values are of the same basic data type, the same multivalue type (e.g., each value is a set(_string_)), or the same composite type (e.g., each value is a {_first_: _string_, _last_: _string_} set).
-    - A _composite value_ is a set of (name, value) pairs, where the names are pairwise distinct strings, and each value is of a basic data type, a multivalue type, or a composite type.
+    - A _composite value_ is a set of (name, value) pairs, where the names are pairwise distinct strings or integers, each identifying the subfeature's name, and each value is of a basic data type, a multivalue type, or a composite type.
 
-    A _basic property_ is a property whose value is of basic data type. A _multivalued property_ is a property whose value is a multivalue, e.g., _titles_: _set_(_string_) = {"Her Majesty", "Her Royal Highness"}. A _composite property_ is a property whose value is composite, e.g., _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). Each member of a composite property is called a _sub-property_.
+    A _basic property_ is a property whose value is of basic data type. A _multivalued property_ is a property whose value is a multivalue, e.g., _titles_: _set_(_string_) = {"Her Majesty", "Her Royal Highness"}. A _composite property_ is a property whose value is composite, e.g., _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). Each member of a composite property is called a _subproperty_.
 
-  - _null_ is a valid value for each _nullable_ property and sub-property, regardless of its data type. _Null-valued_ [sub]property indicates that a [sub]feature value is not specified.
+  - _null_ is a valid value for each _nullable_ property and subproperty, regardless of its data type. _Null-valued_ [sub]property indicates that a [sub]feature value is not specified.
 
     Several different interpretations can be associated with a _null_ value. Following the terminology introduced by [Codd](https://dl.acm.org/doi/10.1145/16301.16303) and adopted by many authors, a _null_ value is either
     - _Applicable missing_ – at present, a value is applicable (applies to the particular entity, relationship, or action) but unknown (whatever the reason, the graph does not have the value). E.g., the temperature 1000 years ago today; a phone number of a person who owns a phone, but the number is unknown; an answer to a question – when the questionee refused to answer.
@@ -188,7 +188,7 @@ A _property graph schema_ is defined by:
   * A set of properties. For each property: 
     * A unique name
     * A data type
-    * For properties and sub-properties with numeric data types, intervals of numeric data types, or multivalued numeric data types: an optional schema-level _units_ metaproperty representing units of measure (e.g., Kg, cm, seconds)
+    * For properties and subproperties with numeric data types, intervals of numeric data types, or multivalued numeric data types: an optional schema-level _units_ metaproperty representing units of measure (e.g., Kg, cm, seconds)
 * A finite set of relationship-types. For each relationship-type: 
   * The relationship-type's directionality: directional or bidirectional
   * A unique name
@@ -248,7 +248,7 @@ Here are two examples:
   - _d_ has a _name_ property with a value that starts with 'M'
   - There are _m_ > 3 vertices, _d₁..dₘ_, each with a label _Dragon_
   - There are relationships from _d_ to any of _d₁..dₘ_, each with a label _freezes_
-  - Each of these relationships has a _tf_ property (stands for "time frame") with a _since_ sub-property whose value is in the range [_now_ - _months_(3) .. _now_]
+  - Each of these relationships has a _tf_ property (stands for "time frame") with a _since_ subproperty whose value is in the range [_now_ - _months_(3) .. _now_]
   - There is a vertex _g_ with a label _Guild_
   - _g_ has a _name_ property, and its value is _Masons_
   - There are _n_ ≥ 1 vertices _q₁..qₙ_, each with a label _Person_
@@ -434,7 +434,7 @@ _expr_ is an entity's expression, a relationship's expression, or a Cartesian pr
   
   A global expression is a _global property_.
 
-Any expression-tag of an expression that is not a property name, a sub-property name, or a constant is called _a calculated property_.
+Any expression-tag of an expression that is not a property name, a subproperty name, or a constant is called _a calculated property_.
 
 An _expression_ is
 
@@ -446,7 +446,7 @@ An _expression_ is
 
   (valid for a Cartesian product's expression only if it is connected to an entity/relationship),
 
-- < _inherent property name_ >.< _sub-property name_ >&#91;.< _sub-property name_ > ...&#93; (of a connected entity/relationship)
+- < _inherent property name_ >.< _subproperty name_ >&#91;.< _subproperty name_ > ...&#93; (of a connected entity/relationship)
 
   (valid for a Cartesian product's expression only if it is connected to an entity/relationship),
   
@@ -512,7 +512,7 @@ A constraint cannot be defined for a concrete entity's expression.
 
 For untyped entities, expressions can be composed only of properties that are common to all valid entity-types. Valid entity-types for an untyped entity are defined implicitly (according to the types of the pattern-entities and pattern-relationships which are connected to the untyped entity) or explicitly (using entity-type constraints - see later) (see Q291).
 
-A sub-property of a composite property is denoted as _property-name.sub-property-name_ (e.g., _name.first_, _tf.since_).
+A subproperty of a composite property is denoted as _property-name.subproperty-name_ (e.g., _name.first_, _tf.since_).
 
 _**Q3:** Any person whose first name is Brandon who owns a dragon_ (version 1)
 
@@ -1395,7 +1395,7 @@ Assignments to _latent pattern-entities_ and assignments to pattern-relationship
 
 _Implicit latent pattern-entities_ are pattern-entities that appear
 - right of a negator (see Q12, Q22, Q288)
-- right of a _None_ quantifier, except branches (or sub-branch of a sequence of quantifiers that follows the _None_ quantifier) that starts with an 'O' (see Q359)
+- right of a _None_ quantifier, except branches (or subbranch of a sequence of quantifiers that follows the _None_ quantifier) that starts with an 'O' (see Q359)
 
 Such typed and untyped entities are required to have no assignments; hence, trivially, no assignments would be reported. Such concrete entities would not be reported as well (see Q20).
 
@@ -1871,7 +1871,7 @@ A relationship's expression defined below a relationship-negator can only be ref
 
 ![V1](Pictures/Q353-2.png)
 
-Composite properties and sub-properties are tagged and can be referenced similar to ordinary properties:
+Composite properties and subproperties are tagged and can be referenced similar to ordinary properties:
 
 _**Q109:** Any person A whose parent owned a horse or a dragon before A's birth_ (two versions)
 
@@ -1887,7 +1887,7 @@ _**Q112:** Any person who owned a horse and a dragon at the same time frames_ (t
 
 ![V1](Pictures/Q112-1.png)
 
-The sub-properties can be compared one-by-one:
+The subproperties can be compared one-by-one:
 
 ![V1](Pictures/Q112-2.png)
 
@@ -2437,7 +2437,7 @@ A2 location:
 
   A quantifier-input with an A2 below it:
   - may be wrapped with an 'O' (except at the pattern's start)
-  - at least one branch of the quantifier (or sub-branch of a sequence of quantifiers) must start with a relationship/path with no relationship/path-negator that is not wrapped with a negator, nor preceded by a _None_ quantifier
+  - at least one branch of the quantifier (or subbranch of a sequence of quantifiers) must start with a relationship/path with no relationship/path-negator that is not wrapped with a negator, nor preceded by a _None_ quantifier
 
 _**Q72:** Any dragon that was frozen exactly ten times_ (two versions)
 
@@ -2553,7 +2553,7 @@ The lower part of an A3 aggregator contains the following elements:
 
     _aggop_ is _min/max/avg/sum_ - for aggregating values of a supported type, _union/intersection_ - for aggregating sets/bags of any type, or _distinct/set/bag_ - for aggregating values of any type. _distinct_ returns the number of distinct _non-null_ evaluation results; _set_ returns a set of all _non-null_ evaluation results (see Q332v2); _bag_ returns a bag of all _non-null_ evaluation results (see Q315).
 
-    _expr_ is an expression composed of constants, properties, and sub-properties of _R_ (when A3 appears below a relationship _R_ with no relationship-negator) (see Q86, Q354), EA-tags defined on top of the aggregator (see Q277), and EA-tags defined right of the aggregator (see Q116, Q137, Q169)
+    _expr_ is an expression composed of constants, properties, and subproperties of _R_ (when A3 appears below a relationship _R_ with no relationship-negator) (see Q86, Q354), EA-tags defined on top of the aggregator (see Q277), and EA-tags defined right of the aggregator (see Q116, Q137, Q169)
   
   - _distinct_ ⟨ _ett_ ⟩
 
@@ -2587,7 +2587,7 @@ A3 location:
 
 - Below a relationship/path
 
-  When A3 appears below a relationship _R_ and _expr_ is composed of at least one property or sub-property of _R_ - _R_ may be wrapped with an 'O'. Otherwise - a relationship/path with an A3 below it may have a relationship/path-negator and may be wrapped with an 'O'.
+  When A3 appears below a relationship _R_ and _expr_ is composed of at least one property or subproperty of _R_ - _R_ may be wrapped with an 'O'. Otherwise - a relationship/path with an A3 below it may have a relationship/path-negator and may be wrapped with an 'O'.
   
 - Below a quantifier-input (excluding quantifier at the start of the pattern)
 
@@ -2883,7 +2883,7 @@ M2 location:
 
   A quantifier-input with an M2 below it:
   - may be wrapped with an 'O'
-  - at least one branch of the quantifier (or sub-branch of a sequence of quantifiers) must start with a relationship/path with no relationship/path-negator that is not wrapped with a negator nor preceded by a _None_ quantifier
+  - at least one branch of the quantifier (or subbranch of a sequence of quantifiers) must start with a relationship/path with no relationship/path-negator that is not wrapped with a negator nor preceded by a _None_ quantifier
   
 _**Q78:** The four dragons that froze Balerion the largest number of times_
 
@@ -2953,7 +2953,7 @@ The lower part of an M3 aggregator contains the following elements:
   - with min _expr_
   - with max _expr_
 
-  _expr_ is an expression composed of constants, properties, and sub-properties of _R_ (when M3 appears below a relationship _R_ with no relationship-negator) (see Q74), EA-tags defined on top of the aggregator (see Q91, Q274, Q306), and EA-tags defined right of the aggregator (see Q130, Q128)
+  _expr_ is an expression composed of constants, properties, and subproperties of _R_ (when M3 appears below a relationship _R_ with no relationship-negator) (see Q74), EA-tags defined on top of the aggregator (see Q91, Q274, Q306), and EA-tags defined right of the aggregator (see Q130, Q128)
 
   Let ___RA(n, o)___ denote the minimal/maximal assignment to _expr_ in the subset of _S(n)_ that contains _BA(n)[o]_.
 
@@ -2964,7 +2964,7 @@ If there are only _j<k_ assignments - all those _j_ are valid assignments. If th
 M3 location:
 - Below a relationship/path
 
-  When M3 appears below a relationship _R_, and _expr_ is composed of at least one property or sub-property of _R_, _R_ may be wrapped with an 'O'. Otherwise - a relationship or path with an M3 below it may have a relationship/path-negator and may be wrapped with an 'O'.
+  When M3 appears below a relationship _R_, and _expr_ is composed of at least one property or subproperty of _R_, _R_ may be wrapped with an 'O'. Otherwise - a relationship or path with an M3 below it may have a relationship/path-negator and may be wrapped with an 'O'.
 
 - Below a quantifier-input (excluding quantifier at the start of the pattern)
 
@@ -3021,7 +3021,7 @@ The lower part of an R1 aggregator contains the following elements:
   - with min _relExpr_
   - with max _relExpr_
 
-  _relExpr_ is an expression containing at least one property or sub-property of _R_
+  _relExpr_ is an expression containing at least one property or subproperty of _R_
 
   Let ___RA(n)___ denote the list of all unique assignments to _R_ in _S(n)_. _RA(n)[o]_ is the _o'th_ assignment.
 
