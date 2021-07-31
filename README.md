@@ -121,9 +121,9 @@ The _property graph data model_ defines the following **concepts**:
 The property graph data model defines the following **structure**:
 
   - The data is organized in a single property graph.
-  - The graph's vertices represent entities. A vertex's label is a string that denotes the _entity's type_ (e.g., _Person_, _Guild_, or _Dragon_). 
-  - The graph's edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label is a string that denotes the _relationship's type_ (e.g., _owns_ or _member of_).
-  - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label is a string that denotes the _action's type_ (e.g., _sleeps_).
+  - The graph's vertices represent entities. A vertex's label is a string or an integer identifying the _entity's type_ (e.g., _Person_, _Guild_, or _Dragon_). 
+  - The graph's edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label is a string or an integer identifying the _relationship's type_ (e.g., _owns_ or _member of_).
+  - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label is a string or an integer identifying the _action's type_ (e.g., _sleeps_).
   - Properties and sub-properties represent features and sub-features of entities (e.g., _name_ property and _first name_ sub-property for a _Person_ entity), relationships (e.g., _timeframe_ property for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). For each entity, relationship, and action, property names are pairwise distinct strings, each denotes the feature's name, and each property value represents the feature's value.
   - Each feature value is represented using one of the _property data types_ supported by the model. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
 
