@@ -107,7 +107,7 @@ The _property graph data model_ defines the following **concepts**:
 
 -	An _action_ is an action _of_ an entity or an action _on_ an entity, and no other [known or relevant] entities are concerned  (e.g., _sleeps_ action for a _Dragon_ entity).
 
-- Each Entity, each relationship, and each action has a set of _features_ (_characteristics_). Each feature has a name (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each entity, relationship, and action, the feature names are pairwise distinct.
+- Each entity, each relationship, and each action has a set of _features_ (_characteristics_). Each feature has a name (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each entity, relationship, and action, the feature names are pairwise distinct.
 
 - Each entity, each relationship, and each action has a single _type_. Entities of the same type are semantically homogeneous. The same is true also for relationships and for actions. Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Many times types are assigned in accordance with the following guidelines:
   - Repetition of existence: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
@@ -116,7 +116,7 @@ The _property graph data model_ defines the following **concepts**:
   - Repetition of relationships: pairs of entities of the same pair of entity-types have relationships of the same types.
   - Type consistency: an entity's type, a relationship's type, and an action's type do not change over time. 
 
-  Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines their features. Such definitions may be specified in a property graph schema (see next section).
+  Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines sets of features. Such definitions may be specified in a property graph schema (see next section).
 
 The property graph data model defines the following **structure**:
 
@@ -125,13 +125,13 @@ The property graph data model defines the following **structure**:
   - The graph's edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label is a string that denotes the _relationship's type_ (e.g., _owns_ or _member of_).
   - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label is a string that denotes the _action's type_ (e.g., _sleeps_).
   - Properties and sub-properties represent features and sub-features of entities (e.g., _name_ property and _first name_ sub-property for a _Person_ entity), relationships (e.g., _timeframe_ property for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). For each entity, relationship, and action, property names are pairwise distinct strings, each denotes the feature's name, and each property value represents the feature's value.
-  - Each feature value is represented using one of the supported _property data types_. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
+  - Each feature value is represented using one of the _property data types_ supported by the model. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
 
     - The model defines a set of _basic data types_ (e.g., _string_, _integer_, _float_).
-    - A _multivalue_ is a set, a bag, or a list of values. All values are of the same basic data type, the same multivalue type (e.g., set(_string_)), or the same composite type.
-    - A _composite value_ is a set of (name, value) pairs, where the names are pairwise distinct strings, and each value is of a basic data type, a multivalue type, or a composite type (e.g., {_first_: _string_, _last_: _string_}).
+    - A _multivalue_ is a set, a bag, or a list of values. All values are of the same basic data type, the same multivalue type (e.g., each value is a set(_string_)), or the same composite type (e.g., each value is a {_first_: _string_, _last_: _string_} set).
+    - A _composite value_ is a set of (name, value) pairs, where the names are pairwise distinct strings, and each value is of a basic data type, a multivalue type, or a composite type.
 
-    A _basic property_ is a property whose value's data type is a basic data type. A _multivalued property_ is a property whose value is a multivalue, e.g., _titles_: _set_(_string_) = {"Her Majesty", "Her Royal Highness"}. A _composite property_ is a property whose value is composite, e.g., _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). Each member of a composite property is called a _sub-property_.
+    A _basic property_ is a property whose value is of basic data type. A _multivalued property_ is a property whose value is a multivalue, e.g., _titles_: _set_(_string_) = {"Her Majesty", "Her Royal Highness"}. A _composite property_ is a property whose value is composite, e.g., _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). Each member of a composite property is called a _sub-property_.
 
   - _null_ is a valid value for each _nullable_ property and sub-property, regardless of its data type. _Null-valued_ [sub]property indicates that a [sub]feature value is not specified.
 
