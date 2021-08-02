@@ -114,15 +114,16 @@ The _property graph data model_ defines the following **concepts**:
   - Repetition of features: entities of the same type have features of the same types. The same is true also for relationships and for actions.
   - Repetitions of actions: entities of the same type 'have' actions of the same types.
   - Repetition of relationships: pairs of entities of the same pair of entity-types have relationships of the same types.
-  - Type consistency: an entity's type, a relationship's type, and an action's type do not change over time. 
+  - Type constancy: an entity's type, a relationship's type, and an action's type do not change over time. 
+  - Value inconstancy: feature values may change over time.
 
   Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines sets of features. Such definitions may be specified in a property graph schema (see next section).
 
 The property graph data model defines the following **structure**:
 
   - The data is organized in a single property graph.
-  - The graph's vertices represent entities. A vertex's label is a string or an integer identifying the _entity's type_ (e.g., _Person_, _Guild_, or _Dragon_). 
-  - The graph's edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label is a string or an integer identifying the _relationship's type_ (e.g., _owns_ or _member of_).
+  - The graph's vertices represent entities. A vertex's label is a string or an integer identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_). 
+  - The graph's edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label is a string or an integer identifying the _relationship's type_ (e.g., _owns_, _member of_).
   - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label is a string or an integer identifying the _action's type_ (e.g., _sleeps_).
   - Properties and subproperties represent features and subfeatures of entities (e.g., _name_ property and _first name_ subproperty for a _Person_ entity), relationships (e.g., _timeframe_ property for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). For each entity, relationship, and action, property names are pairwise distinct strings or integers, each identifying the feature's name, and each property value represents the feature's value.
   - Each feature value is represented using one of the _property data types_ supported by the model. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
@@ -1765,7 +1766,9 @@ _shortest_ may not appear directly right of a negator or a path-negator.
 
 ## Path Patterns
 
-An alternative to constraints on the entity-types and the relationship-types along a path are constraints on the patterns which assignments to a path are composed of. A _path pattern_ is a pattern that has one entity marked as left-terminal and one entity, possibly the same one, marked as right-terminal.
+An alternative to constraints on the entity-types and the relationship-types along a path are constraints on the subgraphs which assignments to a path are composed of. 
+
+A _path pattern_ is a pattern that has one entity marked as _left-terminal_ and one entity, possibly the same one, marked as _right-terminal_.
 
 A _path-assignment_ is composed of chained subgraphs; each subgraph is assigned to a path pattern. There is an overlap between assignments to successive path patterns:
 
@@ -3108,7 +3111,7 @@ _**Q272:** Any pair of dragons (A, B) where the longest freeze duration is at le
 
 ![V1](Pictures/Q272.png)
 
-_**Q363:** Any dragon that the last time it froze some dragon for the first time was in or after 1010_
+_**Q363:** Any dragon that the latest time it froze some dragon for the first time was in or after 1010_
 
 ![V1](Pictures/Q363.png)
 
