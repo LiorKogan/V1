@@ -109,7 +109,9 @@ The _property graph data model_ defines the following **concepts**:
 
 - Each entity, each relationship, and each action has a set of _features_ (_characteristics_). Each feature has a name (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each entity, relationship, and action, the feature names are pairwise distinct.
 
-- Each entity, each relationship, and each action has a single _type_. Entities of the same type are semantically homogeneous. The same is true also for relationships and for actions. Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Many times types are assigned in accordance with the following guidelines:
+- Each entity, each relationship, and each action has a single _type_. Entities of the same type are semantically homogeneous. The same is true also for relationships and for actions. A property graph is a _heterogenous graph_; it may contain multiple types of entities (_multi-modal_, _multimode_), multiple types of relationships (_multi-relational_), and, optionally, multiple types of actions. Entities, relationships, and actions may have multiple types of features (_multi-featured_).
+
+  Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Many times types are assigned in accordance with the following guidelines:
   - Repetition of existence: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
   - Repetition of features: entities of the same type have features of the same types. The same is true also for relationships and for actions.
   - Repetitions of actions: entities of the same type 'have' actions of the same types.
