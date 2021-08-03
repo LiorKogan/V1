@@ -131,7 +131,7 @@ The property graph data model defines the following **structure**:
   - Each feature value is represented using one of the _property data types_ supported by the model. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
 
     - The model defines a set of _basic data types_ (e.g., _string_, _integer_, _float_).
-    - A _multivalue_ is a set, a bag, or a list of values. All values are of the same basic data type, the same multivalue type (e.g., each value is a set(_string_)), or the same composite type (e.g., each value is a set({_first_: _string_, _last_: _string_})).
+    - A _multivalue_ is a set, a bag, or a list of values. All values are of the same basic data type (e.g., each value is a _string_), the same multivalue type (e.g., each value is a set(_string_)), or the same composite type (e.g., each value is a {_first_: _string_, _last_: _string_} composite).
     - A _composite value_ is a set of (name, value) pairs, where the names are pairwise distinct strings or integers, each identifying the subfeature's name, and each value is of a basic data type, a multivalue type, or a composite type.
 
     A _basic property_ is a property whose value is of basic data type. A _multivalued property_ is a property whose value is a multivalue, e.g., _titles_: _set_(_string_) = {"Her Majesty", "Her Royal Highness"}. A _composite property_ is a property whose value is composite, e.g., _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). Each member of a composite property is called a _subproperty_.
