@@ -206,7 +206,7 @@ A _property graph schema_ is defined by:
   * A set of properties - similar to entity-types' properties
   
 A predefined property-less entity-type _Null_ serves two purposes:
-* Realizing unary edges (actions) as edges (relationships): an action-type can be realized as a relationship-type that is applicable between some entity-type and the _Null_ entity-type. For example, a _sleeps_: {(_Dragon_, _Null_)} relationship-type realizes a _sleeps_ action-type for the _Dragon_ entity-type.
+* Realizing actions: an action-type can be realized as a relationship-type that is applicable between some entity-type and the _Null_ entity-type. For example, a _sleeps_: {(_Dragon_, _Null_)} relationship-type realizes a _sleeps_ action-type for the _Dragon_ entity-type.
 * Realizing relationships to unknown or unimportant entities: sometimes a real entity is unknown or unimportant, but the existence of a relationship and the values of the relationship's properties - are important. For example, we may know that some dragons were owned in given timeframes, but we do not know or do not care who/what owned them. Still - we want to be able to store and query such information. _owns_: {(_Person_, _Dragon_), (_Guild_, _Dragon_), (_Null_, _Dragon_)} allows us to realize this.
 
 Property graph schema definitions may vary in many aspects, including:
