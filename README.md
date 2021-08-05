@@ -74,7 +74,7 @@ Many query posers are professionals (e.g., researchers, analysts, or investigato
 
 Since the capabilities of the human visual system with respect to pattern perception are remarkable, it is a matter of course that query patterns were to be expressed visually. Indeed, five of the abovementioned languages use 'ASCII-art syntax' for expressing topological constraints. Needless to say, this type of 'visualization' is quite limited. While the use of ASCII-art declined during the 1990s in favor of graphical images, query languages began to adopt ASCII-art only recently. Visual (graphical, diagrammatic) query languages have the potential to be much more 'user-friendly' than their textual counterparts in the sense that patterns may be constructed and understood much more quickly and with much less mental effort. Given a schema, interactive tools can allow query posers to construct valid patterns with minimal typing. A long-standing challenge is to design a visual query language that is generic, has rich expressive power, and is highly receptive and productive. V1 attempts to answer this challenge.
 
-V1 is a declarative visual pattern query language for schema-based property graphs. V1 supports property graphs with mixed (both directed and undirected) edges and unary edges, with multivalued and composite properties, and with _null_ property values. V1 supports temporal data types, operators, and functions and can be extended to support additional data types, operators, and functions (one spatiotemporal model is presented). V1 is generic, concise, has rich expressive power, and is highly receptive and productive.
+V1 is a declarative visual pattern query language for schema-based property graphs. V1 supports property graphs with mixed (both directed and undirected) edges, multivalued and composite properties, and _null_ property values. V1 supports temporal data types, operators, and functions and can be extended to support additional data types, operators, and functions (one spatiotemporal model is presented). V1 is generic, concise, has rich expressive power, and is highly receptive and productive.
 
 ## The Property Graph Data Model
 
@@ -82,7 +82,7 @@ The term _property graph_ refers to both a mathematical structure and a data mod
 
 ### Mathematical Structure:
 
-A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is a pair of sets consisting of a set of _vertices_ (_nodes_) and a set of _edges_ (_arcs_). A graph may be _directed_ (i.e., _digraph_), in which each edge consists of an ordered pair of vertices, *undirected*, in which each edge consists of an unordered pair of vertices, or _mixed_ in which both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed. Sometimes _unary edges_ (_half-edges_ - edges attached to only one vertex) are allowed as well.
+A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is a pair of sets consisting of a set of _vertices_ (_nodes_) and a set of _edges_ (_arcs_). A graph may be _directed_ (i.e., _digraph_), in which each edge consists of an ordered pair of vertices, *undirected*, in which each edge consists of an unordered pair of vertices, or _mixed_ in which both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed.
 
 An _attributed graph_ is a graph in which nodes and/or edges are annotated with attributes or sets of attributes (i.e., _multi-attributed graph_). Attributes can be nominal, ordinal, key-value pairs, and so on. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
@@ -90,7 +90,7 @@ A _property graph_ (also called _labeled property graph_, _LPG_) is a multi-attr
 
 - Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex-labels and the set of edge-labels are disjoint.
 
-- Each vertex and each edge (unary or binary) has a set of attributes called _properties_. Each property is an ordered pair: the property's name and the property's value. For each vertex and each edge, the property names are pairwise distinct.
+- Each vertex and each edge has a set of attributes called _properties_. Each property is an ordered pair: the property's name and the property's value. For each vertex and each edge, the property names are pairwise distinct.
 
 ### Data Model:
 
@@ -101,9 +101,9 @@ A _data element_ (i.e., _datum_) is an atomic unit of data. A _data model_ speci
 
 The _property graph data model_ defines the following **concepts**:
 
--	An _entity_ is a physical, conceptual, virtual, or fictional particular (e.g., a certain person, a certain guild, or a certain dragon). Any two entities are distinguishable.
+-	An _entity_ is a physical, conceptual, virtual, or fictional particular (e.g., a certain person, guild, or dragon). Any two entities are distinguishable.
 
--	A (_binary_) _relationship_ is an _association_ or an _interaction_ between a pair of entities or between an entity and itself. Each relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity; an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _sibling_ relationship between two _Person_ entities).
+-	A (_binary_) _relationship_ is an _association_ or an _interaction_ between a pair of entities or between an entity and itself. Each relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity, an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _sibling_ relationship between two _Person_ entities).
 
 -	An _action_ is an action _of_ an entity (e.g., _eats_ for a _Person_ entity) or an action _on_ or _against_ an entity (e.g., _accused_ for a _Person_ entity), when no other [known or relevant] entities are concerned. An action may also represent a state of an entity (e.g., _sleeps_ action for a _Person_ entity) or a state-change (e.g., _falls asleep_ for a _Person_ entity).
 
@@ -112,21 +112,22 @@ The _property graph data model_ defines the following **concepts**:
 - Each entity, each relationship, and each action has a single _type_. A property graph is a _heterogeneous graph_; it may contain entities of multiple types (_multi-modal_, _multimode_), relationships of multiple types (_multi-relational_), and, optionally, actions of multiple types. Entities, relationships, and actions may have multiple types of features (_multi-featured_).
 
   Entities of the same type are _semantically homogeneous_. The same is true also for relationships and for actions. Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Many times types are assigned in accordance with the following guidelines:
-  - Repetition of existence: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
-  - Repetition of features: entities of the same type have features of the same types. The same is true also for relationships and for actions.
-  - Repetitions of actions: entities of the same type 'have' actions of the same types.
-  - Repetition of relationships: pairs of entities of the same pair of entity-types have relationships of the same types.
-  - Type constancy: an entity's type, a relationship's type, and an action's type do not change over time. 
-  - Value inconstancy: feature values may change over time.
+  - _Repetition of existence_: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
+  - _Repetition of features_: entities of the same type have features of the same types. The same is true also for relationships and for actions.
+  - _Repetitions of actions_: entities of the same type 'have' actions of the same types.
+  - _Repetition of relationships_: pairs of entities of the same pair of entity-types have relationships of the same types.
+  - _Type constancy_: an entity's type, a relationship's type, and an action's type do not change over time. 
+  - _Value inconstancy_: feature values may change over time.
 
   Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines sets of features. Such definitions may be specified in a property graph schema (see next section).
 
 The property graph data model defines the following **structure**:
 
-  - The data is organized in a single property graph.
-  - The graph's vertices represent entities. A vertex's label is a string or an integer identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_). 
-  - The graph's edges represent binary relationships. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. An edge's label is a string or an integer identifying the _relationship's type_ (e.g., _owns_, _member of_).
-  - Unary edges, if allowed, can represent entities' actions (e.g., _sleeps_ action for a _Dragon_ entity). A unary edge's label is a string or an integer identifying the _action's type_ (e.g., _sleeps_).
+  - All available data is organized in a single property graph.
+  - A _null vertex_ is a labelless propertyless vertex. Each null vertex is connected to exactly one edge. An edge between two null vertices is not allowed.
+  - Any vertex, except null vertices, represents an entity. The vertex's label is an integer or a nonempty string identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_).
+  - A graph edge, where both vertices are not null vertices, represents a binary relationship. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. The edge's label is an integer or a nonempty string identifying the _relationship's type_ (e.g., _owns_, _member of_).
+  - A graph edge, where one vertex is a null vertex, represents an entity's action (e.g., sleeps action for a Dragon entity). The edge's label is an integer or a nonempty string identifying the _action's type_ (e.g., _sleeps_).
   - Properties and subproperties represent features and subfeatures of entities (e.g., _name_ property and _first name_ subproperty for a _Person_ entity), relationships (e.g., _timeframe_ property for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). For each entity, relationship, and action, property names are pairwise distinct strings or integers, each identifying the feature's name, and each property value represents the feature's value.
   - Each feature value is represented using one of the _property data types_ supported by the model. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
 
@@ -201,8 +202,6 @@ A _property graph schema_ is defined by:
 A predefined property-less entity-type _Null_ serves two purposes:
 * Realizing unary edges (actions) as edges (relationships): an action-type can be realized as a relationship-type that is applicable between some entity-type and the _Null_ entity-type. For example, a _sleeps_: {(_Dragon_, _Null_)} relationship-type realizes a _sleeps_ action-type for the _Dragon_ entity-type.
 * Realizing relationships to unknown or unimportant entities: sometimes a real entity is unknown or unimportant, but the existence of a relationship and the values of the relationship's properties - are important. For example, we may know that some dragons were owned in given timeframes, but we do not know or do not care who/what owned them. Still - we want to be able to store and query such information. _owns_: {(_Person_, _Dragon_), (_Guild_, _Dragon_), (_Null_, _Dragon_)} allows us to realize this.
-
-Each entity of type _Null_ is connected by exactly one relationship. A relationship between two _Null_ entities is not allowed.
 
 Property graph schema definitions may vary in many aspects, including:
 
@@ -1059,7 +1058,7 @@ _**Q31:** Any pair of dragons (A, B) where A froze B, A fired at B, B froze A, a
 
 Without the order constraint, any reported pair of dragons would be reported twice: (D1, D2), (D2, D1).
 
-Property graph data models usually require that each entity and each relationship would be *uniquely identifiable*. To support order constraints, V1 further requires that graph-entities (except _Null_ entities) would also be _ordered_. 
+Property graph data models usually require that each entity and each relationship would be *uniquely identifiable*. To support order constraints, V1 further requires that graph-entities would also be _ordered_. 
 
 Order constraints are depicted in red ('<X' or '≤X'), where X is another entity-tag. Several nonidenticality or order constraints may be defined for the same pattern-entity, e.g., '<A,<B', '≠A,<C' (see Q83).
 
