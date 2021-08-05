@@ -126,8 +126,14 @@ The property graph data model defines the following **structure**:
   - All available data is organized in a single property graph.
   - A _null vertex_ is a labelless propertyless vertex. Each null vertex is connected to exactly one edge. An edge between two null vertices is not allowed.
   - Any vertex, except null vertices, represents an entity. The vertex's label is an integer or a nonempty string identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_).
-  - A graph edge, where both vertices are not null vertices, represents a binary relationship. Directed graph edges represent directional relationships, while undirected edges represent bidirectional relationships. The edge's label is an integer or a nonempty string identifying the _relationship's type_ (e.g., _owns_, _member of_).
-  - A graph edge, where one vertex is a null vertex, represents an entity's action (e.g., sleeps action for a Dragon entity). The edge's label is an integer or a nonempty string identifying the _action's type_ (e.g., _sleeps_).
+  - A graph edge, where both vertices are not null vertices, represents a binary relationship. 
+  - A graph edge, where one vertex is a null vertex, represents either
+
+    - an entity's action (e.g., _sleeps_ action for a _Person_ entity), or
+    - a relationship between an entity and a nonspecified entity. Sometimes, an entity is unknown or unimportant, but the existence of a relationship and the values of the relationship’s properties - are important. For example, we may know that some dragon was owned in given timeframes, but we do not know or care who/what owned it. Still, we want to be able to model such data.
+
+  - The edge's label is an integer or a nonempty string identifying the _relationship's type_ (e.g., _owns_, _member of_) or the _action's type_ (e.g., _sleeps_).
+  - A directed graph edge represents a directional relationship or action, while an undirected edge represents a bidirectional relationships or action.
   - Properties and subproperties represent features and subfeatures of entities (e.g., _name_ property and _first name_ subproperty for a _Person_ entity), relationships (e.g., _timeframe_ property for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). For each entity, relationship, and action, property names are pairwise distinct strings or integers, each identifying the feature's name, and each property value represents the feature's value.
   - Each feature value is represented using one of the _property data types_ supported by the model. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
 
