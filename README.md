@@ -130,7 +130,7 @@ The property graph data model defines the following **structure**:
   - A graph edge, where one vertex is a null vertex, represents either
 
     - an entity's action (e.g., _sleeps_ action for a _Person_ entity), or
-    - a relationship between an entity and a nonspecified entity. Sometimes, an entity is unknown or unimportant, but the existence of a relationship and the values of the relationship’s properties - are important. For example, we may know that some dragon was owned in given timeframes, but we do not know or care who/what owned it. Still, we want to be able to model such data.
+    - a relationship between an entity and a nonspecific entity. Sometimes, an entity is unknown or unimportant, but the existence of a relationship and the values of the relationship’s properties - are important. For example, we may know that some dragon was owned in given timeframes, but we do not know or care who owned it. Still, we want to be able to model such data.
 
   - The edge's label is an integer or a nonempty string identifying the _relationship's type_ (e.g., _owns_, _member of_) or the _action's type_ (e.g., _sleeps_).
   - A directed graph edge represents a directional relationship or action, while an undirected edge represents a bidirectional relationships or action.
@@ -211,7 +211,7 @@ A predefined property-less entity-type _Null_ serves two purposes:
 
 Property graph schema definitions may vary in many aspects, including:
 
-* Supported schema constraints (properties _uniqueness_ and _nullableness_, _property value constraints_, _relationships cardinality constraints_, disallow loops for certain relationship-types, etc.)
+* Supported schema constraints (properties _uniqueness_ and _nullability_, _property value constraints_, _relationships cardinality constraints_, disallow loops for certain relationship-types, etc.)
 * Supported ways to declare user-defined data types
 * Properties may be either:
   * Defined globally and assigned to one or more entity/relationship-types, or
