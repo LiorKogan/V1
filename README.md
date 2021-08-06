@@ -101,15 +101,17 @@ A _data element_ (i.e., _datum_) is an atomic unit of data. A _data model_ speci
 
 The _property graph data model_ defines the following **concepts**:
 
--	An _entity_ is a physical, conceptual, virtual, or fictional particular (e.g., a certain person, guild, or dragon). Any two entities are distinguishable.
+-	An _entity_ is a physical, conceptual, virtual, or fictional particular (e.g., a certain person, guild, or dragon).
 
 -	A (_binary_) _relationship_ is an _association_ or an _interaction_ between a pair of entities or between an entity and itself. Each relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity, an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _sibling_ relationship between two _Person_ entities).
 
 -	An _action_ is an action _of_ an entity (e.g., _eats_ for a _Person_ entity) or an action _on_ or _against_ an entity (e.g., _accused_ for a _Person_ entity), when no other [known or relevant] entities are concerned. An action may also represent a state of an entity (e.g., _sleeps_ action for a _Person_ entity) or a state-change (e.g., _falls asleep_ for a _Person_ entity).
 
-- Each entity, each relationship, and each action has a set of _features_ (_characteristics_). Each feature has a name (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each entity, relationship, and action, the feature names are pairwise distinct.
+- We will use the term _graph element_ to refer to a graph entity, relationship, or action.
 
-- Each entity, each relationship, and each action has a single _type_. A property graph is a _heterogeneous graph_; it may contain entities of multiple types (_multi-modal_, _multimode_), relationships of multiple types (_multi-relational_), and, optionally, actions of multiple types. Entities, relationships, and actions may have multiple types of features (_multi-featured_).
+- Each element has a set of _features_ (_characteristics_). Each feature has a name (e.g., _name_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each element, the feature names are pairwise distinct.
+
+- Each element has a single _type_. A property graph is a _heterogeneous graph_; it may contain entities of multiple types (_multi-modal graph_), relationships of multiple types (_multi-relational graph_), and, optionally, actions of multiple types. Elements may have multiple types of features (_multi-featured graph_).
 
   Entities of the same type are _semantically homogeneous_. The same is true also for relationships and for actions. Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Many times types are assigned in accordance with the following guidelines:
   - _Repetition of existence_: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
