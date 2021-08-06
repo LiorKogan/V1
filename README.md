@@ -159,7 +159,7 @@ The property graph data model defines the following **structure**:
 
     Though _null_ value semantics is not usually defined as part of the data model, the semantics of operators and functions is well-defined for _null_ values. E.g., what is the result of (yesterday's date < person's death date) when the death date is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable_ values.
     
-- Subject to the data available, each entity should not be represented using more than one graph vertex. If new data proves that two or more vertices represent the same entity, these vertices should be merged. Similarly, each relationship or action should not be represented using more the one graph edge.
+- Subject to the data available, each entity should not be represented using more than one vertex. If new data proves that two or more vertices represent the same entity, these vertices should be merged. Similarly, each relationship or action should not be represented using more the one graph edge.
 
 - Any pair of vertices, except null vertices, are _distinguishable_. Conceptually, it means that there should be no pair of vertices with an identical type, property values, and relationships. Practically, entities usually have a pairwise distinct identifier property (e.g., a UUID). Similarly, any pair of relationships or actions are _distinguishable_. There should be no pair of edges with an identical type and property values that connect the same pair of vertices or the same vertex with a null vertex.
 
