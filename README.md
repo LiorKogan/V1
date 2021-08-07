@@ -99,7 +99,7 @@ A _data element_ (i.e., _datum_) is an atomic unit of data. A _data model_ speci
 - A conceptualization: a set of _concepts_ (e.g., _entity_, _relationship_, _feature_) used for defining data elements and their relations. The semantics of the concepts may be described, for example, using ontological concepts (e.g., _particular_, _type_, _universal_, _composition_, _relation_, _action_, _quality_).
 - A representation: a _structure_ (e.g., mathematical, diagrammatic) used for representing data elements and their relations.
 
-The _property graph data model_ defines the following **concepts**:
+The _property graph data model_ defines the following **conceptualization**:
 
 -	An _entity_ is a physical, conceptual, virtual, or fictional particular (e.g., a certain person, guild, or dragon).
 
@@ -123,7 +123,7 @@ The _property graph data model_ defines the following **concepts**:
 
   Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines sets of features. Such definitions may be specified in a property graph schema (see next section).
 
-The property graph data model defines the following **structure**:
+The property graph data model defines the following **representation**:
 
   - All available data is organized in a single property graph.
   - A _null vertex_ is a labelless propertyless vertex. Each null vertex is connected to exactly one edge. An edge between two null vertices is not allowed.
@@ -141,15 +141,15 @@ The property graph data model defines the following **structure**:
 
     - The model defines a set of _basic data types_ (e.g., _string_, _integer_, _float_).
     - A _multivalue_ is a set, a bag, or a list of values. All values are of the same basic data type (e.g., each value is a _string_), the same multivalue type (e.g., each value is a set(_string_)), or the same composite type (e.g., each value is a {_first_: _string_, _last_: _string_} composite).
-    - A _composite value_ is a set of (name, value) pairs, where the names are pairwise distinct strings or integers, each identifying the subfeature's name, and each value is of a basic data type, a multivalue type, or a composite type.
+    - A _composite value_ is a set of (name, value) pairs in which the names are pairwise distinct strings or integers identifying the subfeatures names, and each value is of a basic data type, a multivalue type, or a composite type.
 
-    A _basic property_ is a property whose value is of basic data type. A _multivalued property_ is a property whose value is a multivalue, e.g., _titles_: _set_(_string_) = {"Her Majesty", "Her Royal Highness"}. A _composite property_ is a property whose value is composite, e.g., _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). Each member of a composite property is called a _subproperty_.
+    A _basic property_ is a property whose value is of a basic data type. A _multivalued property_ is a property whose value is a multivalue, e.g., _titles_: _set_(_string_) = {"Her Majesty", "Her Royal Highness"}. A _composite property_ is a property whose value is composite, e.g., _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). Each member of a composite property is called a _subproperty_.
 
   - _null_ is a valid value for each _nullable_ property and subproperty, regardless of its data type. _Null-valued_ [sub]property indicates that a [sub]feature value is not specified.
 
     Several different interpretations can be associated with a _null_ value. Following the terminology introduced by [Codd](https://dl.acm.org/doi/10.1145/16301.16303) and adopted by many authors, a _null_ value is either
     - _Applicable missing_ – at present, a value is applicable (applies to the particular entity, relationship, or action) but unknown (whatever the reason, the graph does not have the value). E.g., the temperature 1000 years ago today; a phone number of a person who owns a phone, but the number is unknown; an answer to a question – when the questionee refused to answer.
-    - _Inapplicable_ - at present, no value is applicable. E.g., the temperature tomorrow; previous citizenship when there is none; direct manager of the CEO; new hire's not-yet-assigned employee ID; a phone number of a person who does not own a phone; an answer to a question – when the question was not posed to the questionee.
+    - _Inapplicable_ - at present, no value is applicable. E.g., the temperature tomorrow, previous citizenship when there is none, direct manager of the CEO, new hire's not-yet-assigned employee ID, a phone number of a person who does not own a phone, an answer to a question – when the question was not posed to the questionee.
 
     [Zaniolo](https://www.sciencedirect.com/science/article/pii/0022000084900801) proposed a third basic interpretation of _null_ values:
 
@@ -161,7 +161,7 @@ The property graph data model defines the following **structure**:
     
 - With regard to the available data, each entity should be represented using one vertex. If new data proves that two or more vertices represent the same entity, these vertices should be merged. Similarly, each relationship or action should be represented using one edge.
 
-- Any pair of vertices, except null vertices, are _distinguishable_, which means that either there should be no pair of vertices with an identical _identifier_, or there should be no pair of vertices with identical type, property values, and relationships. Similarly, any pair of edges are _distinguishable_, which means that either there should be no pair of edges with an identical _identifier_, or there should be no pair of edges with identical type and property values that connect the same pair of vertices or the same vertex and a null vertex. An _identifier_ may be a property or a set of properties that uniquely identifies the element, or an implementation index that uniquely identifies the element.
+- Any pair of vertices, except null vertices, should be _distinguishable_, which means that either there should be no pair of vertices with an identical _identifier_, or there should be no pair of vertices with identical type, property values, and relationships. Similarly, any pair of edges should be _distinguishable_, which means that either there should be no pair of edges with an identical _identifier_, or there should be no pair of edges with identical type and property values that connect the same pair of vertices or the same vertex and a null vertex. An _identifier_ is a property, a set of properties, or an implementation index that uniquely identifies the element.
 
 _n_-ary relationships, where _n_ > 2, are not supported. However, this poses no practical limitation since any _n_-ary relationship, _n_ > 2, can be reframed as an entity and _n_ binary relationships. Consider, for example, a ternary relationship, where Person _A_ sells Horse _H_ to Person _B_. Instead, one can reframe this data as a _Sale_ entity _S_, a _seller_ relationship from _S_ to _A_, a _buyer_ relationship from _S_ to _B_, and a _sold_ relationship from _S_ to _H_.
 
