@@ -99,7 +99,7 @@ A _data element_ (i.e., _datum_) is an atomic unit of data. A _data model_ speci
 - A conceptualization: a set of _concepts_ (e.g., _entity_, _relationship_, _feature_) used for defining data elements and their relations. The semantics of the concepts may be described, for example, using ontological concepts (e.g., _particular_, _type_, _universal_, _composition_, _relation_, _action_, _quality_).
 - A representation: a _structure_ (e.g., mathematical, diagrammatic) used for representing data elements and their relations.
 
-The _property graph data model_ defines the following **conceptualization**:
+The _property graph data model_ defines the following **concepts**:
 
 -	An _entity_ is a physical, conceptual, virtual, or fictional particular (e.g., a certain person, guild, or dragon).
 
@@ -107,7 +107,7 @@ The _property graph data model_ defines the following **conceptualization**:
 
 -	An _action_ is an action _of_ an entity (e.g., _eats_ for a _Person_ entity) or an action _on_ or _against_ an entity (e.g., _accused_ for a _Person_ entity), when no other [known or relevant] entities are concerned. An action may also represent a state of an entity (e.g., _sleeps_ action for a _Person_ entity) or a state-change (e.g., _falls asleep_ for a _Person_ entity).
 
-- We will use the term _graph element_ to refer to a graph entity, relationship, or action.
+- We will use the term _element_ to refer to an entity, a relationship, or an action.
 
 - Each element has a set of _features_ (_characteristics_). Each feature has a name (e.g., _birth date_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each element, the feature names are pairwise distinct.
 
@@ -121,18 +121,18 @@ The _property graph data model_ defines the following **conceptualization**:
   - _Type constancy_: an entity's type, a relationship's type, and an action's type do not change over time. 
   - _Value inconstancy_: feature values may change over time.
 
-  Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines sets of features. Such definitions may be specified in a property graph schema (see next section).
+  Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines sets of features. Such definitions may be specified as part of a property graph schema (see next section).
 
-The property graph data model defines the following **representation**:
+The property graph data model defines the following **structure**:
 
-  - All available data is organized in a single property graph.
-  - A _null vertex_ is a labelless propertyless vertex. Each null vertex is connected to exactly one edge. An edge between two null vertices is not allowed.
+  - All available data elements are organized in a single property graph.
+  - A _null vertex_ is a propertyless vertex with a null label. Each null vertex is connected to exactly one edge. An edge between two null vertices is not allowed.
   - Any vertex, except null vertices, represents an entity. The vertex's label is an integer or a nonempty string identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_).
   - A graph edge, where both vertices are not null vertices, represents a binary relationship. 
   - A graph edge, where one vertex is a null vertex, represents either
 
     - an entity's action (e.g., _sleeps_ action for a _Person_ entity), or
-    - a relationship between an entity and a nonspecific entity. Sometimes, an entity is unknown or unimportant, but the existence of a relationship and the values of the relationship’s properties - are important. For example, we may know that a given dragon was owned in given timeframes, but we do not know or care who owned it. Still, we want to be able to model such data.
+    - a relationship between an entity and a nonspecific entity. Sometimes, an entity is unknown or unimportant, but the existence of a relationship and the values of the relationship’s properties - are important. For example, we may know that a given horse was owned in given timeframes, but we do not know or care who owned it. Still, we want to be able to model such data.
 
   - The edge's label is an integer or a nonempty string identifying the _relationship's type_ (e.g., _owns_, _member of_) or the _action's type_ (e.g., _sleeps_).
   - A directed graph edge represents a directional relationship or action, while an undirected edge represents a bidirectional relationships or action.
@@ -143,7 +143,7 @@ The property graph data model defines the following **representation**:
     - A _multivalue_ is a set, a bag, or a list of values. All values are of the same basic data type (e.g., each value is a _string_), the same multivalue type (e.g., each value is a set(_string_)), or the same composite type (e.g., each value is a {_first_: _string_, _last_: _string_} composite).
     - A _composite value_ is a set of (name, value) pairs in which the names are pairwise distinct strings or integers identifying the subfeatures names, and each value is of a basic data type, a multivalue type, or a composite type.
 
-    A _basic property_ is a property whose value is of a basic data type. A _multivalued property_ is a property whose value is a multivalue, e.g., _titles_: _set_(_string_) = {"Her Majesty", "Her Royal Highness"}. A _composite property_ is a property whose value is composite, e.g., _name_ = (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). Each member of a composite property is called a _subproperty_.
+    A _basic property_ is a property whose value is of a basic data type. A _multivalued property_ is a property whose value is a multivalue, e.g., _titles_: _set_(_string_) = {"Her Majesty", "Her Royal Highness"}. A _composite property_ is a property whose value is composite, e.g., _name_: (_first_: _string_ = "Brandon", _last_: _string_ = "Stark"). Each member of a composite property is called a _subproperty_.
 
   - _null_ is a valid value for each _nullable_ property and subproperty, regardless of its data type. _Null-valued_ [sub]property indicates that a [sub]feature value is not specified.
 
@@ -161,7 +161,7 @@ The property graph data model defines the following **representation**:
     
 - With regard to the available data, each entity should be represented using one vertex. If new data proves that two or more vertices represent the same entity, these vertices should be merged. Similarly, each relationship or action should be represented using one edge.
 
-- Any pair of vertices, except null vertices, should be _distinguishable_, which means that either there should be no pair of vertices with an identical _identifier_, or there should be no pair of vertices with identical type, property values, and relationships. Similarly, any pair of edges should be _distinguishable_, which means that either there should be no pair of edges with an identical _identifier_, or there should be no pair of edges with identical type and property values that connect the same pair of vertices or the same vertex and a null vertex. An _identifier_ is a property, a set of properties, or an implementation index that uniquely identifies the element.
+- Any pair of vertices, except null vertices, should be _distinguishable_, which means that vertices _identifiers_ should be pairwise disjoint, or there should be no pair of vertices with identical type, property values, and relationships. Similarly, any pair of edges should be _distinguishable_, which means that edges _identifiers_ should be pairwise disjoint, or there should be no pair of edges with identical type and property values that connect the same pair of vertices or the same vertex and a null vertex. An _identifier_ is a property, a set of properties, or an implementation index that uniquely identifies the element.
 
 _n_-ary relationships, where _n_ > 2, are not supported. However, this poses no practical limitation since any _n_-ary relationship, _n_ > 2, can be reframed as an entity and _n_ binary relationships. Consider, for example, a ternary relationship, where Person _A_ sells Horse _H_ to Person _B_. Instead, one can reframe this data as a _Sale_ entity _S_, a _seller_ relationship from _S_ to _A_, a _buyer_ relationship from _S_ to _B_, and a _sold_ relationship from _S_ to _H_.
 
