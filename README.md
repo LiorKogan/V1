@@ -189,7 +189,7 @@ It is much easier to define patterns when the information is presented consisten
 * For the _Horse_ entity-type, define a _color_ property with a nominal data type
 * Ensure that all the information is structured accordingly
 
-Though proposed property graph and property graph schema definitions have much in common (See [Angles](http://ceur-ws.org/Vol-2100/paper26.pdf), [Wu](https://arxiv.org/abs/1810.08755), [Hartig and Hidders](https://dl.acm.org/citation.cfm?id=3327964.3328495), and [Thakkar et al.](https://ieeexplore.ieee.org/document/9088985)), to date, there is neither a de jure nor a de facto standard definition (and hence, no standard property graph schema definition language). 
+Though proposed property graph and property graph schema definitions have much in common (See [Angles](http://ceur-ws.org/Vol-2100/paper26.pdf), [Wu](https://arxiv.org/abs/1810.08755), [Hartig and Hidders](https://dl.acm.org/citation.cfm?id=3327964.3328495), and [Angles et al.](https://ieeexplore.ieee.org/document/9088985)), to date, there is neither a de jure nor a de facto standard definition (and hence, no standard property graph schema definition language). 
 
 The following _property graph schema model_ (i.e., _property graph metamodel_) is assumed in this paper:
 
