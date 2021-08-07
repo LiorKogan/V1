@@ -86,7 +86,7 @@ A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is a pai
 
 An _attributed graph_ is a graph in which nodes and/or edges are annotated with attributes or sets of attributes (i.e., _multi-attributed graph_). Attributes can be nominal, ordinal, key-value pairs, and so on. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
-A _property graph_ (also called _labeled property graph_, _LPG_) is a multi-attributed mixed pseudograph in which:
+A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a multi-attributed mixed pseudograph in which:
 
 - Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex-labels and the set of edge-labels are disjoint.
 
