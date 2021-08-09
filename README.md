@@ -82,7 +82,7 @@ The term _property graph_ refers to both a mathematical structure and a data mod
 
 ### Mathematical Structure:
 
-A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is a pair of sets consisting of a set of _vertices_ (_nodes_) and a set of _edges_ (_arcs_). A graph may be _directed_ (i.e., _digraph_), in which each edge consists of an ordered pair of vertices, *undirected*, in which each edge consists of an unordered pair of vertices, or _mixed_ in which both directed and undirected edges may exist. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed.
+A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) consist of a set of _vertices_ (_nodes_, _dots_, _points_) and a set of _edges_ (_linkes_, _lines_). A graph may be _directed_ (i.e., _digraph_), in which each edge (_directed edge_, _arc_) consists of an ordered pair of vertices, or *undirected*, in which each edge (_undirected edge_) consists of an unordered pair of vertices. A _mixed graph_ consist of a set of vertices, a set of directed edges and a set of undirected edges.  A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which both [_loops_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (an edge between a vertex and itself) and [_multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (two or more edges connecting the same pair of vertices) are allowed.
 
 An _attributed graph_ is a graph in which nodes and/or edges are annotated with attributes or sets of attributes (i.e., _multi-attributed graph_). Attributes can be nominal, ordinal, key-value pairs, and so on. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
@@ -111,7 +111,7 @@ The _property graph data model_ defines the following **concepts**:
 
 - Each element has a set of _features_ (_characteristics_). Each feature has a name (e.g., _birth date_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each element, the feature names are pairwise distinct.
 
-- Each element has a single _type_. A property graph is a _heterogeneous graph_; it may contain entities of multiple types (_multi-modal graph_), relationships of multiple types (_multi-relational graph_), and, optionally, actions of multiple types. Elements may have multiple types of features (_multi-featured graph_).
+- Each element has a single _type_. A property graph is a _heterogeneous graph_; it may contain entities of multiple types (_multi-modal graph_), relationships of multiple types (_multi-relational graph_), and, optionally, actions of multiple types. Elements may have multiple features (_multi-featured graph_).
 
   Entities of the same type are _semantically homogeneous_. The same is true also for relationships and for actions. Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Many times types are assigned in accordance with the following guidelines:
   - _Repetition of existence_: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
