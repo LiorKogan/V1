@@ -82,13 +82,13 @@ The term _property graph_ refers to both a mathematical structure and a data mod
 
 ### Mathematical Structure:
 
-A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is an ordered quintet _G_ = (_V_, _E_, _A_, _fₑ_, _fₐ_) consisting of a set _V_ of [_vertices_](https://en.wikipedia.org/wiki/Vertex_(graph_theory)) (_nodes_, _dots_, _points_), a set _E_ of _undirectred edges_ (_undirectred links_, _undirectred lines_), a set _A_ of _directred edges_ (_directred links_, _directred lines_, _arcs_, _arrows_), a mapping _fₑ_ from each element of E to an unordered pair of vertices, and a mapping _fₐ_ from each element of A to an ordered pair of vertices.
+A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is an ordered quintet _G_ = (_V_, _E_, _A_, _ψₑ_, _ψₐ_) consisting of a nonempty set _V_ whose elements are called [_vertices_](https://en.wikipedia.org/wiki/Vertex_(graph_theory)) (_nodes_, _dots_, _points_), a set _E_ whose elements are called _undirectred edges_ (_undirectred links_, _undirectred lines_), a set _A_ whose elements are called _directred edges_ (_directred links_, _directred lines_, _arcs_, _arrows_), an _incidence function_ _ψₑ_ mapping every element of _E_ to an unordered pair of vertices, and an _incidence function_ _ψₐ_ mapping every element of _A_ to an ordered pair of vertices.
 
-An [_undirected graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)#Graph) is a graph in which _A_ ≜ _∅_. A [_directed graph_](https://en.wikipedia.org/wiki/Directed_graph) (_digraph_) is a graph in which _E_ ≜ _∅_. A [_mixed graph_](https://en.wikipedia.org/wiki/Mixed_graph) is a graph in which both _E_ and _A_ are allowed to be nonempty.
+An [_undirected graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)#Graph) is a graph in which _A_ ≔ _∅_. A [_directed graph_](https://en.wikipedia.org/wiki/Directed_graph) (_digraph_) is a graph in which _E_ ≔ _∅_. A [_mixed graph_](https://en.wikipedia.org/wiki/Mixed_graph) is a graph in which both _E_ and _A_ are allowed to be nonempty.
 
 A [_loop_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) is an edge (directed or undirected) connecting a vertex to itself. [_Multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (_parallel edges_) are two or more undirected edges connecting the same unordered pair of vertices or directed edges connecting the same ordered pair of vertices. A _simple graph_ is a graph in which multiple edges and loops are not allowed. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which multiple edges and loops are allowed.
 
-An _attributed graph_ is a graph in which nodes and/or edges are annotated with attributes or sets of attributes (i.e., _multi-attributed graph_). Attributes can be nominal, ordinal, key-value pairs, and so on. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
+An _attributed graph_ is a graph in which vertices and/or edges are annotated with attributes or sets of attributes (i.e., _multi-attributed graph_). Attributes can be nominal, ordinal, key-value pairs, and so on. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
 A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a multi-attributed mixed pseudograph in which:
 
@@ -3765,14 +3765,14 @@ _**Q273:** For each horse color - the three horse-ownerships with the latest own
 
 ## Multivalued Functions and Expressions
 
-A _multivalued function_ is a function that may have more than one value in its range for each value in its domain. In V1, expressions composed of multivalued functions are evaluated separately for each range value. 
+A _multivalued function_ is a function that may associate zero or more values to each input. In V1, expressions composed of multivalued functions are evaluated separately for each output associated with the input. 
 
 V1 supports the following multivalued functions:
 
-* _el_(_St_) → _t_  - a single element of a set; has no evaluations when _St_ is empty
-* _subset_(_St_) → _t_  - a single nonempty subset of a set; has no evaluations when _St_ is empty
-* _el_(_Bt_) → _t_  - a single element of a bag; has no evaluations when _Bt_ is empty
-* _subbag_(_Bt_) → _t_  - a single nonempty subbag of a bag; has no evaluations when _Bt_ is empty
+* _el_: _St_ ↦ _t_ - associates a set with each of its elements; no associations when _St_ is empty
+* _el_: _Bt_ ↦ _t_ - associates a bag with each of its elements; no associations when _Bt_ is empty
+* _subset_: _St_ ↦ _t_ - associates a set with each of its nonempty subsets; no associations when _St_ is empty
+* _subbag_: _Bt_ ↦ _t_ - associates a bag with each of its nonempty subbags; no associations when _Bt_ is empty
 
 In the following examples, _Person_ has the following property: _nicknames_: _set(string)_.
 
