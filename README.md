@@ -88,7 +88,7 @@ An [_undirected graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematic
 
 A [_loop_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) is an edge (directed or undirected) connecting a vertex to itself. [_Multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (_parallel edges_) are two or more undirected edges connecting the same unordered pair of vertices or directed edges connecting the same ordered pair of vertices. A _simple graph_ is a graph in which multiple edges and loops are not allowed. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which multiple edges and loops are allowed.
 
-An _attributed graph_ is a graph in which vertices and/or edges are annotated with attributes or sets of attributes (i.e., _multi-attributed graph_). Attributes can be nominal, ordinal, key-value pairs, and so on. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
+Informally, an _attributed graph_ is a graph in which vertices and/or edges may be associated (annotated) with attributes or with vectors or sets of attributes (i.e., _multi-attributed graph_). _Attributes_ can be nominal, ordinal, key-value pairs, and so on. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
 A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a multi-attributed mixed pseudograph in which:
 
