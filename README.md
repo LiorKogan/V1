@@ -753,8 +753,8 @@ Functions over _set_ expressions:
 | _count_(_St_) → _int_        | number of elements
 | _bag_(_St_) → _Bt_           | set to bag
 | _list_(_St_) → _Lt_          | set to list
-| _el_(_St_) → _t_             | (see [Multivalued Functions and Expressions](#multivalued-functions-and-expressions))
-| _subset_(_St_) → _St_        | (see [Multivalued Functions and Expressions](#multivalued-functions-and-expressions))
+| _el_(_St_) ⇉ _t_             | (see [Multivalued Functions and Expressions](#multivalued-functions-and-expressions))
+| _subset_(_St_) ⇉ _St_        | (see [Multivalued Functions and Expressions](#multivalued-functions-and-expressions))
 | _min_(_St_) → _t_ <br> _max_(_St_) → _t_ | _t_ is an ordinal type <br> _null_ when _St_ is _null_ or when it is empty
 | _avg_(_St_) → _t_ or _float_ | _t_ is an ordinal type <br> if _t_ is _int_ - the result is _float_ <br> _null_ when _St_ is _null_ or when it is empty 
 | _sum_(_St_) → _t_            | _t_ is _int_ / _float_ / _duration_ (not _date_ / _time_ / _datetime_) <br> _null_ when _St_ is _null_; zero when it is empty
@@ -772,8 +772,8 @@ Functions over _bag_ expressions:
 | _multiplicity_(_Bt_, _t_) → _int_ | number of times _t_ occurs in _Bt_
 | _set_(_Bt_) → _St_                | bag to set
 | _list_(_Bt_) → _Lt_               | bag to list
-| _el_(_Bt_) → _t_                  | (see [Multivalued Functions and Expressions](#multivalued-functions-and-expressions))
-| _subbag_(_Bt_) → _Bt_             | (see [Multivalued Functions and Expressions](#multivalued-functions-and-expressions))
+| _el_(_Bt_) ⇉ _t_                  | (see [Multivalued Functions and Expressions](#multivalued-functions-and-expressions))
+| _subbag_(_Bt_) ⇉ _Bt_             | (see [Multivalued Functions and Expressions](#multivalued-functions-and-expressions))
 | _min_(_Bt_) → _t_ <br> _max_(_Bt_) → _t_ | _t_ is an ordinal type <br> _null_ when _Bt_ is _null_ or when it is empty
 | _avg_(_Bt_) → _t_ or _float_ | _t_ is an ordinal type <br> if _t_ is _int_ - the result is _float_ <br> _null_ when _Bt_ is _null_ or when it is empty 
 | _sum_(_Bt_) → _t_                 | _t_ is _int_ / _float_ / _duration_ (not _date_ / _time_ / _datetime_) <br> _null_ when _Bt_ is _null_; zero when it is empty
@@ -3769,10 +3769,12 @@ A _multivalued function_ is a function that may associate zero or more values to
 
 V1 supports the following multivalued functions:
 
-* _el_: _St_ ↦ _t_ - associates a set with each of its elements; no associations when _St_ is empty
-* _el_: _Bt_ ↦ _t_ - associates a bag with each of its elements; no associations when _Bt_ is empty
-* _subset_: _St_ ↦ _t_ - associates a set with each of its nonempty subsets; no associations when _St_ is empty
-* _subbag_: _Bt_ ↦ _t_ - associates a bag with each of its nonempty subbags; no associations when _Bt_ is empty
+* _el_: _St_ ⇉ _t_ - associates a set with each of its elements
+* _el_: _Bt_ ⇉ _t_ - associates a bag with each of its elements
+* _subset_: _St_ ⇉ _St_ - associates a set with each of its nonempty subsets
+* _subbag_: _Bt_ ⇉ _Bt_ - associates a bag with each of its nonempty subbags
+
+All these multivalued functuions have no associations when the input is an empty set or bag.
 
 In the following examples, _Person_ has the following property: _nicknames_: _set(string)_.
 
