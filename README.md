@@ -134,8 +134,8 @@ The _[mixed] property graph data model_ defines the following **structure**:
   - All data elements are organized in a single [mixed] property graph mathematical structure.
   - A _null vertex_ is a propertyless vertex with a null label. Each null vertex is connected to exactly one edge. An edge connecting two null vertices is not allowed.
   - Any vertex, except null vertices, represents an entity. The vertex's label is an integer or a nonempty string identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_).
-  - A directed edge {_u_, _v_}, where both _u_ and _v_ are not null vertices, represents a directional relationship between the entity represented by _u_ and the entity represented by _v_.
-  - An undirected edge (_u_, _v_), where both _u_ and _v_ are not null vertices, represents an bidirectional relationship between the entity represented by _u_ and the entity represented by _v_.
+  - An undirected edge {_u_, _v_}, where both _u_ and _v_ are not null vertices, represents an bidirectional relationship between the entity represented by _u_ and the entity represented by _v_.
+  - A directed edge (_u_, _v_), where both _u_ and _v_ are not null vertices, represents a directional relationship between the entity represented by _u_ and the entity represented by _v_.
   - An edge, where one vertex is a null vertex, represents either
 
     - an entity's action (e.g., _sleeps_ action for a _Person_ entity), or
