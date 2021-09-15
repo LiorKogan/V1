@@ -132,10 +132,11 @@ The _[mixed] property graph data model_ defines the following **concepts**:
 The _[mixed] property graph data model_ defines the following **structure**:
 
   - All data elements are organized in a single [mixed] property graph mathematical structure.
-  - A _null vertex_ is a propertyless vertex with a null label. Each null vertex is connected to exactly one edge. An edge between two null vertices is not allowed.
+  - A _null vertex_ is a propertyless vertex with a null label. Each null vertex is connected to exactly one edge. An edge connecting two null vertices is not allowed.
   - Any vertex, except null vertices, represents an entity. The vertex's label is an integer or a nonempty string identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_).
-  - A graph edge, where both vertices are not null vertices, represents a binary relationship. 
-  - A graph edge, where one vertex is a null vertex, represents either
+  - A directed edge {_u_, _v_} where both _u_ and _v_ are not null vertices, represents a directional relationship between the entity represented by _u_ and the entity represented by _v_.
+  - An undirected edge (_u_, _v_) where both _u_ and _v_ are not null vertices, represents an bidirectional relationship between the entity represented by _u_ and the entity represented by _v_.
+  - An edge, where one vertex is a null vertex, represents either
 
     - an entity's action (e.g., _sleeps_ action for a _Person_ entity), or
     - a relationship between an entity and a nonspecific entity. Sometimes, an entity is unknown or unimportant, but the existence of a relationship and the values of the relationship’s properties - are important. For example, we may know that a given horse was owned in given timeframes, but we do not know or care who owned it. Still, we want to be able to model such data.
