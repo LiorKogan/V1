@@ -131,7 +131,7 @@ The _[mixed] property graph data model_ defines the following **concepts**:
 
 The _[mixed] property graph data model_ defines the following **structure**:
 
-  - •	All data elements are organized in a single [mixed] property graph mathematical structure.
+  - All data elements are organized in a single [mixed] property graph mathematical structure.
   - A _null vertex_ is a propertyless vertex with a null label. Each null vertex is connected to exactly one edge. An edge between two null vertices is not allowed.
   - Any vertex, except null vertices, represents an entity. The vertex's label is an integer or a nonempty string identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_).
   - A graph edge, where both vertices are not null vertices, represents a binary relationship. 
