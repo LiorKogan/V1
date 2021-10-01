@@ -3708,6 +3708,10 @@ _**Q223:** Any person A and A's horses of the three colors for which the cumulat
 
 ![V1](Pictures/Q223.png)
 
+_**Q222:** Any person A and A's horses of the three colors for which A's average ownership start date is the latest_
+
+![V1](Pictures/Q222.png)
+
 _**Q269:** Any person A and A's horses of the three colors for which the average ownership start date is the latest_
 
 ![V1](Pictures/Q269.png)
@@ -3717,10 +3721,6 @@ _**Q276:** Any person A and A's horses of the three colors for which the earlies
 ![V1](Pictures/Q276.png)
 
 Even if the three horses with the earliest ownership start date are of the same color, we would still get all people and their horses of two more colors (of the next-earliest ownership start dates)
-
-_**Q222:** Any person A and A's horses of the three colors for which A's average ownership start date is the latest_
-
-![V1](Pictures/Q222.png)
 
 _**Q216:** Any dragon that Balerion froze during the three 30-day timeframes during which it froze dragons the largest number of times_
 
