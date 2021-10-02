@@ -2454,7 +2454,7 @@ A2 location:
   - may be wrapped with an 'O' (except at the pattern's start)
   - at least one branch of the quantifier (or subbranch of a sequence of quantifiers) must start with a relationship/path with no relationship/path-negator that is not wrapped with a negator, nor preceded by a _None_ quantifier
 
-_**Q71:** Any dragon that froze dragons more than ten times_
+_**Q71:** Any dragon A that froze dragons more than ten times_
 
 ![V1](Pictures/Q071.png)
 
