@@ -1116,7 +1116,7 @@ On its right - a relationship or a path (see [Paths](#paths), Q84)
 * with no 'O' (see [Optional Components](#optional-components))
 * with no aggregators (see [Aggregators](#aggregators))
 
-Query results do not include assignments to entities/relationships/paths right of a negator. Any pattern elements right of a negator is depicted with a gray 'no report' icon on its top-right, indicating  that the query result does not include an assignment for it (see [Latent pattern-entities](#latent-pattern-entities)).
+Query results do not include assignments to entities/relationships/paths right of a negator. Any pattern entity right of a negator is depicted with a gray 'no report' icon on its top-right, indicating  that the query result does not include its assignment (see [Latent pattern-entities](#latent-pattern-entities)).
 
 _**Q12:** Any person who does not own a horse_
 
