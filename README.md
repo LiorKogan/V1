@@ -1109,11 +1109,11 @@ On its left, there is either
 * an entity
 * a quantifier
 
-On its right side - a relationship or a path (see [Paths](#paths), Q84)
+On its right - a relationship or a path (see [Paths](#paths), Q84)
 
 * optionally, with a relationship/path-negator (see [Relationship/Path-Negator](#relationshippath-negator), Q82)
 * optionally, with a relationship's expression (see Q99v1)
-* with no optional (see [Optional Components](#optional-components))
+* with no 'O' (see [Optional Components](#optional-components))
 * with no aggregators (see [Aggregators](#aggregators))
 
 Query results do not include assignments to entities/relationships/paths right of a negator. Any pattern elements right of a negator is depicted with a gray 'no report' icon on its top-right, indicating  that the query result does not include an assignment for it (see [Latent pattern-entities](#latent-pattern-entities)).
