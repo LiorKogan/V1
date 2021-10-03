@@ -1198,7 +1198,7 @@ _**Q26:** Any person who is a member of at least one guild that Brandon Stark is
 
 Negators may appear in more than one branch:
 
-_**Q20:** Any horse that is neither owned by Rogar Bolton nor by Robin Arryn_ (two versions)
+_**Q20:** Any horse neither owned by Rogar Bolton nor by Robin Arryn_ (two versions)
 
 ![V1](Pictures/Q020-1.png)
 
