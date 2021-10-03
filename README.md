@@ -196,7 +196,7 @@ It is much easier to define patterns when the information is presented consisten
 * For the _Horse_ entity-type, define a _color_ property with a nominal data type
 * Ensure that all the information is structured accordingly
 
-Though proposed property graph and property graph schema definitions have much in common (See [Angles](http://ceur-ws.org/Vol-2100/paper26.pdf), [Wu](https://arxiv.org/abs/1810.08755), [Hartig and Hidders](https://dl.acm.org/citation.cfm?id=3327964.3328495), and [Angles et al.](https://ieeexplore.ieee.org/document/9088985)), to date, there is neither a de jure nor a de facto standard definition (and hence, no standard property graph schema definition language). 
+Though proposed property graph and property graph schema definitions have much in common (see [Angles](http://ceur-ws.org/Vol-2100/paper26.pdf), [Wu](https://arxiv.org/abs/1810.08755), [Hartig and Hidders](https://dl.acm.org/citation.cfm?id=3327964.3328495), and [Angles et al.](https://ieeexplore.ieee.org/document/9088985)), to date, there is neither a de jure nor a de facto standard definition (and hence, no standard property graph schema definition language). 
 
 The following _property graph schema model_ (i.e., _property graph metamodel_) is assumed in this paper:
 
@@ -244,7 +244,7 @@ When patterns are described in a natural language, they may be ambiguous, and th
 
 Here are two examples:
 
-* _P1: Any person who owns at least five white horses_ (See Q101)
+* _P1: Any person who owns at least five white horses_ (see Q101)
 
   _P1_ defines the set of (sub)graphs in which 
 
@@ -378,9 +378,9 @@ Two consecutive rectangles can be connected with:
 
 * A horizontal **black arrow**, representing a _directional typed relationship_,
 * A horizontal **black line**, representing either a _bidirectional typed relationship_ or a directional typed relationship for which either direction is acceptable,
-* A horizontal **red arrow**, representing an _untyped directional relationship_ (See [Untyped Relationships](#untyped-relationships)),
+* A horizontal **red arrow**, representing an _untyped directional relationship_ (see [Untyped Relationships](#untyped-relationships)),
 * A horizontal **red line**, representing either an _untyped bidirectional relationship_ or an _untyped directional relationship_ where either direction is acceptable, or
-* A horizontal **blue line**, representing a _pattern-path_ (See [Paths](#paths))
+* A horizontal **blue line**, representing a _pattern-path_ (see [Paths](#paths))
 
 The terms _typed relationship_ and _untyped relationship_ refer only to pattern relationships. The term _path_ may refer to both _graph-path_ and _pattern-path_.
 
@@ -1065,7 +1065,7 @@ _**Q24:** Any person A having (at least) two parents and owns a dragon that was 
 
 Q24 demonstrates the usage of both identicality constraints and nonidenticality constraints for the same pattern-entity.
 
-Consider Q5v1, Q6, Q7, and Q24. For any given assignment, there is another assignment where the two parents are switched (for example, in Q5v1, the assignments to D and E are switched). Such redundant assignments are usually undesired. Using _order constraints_, we can avoid such redundancies (See Q5v2).
+Consider Q5v1, Q6, Q7, and Q24. For any given assignment, there is another assignment where the two parents are switched (for example, in Q5v1, the assignments to D and E are switched). Such redundant assignments are usually undesired. Using _order constraints_, we can avoid such redundancies (see Q5v2).
 
 Also, consider the following pattern: _Any three persons A, B, and C, who are pairwise friends_. If persons (A1, B1, C1) compose an assignment, so do (A1, C1, B1), (B1, A1, C1), and all other permutations. Such a factorial increase in the number of assignments is usually undesired. Using _order constraints_, we can express patterns such as _Any three persons A<B<C, who are pairwise friends_.
 
@@ -1102,7 +1102,19 @@ An assignment matches the pattern only if:
 
 Such patterns can be composed using _negators_. The pattern starts with the 'positive' component, and negators separate it from the 'negative' components.
 
-A negator is depicted with a **pink 'X' rectangle**. It has one connection on its left side and one connection on its right side. On its left, there is an entity or a quantifier. On its right side - a relationship or a path. A negator may not appear directly left of a relationship or a path with an aggregator (see [Aggregators](#aggregators)).
+A negator is depicted by a narrow **pink 'X' rectangle**. The rectangle has one connection on its left side and one connection on its right side. 
+
+On its left, there is either
+
+* an entity
+* a quantifier
+
+On its right side - a relationship or a path (see [Paths](#paths), Q84)
+
+* optionally, with a relationship/path-negator (see [Relationship/Path-Negator](#relationshippath-negator), Q82)
+* optionally, with a relationship's expression (see Q99v1)
+* with no optional (see [Optional Components](#optional-components))
+* with no aggregators (see [Aggregators](#aggregators))
 
 Query results do not include assignments to entities/relationships/paths right of a negator. Any pattern elements right of a negator is depicted with a gray 'no report' icon on its top-right, indicating  that the query result does not include an assignment for it (see [Latent pattern-entities](#latent-pattern-entities)).
 
@@ -1371,7 +1383,7 @@ A horizontal quantifier may appear
 * below a relationship's expression
 * below a horizontal quantifier (in a branch)
 
-On its bottom, there zero or more branches. Each branch starts with either
+On its bottom, there are zero or more branches. Each branch starts with either
 
 * a relationship's expression, or
 * a horizontal quantifier
@@ -3087,11 +3099,11 @@ _**Q303:** Any pair of dragons (A, B) where A froze B at least three times, each
 
 ![V1](Pictures/Q303.png)
 
-_**Q186:** Any dragon that Balerion froze more than ten times for less than ten minutes, and at least once for ten minutes or more_
+_**Q186:** Any dragon Balerion froze more than ten times for less than ten minutes, and at least once for ten minutes or more_
 
 ![V1](Pictures/Q186.png)
 
-_**Q99:** Any dragon that Balerion froze more than ten times for less than ten minutes, and not once for ten minutes or more_ (two versions)
+_**Q99:** Any dragon Balerion froze more than ten times for less than ten minutes, and not once for ten minutes or more_ (two versions)
 
 ![V1](Pictures/Q099-1.png)
 
@@ -3373,7 +3385,7 @@ _**Q347:** The five dragon triplets with the largest number of times triplet-mem
 
 Note that we need to count each triplet only once (ignoring permutations).
 
-_**Q100:** Any dragon that Balerion froze more than ten times for less than ten minutes, more than ten times on or after January 1, 1010, more than 15 times for less than ten minutes or on or after January 1, 1010, and more than 100 times altogether_
+_**Q100:** Any dragon Balerion froze more than ten times for less than ten minutes, more than ten times on or after January 1, 1010, more than 15 times for less than ten minutes or on or after January 1, 1010, and more than 100 times altogether_
 
 ![V1](Pictures/Q100.png)
 
@@ -3722,7 +3734,7 @@ _**Q276:** Any person A and A's horses of the three colors for which the earlies
 
 Even if the three horses with the earliest ownership start date are of the same color, we would still get all people and their horses of two more colors (of the next-earliest ownership start dates)
 
-_**Q216:** Any dragon that Balerion froze during the three 30-day timeframes during which it froze dragons the largest number of times_
+_**Q216:** Any dragon Balerion froze during the three 30-day timeframes during which it froze dragons the largest number of times_
 
 ![V1](Pictures/Q216.png)
 
@@ -3873,7 +3885,7 @@ _**Q327:** Any person who at each day of at least ten consecutive days - owned a
 
 ![V1](Pictures/Q327.png)
 
-_**Q318:** Any dragon that Balerion froze/fired at during the three 30-day timeframes during which it froze/fired at dragons the largest number of times_
+_**Q318:** Any dragon Balerion froze/fired at during the three 30-day timeframes during which it froze/fired at dragons the largest number of times_
 
 ![V1](Pictures/Q318.png)
 
@@ -3881,7 +3893,7 @@ Note that {1} and {2} are defined right of an 'O', hence evaluated to an empty s
 
 {3} is a property of A, but, being an aggregated multivalued expression, must be defined right of the aggregator.
 
-_**Q371:** Any dragon that Balerion froze/fired at during the three **non-overlapping** 30-day timeframes during which it froze/fired at dragons the largest number of times_
+_**Q371:** Any dragon Balerion froze/fired at during the three **non-overlapping** 30-day timeframes during which it froze/fired at dragons the largest number of times_
 
 ![V1](Pictures/Q371.png)
 
