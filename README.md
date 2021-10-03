@@ -1107,7 +1107,7 @@ A negator is depicted by a narrow **pink 'X' rectangle**. The rectangle has one 
 On its left, there is either
 
 * an entity
-* a quantifier
+* a quantifier (see Q20v1)
 
 On its right - a relationship or a path (see [Paths](#paths), Q84)
 
