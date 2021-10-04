@@ -852,7 +852,9 @@ When a quantifier is directly right of the pattern start, each branch may start 
 
 When a quantifier is directly right of an entity, each branch may start with:
 
-* A relationship/path, optionally with a relationship/path-negator, optionally wrapped with a negator or with an 'O' (see Q358, Q359),
+* A relationship/path
+  * optionally, with a relationship/path-negator (see Q358, Q359)
+  * optionally, with a negator or with an 'O' (see Q358, Q359),
 * An entity's expression (see Q3v2),
 * A Cartesian product's expression (see Q340), or
 * A quantifier (see Q8)
