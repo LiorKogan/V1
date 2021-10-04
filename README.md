@@ -1313,7 +1313,7 @@ _**Q30:** Any pair of dragons (A, B) where A both froze B and fired at B_ (two v
 
 ![V1](Pictures/Q030-1.png)
 
-A combiner has the same semantics as the duplication of anything right of it to each branch.
+A combiner is syntactic sugar, which, alternatively, can be implemented by duplicating anything right of it to each branch.
 
 ![V1](Pictures/Q030-2.png)
 
