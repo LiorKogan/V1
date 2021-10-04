@@ -1476,7 +1476,8 @@ On its right, there is either
   - optionally, with a relationship/path-negator (see Q126)
   - optionally, with relationship's expressions (see Q339) 
   - optionally, with aggregators (see Q125)
-- a quantifier (see Q360v2)
+- a quantifier 
+  - o	optionally, with aggregators (see Q360v2)
 
 Alternatively:
 
