@@ -1468,7 +1468,7 @@ _**Q143:** Any person who owns a horse that is neither white nor black and has a
 
 ![V1](Pictures/Q143.png)
 
-When there are several pattern-entities with the same entity-tag - some may be latent (implicit or explicit) while others are not. See Q337, Q339.
+When several pattern-entities have the same entity-tag, some may be latent (implicit or explicit) while others are not. See Q337, Q339.
 
 Concrete, typed, and untyped entities may all be latent - implicit or explicit.
 
