@@ -1291,9 +1291,23 @@ _**Q82:** Any dragon that froze all other dragons. **Alternative phrasing:** Any
 
 ![V1](Pictures/BB15.png)
 
-A **vertical purple rectangle with a closing curly brace** represents a _combiner_. A combiner combines two or more consecutive branches of the same quantifier. 
+A _combiner_ combines two or more consecutive branches of the same quantifier.
 
-On the combiner's left side are relationships and paths, and on its right side - an entity. A sequence of combiners is valid as well. The entity-type on a combiner's right side must match all the relationship-types and paths on its left side.
+A combiner is depicted by a narrow **purple ‘}’ rectangle**. The rectangle has one connection on its left side and one connection on its right side.
+
+On its left, there are relationships and paths
+
+- optionally, with a negator (see Q35)
+- optionally, with a relationship/path-negator (see Q360)
+- optionally, with relationship's expressions (see Q185)
+- optionally, with aggregators (see Q244)
+
+On its right – there is either
+
+- an entity
+- a combiner (see Q100)
+
+The entity-type on a combiner's right side must match all the relationship-types and paths on its left side.
 
 _**Q30:** Any pair of dragons (A, B) where A both froze B and fired at B_ (two versions)
 
