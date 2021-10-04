@@ -1093,7 +1093,7 @@ Sometimes we need to express a pattern that contains elements for which there is
 
 * A 'positive' component - _any person whose first name is Brandon_
 * A negator - _does not_
-* One or more 'negative' component - _own a white horse_
+* One or more 'negative' components - _own a white horse_
 
 An assignment matches the pattern only if:
 
@@ -1224,7 +1224,7 @@ _**Q335:** Any person and that person's parent for whom there is no horse that b
 
 The two negative components refer to the same graph entity.
 
-A sequence of negators:
+Negators may also appear in a sequence:
 
 _**Q23:** Any horse not owned by a person who does not own a dragon_
 
