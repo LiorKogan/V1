@@ -1477,7 +1477,7 @@ On its right, there is either
   - optionally, with relationship's expressions (see Q339) 
   - optionally, with aggregators (see Q125)
 - a quantifier 
-  - o	optionally, with aggregators (see Q360v2)
+  - optionally, with aggregators (see Q360v2)
 
 Alternatively:
 
