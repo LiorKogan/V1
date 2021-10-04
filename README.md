@@ -1112,7 +1112,7 @@ On its left, there is either
 On its right - a relationship or a path (see [Paths](#paths), Q84)
 
 * optionally, with a relationship/path-negator (see [Relationship/Path-Negator](#relationshippath-negator), Q82)
-* optionally, with a relationship's expression (see Q99v1)
+* optionally, with relationship's expressions (see Q99v1)
 * with no 'O' (see [Optional Components](#optional-components))
 * with no aggregators (see [Aggregators](#aggregators))
 
@@ -1460,12 +1460,27 @@ At least one pattern-entity should be non-latent.
 
 ![V1](Pictures/BB07.png)
 
-An _optional_ is depicted with a **magenta 'O' rectangle**. Anything right of it is optional: if it has a valid assignment - it will be reported (unless it is latent). Otherwise - it will not.
+Anything right of an _optional_ is optional: if it has a valid assignment - it will be reported (unless it is latent). Otherwise - it will not.
 
-An 'O' may be located directly left of
+An _optional_ (i.e., an 'O') is depicted with a **magenta 'O' rectangle**. The rectangle has one connection on its left side and one connection on its right side.
 
-- a relationship or a path, with or without a relationship/path-negator
-- a quantifier, excluding quantifier at the start of the pattern
+On its left, there is either
+
+- an entity
+- a quantifier (see Q144), except a quantifier at the start of the pattern
+
+On its right, there is either 
+
+- a relationship or a path (see [Paths](#paths))
+  - with no negator
+  - optionally, with a relationship/path-negator (see Q126)
+  - optionally, with relationship's expressions (see Q339) 
+  - optionally, with aggregators (see Q125)
+- a quantifier (see Q360v2)
+
+Alternatively:
+
+On its left - a quantifier at the start of the pattern, and on its right - an entity (see Q321v1)
 
 _**Q147:** Any person A. If A owns both a horse and a dragon - they should be included in the assignment_
 
