@@ -1542,14 +1542,17 @@ _**Q203:** Any person A. If A owns both a horse and a dragon - they should be in
 When tags right of an 'O' have no assignments:
 
 - An expression-tag defined right of an 'O' is evaluated to _null_ (see Q140, Q141)
-- An A1/A2 aggregation-tag defined right of an 'O' is evaluated to zero (see Q125, Q347)
+- An A1/A2 aggregation-tag defined right of an 'O' is evaluated to zero (see Q125, Q347, Q259v2)
 - An A3 aggregation-tag defined right of an 'O' is 
   - evaluated to _null_ when _aggop_ is _min_/_max_/_avg_/_sum_ (see Q317, Q318)
   - evaluated to zero when _aggop_ is _distinct_
   - evaluated to {} / [] when _aggop_ is _set_/_bag_/_union_/_intersection_
-- The number of assignments to an entity-tag / Cartesian product of entity-tags defined right of an 'O' is zero (see Q295, Q320, Q321)
-- The number of assignments to an entity type-tag defined right of an 'O' is zero
-- The number of assignments to a relationship type-tag defined right of an 'O' is zero
+
+Entity tags, entity type-tags, and relationship type-tags defined right of an 'O' can be used in aggregators defined left of the 'O' (see Q295, Q320, Q321):
+
+- A/M/R aggregators: ___T___ may contain tags defined right on an 'O'
+- M aggregators: ___B___ may contain tags defined right on an 'O'
+- M1 aggregator: ___M___ may contain tags defined right on an 'O'
 
 _**Q359:** Any dragon A where (i) there is no black dragon A froze (ii) there is no white dragon A did not freeze, (iii) there is at least one gold dragon A froze, and (iv) there is at least one silver dragon A did not freeze. Also report any red dragon that A froze and any blue dragon that A did not freeze_
 
