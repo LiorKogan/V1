@@ -1548,17 +1548,17 @@ When tags right of an 'O' have no assignments:
   - evaluated to zero when _aggop_ is _distinct_
   - evaluated to {} / [] when _aggop_ is _set_/_bag_/_union_/_intersection_
 
-Entity tags, entity type-tags, and relationship type-tags defined right of an 'O' can be used in aggregators defined left of the 'O' (see Q295, Q320, Q321):
-
-- A/M/R aggregators: ___T___ may contain tags defined right on an 'O'
-- M aggregators: ___B___ may contain tags defined right on an 'O'
-- M1 aggregator: ___M___ may contain tags defined right on an 'O'
-
 Entity tags defined right of an 'O' cannot be used in identicality, nonidenticality, and order constraints defined left of the 'O'.
 
 Entity type-tags, defined right of an 'O' cannot be used in entity-type constraints defined left of the 'O'.
 
 Relationship type-tags defined right of an 'O' cannot be used in relationship-type constraints defined left of the 'O'.
+
+Entity tags, entity type-tags, and relationship type-tags defined right of an 'O' can be used in aggregators defined left of the 'O' (see Q295, Q320, Q321):
+
+- A/M/R aggregators: ___T___ may contain tags defined right on an 'O'
+- M aggregators: ___B___ may contain tags defined right on an 'O'
+- M1 aggregator: ___M___ may contain tags defined right on an 'O'
 
 _**Q359:** Any dragon A where (i) there is no black dragon A froze (ii) there is no white dragon A did not freeze, (iii) there is at least one gold dragon A froze, and (iv) there is at least one silver dragon A did not freeze. Also report any red dragon that A froze and any blue dragon that A did not freeze_
 
