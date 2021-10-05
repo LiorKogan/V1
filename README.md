@@ -1664,7 +1664,7 @@ An entity type-tag defined right of a negator can only be referenced right of th
 
 ![V1](Pictures/Illegal-Tag03.png)
 
-An entity type-tag defined right of an 'O' can only be referenced right of that 'O', except when referenced in a _distinct_ ⟨ _ett_ ⟩ A3 aggregator (see Q167v2).
+An entity type-tag defined right of an 'O' can only be referenced right of that 'O', except when used in an aggregator's ___T___ (any aggregator) or ___M___ (A3, M1, M2, M3 aggregators) definition.
 
 ## Untyped Relationships
 
@@ -1742,7 +1742,7 @@ For any quantifier except _all_ - a relationship type-tag defined in a branch ca
 
 A relationship type-tag defined right of a negator can only be referenced right of that negator.
 
-A relationship type-tag defined right of an 'O' can only be referenced right of that 'O', except when referenced in a distinct ⟪ _rtt_ ⟫ A3 aggregator.
+A relationship type-tag defined right of an 'O' can only be referenced right of that 'O', except when used in an aggregator's ___T___ (any aggregator) or ___M___ (A3, M1, M2, M3 aggregators) definition.
 
 ## Null Entities
 
