@@ -3923,7 +3923,7 @@ _**Q318:** Any dragon Balerion froze/fired at during the three 30-day timeframes
 
 ![V1](Pictures/Q318.png)
 
-Note that {1} and {2} are defined right of an 'O', hence evaluated to an empty set when the optional part has no assignment. Since _s_ ∪ ∅ = _s_, the pattern is valid even if Balerion froze no dragon or if it fired at no dragon.
+Note that {1} and {2} are defined right of an 'O', hence evaluated to empty sets when the optional parts have no assignments. Since _S_ ∪ ∅ = _S_, the pattern is valid even if Balerion froze no dragon or if it fired at no dragon.
 
 {3} is a property of A, but, being an aggregated multivalued expression, must be defined right of the aggregator.
 
