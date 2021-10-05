@@ -1554,6 +1554,12 @@ Entity tags, entity type-tags, and relationship type-tags defined right of an 'O
 - M aggregators: ___B___ may contain tags defined right on an 'O'
 - M1 aggregator: ___M___ may contain tags defined right on an 'O'
 
+Entity tags defined right of an 'O' cannot be used in identicality, nonidenticality, and order constraints defined left of the 'O'.
+
+Entity type-tags, defined right of an 'O' cannot be used in entity-type constraints defined left of the 'O'.
+
+Relationship type-tags defined right of an 'O' cannot be used in relationship-type constraints defined left of the 'O'.
+
 _**Q359:** Any dragon A where (i) there is no black dragon A froze (ii) there is no white dragon A did not freeze, (iii) there is at least one gold dragon A froze, and (iv) there is at least one silver dragon A did not freeze. Also report any red dragon that A froze and any blue dragon that A did not freeze_
 
 ![V1](Pictures/Q359.png)
