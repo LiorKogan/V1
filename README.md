@@ -1515,6 +1515,8 @@ _**Q81:** Balerion. If there is a dragon it did not freeze - it should be includ
 
 Quantifier's branches that start with an 'O' do not affect the quantifier's evaluation.
 
+Assignments to optional branches are reported regardless of the quantifier type, but only when there is an assignment to the pattern.
+
 _**Q144:** Any person A who owns a white horse. If A has a parent who owns a horse - the parent and its horse should be included in the assignment_
 
 ![V1](Pictures/Q144.png)
@@ -1539,6 +1541,10 @@ _**Q203:** Any person A. If A owns both a horse and a dragon - they should be in
 
 ![V1](Pictures/Q203.png)
 
+_**Q359:** Any dragon A where (i) there is no black dragon A froze (ii) there is no white dragon A did not freeze, (iii) there is at least one gold dragon A froze, and (iv) there is at least one silver dragon A did not freeze. Also report any red dragon that A froze and any blue dragon that A did not freeze_
+
+![V1](Pictures/Q359.png)
+
 When tags right of an 'O' have no assignments:
 
 - An expression-tag defined right of an 'O' is evaluated to _null_ (see Q140, Q141)
@@ -1559,12 +1565,6 @@ Entity tags, entity type-tags, and relationship type-tags defined right of an 'O
 - A/M/R aggregators: ___T___ may contain tags defined right of an 'O'
 - A1/A3/M aggregators: ___B___ may contain tags defined right of an 'O' (see Q295, Q320, Q321v1)
 - M1 aggregator: ___M___ may contain tags defined right of an 'O'
-
-_**Q359:** Any dragon A where (i) there is no black dragon A froze (ii) there is no white dragon A did not freeze, (iii) there is at least one gold dragon A froze, and (iv) there is at least one silver dragon A did not freeze. Also report any red dragon that A froze and any blue dragon that A did not freeze_
-
-![V1](Pictures/Q359.png)
-
-Assignments to optional branches are reported regardless of the quantifier type, but only when there is an assignment to the pattern.
 
 ## Untyped Entities
 
