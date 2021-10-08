@@ -2065,11 +2065,11 @@ For all aggregator types (A1, A2, A3, M1, M2, M3, and R1), the _per_ clause has 
 
   _T_ = entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier (valid only when there is exactly one such entity-tag (A1: see Q246)
     
-- '↔':
+- '⟷':
 
   _T_ = _et1 × et2_ where _et1_ is directly left of the aggregator, and there is a single entity directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier - _et2_ (A2: see Q75)
   
-Wherever possible, the notations '←', '→' and '↔' are used instead of entity-tags.
+Wherever possible, the notations '←', '→' and '⟷' are used instead of entity-tags.
 
 Next, let ___TA___ denote a of all unique assignments to _T_ in _S_. _TA[n]_ is the n'th unique assignment to _T_.
 
@@ -2120,7 +2120,7 @@ The lower part of an A1 aggregator contains the following elements:
   
     _B_ = [_et1, et2, ..._] where _et1, et2, ..._ are directly right of the aggregator and not wrapped with a negator nor preceded by a _None_ quantifier (equivalent to '_et1_ ∪ _et2_ ∪ _..._') (see Q294, Q175, Q176 where card(B)>1)
     
-  - '↔':
+  - '⟷':
   
     _B_ = [_et × et1, et × et2, ..._] where _et_ is directly left of the aggregator and _et1, et2, ..._ are directly right of the aggregator and not wrapped with a negator nor preceded by a _None_ quantifier (equivalent to '_et × et1_ ∪ _et × et2_ ∪ ...')
     
@@ -2808,7 +2808,7 @@ The lower part of an M1 aggregator contains the following elements:
   - '_et1 × et2 × ..._': _B_ = _et1_ × _et2_ × ...
   - '←': _B_ = entity-tag directly left of the aggregator
   - '→': _B_ = entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier (valid only when there is exactly one such entity-tag)
-  - '↔': _B = et1 × et2_, where _et1_ is the entity-tag directly left of the aggregator, and there is a single entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier - _et2_
+  - '⟷': _B = et1 × et2_, where _et1_ is the entity-tag directly left of the aggregator, and there is a single entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier - _et2_
 
   Let ___BA(n)___ denote the list of all unique assignments to _B_ in _S(n)_. _BA(n)[o]_ is the _o'th_ assignment.
 
@@ -2829,7 +2829,7 @@ The lower part of an M1 aggregator contains the following elements:
 
     _M_ = [_et1, et2, ..._] where _et1, et2, ..._ are directly right of the aggregator and not wrapped with a negator nor preceded by a _None_ quantifier (equivalent to '_et1_ ∪ _et2_ ∪ ...')
     
-  - '↔':
+  - '⟷':
 
     _M_ = [_et × et1, et × et2, ..._] where _et_ is directly left of the aggregator and _et1, et2, ..._ are directly right of the aggregator and not wrapped with a negator nor preceded by a _None_ quantifier (equivalent to '_et × et1_ ∪ _et × et2_ ∪ ...')
 
@@ -2922,7 +2922,7 @@ The lower part of an M2 aggregator contains the following elements:
   - '_et1 × et2 × ..._': _B_ = _et1_ × _et2_ × ...
   - '←': _B_ = entity-tag directly left of the aggregator (see Q78, Q171, Q172)
   - '→': _B_ = entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier (valid only when there is exactly one such entity-tag) (see Q195, Q228)
-  - '↔': _B = et1 × et2_, where _et1_ is the entity-tag directly left of the aggregator, and there is a single entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier - _et2_ (see Q77, Q80)
+  - '⟷': _B = et1 × et2_, where _et1_ is the entity-tag directly left of the aggregator, and there is a single entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier - _et2_ (see Q77, Q80)
 
   Let ___BA(n)___ denote the list of all unique assignments to _B_ in _S(n)_. _BA(n)[o]_ is the _o'th_ assignment.
 
@@ -3015,7 +3015,7 @@ The lower part of an M3 aggregator contains the following elements:
   - '_et1 × et2 × ..._': _B_ = _et1_ × _et2_ × ...
   - '←': _B_ = entity-tag directly left of the aggregator
   - '→': _B_ = entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier (valid only when there is exactly one such entity-tag)
-  - '↔': _B = et1 × et2_, where _et1_ is the entity-tag directly left of the aggregator, and there is a single entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier - _et2_
+  - '⟷': _B = et1 × et2_, where _et1_ is the entity-tag directly left of the aggregator, and there is a single entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier - _et2_
 
   Let ___BA(n)___ denote the list of all unique assignments to _B_ in _S(n)_. _BA(n)[o]_ is the _o'th_ assignment.
 
@@ -3451,7 +3451,7 @@ Hence, for all extended aggregator types (A1, A2, A3, M1, M2, M3, and R1), the _
 
   _T_ = _et1 × et2 × ... × expr1 × expr2 × ... ×_ ⟨ _ett1_ ⟩ _×_ ⟨ _ett2_ ⟩ _× ... ×_ ⟪ _rtt1_ ⟫ _×_ ⟪ _rtt2_ ⟫ _× ..._
     
-Wherever possible, the notations '←', '→' and '↔' are used instead of entity-tags.
+Wherever possible, the notations '←', '→' and '⟷' are used instead of entity-tags.
 
 For all extended M aggregators (M1, M2, and M3), the same is true also for _B_.
 
