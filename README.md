@@ -1297,7 +1297,7 @@ A combiner is depicted by a narrow **purple ‘}’ rectangle**. The rectangle h
 
 On its left, there are relationships and paths
 
-- optionally, with a negator (see Q35)
+- optionally, with a negator (see Q35) or with an 'O'
 - optionally, with a relationship/path-negator (see Q360v1)
 - optionally, with relationship's expressions (see Q185)
 - optionally, with aggregators (see Q244)
