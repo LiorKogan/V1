@@ -1222,12 +1222,6 @@ _**Q362:** Any horse owned either by Rogar Bolton or Robin Arryn but not by both
 
 If either Rogar Bolton or Robin Arryn owns the horse - the owner will be part of the reported assignments.
 
-_**Q335:** Any person and that person's parent for whom there is no horse that both are its owners_
-
-![V1](Pictures/Q335.png)
-
-The two negative components refer to the same graph entity.
-
 Negators may also appear in a sequence:
 
 _**Q23:** Any horse not owned by a person who does not own a dragon_
@@ -1241,6 +1235,12 @@ Valid assignments:
 * Any horse that is not owned
 * Any horse that none of its owners is a person (e.g., a horse owned by a guild)
 * Any horse that each person who owns it - also owns a dragon
+
+EA-tags, entity type-tags, and relationship type-tags defined right of a negator can only be referenced right of that negator.
+
+Identicality, nonidenticality, and order constraints cannot be defined between pattern-entities defined in different negative components.
+
+![V1](Pictures/Illegal-Tag07.png)
 
 ## Relationship/Path-Negator
 
@@ -1375,9 +1375,9 @@ _**Q35:** Any pair of dragons (A, B) where A froze B but did not fire at B_
 
 ![V1](Pictures/Q035.png)
 
-_**Q334:** Any dragon A for which there is no dragon B that A both froze and fired at_
+At least one combined branch must be a non-negative component.
 
-![V1](Pictures/Q334.png)
+![V1](Pictures/Illegal-Tag08.png)
 
 ## Chains, Horizontal Quantifiers, and Horizontal Combiner
 
@@ -2436,6 +2436,14 @@ _**Q352:** Any dragon that froze at least ten dragons of the colors of horses of
 _**Q355:** Any dragon that froze at least ten dragons of the color of one horse of one of its owners_
 
 ![V1](Pictures/Q355.png)
+
+_**Q335:** Any person and that person's parent for whom there is no horse that both are its owners_
+
+![V1](Pictures/Q335.png)
+
+_**Q334:** Any dragon A for which there is no dragon B that A both froze and fired at_
+
+![V1](Pictures/Q334.png)
 
 _**Q207:** Any pair of dragons where the difference between the number of dragons that one of them froze and the number of dragons that the other froze is less than 10_
 
