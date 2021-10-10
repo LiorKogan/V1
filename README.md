@@ -1115,7 +1115,7 @@ On its left, there is either
 
 On its right - a relationship or a path (see [Paths](#paths), Q84)
 
-* optionally, with a relationship/path-negator (see [Relationship/Path-Negator](#relationshippath-negator), Q82)
+* optionally, with a relationship/path-negator (see [Relationship/Path-Negator](#relationshippath-negator), Q82v1)
 * optionally, with relationship's expressions (see Q99v1)
 * with no 'O' (see [Optional Components](#optional-components))
 * with no aggregators (see [Aggregators](#aggregators))
