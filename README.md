@@ -1452,7 +1452,7 @@ Such typed and untyped entities are required to have no assignments; hence, triv
 
 Implicit latent pattern-entities are depicted with a **gray 'no report' icon** on their top-right. These icons are automatically added by the interactive pattern builder/visualizer tool and may not be added/removed by the pattern composer.
 
-An entity right of a combiner is depicted as implicit latent if it is implicit latent according to each of the combined branches (see Q334). If it is not implicit latent according to one or more branches - it will not be depicted as implicit latent (see Q35).
+An entity right of a combiner is not depicted as implicit latent even if it is implicit latent according to one or more branches (see Q35).
 
 _Explicit latent pattern-entities_ are non-implicit latent pattern-entities, which the pattern composer marks as latent. Though they may have assignments - those assignments are required not to be reported. Any non-implicit latent pattern-entity may be set as explicit latent.
 
