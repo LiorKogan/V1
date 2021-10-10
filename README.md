@@ -1238,7 +1238,7 @@ Valid assignments:
 
 EA-tags, entity type-tags, and relationship type-tags defined right of a negator can only be referenced right of that negator.
 
-Identicality, nonidenticality, and order constraints cannot be defined between pattern-entities defined in different negative components.
+Identicality, nonidenticality, and order constraints cannot be defined between pattern-entities in different negative components.
 
 ![V1](Pictures/Illegal-Tag07.png)
 
