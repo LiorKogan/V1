@@ -1317,10 +1317,6 @@ A combiner is syntactic sugar, which, alternatively, can be implemented by dupli
 
 ![V1](Pictures/Q030-2.png)
 
-_**Q360:** Any dragon that (froze or fired at) all other dragons. **Alternative phrasing:** Any dragon for which there is no dragon (besides itself) it did not (freeze or fire at)_ (version 1)
-
-![V1](Pictures/Q360-1.png)
-
 _**Q187:** Any dragon Balerion froze at least once on or after January 1, 1010, **and** at least once for less than ten minutes_
 
 ![V1](Pictures/Q187.png)
@@ -1696,9 +1692,9 @@ _**Q53:** Any person with a path of length up to three to Rogar Bolton_ (version
 
 Relationships are implicitly type-constrained also when a negator or a relationship-negator wraps an untyped relationship:
 
-_**Q360:** Any dragon that (froze or fired at) all other dragons. **Alternative phrasing:** Any dragon for which there is no dragon (besides itself) it did not (freeze or fire at)_ (version 4)
+_**Q360:** Any dragon that (froze or fired at) all other dragons. **Alternative phrasing:** Any dragon for which there is no dragon (besides itself) it did not (freeze or fire at)_ (version 1)
 
-![V1](Pictures/Q360-4.png)
+![V1](Pictures/Q360-1.png)
 
 In addition to the implicit relationship-type constraints, _explicit relationship-type constraints_ can be enforced using:
 
