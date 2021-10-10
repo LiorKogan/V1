@@ -1379,6 +1379,10 @@ At least one combined branch must be a non-negative component.
 
 ![V1](Pictures/Illegal-Tag08.png)
 
+For the _None_ quantifier, all the branches are negative components.
+
+![V1](Pictures/Illegal-Tag09.png)
+
 ## Chains, Horizontal Quantifiers, and Horizontal Combiner
 
 Relationship's expressions can be _chained_. When chained, each expression with a constraint is a _filtering stage_. An assignment is valid only if all the chained constraints are satisfied, or in other words - if it passes all filtering stages.
