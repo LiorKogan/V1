@@ -1258,13 +1258,15 @@ Sometimes we want an assignment to match the pattern only in the second case - w
 * The assignment has no superset that matches a pattern composed of the left component, the right components, and the relationship/path
   * _There is no person whose first name is Brandon who owns a white horse_
 
-A _relationship/path-negator_ is depicted with a **red '✕'** mark at the center of the relationship/path arrow/line. The arrow/line and the associated text are faded.
+A _relationship/path-negator_ is depicted with a **red '✕'** at the center of the relationship/path arrow/line. The arrow/line and the associated text are faded.
 
-Components located right of a relationship/path-negator are required to have assignments. These assignments are included in the reported assignments.
+A component located right of a pattern relationship/path with a relationship/path-negator is required to have an assignment. Such assignments are included in the reported pattern assignment. The relationship/path is reported as a _negated relationship/path_, which may have a type and properties.
 
 _**Q357:** Any dragon for which there is at least one dragon (besides itself) it did not freeze_
 
 ![V1](Pictures/Q357.png)
+
+Each assignment is composed of a dragon, a negated _freezes_ relationship, and a dragon it did not freeze.
 
 _**Q83:** Any dragon for which there are at least two dragons (besides itself) it did not freeze_
 
