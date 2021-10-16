@@ -301,7 +301,7 @@ A query may be:
 * A reporting query:
   * Report [all / up to _k_] subgraphs of _G_, each is an assignment
   * Report subgraphs of _G_, each is a union of assignments, e.g., the union of all assignments with identical assignments to all entities (and different assignments to relationships)
-  * Report a single subgraph of _G_, composed of the union of all assignments. This is sometimes preferred since it avoids combinatorial explosion for many queries (e.g., if a person owns ten white horses, any subset of five of the person's horses compose an assignment to P1'''). However, for some patterns, individual assignments cannot be deduced from their union.
+  * Report a single subgraph of _G_, composed of the union of all assignments. This is sometimes preferred since it avoids combinatorial explosion for many queries (e.g., if a person owns ten white horses, any subset of five of the person's horses compose an assignment to _P1'''_). However, for some patterns, individual assignments cannot be deduced from their union.
 
 Implementations may support one or more of the above.
 
