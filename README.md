@@ -170,7 +170,7 @@ The _[mixed] property graph data model_ defines the following **structure**:
 - Ideally, each new atomic unit of explicit information about the modeled domain should entail either:
   - Addition or deletion of a single vertex or edge
   - Modification of a single property value of a single vertex or edge
-  - Merging two vertices (If new information proves that two or more vertices represent the same entity)
+  - Merging two vertices (If new information proves that two vertices represent the same entity)
 
 - Any pair of vertices, except null vertices, should be _distinguishable_, which means that vertices' _identifiers_ should be pairwise distinct, or there should be no pair of vertices with identical type, property values, and relationships. Similarly, any pair of edges should be _distinguishable_, which means that edges' _identifiers_ should be pairwise distinct, or there should be no pair of edges with identical type and property values that connect the same pair of vertices or the same vertex and a null vertex. An _identifier_ is a set of properties and implementation indexes that collectively uniquely identifies the element.
 
