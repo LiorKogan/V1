@@ -99,7 +99,7 @@ A _mixed property graph_ is a multi-attributed mixed pseudograph with similar at
 
 ### Data Model:
 
-A _data element_ (i.e., _datum_) is an atomic unit of data. A _data model_ specifies the structure and the semantics of data elements and the relations between data elements. A data model consists of:
+A _data element_ (i.e., _datum_) is an atomic unit of data. It is a representation of an atomic unit of explicit information about the modeled domain. A _data model_ specifies the structure and the semantics of data elements and the relations between data elements. A data model consists of:
 
 - A conceptualization: a set of _concepts_ (e.g., _entity_, _relationship_, _feature_) used for defining data elements and their relations. The semantics of the concepts may be described, for example, using ontological concepts (e.g., _particular_, _type_, _universal_, _composition_, _relation_, _action_, _quality_).
 - A representation: a _structure_ (e.g., mathematical, diagrammatic) used for representing data elements and their relations.
@@ -133,7 +133,7 @@ The _[mixed] property graph data model_ defines the following **structure**:
   - All data elements are organized in a single [mixed] property graph mathematical structure.
   - A _null vertex_ is a propertyless vertex with a null label. Each null vertex is connected to exactly one edge. An edge connecting two null vertices is not allowed.
   - Any vertex, except null vertices, represents an entity. The vertex's label is an integer or a nonempty string identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_).
-  - An undirected edge {_u_, _v_}, where both _u_ and _v_ are not null vertices, represents an bidirectional relationship between the entity represented by _u_ and the entity represented by _v_.
+  - An undirected edge {_u_, _v_}, where both _u_ and _v_ are not null vertices, represents a bidirectional relationship between the entity represented by _u_ and the entity represented by _v_.
   - A directed edge (_u_, _v_), where both _u_ and _v_ are not null vertices, represents a directional relationship between the entity represented by _u_ and the entity represented by _v_.
   - An edge, where one vertex is a null vertex, represents either
 
@@ -165,9 +165,14 @@ The _[mixed] property graph data model_ defines the following **structure**:
 
     Though _null_ value semantics is not usually defined as part of the data model, the semantics of operators and functions is well-defined for _null_ values. E.g., what is the result of (yesterday's date < person's death date) when the death date is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable_ values.
     
-- With regard to the available data, each entity should be represented using one vertex. If new data proves that two or more vertices represent the same entity, these vertices should be merged. Similarly, each relationship or action should be represented using one edge.
+- With regard to the available data, each entity should be represented using one vertex. Similarly, each relationship or action should be represented using one edge.
 
 - Any pair of vertices, except null vertices, should be _distinguishable_, which means that vertices' _identifiers_ should be pairwise distinct, or there should be no pair of vertices with identical type, property values, and relationships. Similarly, any pair of edges should be _distinguishable_, which means that edges' _identifiers_ should be pairwise distinct, or there should be no pair of edges with identical type and property values that connect the same pair of vertices or the same vertex and a null vertex. An _identifier_ is a set of properties and implementation indexes that collectively uniquely identifies the element.
+
+- Ideally, each new atomic unit of explicit information about the modeled domain should entail either:
+  - Addition or deletion of a single vertex or edge
+  - Modification of a single property value of a single vertex or edge
+  - Merging two vertices (If new information proves that two or more vertices represent the same entity)
 
 _n_-ary relationships, where _n_ > 2, are not supported. However, this poses no practical limitation since any _n_-ary relationship, _n_ > 2, can be reframed as an entity and _n_ binary relationships. Consider, for example, a ternary relationship, where Person _A_ sells Horse _H_ to Person _B_. Instead, one can reframe this data as a _Sale_ entity _S_, a _seller_ relationship from _S_ to _A_, a _buyer_ relationship from _S_ to _B_, and a _sold_ relationship from _S_ to _H_.
 
