@@ -118,7 +118,7 @@ The _[mixed] property graph data model_ defines the following **concepts**:
 
 - Each element has a single _type_. A property graph is a _heterogeneous graph_; it may contain entities of multiple types (_multi-modal graph_), relationships of multiple types (_multi-relational graph_), and, optionally, actions of multiple types. Elements may have multiple features (_multifeatured graph_).
 
-  Entities of the same type are _semantically homogeneous_. The same is true also for relationships and for actions. Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Many times types are assigned in accordance with the following guidelines:
+  Entities of the same type are _semantically homogeneous_. The same is true also for relationships and for actions. Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Many times, types are assigned in accordance with the following guidelines:
   - _Repetition of existence_: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
   - _Repetition of features_: entities of the same type have features of the same types. The same is true also for relationships and for actions.
   - _Repetitions of actions_: entities of the same type 'have' actions of the same types.
@@ -126,7 +126,7 @@ The _[mixed] property graph data model_ defines the following **concepts**:
   - _Type constancy_: an entity's type, a relationship's type, and an action's type do not change over time. 
   - _Value inconstancy_: feature values may change over time.
 
-  Note that the property graph data model does not define types of entities, relationships, and actions, nor it defines sets of features. Such definitions may be specified as part of a property graph schema (see next section).
+  The property graph data model does not define types of entities, relationships, and actions, nor does it define sets of features. Such definitions may be specified in a _domain model_ and enforced using a _property graph schema_ (see next section).
 
 The _[mixed] property graph data model_ defines the following **structure**:
 
