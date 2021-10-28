@@ -99,7 +99,7 @@ A _mixed property graph_ is a multi-attributed mixed pseudograph with similar at
 
 ### Data Model:
 
-A _data element_ (i.e., _datum_) is an atomic unit of data. It is a representation of an atomic unit of explicit information about the modeled domain. A _data model_ specifies the structure and the semantics of data elements and the relations between data elements. A data model consists of:
+Data is a representation of information. A _data element_ (i.e., _datum_) is an atomic unit of data, hence, an atomic unit of representation of information about the domain of discourse. A _data model_ specifies the structure and the semantics of data elements and the relations between data elements. A data model consists of:
 
 - A conceptualization: a set of _concepts_ (e.g., _entity_, _relationship_, _feature_) used for defining data elements and their relations. The semantics of the concepts may be described, for example, using ontological concepts (e.g., _particular_, _type_, _universal_, _composition_, _relation_, _action_, _quality_).
 - A representation: a _structure_ (e.g., mathematical, diagrammatic) used for representing data elements and their relations.
@@ -167,9 +167,9 @@ The _[mixed] property graph data model_ defines the following **structure**:
     
 - With regard to the available data, each entity should be represented using one vertex. Similarly, each relationship or action should be represented using one edge.
 
-- Ideally, each new atomic unit of explicit information about the modeled domain should entail either:
-  - Addition or deletion of a single vertex or edge
-  - Modification of a single property value of a single vertex or edge
+- Ideally, each new atomic unit of explicit information about the domain of discourse should entail
+  - Addition or deletion of a single vertex or edge,
+  - Modification of a single property value of a single vertex or edge, or
   - Merging two vertices (If new information proves that two vertices represent the same entity)
 
 - Any pair of vertices, except null vertices, should be _distinguishable_, which means that vertices' _identifiers_ should be pairwise distinct, or there should be no pair of vertices with identical type, property values, and relationships. Similarly, any pair of edges should be _distinguishable_, which means that edges' _identifiers_ should be pairwise distinct, or there should be no pair of edges with identical type and property values that connect the same pair of vertices or the same vertex and a null vertex. An _identifier_ is a set of properties and implementation indexes that collectively uniquely identifies the element.
