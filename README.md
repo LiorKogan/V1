@@ -99,10 +99,10 @@ A _mixed property graph_ is a multi-attributed mixed pseudograph with similar at
 
 ### Data Model:
 
-Data is a representation of information. A _data element_ (i.e., _datum_) is an atomic unit of data, hence, an atomic unit of representation of information about the domain of discourse. A _data model_ specifies the structure and the semantics of data elements and the relations between data elements. A data model consists of:
+_Data_ is a representation of information. A _data element_ (i.e., _datum_) is an atomic unit of data, hence, an atomic unit of representation of information about the domain of discourse. A _data model_ is a _conceptual model_ that specifies the structure and the semantics of data elements and the relations between data elements. A data model consists of:
 
-- A conceptualization: a set of _concepts_ (e.g., _entity_, _relationship_, _feature_) used for defining data elements and their relations. The semantics of the concepts may be described, for example, using ontological concepts (e.g., _particular_, _type_, _universal_, _composition_, _relation_, _action_, _quality_).
-- A representation: a _structure_ (e.g., mathematical, diagrammatic) used for representing data elements and their relations.
+- A set of _concepts_ (e.g., _entity_, _relationship_, _feature_), used for defining data elements and their relations. The semantics of the concepts may be described, for example, using ontological concepts (e.g., _particular_, _type_, _universal_, _composition_, _relation_, _action_, _quality_).
+- A _structure_ (e.g., mathematical, diagrammatic), used for representing data elements.
 
 The _[mixed] property graph data model_ defines the following **concepts**:
 
