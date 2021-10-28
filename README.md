@@ -108,15 +108,19 @@ The _[mixed] property graph data model_ defines the following **concepts**:
 
 -	An _entity_ is a physical, conceptual, virtual, or fictional particular (e.g., a certain person, guild, or dragon).
 
+- Each entity has a single _type_ (e.g., _Person_)
+
 -	A (_binary_) _relationship_ is an _association_ or an _interaction_ between a pair of entities or between an entity and itself. Each relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity, an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _friend of_ relationship between two _Person_ entities). Bidirectional relationships are supported only in the mixed property graph data model.
+
+- Each relationship has a single _type_ (e.g., _owns_)
 
 -	An _action_ is an action _of_ an entity (e.g., _erupts_ for a _Volcano_ entity) or an action _on_ an entity (e.g., _accused_ for a _Person_ entity), when no other [known or relevant] entities are concerned. An action may also represent a state of an entity (e.g., _sleeps_ action for a _Person_ entity) or a state-change (e.g., _falls asleep_ for a _Person_ entity). Like relationships, actions are either directional or bidirectional. Bidirectional actions are supported only in the mixed property graph data model.
 
-- We will use the term _element_ to refer to an entity, a relationship, or an action.
+- Each action has a single _type_ (e.g., _erupts_)
 
-- Each element has a set of _features_ (_characteristics_). Each feature has a name (e.g., _birth date_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each element, the feature names are pairwise distinct.
+- Each entity, relationship, or action has a set of _features_ (_characteristics_). Each feature has a name (e.g., _birth date_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each entity, relationship, or action, the feature names are pairwise distinct.
 
-- Each element has a single _type_. A property graph is a _heterogeneous graph_; it may contain entities of multiple types (_multi-modal graph_), relationships of multiple types (_multi-relational graph_), and, optionally, actions of multiple types. Elements may have multiple features (_multifeatured graph_).
+- A property graph is a _heterogeneous graph_; it may contain entities of multiple types (_multi-modal graph_), relationships of multiple types (_multi-relational graph_), and, optionally, actions of multiple types. In addition, each entity, relationship, or action  may have multiple features (_multifeatured graph_).
 
   Entities of the same type are _semantically homogeneous_. The same is true also for relationships and for actions. Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Many times, types are assigned in accordance with the following guidelines:
   - _Repetition of existence_: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
