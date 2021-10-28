@@ -165,8 +165,6 @@ The _[mixed] property graph data model_ defines the following **structure**:
 
     Though _null_ value semantics is not usually defined as part of the data model, the semantics of operators and functions is well-defined for _null_ values. E.g., what is the result of (yesterday's date < person's death date) when the death date is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable_ values.
     
-- With regard to the available information, each entity should be represented using a single vertex. Similarly, each relationship or action should be represented using a single edge.
-
 - Should newly-available information proves that two or more vertices represent the same entity, these vertices should be merged. Similarly, should newly-available information proves that two or more edges represent the same relationship or action, these edges should be merged.
 
 - Should newly-available information proves that a vertex represents two or more entities, this vertex should be split. Similarly, should newly-available information proves that an edge represents two or more relationships or actions, this edge should be split.
