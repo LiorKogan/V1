@@ -167,12 +167,11 @@ The _[mixed] property graph data model_ defines the following **structure**:
     
 - With regard to the available information, each entity should be represented using a single vertex. Similarly, each relationship or action should be represented using a single edge.
 
-- Ideally, each new atomic unit of explicit information about the domain of discourse should entail
-  - Addition or deletion of a single vertex or edge,
-  - Modification of a single property value of a single vertex or edge, or
-  - Merging two vertices (If new information proves that two vertices represent the same entity)
+- Should newly-available information proves that two or more vertices represent the same entity, these vertices should be merged. Similarly, should newly-available information proves that two or more edges represent the same relationship or action, these edges should be merged.
 
-- Any pair of vertices, except null vertices, should be _distinguishable_, which means that vertices' _identifiers_ should be pairwise distinct, or there should be no pair of vertices with identical type, property values, and relationships. Similarly, any pair of edges should be _distinguishable_, which means that edges' _identifiers_ should be pairwise distinct, or there should be no pair of edges with identical type and property values that connect the same pair of vertices or the same vertex and a null vertex. An _identifier_ is a set of properties and implementation indexes that collectively uniquely identifies the element.
+- Should newly-available information proves that a vertex represents two or more entities, this vertex should be split. Similarly, should newly-available information proves that an edge represents two or more relationships or actions, this edge should be split.
+
+- Any pair of vertices, except null vertices, must be _distinguishable_, which means that vertices' _identifiers_ must be pairwise distinct, or there should be no pair of vertices with identical type, property values, and relationships. Similarly, any pair of edges must be _distinguishable_, which means that edges' _identifiers_ must be pairwise distinct, or there should be no pair of edges with identical type and property values that connect the same pair of vertices or the same vertex and a null vertex. An _identifier_ is a set of properties and implementation indexes that collectively uniquely identifies the element.
 
 _n_-ary relationships, where _n_ > 2, are not supported. However, this poses no practical limitation since any _n_-ary relationship, _n_ > 2, can be reframed as an entity and _n_ binary relationships. Consider, for example, a ternary relationship, where Person _A_ sells Horse _H_ to Person _B_. Instead, one can reframe this data as a _Sale_ entity _S_, a _seller_ relationship from _S_ to _A_, a _buyer_ relationship from _S_ to _B_, and a _sold_ relationship from _S_ to _H_.
 
