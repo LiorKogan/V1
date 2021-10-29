@@ -143,7 +143,7 @@ The _[mixed] property graph data model_ defines the following **structure**:
   - An edge, where one vertex is a null vertex, represents either
 
     - an entity's action (e.g., _sleeps_ action for a _Person_ entity), or
-    - a relationship between an entity and a nonspecific entity. Sometimes, an entity is unknown or unimportant, but the existence of a relationship and the values of the relationship’s properties - are important. For example, we may know that a given horse was owned in given timeframes, but we do not know or care who owned it. Still, we want to be able to model such data.
+    - a relationship between an entity and a nonspecific entity. Sometimes, an entity is unknown or unimportant, but the existence of a relationship and the values of the relationship's properties - are important. For example, we may know that a given horse was owned in given timeframes, but we do not know or care who owned it. Still, we want to be able to model such data.
 
   - The edge's label is an integer or a nonempty string identifying the _relationship's type_ (e.g., _owns_, _member of_) or the _action's type_ (e.g., _sleeps_).
   - A directed graph edge represents a directional relationship or action, while an undirected edge represents a bidirectional relationships or action.
@@ -168,8 +168,7 @@ The _[mixed] property graph data model_ defines the following **structure**:
   
     Codd, Zaniolo, and many others proposed using two or more types of _null_ instead of a 'generic' _null_, but this approach remains mainly theoretical. In practice, _null_ values often have no consistent semantics. For a _birth date_ property, a _null_ value would likely represent an unknown birth date, but for a _death date_ property, a _null_ value may represent that the date on which the person died is unknown (_applicable missing_), that the person is still alive (_inapplicable_), or that it is unknown if the person is still alive (_no information_).
 
-    Though _null_ value semantics is not usually defined as part of the data model, the semantics of operators and functions is well-defined for _null_ values. E.g., what is the result of (yesterday's date < person's death date) when the death date is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable_ values.
-    
+    Though _null_ value semantics is often not defined as part of the data model, nor as part of the _data schema_, the semantics of _null_ values are well-defined for query languages' operators and functions. E.g., what is the result of (yesterday's date < person's death date) when the _death date_ is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable values_.
 - Should newly-available information proves that two or more vertices represent the same entity, these vertices should be merged. Similarly, should newly-available information proves that two or more edges represent the same relationship or action, these edges should be merged.
 
 - Should newly-available information proves that a vertex represents two or more entities, this vertex should be split. Similarly, should newly-available information proves that an edge represents two or more relationships or actions, this edge should be split.
@@ -1301,7 +1300,7 @@ _**Q82:** Any dragon that froze all other dragons. **Alternative phrasing:** Any
 
 A _combiner_ combines two or more consecutive branches of the same quantifier.
 
-A combiner is depicted by a narrow **purple ‘}’ rectangle**. The rectangle has one connection on its left side and one connection on its right side.
+A combiner is depicted by a narrow **purple '}' rectangle**. The rectangle has one connection on its left side and one connection on its right side.
 
 On its left, there are relationships and paths
 
