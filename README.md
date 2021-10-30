@@ -107,7 +107,7 @@ _Data_ is a representation of _information_. A _data element_ (i.e., _datum_) is
 
 The _[mixed] property graph data model_ defines the following **concepts**:
 
--	An _entity_ is a physical, conceptual, virtual, or fictional particular (e.g., a certain person, guild, or dragon).
+-	An _entity_ is a physical, conceptual, virtual, or fictional _particular_ (e.g., a certain person, guild, or dragon).
 
 - Each entity has a single _type_ (e.g., _Person_)
 
@@ -115,7 +115,7 @@ The _[mixed] property graph data model_ defines the following **concepts**:
 
 - Each relationship has a single _type_ (e.g., _owns_)
 
--	An _action_ is an action _of_ an entity (e.g., _erupts_ for a _Volcano_ entity) or an action _on_ an entity (e.g., _accused_ for a _Person_ entity), when no other [known or relevant] entities are concerned. An action may also represent a state of an entity (e.g., _sleeps_ action for a _Person_ entity) or a state-change (e.g., _falls asleep_ for a _Person_ entity). Like relationships, actions are either directional or bidirectional. Bidirectional actions are supported only in the mixed property graph data model.
+-	An _action_ is an _action of_ an entity (e.g., _erupts_ for a _Volcano_ entity) or an _action on_ an entity (e.g., _accused_ for a _Person_ entity), when no other [known or relevant] entities are concerned. An action may also represent a state of an entity (e.g., _sleeps_ action for a _Person_ entity) or a state-change (e.g., _falls asleep_ for a _Person_ entity). Like relationships, actions are either directional or bidirectional. Bidirectional actions are supported only in the mixed property graph data model.
 
 - Each action has a single _type_ (e.g., _erupts_)
 
