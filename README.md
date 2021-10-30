@@ -181,9 +181,11 @@ The term _property graph_ was introduced by [Rodriguez](https://arxiv.org/abs/10
 
 Various extensions were proposed, including:
 - Each vertex has a set of labels (_vertex multi-labeled graph_); entities are _multi-typed_
+- Directional relationship types naming: instead of a name for only one direction (e.g., _owns_), a unique name is defined for each direction (e.g., _owns_, _owned by_; _parent of_, _offspring of_)
 - [_Property hypergraphs_](https://link.springer.com/chapter/10.1007%2F978-3-319-26148-5_21) (_hyperedges_ represent _n_-ary relationships)
 - Schema-level and data-level _metaproperties_ (properties of properties – e.g., units of measure, accuracy, reliability)
 - [EPGM – Extended Property Graph Model](https://dbs.uni-leipzig.de/file/EPGM.pdf), in which _logical graphs_ consist of subsets of a shared set of vertices and a shared set of edges. In addition, logical graphs have types and properties.
+- Support of _derivation_ (_specialization_) of entity-types, relationship-types, and property types
 
 ## The Property Graph Schema
 
@@ -234,9 +236,6 @@ Property graph schema definitions may vary in many aspects, including:
 * Properties may be either:
   * Defined globally and assigned to one or more entity/relationship-types, or
   * Defined per entity/relationship-type: different entity/relationship-types may have a property with the same name but with a different data type
-* Directional relationship-types naming: 
-  * A unique name for each direction (e.g., _owns_, _owned by_; _parent of_, _offspring of_), or
-  * A unique name for only one direction
 * Support of derivation (specialization) of entity-types, relationship-types, and property types
 
 V1 can be utilized with most definitions with minimal changes. 
