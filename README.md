@@ -236,7 +236,6 @@ Property graph schema definitions may vary in many aspects, including:
 * Properties may be either:
   * Defined globally and assigned to one or more entity/relationship-types, or
   * Defined per entity/relationship-type: different entity/relationship-types may have a property with the same name but with a different data type
-* Support of derivation (specialization) of entity-types, relationship-types, and property types
 
 V1 can be utilized with most definitions with minimal changes. 
 
