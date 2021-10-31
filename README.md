@@ -87,7 +87,7 @@ An [_undirected graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematic
 
 Given undirected edge _e_ such that _ψₑ_(_e_) = {_u_,_v_}, we say that _e_ _connects_ vertices _u_ and _v_. Likewise, given directed edge _a_ such that _ψₐ_(_a_) = (_u_,_v_), we say that _a_ _connects_ vertex _u_ to vertex _v_. A [_loop_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) is an edge (directed or undirected) connecting a vertex with itself. [_Multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (_parallel edges_) are two or more undirected edges connecting the same unordered pair of vertices or directed edges connecting the same ordered pair of vertices. A _simple graph_ is a graph in which multiple edges and loops are not allowed. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which multiple edges and loops are allowed.
 
-An _attributed graph_ is a generic term referring to graphs in which vertices and/or edges may be associated with attributes or with vectors or sets of attributes  (i.e., _multi-attributed graph_). An _attribute_ may be a nominal value, an ordinal value, a key-value pair, or other annotation. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
+An _attributed graph_ is a generic term referring to graphs in which an attribute (i.e., _single-attributed_) or a set, a bag, or a list of attributes (i.e., _multi-attributed_) may be associated with each vertex (i.e., _vertex-attributed graph_), edge (i.e., _edge-attributed graph_), or the graph itself. An _attribute_ may be a nominal value, an ordinal value, a key-value pair, or other annotation. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
 A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a multi-attributed directed pseudograph in which:
 
@@ -103,7 +103,7 @@ _Data_ is a representation of _information_. A _data element_ (i.e., _datum_) is
 
 - A set of _concepts_ (e.g., _entity_, _relationship_, _feature_), used for defining data elements and their relations. The semantics of the concepts may be described, for example, using ontological concepts (e.g., _particular_, _type_, _universal_, _composition_, _relation_, _action_, _quality_).
 
-- A _structure_ (e.g., mathematical, diagrammatic), used for representing data elements.
+- A _structure_ (e.g., mathematical, diagrammatic), used for organizing data elements.
 
 The _[mixed] property graph data model_ defines the following **concepts**:
 
