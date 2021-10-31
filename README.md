@@ -89,7 +89,7 @@ Given undirected edge _e_ such that _ψₑ_(_e_) = {_u_,_v_}, we say that _e_ _c
 
 An _attributed graph_ is a generic term referring to graphs in which an attribute (i.e., _single-attributed_) or a set, a bag, or a list of attributes (i.e., _multi-attributed_) may be associated with each vertex (i.e., _vertex-attributed graph_), edge (i.e., _edge-attributed graph_), or the graph itself. An _attribute_ may be a nominal value, an ordinal value, a key-value pair, or other annotation. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
-A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a multi-attributed directed pseudograph in which:
+A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a vertex-multi-attributed edge-multi-attributed directed pseudograph in which:
 
 - Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex-labels and the set of edge-labels are disjoint.
 
