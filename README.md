@@ -95,7 +95,7 @@ A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a vertex-multi-att
 
 - Each vertex and each edge has a set of attributes called _properties_. Each property is an ordered pair: the property's name and the property's value. For each vertex and each edge, the property names are pairwise distinct.
 
-A _mixed property graph_ is a multi-attributed mixed pseudograph with similar attributes.
+A _mixed property graph_ is mixed instead of directed.
 
 ### Data Model:
 
