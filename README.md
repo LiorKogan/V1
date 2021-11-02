@@ -131,7 +131,7 @@ Entities of the same _type_ are _semantically homogeneous_. The same is true als
   - _Type constancy_: an entity's type, a relationship's type, and an action's type do not change over time. 
   - _Value inconstancy_: feature values may change over time.
 
-The property graph data model is a metamodel, as it does not define types of entities, relationships, and actions, nor defines sets of features. It is domain-agnostic. Instead, such definitions may be specified in a _domain model_ and enforced using a _property graph schema_ (see next section).
+The property graph data model is a metamodel, as it does not specify types of entities, relationships, and actions, nor does it specify sets of features. It is domain-agnostic. Instead, domain-specific concepts may be specified in a _domain model_ and enforced using a _property graph schema_ (see next section).
 
 The _[mixed] property graph data model_ comprises the following **structure**:
 
