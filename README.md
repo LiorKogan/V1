@@ -373,9 +373,9 @@ Yellow, blue, and red rectangles represent _concrete_, _typed_ and _untyped_ ent
 
 **A yellow rectangle** represents a _concrete entity_: a specific person, a specific horse, etc. A concrete entity has a single assignment - a specific graph-entity. The text inside the rectangle denotes the entity-type and the value of a _visualization expression_ defined for this entity-type. For example, the visualization-expression for the _Person_ entity-type may be: _name.first_ ∥ ' ' ∥ _name.last_ and its value, for a specific graph-entity, would be 'Brandon Stark'.
 
-**A blue rectangle** represents a _typed entity_: The text inside the rectangle denotes an entity-type. Only graph-entities of this type may be assigned to the pattern-entity. 
+**A blue rectangle** represents a _typed entity_. The text inside the rectangle denotes an entity-type. Only graph-entities of this type may be assigned to the pattern-entity. 
 
-**A red rectangle** represents an _untyped entity_: Graph-entities of different types may be assigned to an untyped entity (subject to _type constraints_. See [Untyped Entities](#untyped-entities)).
+**A red rectangle** represents an _untyped entity_. Graph-entities of different types may be assigned to an untyped entity. An optional text inside the rectangle denotes an entity-type constraint (See [Untyped Entities](#untyped-entities)).
 
 Two consecutive rectangles can be connected with:
 
@@ -389,7 +389,7 @@ The terms _typed relationship_ and _untyped relationship_ refer only to pattern 
 
 Each black arrow/line has a label on top. The label denotes a relationship-type. For arrows - the label is aligned to the arrow's origin. For lines - the label is centered. Only graph-relationships of this type can match the pattern-relationship.
 
-For every blue rectangle, red rectangle, black arrow, and black line, a pattern matching engine would look in the property graph for assignments. Graph entities are assigned to pattern entities. Graph relationships are assigned to pattern relationships. An assignment to the pattern is a set of graph-entities and graph-relationships that matches the whole pattern.
+A pattern matching engine would look in the property graph for assignments for every blue rectangle, red rectangle, black arrow, and black line. Graph entities are assigned to pattern entities. Graph relationships are assigned to pattern relationships. An assignment to the pattern is a set of graph-entities and graph-relationships that matches the whole pattern.
 
 The relationship-type between any two entities must be valid with respect to the schema.
 
@@ -479,7 +479,7 @@ An _expression_ is
 - _expr op expr_, where _op_ is a binary operator (e.g., '3 + {1}'),
 - (_expr_),
 -	'_f_' where _f_ is a parameterless function (e.g., '_now_'. See G11),
--	'_f_(e1, e2, ...)' where _f_ is a function with at least one parameter and e1, e2, ... are expression (see Q353),
+-	'_f_(e1, e2, ...)' where _f_ is a function with at least one parameter and e1, e2, ... are expressions (see Q353),
 -	'e1._f_' - equivalent to _f_(e1), where _f_ is a function with one parameter and e1 is an expression,
 -	'e1._f_(e2, e3, ...)' - equivalent to _f_(e1, e2, e3, ...), where _f_ is a function with more than one parameter and e1, e2, e3, ... are expressions,
 - An _interval expression_ (see Q327),
