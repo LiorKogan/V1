@@ -827,7 +827,7 @@ Implementations may support _[opaque data types](https://en.wikipedia.org/wiki/O
 
 ## Quantifiers
 
-A **vertical purple rectangle** represents a _vertical quantifier_. It contains a quantifier type.
+A **vertical purple rectangle** represents a _vertical quantifier_. The text inside the rectangle denotes the quantifier type.
 
 Vertical quantifiers (or simply 'quantifiers') can be used when there is a need to satisfy more than one constraint.
 
@@ -1396,7 +1396,7 @@ _**Q10:** Any person whose first name is Brandon, who owns some dragon B which f
 
 ![V1](Pictures/Q010.png)
 
-A **horizontal purple rectangle** represents a _horizontal quantifier_. It contains a quantifier type.
+A **horizontal purple rectangle** represents a _horizontal quantifier_. The text inside the rectangle denotes the quantifier type.
 
 Eleven horizontal quantifier types are defined (as for vertical quantifiers, except the _All_ quantifier). Their semantics are similar to those of vertical quantifiers. _All_ can be implemented by chaining relationship's expressions or by using vertical quantifiers (see Q100).
 
