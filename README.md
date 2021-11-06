@@ -764,7 +764,7 @@ Functions over _set_ expressions:
 | _min_(_St_) → _t_ <br> _max_(_St_) → _t_ | _t_ is an ordinal type <br> _null_ when _St_ is _null_ or when it is empty
 | _avg_(_St_) → _t_ or _float_ | _t_ is an ordinal type <br> if _t_ is _int_ - the result is _float_ <br> _null_ when _St_ is _null_ or when it is empty 
 | _sum_(_St_) → _t_            | _t_ is _int_ / _float_ / _duration_ (not _date_ / _time_ / _datetime_) <br> _null_ when _St_ is _null_; zero when it is empty
-| _min_(_St, n: int_) → _St_ <br> _max_(_St, n: int_) → _St_ | Set of (up to) _max_(0, _n_) smallest/largest values <br> _t_ is an ordinal type <br> _null_ when _St_ is _null_, {} when it contains no _non-null_ elements 
+| _min_(_St, n: int_) → _St_ <br> _max_(_St, n: int_) → _St_ | Set of (up to) _max_(0, _n_) smallest/largest values <br> _t_ is an ordinal type <br> _null_ when _St_ is _null_, {} when it is empty 
 | _overlap_(_Sdateframe_) → _duration_ <br> _overlap_(_Sdatetimeframe_) → _duration_ | The duration of the overlap between all members of _S_ <br> Always non-negative (see Q371)
 | _union_(_SSt_) → _St_ <br> _union_(_SBt_) → _Bt_	| The union of all members of a set of sets/bags (_t_ is any type)
 | intersection(_SSt_) → _St_ <br> intersection(_SBt_) → _Bt_| The intersection of all members of a set of sets/bags (_t_ is any type)
