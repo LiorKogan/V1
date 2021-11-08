@@ -180,7 +180,8 @@ _n_-ary relationships, where _n_ > 2, are not supported. However, this poses no 
 The term _property graph_ was introduced by [Rodriguez](https://arxiv.org/abs/1006.2361) and [Neubauer](https://arxiv.org/abs/1004.1001), though other terms were used to describe similar data models. [Tsai and Fu's](https://ieeexplore.ieee.org/document/4310127) _attributed relational graph_ is a directed multigraph in which both nodes and edges have labels, and each label defines a set of numerical or logical attributes. [Shao et al.](https://ieeexplore.ieee.org/abstract/document/7953521) used the term _Heterogeneous graph_ for the same construct. [Gallagher](http://www.aaai.org/Papers/Symposia/Fall/2006/FS-06-02/FS06-02-007.pdf) used the term _data graph_ to refer to graphs in which vertices and/or edges may be typed and/or attributed. [Singh et al.](http://ieeexplore.ieee.org/abstract/document/4272051/) used the term _M*3_ (multi-modal, multi-relational, multifeatured) _network_ to refer to graphs with multiple entity-types, multiple relationship-types, and multiple descriptive features for nodes and edges. [Krause et al.](https://link.springer.com/chapter/10.1007/978-3-319-40530-8_10)  used the term _typed graph_ to refer to graphs with typed nodes, typed edges, and typed node properties.
 
 Various extensions were proposed, including:
-- Each vertex has a set of labels (_vertex multi-labeled graph_); entities are _multi-typed_
+- Instead of a single label, each vertex has a (possibly empty) set of labels (_vertex multi-labeled graph_); entities are _multi-typed_
+- Instead of a single label, each edge has a (possibly empty) set of labels (_edge multi-labeled graph_); relationships are _multi-typed_
 - Directional relationship types naming: instead of a name for only one direction (e.g., _owns_), a unique name is defined for each direction (e.g., _owns_, _owned by_; _parent of_, _offspring of_)
 - [_Property hypergraphs_](https://link.springer.com/chapter/10.1007%2F978-3-319-26148-5_21) (_hyperedges_ represent _n_-ary relationships)
 - Schema-level and data-level _metaproperties_ (properties of properties – e.g., units of measure, accuracy, reliability)
@@ -829,7 +830,7 @@ Implementations may support _[opaque data types](https://en.wikipedia.org/wiki/O
 
 A **vertical purple rectangle** represents a _vertical quantifier_. The text inside the rectangle denotes the quantifier type.
 
-Vertical quantifiers (or simply 'quantifiers') can be used when there is a need to satisfy more than one constraint.
+Vertical quantifiers (or simply 'quantifiers') add much expressive power, including more complex topological constraints, more than one entity's expression constraint, and alternative subpatterns.
 
 _**Q3:** Any person whose first name is Brandon who owns a dragon_ (version 2)
 
