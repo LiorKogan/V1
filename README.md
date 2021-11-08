@@ -844,14 +844,15 @@ _**Q304:** Any person who owns a white horse and who owns a horse weighing more 
 
 ![V1](Pictures/Q304.png)
 
-The same graph-entity may match more than one pattern-entity. Either the same horse or different horses may be assigned to B and C (this can be avoided: see *identicality, nonidenticality*, and *order constraints* later on). The same graph-relationship may match more than one pattern-relationship.
+The same graph-entity may match more than one pattern-entity. For example, Either the same horse or different horses may be assigned to B and C (this can be avoided: see *identicality, nonidenticality*, and *order constraints* later on). Similarly, the same graph-relationship may match more than one pattern-relationship.
 
 A vertical quantifier has one connection on its left side and zero or more branches on its right side. On its left side, there is an entity, a quantifier, or the pattern's start. Except at the pattern's start, a quantifier may be wrapped with an 'O' (see Q147, Q149).
 
 When a quantifier is directly right of the pattern start, each branch may start with:
 
 * An entity (see Q108),
-* A Cartesian product's expression (see Q207), or
+* A Cartesian product's expression (see Q207)
+* A global expression (see Q375), or
 * A quantifier (see Q332v2)
 
 When a quantifier is directly right of an entity, each branch may start with:
