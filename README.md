@@ -3626,7 +3626,7 @@ _**Q270:** Any person A and A's horses of the colors for which there are more th
 
 ![V1](Pictures/Agg-A3-Extended.png)
 
-_**Q331:** Any day during which the horse ownerships that started lasted on average for at least ten years_
+_**Q331:** Any day at which the horse ownerships that started (and ended since) lasted on average for at least ten years_
 
 ![V1](Pictures/Q331.png)
 
