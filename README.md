@@ -344,10 +344,19 @@ The schema was composed of the following entity-types (and their properties):
 the following directional relationship-types (and their properties):
 
 * ***owns***: {(_Person_, _Horse_), (_Person_, _Dragon_), (_Guild_, _Horse_), (_Guild_, _Dragon_)} - _df_: _dateframe_
+
+  When the person is still the owner and the ownership has no defined termination date, df.till is 31/12/9999.
+
 * ***fires at***: {(_Dragon_, _Dragon_)} - _time_: _datetime_; no loops allowed
 * ***freezes***: {(_Dragon_, _Dragon_)} - _tf_: _datetimeframe_; no loops allowed
+
+  tf is set only after the freeze has ended. tf.since and tf.till are never _null_.
+
 * ***offspring of***: {(_Person_, _Person_)}; no loops allowed
 * ***member of***: {(_Person_, _Guild_)} - _df_: _dateframe_
+
+  When the person is still a member and the membership has no defined termination date, df.till is 31/12/9999.
+
 * ***subject of***: {(_Person_, _Kingdom_)}
 
 and of the following bidirectional relationship-type (and its properties):
