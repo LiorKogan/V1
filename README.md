@@ -821,6 +821,7 @@ Other functions:
 |Function                                            | Notes 
 |----------------------------------------------------|------
 | _now_ → _datetime_                                 | See Q8v2, G11
+| _today_ → _date_                                   | See Q328
 | _date_(year, month, day) → _date_                  | Construct date using three integers (see Q353) <br> _null_ when at least one value is _null_
 | _min_(_t_, _t_, ...) → _t_ <br> _max_(_t_, _t_, ...) → _t_ | One or more values of the same ordinal type <br> _null_ when at least one value is _null_ <br> _min_({_t_, _t_, …})and _max_({_t_, _t_, …}) ignore _null_ values (see Q317)
 
