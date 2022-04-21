@@ -3345,11 +3345,13 @@ _**Q317:** Any dragon that the time difference between the earliest time it froz
 
 ![V1](Pictures/Q317.png)
 
-Note that {1}, {2}, {3} and {4} are defined right of an 'O', hence evaluated to _null_ when the optional part has no assignment. Since _min_({...}) and _max_({...}) ignore _nulls_, the pattern would yield the expected results even when dragon A froze no dragon or when dragon A fired at no dragon.
+{1}, {2}, {3} and {4} are defined right of an 'O', hence evaluated to _null_ when the optional part has no assignments. Since _min_({...}) and _max_({...}) ignore _nulls_, the pattern would yield the expected results even when dragon A froze no dragon or when dragon A fired at no dragon.
 
 _**Q377:** Any dragon and the three earliest times it froze/fired at some dragon_
 
 ![V1](Pictures/Q377.png)
+
+{1} and {2} are defined right of an 'O', hence evaluated to [] when the optional part has no assignments.
 
 ## Aggregator Sequences
 
