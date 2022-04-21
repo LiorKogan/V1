@@ -168,7 +168,7 @@ The _[mixed] property graph data model_ comprises the following **structure**:
   
     Codd, Zaniolo, and many others proposed using two or more types of _null_ instead of a 'generic' _null_, but this approach remains mainly theoretical. In practice, _null_ values often have no consistent semantics. For a _birth date_ property, a _null_ value would likely represent an unknown birth date, but for a _death date_ property, a _null_ value may represent that the date on which the person died is unknown (_applicable missing_), that the person is still alive (_inapplicable_), or that it is unknown if the person is still alive (_no information_).
 
-    Though _null_ value semantics is often not defined as part of the data model, nor as part of the _data schema_, the semantics of _null_ values are well-defined for query languages' operators and functions. E.g., what is the result of (yesterday's date < person's death date) when the _death date_ is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable values_.
+    Though the semantic of _null_ values is not always defined as part of the data model, nor as part of the _data schema_, it must be well-defined for query languages' operators and functions. E.g., what is the result of (yesterday's date < person's death date) when the _death date_ is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable values_.
 - Should new information proves that two or more vertices represent the same entity, these vertices should be merged. Similarly, should new information proves that two or more edges represent the same relationship or action, these edges should be merged.
 
 - Should new information proves that a vertex represents two or more entities, this vertex should be split. Similarly, should new information proves that an edge represents two or more relationships or actions, this edge should be split.
@@ -465,7 +465,7 @@ An _expression_ is
 
 - A literal (_string_, _integer_, or _float_),
 
-  Note: _date_, _datetime_, and _duration_ literals are represented using the functions _date_(_string_), _datetime_(_string_) and _duration_(_string_), respectively. In visual syntax, these function names are omitted, and expressions are formatted according to the regional settings
+  Note: _date_, _datetime_, and _duration_ literals are represented using the functions _date_(_string_), _datetime_(_string_) and _duration_(_string_), respectively. In visual syntax, these function names are omitted, and expressions are formatted according to the regional settings (see Q8),
 
 - < _inherent property name_ > (of a connected entity/relationship)
 
@@ -571,7 +571,7 @@ The following constraint operators can be only blue:
 * A _is null_ constraint is satisfied if and only if the expression is evaluated to _null_ 
 * A _not null_ constraint is satisfied if and only if the expression is not evaluated to _null_
 
-All V1's operators and all functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _Null-valued_ [sub]properties are interpreted as _applicable missing_ (e.g., 1 + _null_ = _null_; max(5, _null_) = _null_). The magic value "9999-12-31" indicates that a date is _inapplicable_.
+All V1's operators and all functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _Null-valued_ [sub]properties are interpreted as _applicable missing or no information_ (e.g., 1 + _null_ = _null_; max(5, _null_) = _null_). The magic value "9999-12-31" indicates that a date is _inapplicable_.
 
 ## Data Types, Operators, and Functions
 
