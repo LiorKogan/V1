@@ -3210,10 +3210,6 @@ _**Q92:** The four dragons with the maximal (average duration they froze dragons
 
 ![V1](Pictures/Q092.png)
 
-_**Q328:** The three people with the maximal cumulative horse ownership days_
-
-![V1](Pictures/Q328.png)
-
 _**Q201:** For each dragon that froze at least ten dragons: the three dragons it froze for the maximal cumulative duration_
 
 ![V1](Pictures/Q201.png)
@@ -3357,6 +3353,10 @@ _**Q128:** Any person A and A's three offspring who own horses of the largest nu
 _**Q198:** Any person A and A's three dragons that (for each of them: the four dragons it froze that froze the largest number of dragons) - froze the largest number of distinct dragons cumulatively_
 
 ![V1](Pictures/Q198.png)
+
+_**Q328:** The three people with the maximal cumulative horse ownership days_
+
+![V1](Pictures/Q328.png)
 
 _**Q179:** Any pair of dragons (A, B) where A froze B for a cumulative duration longer than the cumulative duration B froze dragons_ (two versions)
 
