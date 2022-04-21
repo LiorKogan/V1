@@ -1567,9 +1567,9 @@ When tags right of an 'O' have no assignments:
 - An expression-tag defined right of an 'O' is evaluated to _null_ (see Q140, Q141)
 - An A1/A2 aggregation-tag defined right of an 'O' is evaluated to zero (see Q125, Q347, Q259v2)
 - An A3 aggregation-tag defined right of an 'O' is 
-  - evaluated to _null_ when _aggop_ is _min_/_max_/_avg_/_sum_ (see Q317, Q318)
-  - evaluated to zero when _aggop_ is _distinct_
-  - evaluated to {} / [] when _aggop_ is _set_/_bag_/_union_/_intersection_
+  - evaluated to _null_ when _aggop_ is _min_/_max_/_avg_ (see Q317)
+  - evaluated to zero when _aggop_ is _sum_/_distinct_ (see Q320v2, Q321v2)
+  - evaluated to {} / [] when _aggop_ is _set_/_bag_/_union_/_intersection_ (see Q318)
 
 Entity tags defined right of an 'O' cannot be used in identicality, nonidenticality, and order constraints defined left of the 'O'.
 
@@ -2666,7 +2666,7 @@ The lower part of an A3 aggregator contains the following elements:
   - if _aggop_ is _set_: _at(n) = {BA(n)[1], BA(n)[2], ...}_ (with no duplicate values and no _null_ values)
   - if _aggop_ is _bag_: _at(n) = [BA(n)[1], BA(n)[2], ...]_ (with duplicate values and no _null_ values)
 
-  When an optional part has no assignments, A3 aggregation-tags defined right of the 'O' are evaluated to _null_ when _aggop_ is _min/max/avg/sum_, evaluated to zero when _aggop_ is _distinct_, and evaluated to {} / [] when _aggop_ is _set/bag/union/intersection_.
+  When an optional part has no assignments, A3 aggregation-tags defined right of the 'O' are evaluated to _null_ when _aggop_ is _min_/_max_/_avg_, evaluated to zero when _aggop_ is _sum_/_distinct_, and evaluated to {} / [] when _aggop_ is _set/bag/union/intersection_.
 
 - an optional **constraint** on _at(n)_
 
