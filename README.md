@@ -1,6 +1,6 @@
 ## V1: A Visual Query Language for Property Graphs
 
-Copyright © 2017-2021 [Lior Kogan](https://www.linkedin.com/in/liorkogan) (koganlior1 [at] gmail [dot] com)
+Copyright © 2017-2022 [Lior Kogan](https://www.linkedin.com/in/liorkogan) (koganlior1 [at] gmail [dot] com)
 
 ---
 
