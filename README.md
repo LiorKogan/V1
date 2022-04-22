@@ -319,7 +319,7 @@ Pattern languages differ in many aspects, including:
 * _Receptivity_ and _Productivity_ (i.e., _readability_ and _writability_) - how intuitive and straightforward is it to understand existing patterns and construct new ones
 * _Conciseness_ - the fewness of symbols and symbol types required for expressing patterns
 * _Aesthetics_ - the quality of patterns being visually appealing
-* _Declarative / Imperative_ - _[Declarative](https://en.wikipedia.org/wiki/Declarative_programming)_ languages describe patterns but do not specify how to match them. _[Imperative](https://en.wikipedia.org/wiki/Imperative_programming)_ languages describe patterns in terms of the steps required to match them on a given computational machine model (e.g., the [Gremlin Traversal Machine](https://arxiv.org/abs/1508.03843). Languages may provide both declarative and imperative constructs.
+* _Declarative / Imperative_ - _[Declarative](https://en.wikipedia.org/wiki/Declarative_programming)_ languages describe patterns but do not specify how to match them. _[Imperative](https://en.wikipedia.org/wiki/Imperative_programming)_ languages describe patterns in terms of the steps required to match them on a given computational machine model (e.g., the [Gremlin Traversal Machine](https://arxiv.org/abs/1508.03843)). Languages may provide both declarative and imperative constructs.
 * _[Expressive power](https://en.wikipedia.org/wiki/Expressive_power_(computer_science))_ - the breadth of patterns that can be expressed. 
   Unless a pattern language (declarative or imperative) is Turing-complete, there would always be computable patterns that cannot be expressed. 
   
