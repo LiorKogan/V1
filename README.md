@@ -350,7 +350,7 @@ the following directional relationship-types (and their properties):
 * ***fires at***: {(_Dragon_, _Dragon_)} - _time_: _datetime_; no loops allowed
 * ***freezes***: {(_Dragon_, _Dragon_)} - _tf_: _datetimeframe_; no loops allowed
 
-  tf is set only after the freeze has ended. tf.since and tf.till are never _null_.
+  tf is set only after the freeze has ended. tf.since and tf.till are _non-nullable_.
 
 * ***offspring of***: {(_Person_, _Person_)}; no loops allowed
 * ***member of***: {(_Person_, _Guild_)} - _df_: _dateframe_
