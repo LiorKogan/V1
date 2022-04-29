@@ -128,10 +128,10 @@ Entities of the same _type_ are _semantically homogeneous_. The same is true als
   - _Repetition of features_: entities of the same type have features of the same types. The same is true also for relationships and for actions.
   - _Repetitions of actions_: entities of the same type 'have' actions of the same types.
   - _Repetition of relationships_: pairs of entities of the same pair of entity-types have relationships of the same types.
-  - _Type constancy_: an entity's type, a relationship's type, and an action's type do not change over time. 
-  - _Value inconstancy_: feature values may change over time.
+  - _Type constancy_: an entity's type, a relationship's type, and an action's type do not change over time.
+  - _Value inconstancy_: the value of some features may change over time.
 
-The property graph data model is a metamodel, as it does not specify types of entities, relationships, and actions, nor does it specify sets of features. It is domain-agnostic. Instead, domain-specific concepts may be specified and enforced using a _property graph schema_ (see next section).
+The property graph data model is a _metamodel_, as it does not specify types of entities, relationships, and actions, nor does it specify sets of features. It is domain-agnostic. Instead, domain-specific concepts may be specified and enforced using a _property graph schema_ (see next section).
 
 The _[mixed] property graph data model_ comprises the following **structure**:
 
@@ -206,7 +206,7 @@ It is much easier to define patterns when the information is presented consisten
 
 Though proposed property graph and property graph schema definitions have much in common (see [Angles](http://ceur-ws.org/Vol-2100/paper26.pdf), [Wu](https://arxiv.org/abs/1810.08755), [Hartig and Hidders](https://dl.acm.org/citation.cfm?id=3327964.3328495), and [Angles et al.](https://ieeexplore.ieee.org/document/9088985)), to date, there is neither a de jure nor a de facto standard definition (and hence, no standard property graph schema definition language). 
 
-The following _property graph schema model_ (i.e., _property graph metamodel_) is assumed in this paper:
+The following _property graph schema model_ is assumed in this paper:
 
 A _property graph schema_ is defined by:
 * A finite set of user-defined data types (on top of the built-in data types)
