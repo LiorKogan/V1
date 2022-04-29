@@ -91,7 +91,7 @@ An _attributed graph_ is a generic term referring to graphs in which an attribut
 
 A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a vertex-multi-attributed edge-multi-attributed directed pseudograph in which:
 
-- Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex-labels and the set of edge-labels are disjoint.
+- Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex labels and the set of edge labels are disjoint.
 
 - Each vertex and each edge has a set of attributes called _properties_. Each property is an ordered pair: the property's name and the property's value. For each vertex and each edge, the property names are pairwise distinct.
 
@@ -103,7 +103,7 @@ _Data_ is a representation of _information_. A _data element_ (i.e., _datum_) is
 
 - A set of ontological _concepts_ (e.g., _entity_, _relationship_, _type_, _feature_). The concepts are used for defining data elements and their relations. They are general, domain-agnostic, and are usually explained rather than defined.
 
-- A _structure_ (e.g., mathematical, diagrammatic), used for organizing data elements.
+- A _structure_ (e.g., mathematical, diagrammatic) for organizing data elements.
 
 The _[mixed] property graph data model_ comprises the following **concepts**:
 
