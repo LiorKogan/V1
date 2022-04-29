@@ -152,7 +152,7 @@ The _[mixed] property graph data model_ comprises the following **structure**:
 
     - The model defines a set of _basic data types_ (e.g., _string_, _integer_, _float_).
     - A _multivalue_ is a set, a bag, or a list of values. All values are of the same basic data type (e.g., each value is a _string_), the same multivalue type (e.g., each value is a set(_string_)), or the same composite type (e.g., each value is a {_first_: _string_, _last_: _string_} composite).
-    - A _multivalue type_ is defined by the collection type (set, bag, or list) and the data type of its elements.
+    - A _multivalue type_ is defined by the collection type (set, bag, or list) and the data type of its elements. The definition must be nonrecursive.
     - A _map_ is a set of (name, value) pairs in which the names are pairwise distinct strings or integers identifying the subfeatures names, and the values are the respective subfeature values.
     - A _map type_ is defined by a set of (name, data type) pairs. The definition must be nonrecursive. A _composite_ is a map in which each value is of a basic data type, a multivalue type, or a composite type.
 
