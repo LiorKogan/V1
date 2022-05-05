@@ -425,7 +425,7 @@ Both directions of the _freezes_ relationship are acceptable. Therefore - a line
 
 ![V1](Pictures/BB02.png)
 
-A **green rectangle** represents an expression. It contains:
+A **green rectangle** represents an expression. The rectangle contains:
 
 - An _expression-tag_ ('{xt}') (see [Expression-Tags](#referencing-expression-tags))
 - An expression ('_expr_')
@@ -1573,13 +1573,13 @@ When tags right of an 'O' have no assignments:
   - evaluated to zero when _aggop_ is _sum_/_distinct_ (see Q320v2, Q321v2)
   - evaluated to {} / [] when _aggop_ is _set_/_bag_/_union_/_intersection_ (see Q318)
 
-Entity tags defined right of an 'O' cannot be used in identicality, nonidenticality, and order constraints defined left of the 'O'.
+Entity-tags defined right of an 'O' cannot be used in identicality, nonidenticality, and order constraints defined left of the 'O'.
 
 Entity type-tags, defined right of an 'O' cannot be used in entity-type constraints defined left of the 'O'.
 
 Relationship type-tags defined right of an 'O' cannot be used in relationship-type constraints defined left of the 'O'.
 
-Entity tags, entity type-tags, and relationship type-tags defined right of an 'O' can be used in aggregators defined left of the 'O':
+Entity-tags, entity type-tags, and relationship type-tags defined right of an 'O' can be used in aggregators defined left of the 'O':
 
 - A/M/R aggregators: ___T___ may contain tags defined right of an 'O'
 - A1/A3/M aggregators: ___B___ may contain tags defined right of an 'O' (see Q295, Q320, Q321v1)
@@ -1591,7 +1591,7 @@ A relationship-type may hold between different pairs of entity-types (e.g., owns
  
  **A red rectangle** represents an _untyped entity_. Graph-entities of different types may be assigned to an untyped entity.
  
- An **empty red rectangle** represents an entity with no explicit entity-type constraint.
+ A red rectangle containing only an entity-tag represents an entity with no explicit entity-type constraint.
 
 _**Q36:** Any person who owns something_
 
