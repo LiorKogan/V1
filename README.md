@@ -1940,7 +1940,7 @@ For any quantifier except _All_:
 ![V1](Pictures/Illegal-Tag06.png)
 
 Similarly, for any horizontal quantifier except _All_:
-* Any EA-tag defined in a branch, except expression-tag of a relationship's expression where the relationship is above of the quantifier and the relationship's expression is below it, can only be referenced in that branch.
+* Any EA-tag defined in a branch, except expression-tag of a relationship's expression where the relationship is above the quantifier and the relationship's expression is below it, can only be referenced in that branch.
 
 For each entity/relationship/Cartesian product - if the same expression is used more than once - the same expression-tag will be assigned (see also Q267v3, Q311):
 
