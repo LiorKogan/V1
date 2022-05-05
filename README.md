@@ -1681,7 +1681,7 @@ _**Q167:** Any person whose owned entities are all of the same type_ (version 1)
 
 ![V1](Pictures/Q167-1.png)
 
-For any quantifier except _all_ - an entity type-tag defined in a branch can only be referenced in that branch.
+For any quantifier except _All_ - an entity type-tag defined in a branch can only be referenced in that branch.
 
 ![V1](Pictures/Illegal-Tag04.png)
 
@@ -1763,7 +1763,7 @@ _**Q368:** Any pair of dragons that have relationships of at least two types, ne
 
 Again, the fact that this pattern would never have assignments can be detected during query analysis.
 
-For any quantifier except _all_ - a relationship type-tag defined in a branch can only be referenced in that branch.
+For any quantifier except _All_ - a relationship type-tag defined in a branch can only be referenced in that branch.
 
 A relationship type-tag defined right of a negator can only be referenced right of that negator.
 
