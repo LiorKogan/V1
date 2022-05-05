@@ -1938,14 +1938,20 @@ For an _All_ quantifier:
 * An EA-tag defined in a branch can be referenced left of the quantifier and in all its branches.
 
 For any quantifier except _All_:
-* An expression-tag of an entity's expression where the entity is left of the quantifier and the entity's expression is right of the it can be referenced left of the quantifier and in all its branches.
+* An expression-tag of an entity's expression where the entity is left of the quantifier and the entity's expression is right of it - can be referenced left of the quantifier and in all its branches.
 * Other EA-tags defined in a branch can only be referenced in that branch.
 
 For any quantifier except _All_ - an EA-tag defined in a branch that affects the quantifier's evaluation can only be referenced in that branch.
 
 ![V1](Pictures/Illegal-Tag06.png)
 
-An EA-tag defined in a branch of a horizontal quantifier's branch that affects the quantifier's evaluation can only be referenced in that branch.
+Similarly, for an _All_ horizontal quantifier:
+* An EA-tag defined in a branch can be referenced above the quantifier and in all its branches.
+
+For any horizontal quantifier except _All_:
+* An expression-tag of a relationship's expression where the relationship is above of the horizontal quantifier and the relationship's expression is below it - can be referenced above the horizontal quantifier and in all its branches.
+* Other EA-tags defined in a branch can only be referenced in that branch.
+
 
 For each entity/relationship/Cartesian product - if the same expression is used more than once - the same expression-tag will be assigned (see also Q267v3, Q311):
 
