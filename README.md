@@ -129,7 +129,7 @@ Types can be assigned based on many universals (qualities), e.g., _person_ entit
   - _Repetition of features_: entities of the same type have features of the same types. The same is true also for relationships and for actions.
   - _Repetitions of actions_: entities of the same type 'have' actions of the same types.
   - _Repetition of relationships_: pairs of entities of the same pair of entity-types have relationships of the same types.
-  - _Type constancy_: an entity's type, a relationship's type, and an action's type do not change over time.
+  - _Type constancy_: an entity's type, a relationship's type, and an action's type, as well as types of their features, do not change over time.
 
 The property graph data model is a _metamodel_, as it does not specify types of entities, relationships, and actions, nor does it specify sets of features. It is domain-agnostic. Instead, domain-specific concepts may be specified and enforced using a _property graph schema_ (see next section).
 
@@ -170,7 +170,7 @@ The _[mixed] property graph data model_ comprises the following **structure**:
   
     Codd, Zaniolo, and many others proposed using two or more types of _null_ instead of a 'generic' _null_, but this approach remains mainly theoretical. In practice, _null_ values often have no consistent semantics. For a _birth date_ property, a _null_ value would likely represent an unknown birth date, but for a _death date_ property, a _null_ value may represent that the date on which the person died is unknown (_applicable missing_), that the person is still alive (_inapplicable_), or that it is unknown if the person is still alive (_no information_).
 
-    Though the semantic of _null_ values is not always defined as part of the data model, nor as part of the _data schema_, it still must be well-defined for query languages' operators and functions. E.g., what is the result of (yesterday's date < person's death date) when the _death date_ is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable values_. In addition, a _sorting comparison operator_ is usually well-defined for _null_ values, and it may be different from the standard comparison operator (e.g., should _The five persons with the earliest birth date_ returns persons with _null_ birth date?)
+    Though the semantic of _null_ values is not always defined as part of the data model, nor as part of the _data schema_, it still must be well-defined for query languages' operators and functions. E.g., what is the result of (yesterday's date < person's death date) when the _death date_ is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable values_. In addition, a _sorting comparison operator_ is usually well-defined for _null_ values, which may differ from the standard comparison operator (e.g., should _The five persons with the earliest birth date_ returns persons with a _null_ birth date?)
 
 - Should new information prove that two or more vertices represent the same entity, these vertices should be merged. Similarly, should new information prove that two or more edges represent the same relationship or action, these edges should be merged.
 
@@ -231,7 +231,7 @@ A _property graph schema_ is defined by:
   
 A predefined property-less entity-type _Null_ serves two purposes:
 * Realizing actions: an action-type can be realized as a relationship-type that is applicable between some entity-type and the _Null_ entity-type. For example, a _sleeps_: {(_Dragon_, _Null_)} relationship-type realizes a _sleeps_ action-type for the _Dragon_ entity-type.
-* Realizing relationships to unknown or unimportant entities: sometimes a real entity is unknown or unimportant, but the existence of a relationship and the values of the relationship's properties - are important. For example, we may know that a certain dragon was owned in given timeframe, but we do not know or do not care who owned it. Still - we want to be able to store and query such information. _owns_: {(_Person_, _Dragon_), (_Guild_, _Dragon_), (_Null_, _Dragon_)} allows us to realize this.
+* Realizing relationships to unknown or unimportant entities: sometimes, a real entity is unknown or unimportant, but the existence of a relationship and the values of the relationship's properties - are important. For example, we may know that a certain dragon was owned in a given timeframe, but we do not know or do not care who owned it. Still - we want to be able to store and query such information. _owns_: {(_Person_, _Dragon_), (_Guild_, _Dragon_), (_Null_, _Dragon_)} allows us to realize this.
 
 Property graph schema definitions may vary in many aspects, including:
 
@@ -260,7 +260,7 @@ Here are two examples:
   - Each of _h₁..hₙ_ has a _color_ property, and its value is _white_
   - There are relationships from _p_ to _h₁..hₙ_, each with a label _owns_
 
-  Note that the pattern's description ignores temporal aspects. Maybe a person owned a horse, owns it, or will own it. Assuming that the owns relationship has a timeframe property, a more accurate description would be _Any person who has 'owns' relationships with at least five white horses_. Maybe we are looking for _Any person who currently owns at least five white horses_ or for _Any person who at some timepoint owned at least five white horses_. If, for example, a horse's color may change over time, or if a horse may turn into a unicorn, we might want to rephrase the pattern.
+  Note that the pattern's description ignores temporal aspects. Maybe a person has owned a horse, owns it, or will own it. Assuming that the owns relationship has a timeframe property, a more accurate description would be _Any person who has 'owns' relationships with at least five white horses_. Maybe we are looking for _Any person who currently owns at least five white horses_ or for _Any person who at some timepoint owned at least five white horses_. If, for example, a horse's color may change over time, or if a horse may turn into a unicorn, we might want to rephrase the pattern.
 
 * _P2: Any person whose date of birth is between January 1, 970 and January 1, 980, who owns a white Horse, who owns a dragon whose name starts with 'M' and over the last month froze at least three dragons belonging to members of the Masons Guild_
 
@@ -276,18 +276,18 @@ Here are two examples:
   - _d_ has a _name_ property with a value that starts with 'M'
   - There are _m_ > 3 vertices, _d₁..dₘ_, each with a label _Dragon_
   - There are relationships from _d_ to any of _d₁..dₘ_, each with a label _freezes_
-  - Each of these relationships has a _tf_ property (stands for "time frame") with a _since_ subproperty whose value is in the range [_now_ - _months_(3) .. _now_]
+  - Each of these relationships has a _tf_ property (stands for "timeframe") with a _since_ subproperty whose value is in the range [_now_ - _months_(3) .. _now_]
   - There is a vertex _g_ with a label _Guild_
   - _g_ has a _name_ property, and its value is _Masons_
   - There are _n_ ≥ 1 vertices _q₁..qₙ_, each with a label _Person_
   - There are relationships from each of _q₁..qₙ_ to _g_, each with a label _member of_
   - There are relationships from each of _q₁..qₙ_ to one or more of _d₁..dₘ_, each with a label _owns_. Each of _d₁..dₘ_ is connected by at least one of these relationships
 
-The terms _entity_ and _relationship_ denote both pattern elements and graph elements. When the context may be ambiguous, we use the terms _pattern-entity_ and _pattern-relationship_ to refer to pattern elements, and the terms _graph-entity_ and _graph-relationship_ to refer to graph elements.
+The terms _entity_ and _relationship_ denote both pattern elements and graph elements. When the context may be ambiguous, we use the terms _pattern-entity_ and _pattern-relationship_ to refer to pattern elements and the terms _graph-entity_ and _graph-relationship_ to refer to graph elements.
 
 Given a property graph schema _S_, a property graph _G_ conforming to _S_, and a query pattern _P_ conforming to _S_, all expressed in language _L=_(_L<sub>S</sub>, L<sub>G</sub>, L<sub>P</sub>, L<sub>R</sub>_), _pattern matching_ is the process of finding, transforming, merging, and annotating subgraphs of _G_ that match _P_. The syntaxes of sublanguages _L<sub>S</sub>_, _L<sub>G</sub>_, _L<sub>P</sub>_, and _L<sub>R</sub>_ define what and how symbols may be combined to create well-formed schemas, graphs, patterns, and query results, respectively. A semantics of _L<sub>P</sub>_ is a mapping (_S, G, P_) → _R_: which subgraphs of _G_ match _P_ and how to transform, merge, and annotate them. 
 
-Any valid subgraph that matches the pattern is called _an assignment_. We use _assignment to X_ where _X_ is a pattern-entity, a pattern-relationship or a set of thereof, to denote the graph-entity, the graph-relationship, or the set of thereof that matches _X_ as part of an assignment.
+Any valid subgraph that matches the pattern is called _an assignment_. We use _assignment to X_ where _X_ is a pattern-entity, a pattern-relationship, or a set of thereof, to denote the graph-entity, the graph-relationship, or the set of thereof that matches _X_ as part of an assignment.
 
 In the patterns given below, unless otherwise stated, each reported assignment should include the graph-entity assigned to each mentioned pattern-entity and the graph-relationship assigned to each mentioned pattern-relationship. Hence, any reported assignment to _P1_ should be composed of:
   
@@ -358,7 +358,7 @@ the following directional relationship-types (and their properties):
 * ***offspring of***: {(_Person_, _Person_)}; no loops allowed
 * ***member of***: {(_Person_, _Guild_)} - _df_: _dateframe_
 
-  When the person is still a member and the membership has no defined termination date, df.till is 31/12/9999.
+  When the person is still a member, and the membership has no defined termination date, df.till is 31/12/9999.
 
 * ***subject of***: {(_Person_, _Kingdom_)}
 
@@ -465,7 +465,7 @@ _expr_ is an entity's expression, a relationship's expression, or a Cartesian pr
   
 - A _global expression_
 
-  The expression is composed of and depends on no entity's expression, relationship's expression, nor Cartesian product's expressions.
+  The expression is composed of and depends on no entity's expression, relationship's expression, nor Cartesian product's expression.
   
   The green rectangle is located at the same level as the leftmost entities (see Q375).
   
@@ -547,7 +547,7 @@ A constraint filters assignments; an assignment is valid only if the result of t
 
 A constraint cannot be defined for a concrete entity's expression.
 
-For untyped entities, expressions can be composed only of properties that are common to all valid entity-types. Valid entity-types for an untyped entity are defined implicitly (according to the types of the pattern-entities and pattern-relationships which are connected to the untyped entity) or explicitly (using entity-type constraints - see later) (see Q291).
+For untyped entities, expressions can be composed only of properties common to all valid entity-types. Valid entity-types for an untyped entity are defined implicitly (according to the types of the pattern-entities and pattern-relationships which are connected to the untyped entity) or explicitly (using entity-type constraints - see later) (see Q291).
 
 A subproperty of a composite property is denoted as _property-name.subproperty-name_ (e.g., _name.first_, _tf.since_).
 
@@ -557,7 +557,7 @@ _**Q3:** Any person whose first name is Brandon who owns a dragon_ (version 1)
 
 {1} is a property of each unique assignment to B.
 
-_**Q190:** Any person who become a dragon owner at 1011 or later_ (two versions)
+_**Q190:** Any person who became a dragon owner at 1011 or later_ (two versions)
 
 ![V1](Pictures/Q190-1.png)
 
@@ -583,11 +583,11 @@ The following constraint operators can be only blue:
 * A _is null_ constraint is satisfied if and only if the expression is evaluated to _null_ 
 * A _not null_ constraint is satisfied if and only if the expression is not evaluated to _null_
 
-All V1's operators and all functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _Null-valued_ [sub]properties are interpreted as _applicable missing or no information_ (e.g., 1 + _null_ = _null_; max(5, _null_) = _null_). The magic value "9999-12-31" indicates that a date is _inapplicable_.
+All V1's operators and functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _Null-valued_ [sub]properties are interpreted as _applicable missing or no information_ (e.g., 1 + _null_ = _null_; max(5, _null_) = _null_). The magic value "9999-12-31" indicates that a date is _inapplicable_.
 
 ## Data Types, Operators, and Functions
 
-One design goal of V1 is to make it applicable with many property graph database management systems. Implementations may support different data types, operators, and functions than those presented here. 
+One design goal of V1 is to make it applicable to many property graph database management systems. Implementations may support different data types, operators, and functions than those presented here. 
 
 To present V1, we use the following data types, operators, and functions:
 
@@ -630,7 +630,7 @@ _It_ denotes a interval of ordinal type _t_
 |Operator (_op_)                   | Operands and result type (result may be _null_ as well)
 |----------------------------------|-----------------------------
 | +, - (unary)                     | _op_ _int_ → _int_ <br> _op_ _float_ → _float_ <br> If the operand is NaN – the result is NaN. Otherwise, If it is _null_ – the result is _null_
-| +, - (binary)                    | _int_ _op_ _int_ → _int_ <br> _float_ _op_ _float_ → _float_ <br> _duration_ _op_ _duration_ → _duration_ <br> _duration_ + _date_ → _date_ <br> _date_ _op_ _duration_ → _date_ <br> _duration_ + _datetime_ → _datetime_ <br> _datetime_ op _duration_ → _datetime_ <br> If one or both operands are NaN – the result in NaN. Otherwise, if one or both operands are _null_ – the result is _null_
+| +, - (binary)                    | _int_ _op_ _int_ → _int_ <br> _float_ _op_ _float_ → _float_ <br> _duration_ _op_ _duration_ → _duration_ <br> _duration_ + _date_ → _date_ <br> _date_ _op_ _duration_ → _date_ <br> _duration_ + _datetime_ → _datetime_ <br> _datetime_ op _duration_ → _datetime_ <br> If one or both operands are NaN – the result is NaN. Otherwise, if one or both operands are _null_ – the result is _null_
 | *                                | _int_ * _int_ → _int_ <br> _float_ * _float_ → _float_ <br> _float_ * _duration_ → _duration_ <br> _duration_ * _float_ → _duration_ <br> If one or both operands are _null_ - the result is _null_
 | /                                | _int_ / _int_ → _int_ (truncated towards zero) <br> _float_ / _float_ → _float_ <br> _duration_ / _float_ → _duration_ <br> If one or both operands are _null_ - the result is _null_
 | % (modulo)                       | _int_ % _int_ → _int_ (remainder has the same sign as the dividend) <br> If one or both operands are _null_ - the result is _null_
@@ -859,7 +859,7 @@ _**Q304:** Any person who owns a white horse and who owns a horse weighing more 
 
 The same graph-entity may match more than one pattern-entity. For example, Either the same horse or different horses may be assigned to B and C (this can be avoided: see *identicality, nonidenticality*, and *order constraints* later on). Similarly, the same graph-relationship may match more than one pattern-relationship.
 
-A vertical quantifier has one connection on its left side and zero or more branches on its right side. On its left side, there is an entity, a quantifier, or the pattern's start. Except at the pattern's start, a quantifier may be wrapped with an 'O' (see Q147, Q149).
+A vertical quantifier has one connection on its left side and zero or more branches on its right side. On its left side is an entity, a quantifier, or the pattern's start. Except at the pattern's start, a quantifier may be wrapped with an 'O' (see Q147, Q149).
 
 When a quantifier is directly right of the pattern start, each branch may start with:
 
@@ -1099,7 +1099,7 @@ _**Q31:** Any pair of dragons (A, B) where A froze B, A fired at B, B froze A, a
 
 Without the order constraint, any reported pair of dragons would be reported twice: (D1, D2), (D2, D1).
 
-Property graph data models usually require that each entity and each relationship would be *uniquely identifiable*. To support order constraints, V1 further requires that graph-entities would also be _ordered_. 
+Property graph data models usually require that each entity and relationship be *uniquely identifiable*. To support order constraints, V1 further requires that graph-entities would also be _ordered_. 
 
 Order constraints are depicted in red ('<X' or '≤X'), where X is another entity-tag. Several nonidenticality or order constraints may be defined for the same pattern-entity, e.g., '<A,<B', '≠A,<C' (see Q83).
 
@@ -1111,7 +1111,7 @@ If, for some assignment, an identicality, nonidenticality, or order constraint i
 
 ![V1](Pictures/BB05.png)
 
-Sometimes we need to express a pattern that contains elements for which there is no assignment. For example, _any person whose first name is Brandon and who does not own a white horse_. Such patterns are composed of:
+Sometimes we need to express a pattern containing elements for which there is no assignment. For example, _any person whose first name is Brandon and who does not own a white horse_. Such patterns are composed of:
 
 * A 'positive' component - _any person whose first name is Brandon_
 * A negator - _does not_
@@ -1124,14 +1124,14 @@ An assignment matches the pattern only if:
 
 Such patterns can be composed using _negators_. The pattern starts with the 'positive' component, and negators separate it from the 'negative' components.
 
-A negator is depicted by a narrow **pink 'X' rectangle**. The rectangle has one connection on its left side and one connection on its right side. 
+A negator is depicted by a narrow **pink 'X' rectangle**. The rectangle has one on its left side and one on its right side. 
 
 On its left, there is either
 
 * an entity
 * a quantifier (see Q20v1)
 
-On its right - a relationship or a path (see [Paths](#paths), Q84)
+On its right is a relationship or a path (see [Paths](#paths), Q84)
 
 * optionally, with a relationship/path-negator (see [Relationship/Path-Negator](#relationshippath-negator), Q82v1)
 * optionally, with relationship's expressions (see Q99v1)
@@ -1208,7 +1208,7 @@ _**Q25:** Any dragon (C) not fired at by Balerion but fired at by a dragon that 
 
 ![V1](Pictures/Q025-2.png)
 
-_**Q26:** Any person who is a member of at least one guild that Brandon Stark is a member of, and at least one guild that Brandon Stark is not a member of_ (four versions)
+_**Q26:** Any person who is a member of at least one guild that Brandon Stark is a member of and at least one guild that Brandon Stark is not a member of_ (four versions)
 
 ![V1](Pictures/Q026-1.png)
 
@@ -1267,9 +1267,9 @@ Identicality, nonidenticality, and order constraints cannot be defined between p
 The pattern _Any person whose first name is Brandon and who does not own a white horse_ has assignments in two cases:
 
 * _There is a person whose first name is Brandon_, and _there are no white horses_
-* _There is a person whose first name is Brandon_, _there is at least one white horse_, but _there is no person whose first name is Brandon who owns a white horse_
+* _There is a person whose first name is Brandon_, and _there is at least one white horse_, but _there is no person whose first name is Brandon who owns a white horse_
 
-Sometimes we want an assignment to match the pattern only in the second case - we want only assignments that match the whole pattern except given relationships/paths. Hence, an assignment matches the pattern _only if_:
+Sometimes we want an assignment to match the pattern only in the second case - we want only assignments that match the whole pattern except for given relationships/paths. Hence, an assignment matches the pattern _only if_:
 
 * It matches a pattern composed of the left component and the right component without the relationship/path
   * _There is a person whose first name is Brandon_
@@ -1285,7 +1285,7 @@ _**Q357:** Any dragon for which there is at least one dragon (besides itself) it
 
 ![V1](Pictures/Q357.png)
 
-Each assignment is composed of a dragon, a negated _freezes_ relationship, and a dragon it did not freeze.
+Each assignment comprises a dragon, a negated _freezes_ relationship, and a dragon it did not freeze.
 
 _**Q83:** Any dragon for which there are at least two dragons (besides itself) it did not freeze_
 
@@ -1313,7 +1313,7 @@ _**Q82:** Any dragon that froze all other dragons. **Alternative phrasing:** Any
 
 A _combiner_ combines two or more consecutive branches of the same quantifier.
 
-A combiner is depicted by a narrow **purple '}' rectangle**. The rectangle has one connection on its left side and one connection on its right side.
+A combiner is depicted by a narrow **purple '}' rectangle**. The rectangle has one connection on its left side and one on its right side.
 
 On its left, there are relationships and paths
 
@@ -1444,7 +1444,7 @@ or
 
 * Another horizontal combiner
 
-_**Q300:** Any pair of dragons (A, B) where A froze B, and at least two of the following conditions are satisfied: (i) the freeze duration was longer than ten minutes (ii) the freeze started after January 1, 980 (iii) the freeze ended before February 1, 980_
+_**Q300:** Any pair of dragons (A, B) where A froze B, and at least two of the following conditions are satisfied: (i) the freeze duration was longer than ten minutes, (ii) the freeze started after January 1, 980, and (iii) the freeze ended before February 1, 980_
 
 ![V1](Pictures/Q300.png)
 
@@ -1500,7 +1500,7 @@ At least one pattern-entity should be non-latent.
 
 Anything right of an _optional_ is optional: if it has a valid assignment - it will be reported (unless it is latent). Otherwise - it will not.
 
-An _optional_ (i.e., an 'O') is depicted with a **magenta 'O' rectangle**. The rectangle has one connection on its left side and one connection on its right side.
+An _optional_ (i.e., an 'O') is depicted with a **magenta 'O' rectangle**. The rectangle has one connection on its left side and one on its right side.
 
 On its left, there is either
 
@@ -1519,7 +1519,7 @@ On its right, there is either
 
 Alternatively:
 
-On its left - a quantifier at the start of the pattern, and on its right - an entity (see Q321v1)
+On its left is a quantifier at the start of the pattern, and on its right is an entity (see Q321v1)
 
 _**Q147:** Any person A. If A owns both a horse and a dragon - they should be included in the assignment_
 
@@ -1561,7 +1561,7 @@ _**Q203:** Any person A. If A owns both a horse and a dragon - they should be in
 
 ![V1](Pictures/Q203.png)
 
-_**Q359:** Any dragon A where (i) there is no black dragon A froze (ii) there is no white dragon A did not freeze, (iii) there is at least one gold dragon A froze, and (iv) there is at least one silver dragon A did not freeze. Also report any red dragon that A froze and any blue dragon that A did not freeze_
+_**Q359:** Any dragon A where (i) there is no black dragon A froze, (ii) there is no white dragon A did not freeze, (iii) there is at least one gold dragon A froze, and (iv) there is at least one silver dragon A did not freeze. Also, report any red dragon that A froze and any blue dragon that A did not freeze_
 
 ![V1](Pictures/Q359.png)
 
@@ -1779,7 +1779,7 @@ Since each graph-entity of type _Null_ is connected by exactly one relationship,
 * It is not directly right of a combiner nor directly left of a quantifier
 * It is not being aggregated
 * Its single connection is either a relationship of a type that supports _Null_ entities on this side or a path that may end with such a relationship
-* Its entity-tag is not reused (no identicality, nonidenticality, nor order constraints)
+* Its entity-tag is not reused (no identicality, nonidenticality, or order constraints)
 
 As part of a pattern:
 * Concrete entities may not be of type _Null_
@@ -1801,7 +1801,7 @@ Each graph-path has a length. The _path length_ is equal to the number of graph-
 
 A _pattern-path_ connects two pattern-entities - like a pattern-relationship. However, while a pattern-relationships are assigned with graph-relationships, pattern-paths are assigned with simple graph-paths minus the first and last entities, which are not considered a part of the assignment. Thus, pattern-paths are assigned with at least one graph-relationship.
 
-A **blue line** between two pattern-entities represents a pattern-path. Above the line is a _constraint on the path length_. An upper bound on the path length must be defined, hence the constraint must be defined using one of the following constraint types: = _expr_, < _expr_, ≤ _expr_, in _set-expr_, in _bag-expr_, in _list-expr_ or in _interval-expr_, where all expressions or interval bounds evaluate to positive integers.
+A **blue line** between two pattern-entities represents a pattern-path. Above the line is a _constraint on the path length_. An upper bound on the path length must be defined, hence the constraint must be defined using one of the following constraint types: = _expr_, < _expr_, ≤ _expr_, in _set-expr_, in _bag-expr_, in _list-expr_, or in _interval-expr_, where all expressions or interval bounds evaluate to positive integers.
 
 _**Q53:** Any person with a path of length up to three to Rogar Bolton_ (version 2)
 
@@ -1941,7 +1941,7 @@ For any quantifier except _All_:
 ![V1](Pictures/Illegal-Tag06.png)
 
 Similarly, for any horizontal quantifier except _All_:
-* Any EA-tag defined in a branch, except expression-tag of a relationship's expression where the relationship is above the quantifier and the relationship's expression is below it, can only be referenced in that branch.
+* Any EA-tag defined in a branch, except expression-tag of a relationship's expression where the relationship is above the quantifier, and the relationship's expression is below it, can only be referenced in that branch.
 
 For each entity/relationship/Cartesian product - if the same expression is used more than once - the same expression-tag will be assigned (see also Q267v3, Q311):
 
@@ -1983,7 +1983,7 @@ _**Q110:** Any three dragons with cyclic freezes of more than 100 minutes, in ch
 
 ![V1](Pictures/Q110.png)
 
-_**Q112:** Any person who owned a horse and a dragon at the same time frames_ (three versions)
+_**Q112:** Any person who owned a horse and a dragon at the same timeframes_ (three versions)
 
 ![V1](Pictures/Q112-1.png)
 
