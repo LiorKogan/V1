@@ -130,7 +130,6 @@ Types can be assigned based on many universals (qualities), e.g., _person_ entit
   - _Repetitions of actions_: entities of the same type 'have' actions of the same types.
   - _Repetition of relationships_: pairs of entities of the same pair of entity-types have relationships of the same types.
   - _Type constancy_: an entity's type, a relationship's type, and an action's type do not change over time.
-  - _Value inconstancy_: the value of some features may change over time.
 
 The property graph data model is a _metamodel_, as it does not specify types of entities, relationships, and actions, nor does it specify sets of features. It is domain-agnostic. Instead, domain-specific concepts may be specified and enforced using a _property graph schema_ (see next section).
 
