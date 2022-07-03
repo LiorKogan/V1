@@ -123,7 +123,8 @@ The _[mixed] property graph data model_ comprises the following **concepts**:
 
 A property graph is hence a _heterogeneous graph_; it may contain entities of multiple types (_multi-modal graph_), relationships of multiple types (_multi-relational graph_), and, optionally, actions of multiple types. In addition, each entity, relationship, or action  may have multiple features (_multifeatured graph_).
 
-Entities of the same _type_ are _semantically homogeneous_. The same is true also for relationships and for actions. Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Many times, types are assigned in accordance with the following guidelines:
+Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Usually, entities of the same type are _semantically homogeneous_. The same is true also for relationships and for actions. For property graphs, _semantic homogeneity_ means:
+
   - _Repetition of existence_: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
   - _Repetition of features_: entities of the same type have features of the same types. The same is true also for relationships and for actions.
   - _Repetitions of actions_: entities of the same type 'have' actions of the same types.
