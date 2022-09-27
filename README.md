@@ -1296,7 +1296,7 @@ _**Q204:** Any dragon for which there is a dragon not owned by a Sarnorian that 
 
 ![V1](Pictures/Q204.png)
 
-_**Q205:** Any dragon A and Sarnorian subject C for which there is a dragon not owned by C that did not freeze A_
+_**Q205:** Any dragon A and Sarnorian subject C where there is a dragon not owned by C that did not freeze A_
 
 ![V1](Pictures/Q205.png)
 
