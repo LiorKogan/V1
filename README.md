@@ -1315,12 +1315,14 @@ A _combiner_ combines two or more consecutive branches of the same quantifier.
 
 A combiner is depicted by a narrow **purple '}' rectangle**. The rectangle has one connection on its left side and one on its right side.
 
-On its left, there are relationships and paths
+On its left, there can be
 
-- optionally, with a negator (see Q35) or with an 'O'
-- optionally, with a relationship/path-negator (see Q360v1)
-- optionally, with relationship's expressions (see Q185)
-- optionally, with aggregators (see Q244)
+- Types relationships, untyped relationships (see Q53), and paths
+  - optionally, with a negator (see Q35) or with an 'O'
+  - optionally, with a relationship/path-negator (see Q360v2)
+  - optionally, with relationship's expressions (see Q185)
+  - optionally, with aggregators (see Q244)
+- a combiner (see Q100)
 
 On its right – there is either
 
