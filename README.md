@@ -1417,34 +1417,31 @@ A **horizontal purple rectangle** represents a _horizontal quantifier_. The text
 
 Eleven horizontal quantifier types are defined (as for vertical quantifiers, except the _All_ quantifier). Their semantics are similar to those of vertical quantifiers. _All_ can be implemented by chaining relationship's expressions or by using vertical quantifiers (see Q100).
 
-A horizontal quantifier may appear
+On the top of a horizontal quantifier, there can be
 
-* below a relationship
-* below a relationship's expression
-* below a horizontal quantifier (in a branch)
+- a relationship (see Q300)
+- a relationship's expression (see Q301)
+- a horizontal quantifier
 
 On its bottom, there are zero or more branches. Each branch starts with either
 
-* a relationship's expression, or
-* a horizontal quantifier
+- a relationship's expression (see Q300)
+- a horizontal quantifier
 
 A branch composed of relationship's expressions with no constraints does not affect the quantifier's evaluation.
 
 A horizontal combiner may be used to combine two or more consecutive branches of the same horizontal quantifier. Each branch ends with either
 
-* A relationship's expressions, or
-* A horizontal combiner
+- A relationship's expressions (see Q302)
+- A horizontal combiner
 
-Below a horizontal combiner
+Below a horizontal combiner, there can be either
 
-* Another chained stage that starts with
-  * a relationship's expression,
-  * a horizontal quantifier, or
-  * an aggregator
-
-or
-
-* Another horizontal combiner
+- Another chained stage that starts with
+  - a relationship's expression (see Q301)
+  - an aggregator (see Q302)
+  - a horizontal quantifier 
+- A horizontal combiner
 
 _**Q300:** Any pair of dragons (A, B) where A froze B, and at least two of the following conditions are satisfied: (i) the freeze duration was longer than ten minutes, (ii) the freeze started after January 1, 980, and (iii) the freeze ended before February 1, 980_
 
