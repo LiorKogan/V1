@@ -654,14 +654,15 @@ _It_ denotes a interval of ordinal type _t_
 
 **Implicit Type Coercion**
 
-|From type (_t1_)     | To type (_t2_)              | Examples
-|---------------------|-----------------------------| -----
-|_int_                | _float_                     | 5 + 3. → 8.
-|_date_               | _datetime_ (00:00)          | _date_("2018-04-05") = _datetime_("2018-04-05T00:00:00") → true
-|_dateframe_          | interval(_date_)            | _df_._duration_, where _df_ is a _dateframe_ property
-|interval(_date_)     | _dateframe_                 | (_date_("2018-04-05") .. _date_("2018-05-05")).since → _date_("2018-04-05")
-|_datetimeframe_      | interval(_datetime_)        | _tf_._duration_, where _tf_ is a _datetimeframe_ property
-|interval(_datetime_) | _datetimefrmae_             | (_date_("2018-04-05") .. _datetime_("2018-05-05T00:00")).since → _datetime_("2018-04-05T00:00")
+|From type (_t1_)     | To type (_t2_)        | Examples
+|---------------------|-----------------------| -----
+|_int_                | _float_               | 5 + 3. → 8.
+|_date_               | _datetime_            | _date_("2018-04-05") = _datetime_("2018-04-05T00:00:00") → true
+|_dateframe_          | _datetimeframe_       | _dateframe_("2018-04-05", "2018-04-08") = _datetimeframe_("2018-04-05T00:00:00", "2018-04-08T23:59:59.999999999")
+|_dateframe_          | interval(_date_)      | _df_._duration_, where _df_ is a _dateframe_ property
+|_datetimeframe_      | interval(_datetime_)  | _tf_._duration_, where _tf_ is a _datetimeframe_ property
+|interval(_date_)     | _dateframe_           | (_date_("2018-04-05") .. _date_("2018-05-05")).since → _date_("2018-04-05")
+|interval(_datetime_) | _datetimefrmae_       | (_date_("2018-04-05") .. _datetime_("2018-05-05T00:00")).since → _datetime_("2018-04-05T00:00")
 
 Also, based on any of these coercion rules:
 
