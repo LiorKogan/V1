@@ -1420,12 +1420,12 @@ Eleven horizontal quantifier types are defined (as for vertical quantifiers, exc
 On the top of a horizontal quantifier, there can be
 
 - a relationship (see Q300)
-- a relationship's expression (see Q301)
+- a relationship's expression (see Q301v1)
 - a horizontal quantifier
 
 On its bottom, there are zero or more branches. Each branch starts with either
 
-- a relationship's expression (see Q300)
+- a relationship's expression (see Q267v3)
 - a horizontal quantifier
 
 A branch composed of relationship's expressions with no constraints does not affect the quantifier's evaluation.
@@ -1438,7 +1438,7 @@ A horizontal combiner may be used to combine two or more consecutive branches of
 Below a horizontal combiner, there can be either
 
 - Another chained stage that starts with
-  - a relationship's expression (see Q301)
+  - a relationship's expression (see Q301v2)
   - an aggregator (see Q302)
   - a horizontal quantifier 
 - A horizontal combiner
