@@ -1407,7 +1407,7 @@ _**Q188:** Any dragon Balerion froze at least once - on or after January 1, 1010
 
 ![V1](Pictures/Q188.png)
 
-_**Q10:** Any person whose first name is Brandon, who owns some dragon B which froze a dragon C that (i) belongs to an offspring of Rogar Bolton, and (ii) froze a dragon that belongs either to Robin Arryn or to Arrec Durrandon. B froze C at least once in or after 1010 - for longer than 100 seconds_
+_**Q10:** Any person whose first name is Brandon, who owns some dragon B which froze a dragon C that (i) belongs to an offspring of Rogar Bolton, and (ii) froze a dragon that belongs to either Robin Arryn or Arrec Durrandon. B froze C at least once in or after 1010 - for longer than 100 seconds_
 
 ![V1](Pictures/Q010.png)
 
