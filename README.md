@@ -348,7 +348,7 @@ the following directional relationship-types (and their properties):
 
 * ***owns***: {(_Person_, _Horse_), (_Person_, _Dragon_), (_Guild_, _Horse_), (_Guild_, _Dragon_)} - _df_: _dateframe_
 
-  When the person is still the owner and the ownership has no defined termination date, df.till is 31/12/9999.
+  When the person is still the owner and the ownership has no defined termination date (the value in _inapplicable_), df.till is 31/12/9999.
 
 * ***fires at***: {(_Dragon_, _Dragon_)} - _time_: _datetime_; no loops allowed
 * ***freezes***: {(_Dragon_, _Dragon_)} - _tf_: _datetimeframe_; no loops allowed
@@ -358,7 +358,7 @@ the following directional relationship-types (and their properties):
 * ***offspring of***: {(_Person_, _Person_)}; no loops allowed
 * ***member of***: {(_Person_, _Guild_)} - _df_: _dateframe_
 
-  When the person is still a member, and the membership has no defined termination date, df.till is 31/12/9999.
+  When the person is still a member and the membership has no defined termination date (the value in _inapplicable_), df.till is 31/12/9999.
 
 * ***subject of***: {(_Person_, _Kingdom_)}
 
@@ -583,9 +583,11 @@ The following constraint operators can be only blue:
 * A _is null_ constraint is satisfied if and only if the expression is evaluated to _null_ 
 * A _not null_ constraint is satisfied if and only if the expression is not evaluated to _null_
 
-All V1's operators and functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _Null-valued_ [sub]properties are interpreted as _applicable missing or no information_ (e.g., 1 + _null_ = _null_; max(5, _null_) = _null_). The magic value "9999-12-31" indicates that a date is _inapplicable_.
-
 ## Data Types, Operators, and Functions
+
+All V1's operators and functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _Null-valued_ [sub]properties are interpreted as _applicable missing or no information_ (e.g., 1 + _null_ = _null_; max(5, _null_) = _null_).
+
+Since V1 is schema-based, there is no need to define the behavior of each operator for any combination of operand types (and similarly, for each function for any combination of parameter types). When the types do not match the definition (e.g., 5 > 'abc', _round_('abc')) – the query is invalid. Type matching should be detected during query analysis. Interactive pattern-building tools should also disallow the construction of such queries.
 
 One design goal of V1 is to make it applicable to many property graph database management systems. Implementations may support different data types, operators, and functions than those presented here. 
 
@@ -617,13 +619,8 @@ To present V1, we use the following data types, operators, and functions:
 | _float_                     | 3., 3.12, -1.78e-6, NaN, -INF, +INF
 | _string_                    | "", "abc", 'abc'
 
-_St_ denotes a set of elements of type _t_
 
-_Bt_ denotes a bag of elements of type _t_
-
-_Lt_ denotes a list of elements of type _t_
-
-_It_ denotes a interval of ordinal type _t_
+We will use _St_, _Bt_, and _Lt_, to denote a set, a bag, and a list of elements of type _t_, respectfully, and _It_ to denote an interval of ordinal type _t_.
 
 **Operators:**
 
@@ -1029,7 +1026,7 @@ The following pattern also requires that A's death date is not a future date:
 
 ![V1](Pictures/Q008-2.png)
 
-_**Q11:** Any current member of the Masons Guild who on or after January 1, 1011, befriended someone who had left the Saddlers guild or the Blacksmiths guild in June 1010 or later_
+_**Q11:** Any current member of the Masons Guild who, on or after January 1, 1011, befriended someone who had left the Saddlers guild or the Blacksmiths guild in June 1010 or later_
 
 ![V1](Pictures/Q011.png)
 
@@ -1037,7 +1034,7 @@ The constraint 'member of df.till = 31/12/9999' means an _inapplicable_ membersh
 
 ## Entity-Tags
 
-The letter in the top-left corner of each pattern-entity rectangle (concrete, typed, or untyped) is called an _entity-tag_. Entity-tags are included in query results as well: any graph-entity in a query result is annotated with the same tag as the pattern-entity to which it was assigned so that the query poser can understand why any given entity is part of the result. As part of the result, a graph-entity may be annotated with more than one entity-tag, as it may be assigned to several pattern-entities (in the same assignment or in different assignments - when assignments are merged).
+The letter in the top-left corner of each pattern-entity rectangle (concrete, typed, or untyped) is called an _entity-tag_. Entity-tags are also included in query results: any graph-entity in a query result is annotated with the same tag as the pattern-entity to which it was assigned so that the query poser can understand why any given entity is part of the result. As part of the result, a graph-entity may be annotated with more than one entity-tag, as it may be assigned to several pattern-entities (in the same assignment or in different assignments - when assignments are merged).
 
 Entity-tags may be referenced:
 
@@ -1086,7 +1083,7 @@ _**Q24:** Any person A having (at least) two parents and owns a dragon that was 
 
 ![V1](Pictures/Q024.png)
 
-Q24 demonstrates the usage of both identicality constraints and nonidenticality constraints for the same pattern-entity.
+Q24 demonstrates the usage of both identicality and nonidenticality constraints for the same pattern-entity.
 
 Consider Q5v1, Q6, Q7, and Q24. For any given assignment, there is another assignment where the two parents are switched (for example, in Q5v1, the assignments to D and E are switched). Such redundant assignments are usually undesired. Using _order constraints_, we can avoid such redundancies (see Q5v2).
 
@@ -1470,7 +1467,7 @@ _Implicit latent pattern-entities_ are pattern-entities that appear
 
 Such typed and untyped entities are required to have no assignments; hence, trivially, no assignments would be reported. Such concrete entities would not be reported as well (see Q20).
 
-Implicit latent pattern-entities are depicted with a **gray 'no report' icon** on their top-right. These icons are automatically added by the interactive pattern builder/visualizer tool and may not be added/removed by the pattern composer.
+Implicit latent pattern-entities are depicted with a **gray 'no report' icon** on their top-right. These icons are automatically added by the interactive pattern-builder/visualizer tool and may not be added/removed by the pattern composer.
 
 An entity right of a combiner is not depicted as implicit latent even if it is implicit latent according to one or more branches (see Q35).
 
