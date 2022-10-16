@@ -585,9 +585,9 @@ The following constraint operators can be only blue:
 
 ## Data Types, Operators, and Functions
 
-All V1's operators and functions are well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _Null-valued_ [sub]properties are interpreted as _applicable missing or no information_ (e.g., 1 + _null_ = _null_; max(5, _null_) = _null_).
+All V1's operators and functions must be well-defined when one or more of the operands or parameters are _null_ or evaluated to _null_. _Null-valued_ [sub]properties are interpreted as _applicable missing or no information_ (e.g., 1 + _null_ = _null_; max(5, _null_) = _null_).
 
-Since V1 is schema-based, there is no need to define the behavior of each operator for any combination of operand types (and similarly, for each function for any combination of parameter types). When the types do not match the definition (e.g., 5 > 'abc', _round_('abc')) – the query is invalid. Type matching should be detected during query analysis. Interactive pattern-building tools should also disallow the construction of such queries.
+Since V1 is schema-based, there is no need to define the behavior of each operator for any combination of operand types (and similarly, for each function for any combination of parameter types). When types do not match the definition (e.g., 5 > 'abc', _round_('abc')) – the query is invalid. Type mismatch should be detected during query analysis. In addition, interactive pattern-building tools should disallow the construction of such queries.
 
 One design goal of V1 is to make it applicable to many property graph database management systems. Implementations may support different data types, operators, and functions than those presented here. 
 
