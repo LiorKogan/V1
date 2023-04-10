@@ -1,6 +1,6 @@
 ## V1: A Visual Query Language for Property Graphs
 
-Copyright © 2017-2022 [Lior Kogan](https://www.linkedin.com/in/liorkogan) (koganlior1 [at] gmail [dot] com)
+Copyright © 2017-2023 [Lior Kogan](https://www.linkedin.com/in/liorkogan) (koganlior1 [at] gmail [dot] com)
 
 ---
 
@@ -2024,19 +2024,19 @@ First example: _Any person who owns at least 20 horses_ (Q59)
 
 ![V1](Pictures/Q059.png)
 
-All assignments to the pattern, ignoring the aggregator, are found and split into sets. In each set, all the assignments to A are identical. Only sets with more than two assignments to B are valid pattern assignments.
+All assignments to the pattern, ignoring the aggregator, are found, and split into sets. In each set, all the assignments to A are identical. Only sets with more than 20 assignments to B are valid pattern assignments.
 
 Second example: _Any dragon that froze dragons more than ten times_ (Q71)
 
 ![V1](Pictures/Q071.png)
 
-All assignments to the pattern, ignoring the aggregator, are found and split into sets. In each set, all the assignments to A are identical. Only sets with more than ten assignments to the relationship are valid pattern assignments.
+All assignments to the pattern, ignoring the aggregator, are found, and split into sets. In each set, all the assignments to A are identical. Only sets with more than ten assignments to the relationship are valid pattern assignments.
 
 Third example: _Any pair of dragons (A, B) where A froze B for a cumulative duration longer than 100 minutes_ (Q86)
 
 ![V1](Pictures/Q086.png)
 
-All assignments to the pattern, ignoring the aggregator, are found and split into sets. In each set, all the assignments to both A and B are identical. Only sets where the sum of the duration of all _freezes_ relationships is greater than 100 minutes are valid pattern assignments.
+All assignments to the pattern, ignoring the aggregator, are found, and split into sets. In each set, all the assignments to both A and B are identical. Only sets where the sum of the duration of all _freezes_ relationships is greater than 100 minutes are valid pattern assignments.
 
 **Evaluating an aggregator:**
 
