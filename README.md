@@ -4,13 +4,15 @@ Copyright © 2017-2023 [Lior Kogan](https://www.linkedin.com/in/liorkogan) (koga
 
 ---
 
-The V1 language, all the content of [https://github.com/LiorKogan/V1](https://github.com/LiorKogan/V1), and all the content of [http://v1.ms/](http://v1.ms/) are licensed under the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/). Commercial license and software tools are also available.
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). Commercial licenses and software tools are also available. V1 is a trademark of Lior Kogan.
+
+![CC](https://upload.wikimedia.org/wikipedia/commons/1/12/Cc-by-nc-sa_icon.svg)
 
 This page contains the description and the specifications of the V1 language. This content is periodically released in [arXiv](https://arxiv.org/abs/1710.04470).
 
 V1 is named after the primary visual cortex in our brain, which is also known as visual area one (V1).
 
-V1 is dedicated to my ancestors all the way back, and to their descendants all the way forth.
+V1 is dedicated to my ancestors all the way back and their descendants all the way forth.
 
 Feedback, questions, corrections, and suggestions are welcome.
 
