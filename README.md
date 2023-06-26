@@ -2,7 +2,7 @@
 
 Copyright © 2017-2023 [Lior Kogan](https://www.linkedin.com/in/liorkogan) (koganlior1 [at] gmail [dot] com)
 
-V1 is a trademark of Lior Kogan.
+The "V1" name is a trademark of Lior Kogan.
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). Commercial licenses and software tools are also available from Lior Kogan.
 
