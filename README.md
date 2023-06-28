@@ -483,11 +483,11 @@ An _expression_ is
 
   Note: _date_, _datetime_, and _duration_ literals are represented using the functions _date_(_string_), _datetime_(_string_) and _duration_(_string_), respectively. In visual syntax, these function names are omitted, and expressions are formatted according to the regional settings (see Q8),
 
-- < _inherent property name_ > (of a connected entity/relationship)
+- <_inherent property name_> (of a connected entity/relationship)
 
   (valid for a Cartesian product's expression only if it is connected to an entity/relationship),
 
-- < _inherent property name_ >.< _subproperty name_ >&#91;.< _subproperty name_ > ...&#93; (of a connected entity/relationship)
+- <_inherent property name_>.<_subproperty name_>&#91;.<_subproperty name_> ...&#93; (of a connected entity/relationship)
 
   (valid for a Cartesian product's expression only if it is connected to an entity/relationship),
   
@@ -553,7 +553,7 @@ A constraint cannot be defined for a concrete entity's expression.
 
 For untyped entities, expressions can be composed only of properties common to all valid entity-types. Valid entity-types for an untyped entity are defined implicitly (according to the types of the pattern-entities and pattern-relationships which are connected to the untyped entity) or explicitly (using entity-type constraints - see later) (see Q291).
 
-A subproperty of a composite property is denoted as <_property-name_>.<_subproperty-name_> (e.g., _name.first_, _tf.since_).
+A subproperty of a composite property is denoted as <_property name_>.<_subproperty name_> (e.g., _name.first_, _tf.since_).
 
 _**Q3:** Any person whose first name is Brandon who owns a dragon_ (version 1)
 
