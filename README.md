@@ -71,7 +71,7 @@ Feedback, questions, corrections, and suggestions are welcome.
 
 ## Introduction
 
-The _property graph_ is an increasingly popular data model. Pattern construction and pattern matching are important tasks when dealing with property graphs. Given a property graph schema _S_, a property graph _G_ conforming to _S_, and a query pattern _P_ conforming to _S_, all expressed in language _L=_(_L<sub>S</sub>, L<sub>G</sub>, L<sub>P</sub>, L<sub>R</sub>_), _pattern matching_ is the process of finding, transforming, merging, and annotating subgraphs of _G_ that match _P_. The syntaxes of sublanguages _L<sub>S</sub>_, _L<sub>G</sub>_, _L<sub>P</sub>_, and _L<sub>R</sub>_ define what and how symbols can be combined to form well-formed schemas, graphs, patterns, and query results, respectively. A semantics of _L<sub>P</sub>_ is a mapping (_S, G, P_) → _R_: which subgraphs of _G_ match _P_ and how to transform, merge, and annotate them. Expressive pattern languages support topological constraints, property value constraints, negations, quantifications, aggregations, and path semantics. _Calculated properties_ may be defined for vertices, edges, and subgraphs, and constraints may be imposed on their evaluation result.
+The _property graph_ is an increasingly popular data model. Pattern construction and pattern matching are important tasks when dealing with property graphs. Given a property graph schema 𝑆, a property graph 𝐺 conforming to 𝑆, and a query pattern 𝑃 conforming to 𝑆, all expressed in language _L=_(_L<sub>S</sub>, L<sub>G</sub>, L<sub>P</sub>, L<sub>R</sub>_), _pattern matching_ is the process of finding, transforming, merging, and annotating subgraphs of 𝐺 that match 𝑃. The syntaxes of sublanguages _L<sub>S</sub>_, _L<sub>G</sub>_, _L<sub>P</sub>_, and _L<sub>R</sub>_ define what and how symbols can be combined to form well-formed schemas, graphs, patterns, and query results, respectively. A semantics of _L<sub>P</sub>_ is a mapping (𝑆, 𝐺, 𝑃) → 𝑅: which subgraphs of 𝐺 match 𝑃 and how to transform, merge, and annotate them. Expressive pattern languages support topological constraints, property value constraints, negations, quantifications, aggregations, and path semantics. _Calculated properties_ may be defined for vertices, edges, and subgraphs, and constraints may be imposed on their evaluation result.
 
 Many query posers are professionals (e.g., researchers, analysts, or investigators) who construct patterns as part of their daily work (e.g., investigative analytics). Such domain experts would like to construct patterns with minimal effort, minimal trial and error, and in a manner that is coherent with the way they think. The ability to express patterns in a way that is aligned with their mental processes is crucial to the flow of their work and to the quality of the insights they can draw. Many domain experts will not use textual property graph query languages (e.g., [Gremlin](https://arxiv.org/abs/1508.03843), [GSQL](https://arxiv.org/abs/1901.08248), [Cypher](https://dl.acm.org/citation.cfm?id=3190657), [PGQL](https://dl.acm.org/citation.cfm?id=2960421), [G-CORE](https://arxiv.org/abs/1712.01550), and the proposed [GQL](https://gql.today/)) either because it can be too hard for someone with little or no programming or scripting skills, or because it requires them to spend too much time on the technicalities and distracts them from their line of inquiry. As a result, they are forced to use only a predefined set of query templates or work in concert with technical experts. Both solutions are far from satisfying. 
 
@@ -85,9 +85,9 @@ The term _property graph_ refers to both a mathematical structure and a data mod
 
 ### Mathematical Structure:
 
-A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is an ordered quintet _G_ = (_V_, _E_, _A_, _ψₑ_, _ψₐ_) consisting of three pairwise disjoint sets and two functions. _V_ is a nonempty set whose elements are called [_vertices_](https://en.wikipedia.org/wiki/Vertex_(graph_theory)) (_nodes_, _dots_, _points_), _E_ is a set whose elements are called _undirected edges_ (_undirected links_, _undirected lines_), _A_ is a set whose elements are called _directed edges_ (_directed links_, _directed lines_, _arcs_, _arrows_), _ψₑ: E → { {u,v} : u,v ∈ V }_ is a total function mapping each undirected edge to an unordered pair of vertices, and _ψₐ: A → { (u,v) : u,v ∈ V }_ is a total function mapping each directed edge to an ordered pair of vertices. An [_undirected graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)#Graph) is a graph in which _A_ ≔ _∅_. A [_directed graph_](https://en.wikipedia.org/wiki/Directed_graph) (_digraph_, _oriented graph_) is a graph in which _E_ ≔ _∅_. A [_mixed graph_](https://en.wikipedia.org/wiki/Mixed_graph) is a graph where both directed and undirected edges may exist.
+A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is an ordered quintet 𝐺 = (𝑉, 𝐸, 𝐴, _ψₑ_, _ψₐ_) consisting of three pairwise disjoint sets and two functions. 𝑉 is a nonempty set whose elements are called [_vertices_](https://en.wikipedia.org/wiki/Vertex_(graph_theory)) (_nodes_, _dots_, _points_), 𝐸 is a set whose elements are called _undirected edges_ (_undirected links_, _undirected lines_), 𝐴 is a set whose elements are called _directed edges_ (_directed links_, _directed lines_, _arcs_, _arrows_), _ψₑ: E → { {u,v}: u,v ∈ V }_ is a total function mapping each undirected edge to an unordered pair of vertices, and _ψₐ: A → { (u,v): u,v ∈ V }_ is a total function mapping each directed edge to an ordered pair of vertices. An [_undirected graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)#Graph) is a graph in which 𝐴 ≔ _∅_. A [_directed graph_](https://en.wikipedia.org/wiki/Directed_graph) (_digraph_, _oriented graph_) is a graph in which 𝐸 ≔ _∅_. A [_mixed graph_](https://en.wikipedia.org/wiki/Mixed_graph) is a graph where both directed and undirected edges may exist.
 
-Given undirected edge _e_ such that _ψₑ_(_e_) = {_u_,_v_}, we say that _e_ _connects_ (_joins_) vertices _u_ and _v_. Likewise, given directed edge _a_ such that _ψₐ_(_a_) = (_u_,_v_), we say that _a_ _connects_ (_joins_) vertex _u_ (_a_'s tail, _a_'s _source vertex_) to vertex _v_ (_a_'s head, _a_'s _target_ vertex). A [_loop_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) is an edge (directed or undirected) connecting a vertex with itself. [_Multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (_parallel edges_) are two or more undirected edges connecting the same unordered pair of vertices or directed edges connecting the same ordered pair of vertices. A _simple graph_ is a graph in which multiple edges and loops are not allowed. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which multiple edges and loops are allowed.
+Given undirected edge 𝑒 such that _ψₑ_(𝑒) = {𝑢,𝑣}, we say 𝑒 is an edge _between_ 𝑢 and 𝑣, 𝑒 _connects_ (_joins_) 𝑢 and 𝑣, and 𝑢 and 𝑣 are adjacent. Likewise, given directed edge 𝑎 such that _ψₐ_(𝑎) = (𝑢,𝑣), we say that 𝑒 is an edge _from_ 𝑢 _to_ 𝑣, 𝑎 _connects_ (_joins_) 𝑢 to 𝑣, 𝑣 is _out adjacent_ to 𝑢, 𝑢 is _in adjacent_ to 𝑣, 𝑢 is 𝑎's tail (𝑎's _source vertex_), and 𝑣 is 𝑎's head (𝑎's _target_ vertex). A [_loop_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) is an edge (directed or undirected) connecting a vertex with itself. [_Multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (_parallel edges_) are two or more undirected edges connecting the same unordered pair of vertices or directed edges connecting the same ordered pair of vertices. A _simple graph_ is a graph in which multiple edges and loops are not allowed. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which multiple edges and loops are allowed.
 
 An _attributed graph_ is a generic term referring to graphs in which an attribute (_single-attributed graph_) or a set, a bag, or a list of attributes (_multi-attributed graph_) may be associated with each vertex (_vertex-attributed graph_), edge (_edge-attributed graph_), or the graph itself. An _attribute_ may be a nominal value, an ordinal value, a key-value pair, or other annotation. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
@@ -140,8 +140,8 @@ The _[mixed] property graph data model_ comprises the following **structure**:
   - All data elements are organized in a single [mixed] property graph mathematical structure.
   - A _null vertex_ is a propertyless vertex with a null label. Each null vertex is connected to exactly one edge. An edge connecting two null vertices is not allowed.
   - Any vertex, except null vertices, represents an entity. The vertex's label is an integer or a nonempty string identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_).
-  - An undirected edge {_u_, _v_}, where both _u_ and _v_ are not null vertices, represents a bidirectional relationship between the entity represented by _u_ and the entity represented by _v_.
-  - A directed edge (_u_, _v_), where both _u_ and _v_ are not null vertices, represents a directional relationship between the entity represented by _u_ and the entity represented by _v_.
+  - An undirected edge {𝑢, 𝑣}, where both 𝑢 and 𝑣 are not null vertices, represents a bidirectional relationship between the entity represented by 𝑢 and the entity represented by 𝑣.
+  - A directed edge (𝑢, 𝑣), where both 𝑢 and 𝑣 are not null vertices, represents a directional relationship between the entity represented by 𝑢 and the entity represented by 𝑣.
   - An edge, where one vertex is a null vertex, represents either
 
     - an entity's action (e.g., _sleeps_ action for a _Person_ entity), or
@@ -180,7 +180,7 @@ The _[mixed] property graph data model_ comprises the following **structure**:
 
 - Any pair of vertices, except null vertices, must be _distinguishable_, which means that vertices' _identifiers_ must be pairwise distinct, or there should be no pair of vertices with identical type, property values, and relationships. Similarly, any pair of edges must be _distinguishable_, which means that edges' _identifiers_ must be pairwise distinct, or there should be no pair of edges with identical type and property values that connect the same pair of vertices or the same vertex and a null vertex. An _identifier_ is a set of properties (often just an automatically generated index) that collectively uniquely identifies the element.
 
-_n_-ary relationships, where _n_ > 2, are not supported. However, this poses no practical limitation since any _n_-ary relationship, _n_ > 2, can be reframed as an entity and _n_ binary relationships. Consider, for example, a ternary relationship, where Person _A_ sells Horse _H_ to Person _B_. Instead, one can reframe this data as a _Sale_ entity _S_, a _seller_ relationship from _S_ to _A_, a _buyer_ relationship from _S_ to _B_, and a _sold_ relationship from _S_ to _H_.
+𝑛-ary relationships, where 𝑛 > 2, are not supported. However, this poses no practical limitation since any 𝑛-ary relationship, 𝑛 > 2, can be reframed as an entity and 𝑛 binary relationships. Consider, for example, a ternary relationship, where Person 𝐴 sells Horse 𝐻 to Person 𝐵. Instead, one can reframe this data as a _Sale_ entity 𝑆, a _seller_ relationship from 𝑆 to 𝐴, a _buyer_ relationship from 𝑆 to 𝐵, and a _sold_ relationship from 𝑆 to 𝐻.
 
 The term _property graph_ was introduced by [Rodriguez](https://arxiv.org/abs/1006.2361) and [Neubauer](https://arxiv.org/abs/1004.1001), though other terms were used to describe similar data models. [Tsai and Fu's](https://ieeexplore.ieee.org/document/4310127) _attributed relational graph_ is a directed multigraph in which both nodes and edges have labels, and each label defines a set of numerical or logical attributes. [Shao et al.](https://ieeexplore.ieee.org/abstract/document/7953521) used the term _Heterogeneous graph_ for the same construct. [Gallagher](http://www.aaai.org/Papers/Symposia/Fall/2006/FS-06-02/FS06-02-007.pdf) used the term _data graph_ to refer to graphs in which vertices and/or edges may be typed and/or attributed. [Singh et al.](http://ieeexplore.ieee.org/abstract/document/4272051/) used the term _M*3_ (multi-modal, multi-relational, multifeatured) _network_ to refer to graphs with multiple entity-types, multiple relationship-types, and multiple descriptive features for nodes and edges. [Krause et al.](https://link.springer.com/chapter/10.1007/978-3-319-40530-8_10)  used the term _typed graph_ to refer to graphs with typed nodes, typed edges, and typed node properties.
 
@@ -188,7 +188,7 @@ Various extensions were proposed, including:
 - Instead of a single label, each vertex has a (possibly empty) set of labels (_vertex multi-labeled graph_); entities are _multi-typed_
 - Instead of a single label, each edge has a (possibly empty) set of labels (_edge multi-labeled graph_); relationships are _multi-typed_
 - Directional relationship types naming: instead of a name for only one direction (e.g., _owns_), a unique name is defined for each direction (e.g., _owns_, _owned by_; _parent of_, _offspring of_)
-- [_Property hypergraphs_](https://link.springer.com/chapter/10.1007%2F978-3-319-26148-5_21) (_hyperedges_ represent _n_-ary relationships)
+- [_Property hypergraphs_](https://link.springer.com/chapter/10.1007%2F978-3-319-26148-5_21) (_hyperedges_ represent 𝑛-ary relationships)
 - Schema-level and data-level _metaproperties_ (properties of properties – e.g., units of measure, accuracy, reliability)
 - [EPGM – Extended Property Graph Model](https://dbs.uni-leipzig.de/file/EPGM.pdf), in which _logical graphs_ consist of subsets of a shared set of vertices and a shared set of edges. In addition, logical graphs have types and properties.
 - Support of _derivation_ (_specialization_) of entity-types, relationship-types, and property types
@@ -257,10 +257,10 @@ Here are two examples:
 
   _P1_ defines the set of (sub)graphs in which 
 
-  - There is a vertex _p_ with a label _Person_
-  - There are _n_ ≥ 5 vertices _h₁..hₙ_, each with a label _Horse_
-  - Each of _h₁..hₙ_ has a _color_ property, and its value is _white_
-  - There are relationships from _p_ to _h₁..hₙ_, each with a label _owns_
+  - There is a vertex 𝑝 with a label _Person_
+  - There are 𝑛 ≥ 5 vertices ℎ₁..ℎₙ, each with a label _Horse_
+  - Each of ℎ₁..ℎₙ has a _color_ property, and its value is _white_
+  - There are relationships from 𝑝 to ℎ₁..ℎₙ, each with a label _owns_
 
   Note that the pattern's description ignores temporal aspects. Maybe a person has owned a horse, owns it, or will own it. Assuming that the owns relationship has a timeframe property, a more accurate description would be _Any person who has 'owns' relationships with at least five white horses_. Maybe we are looking for _Any person who currently owns at least five white horses_ or for _Any person who at some timepoint owned at least five white horses_. If, for example, a horse's color may change over time, or if a horse may turn into a unicorn, we might want to rephrase the pattern.
 
@@ -268,28 +268,28 @@ Here are two examples:
 
   _P2_ defines the set of (sub)graphs in which 
 
-  - There is a vertex _p_ with a label _Person_
-  - _p_ has a _birthDate_ property of type _date_, and its value is between January 1, 970 and January 1, 980
-  - There is at least one vertex _h_ with a label _Horse_
-  - There is a relationship from _p_ to _h_ with a label _owns_
-  - _h_ has a _color_ property, and its value is _white_
-  - There is at least one vertex _d_ with a label _Dragon_
-  - There is a relationship from _p_ to _d_ with a label _owns_
-  - _d_ has a _name_ property with a value that starts with 'M'
-  - There are _m_ > 3 vertices, _d₁..dₘ_, each with a label _Dragon_
-  - There are relationships from _d_ to any of _d₁..dₘ_, each with a label _freezes_
+  - There is a vertex 𝑝 with a label _Person_
+  - 𝑝 has a _birthDate_ property of type _date_, and its value is between January 1, 970 and January 1, 980
+  - There is at least one vertex ℎ with a label _Horse_
+  - There is a relationship from 𝑝 to ℎ with a label _owns_
+  - ℎ has a _color_ property, and its value is _white_
+  - There is at least one vertex 𝑑 with a label _Dragon_
+  - There is a relationship from 𝑝 to 𝑑 with a label _owns_
+  - 𝑑 has a _name_ property with a value that starts with 'M'
+  - There are 𝑚 > 3 vertices, 𝑑₁..𝑑ₘ, each with a label _Dragon_
+  - There are relationships from 𝑑 to any of 𝑑₁..𝑑ₘ, each with a label _freezes_
   - Each of these relationships has a _tf_ property (stands for "timeframe") with a _since_ subproperty whose value is in the range [_now_ - _months_(3) .. _now_]
-  - There is a vertex _g_ with a label _Guild_
-  - _g_ has a _name_ property, and its value is _Masons_
-  - There are _n_ ≥ 1 vertices _q₁..qₙ_, each with a label _Person_
-  - There are relationships from each of _q₁..qₙ_ to _g_, each with a label _member of_
-  - There are relationships from each of _q₁..qₙ_ to one or more of _d₁..dₘ_, each with a label _owns_. Each of _d₁..dₘ_ is connected by at least one of these relationships
+  - There is a vertex 𝑔 with a label _Guild_
+  - 𝑔 has a _name_ property, and its value is _Masons_
+  - There are 𝑛 ≥ 1 vertices 𝑞₁..𝑞ₙ, each with a label _Person_
+  - There are relationships from each of 𝑞₁..𝑞ₙ to 𝑔, each with a label _member of_
+  - There are relationships from each of 𝑞₁..𝑞ₙ to one or more of 𝑑₁..𝑑ₘ, each with a label _owns_. Each of 𝑑₁..𝑑ₘ is connected by at least one of these relationships
 
 The terms _entity_ and _relationship_ denote both pattern elements and graph elements. When the context may be ambiguous, we use the terms _pattern-entity_ and _pattern-relationship_ to refer to pattern elements and the terms _graph-entity_ and _graph-relationship_ to refer to graph elements.
 
-Given a property graph schema _S_, a property graph _G_ conforming to _S_, and a query pattern _P_ conforming to _S_, all expressed in language _L=_(_L<sub>S</sub>, L<sub>G</sub>, L<sub>P</sub>, L<sub>R</sub>_), _pattern matching_ is the process of finding, transforming, merging, and annotating subgraphs of _G_ that match _P_. The syntaxes of sublanguages _L<sub>S</sub>_, _L<sub>G</sub>_, _L<sub>P</sub>_, and _L<sub>R</sub>_ define what and how symbols may be combined to create well-formed schemas, graphs, patterns, and query results, respectively. A semantics of _L<sub>P</sub>_ is a mapping (_S, G, P_) → _R_: which subgraphs of _G_ match _P_ and how to transform, merge, and annotate them. 
+Given a property graph schema 𝑆, a property graph 𝐺 conforming to 𝑆, and a query pattern 𝑃 conforming to 𝑆, all expressed in language _L=_(_L<sub>S</sub>, L<sub>G</sub>, L<sub>P</sub>, L<sub>R</sub>_), _pattern matching_ is the process of finding, transforming, merging, and annotating subgraphs of 𝐺 that match 𝑃. The syntaxes of sublanguages _L<sub>S</sub>_, _L<sub>G</sub>_, _L<sub>P</sub>_, and _L<sub>R</sub>_ define what and how symbols may be combined to create well-formed schemas, graphs, patterns, and query results, respectively. A semantics of _L<sub>P</sub>_ is a mapping (𝑆, 𝐺, 𝑃) → 𝑅: which subgraphs of 𝐺 match 𝑃 and how to transform, merge, and annotate them. 
 
-Any valid subgraph that matches the pattern is called _an assignment_. We use _assignment to X_ where _X_ is a pattern-entity, a pattern-relationship, or a set of thereof, to denote the graph-entity, the graph-relationship, or the set of thereof that matches _X_ as part of an assignment.
+Any valid subgraph that matches the pattern is called _an assignment_. We use _assignment to_ 𝑋 where 𝑋 is a pattern-entity, a pattern-relationship, or a set of thereof, to denote the graph-entity, the graph-relationship, or the set of thereof that matches 𝑋 as part of an assignment.
 
 In the patterns given below, unless otherwise stated, each reported assignment should include the graph-entity assigned to each mentioned pattern-entity and the graph-relationship assigned to each mentioned pattern-relationship. Hence, any reported assignment to _P1_ should be composed of:
   
@@ -307,11 +307,11 @@ A query may be:
 
 * A decision query: does at least one assignment exist?
 * A counting query: how many assignments exist?
-* A counting-decision query: are there at least _k_ assignments?
+* A counting-decision query: are there at least 𝑘 assignments?
 * A reporting query:
-  * Report [all / up to _k_] subgraphs of _G_, each is an assignment
-  * Report subgraphs of _G_, each is a union of assignments, e.g., the union of all assignments with identical assignments to all entities (and different assignments to relationships)
-  * Report a single subgraph of _G_, composed of the union of all assignments. This is sometimes preferred since it avoids combinatorial explosion for many queries (e.g., if a person owns ten white horses, any subset of five of the person's horses compose an assignment to _P1'''_). However, for some patterns, individual assignments cannot be deduced from their union.
+  * Report [all / up to 𝑘] subgraphs of 𝐺, each is an assignment
+  * Report subgraphs of 𝐺, each is a union of assignments, e.g., the union of all assignments with identical assignments to all entities (and different assignments to relationships)
+  * Report a single subgraph of 𝐺, composed of the union of all assignments. This is sometimes preferred since it avoids combinatorial explosion for many queries (e.g., if a person owns ten white horses, any subset of five of the person's horses compose an assignment to _P1'''_). However, for some patterns, individual assignments cannot be deduced from their union.
 
 Implementations may support one or more of the above.
 
@@ -493,10 +493,10 @@ An _expression_ is
 - _op expr_, where _op_ is a unary operator (e.g., '- {1}'),
 - _expr op expr_, where _op_ is a binary operator (e.g., '3 + {1}'),
 - (_expr_),
--	'_f_' where _f_ is a parameterless function (e.g., '_now_'. See G11),
--	'_f_(e1, e2, ...)' where _f_ is a function with at least one parameter and e1, e2, ... are expressions (see Q353),
--	'e1._f_' - equivalent to _f_(e1), where _f_ is a function with one parameter and e1 is an expression,
--	'e1._f_(e2, e3, ...)' - equivalent to _f_(e1, e2, e3, ...), where _f_ is a function with more than one parameter and e1, e2, e3, ... are expressions,
+-	'𝑓' where 𝑓 is a parameterless function (e.g., '_now_'. See G11),
+-	'𝑓(e1, e2, ...)' where 𝑓 is a function with at least one parameter and e1, e2, ... are expressions (see Q353),
+-	'e1.𝑓' - equivalent to 𝑓(e1), where 𝑓 is a function with one parameter and e1 is an expression,
+-	'e1.𝑓(e2, e3, ...)' - equivalent to 𝑓(e1, e2, e3, ...), where 𝑓 is a function with more than one parameter and e1, e2, e3, ... are expressions,
 - An _interval expression_ (see Q327),
 - A _set expression_ (see Q318),
 - A _bag expression_ (see Q315), or
@@ -622,7 +622,7 @@ To present V1, we use the following data types, operators, and functions:
 | _string_                    | "", "abc", 'abc'
 
 
-We will use _St_, _Bt_, and _Lt_, to denote a set, a bag, and a list of elements of type _t_, respectfully, and _It_ to denote an interval of ordinal type _t_.
+We will use _St_, _Bt_, and _Lt_, to denote a set, a bag, and a list of elements of type 𝑡, respectfully, and _It_ to denote an interval of ordinal type 𝑡.
 
 **Operators:**
 
@@ -633,8 +633,8 @@ We will use _St_, _Bt_, and _Lt_, to denote a set, a bag, and a list of elements
 | *                                | _int_ * _int_ → _int_ <br> _float_ * _float_ → _float_ <br> _float_ * _duration_ → _duration_ <br> _duration_ * _float_ → _duration_ <br> If one or both operands are _null_ - the result is _null_
 | /                                | _int_ / _int_ → _int_ (truncated towards zero) <br> _float_ / _float_ → _float_ <br> _duration_ / _float_ → _duration_ <br> If one or both operands are _null_ - the result is _null_
 | % (modulo)                       | _int_ % _int_ → _int_ (remainder has the same sign as the dividend) <br> If one or both operands are _null_ - the result is _null_
-| ∪, ∩, -, △ <br> (union, intersection, difference, symmetric difference) | _St op St_ → _St_ (_t_ is any type) <br> _Bt op Bt_ → _Bt_ (_t_ is any type) (see Q377) <br> If one or both operands are _null_ - the result is _null_
-| ∥ (concatenation)                | string ∥ string → string. _s_ ∥ _null_ = _null_ ∥ _s_ = _null_ <br> _Lt_ ∥ _Lt_ → _Lt_ (_t_ is any type). _null_ ∥ _L_ = _L_ ∥ _null_ = _null_ <br> _t_ ∥ _Lt_ → _Lt_ (_t_ is any type). _null_ ∥ _L_ = (_null_, ...). _L_. _t_ ∥ _null_ = _null_ <br> _Lt_ ∥ _t_ → _Lt_ (_t_ is any type). _L_ ∥ _null_  = (..., _null_). _null_ ∥ _t_ = _null_
+| ∪, ∩, -, △ <br> (union, intersection, difference, symmetric difference) | _St op St_ → _St_ (𝑡 is any type) <br> _Bt op Bt_ → _Bt_ (𝑡 is any type) (see Q377) <br> If one or both operands are _null_ - the result is _null_
+| ∥ (concatenation)                | string ∥ string → string. 𝑠 ∥ _null_ = _null_ ∥ 𝑠 = _null_ <br> _Lt_ ∥ _Lt_ → _Lt_ (𝑡 is any type). _null_ ∥ 𝐿 = 𝐿 ∥ _null_ = _null_ <br> 𝑡 ∥ _Lt_ → _Lt_ (𝑡 is any type). _null_ ∥ 𝐿 = (_null_, ...). 𝐿. 𝑡 ∥ _null_ = _null_ <br> _Lt_ ∥ 𝑡 → _Lt_ (𝑡 is any type). 𝐿 ∥ _null_  = (..., _null_). _null_ ∥ 𝑡 = _null_
 
 **Constraint Operators:**
 
@@ -643,12 +643,12 @@ We will use _St_, _Bt_, and _Lt_, to denote a set, a bag, and a list of elements
 | is null, not null (unary)             | any_type _op_ <br> An empty set / bag / list is not a _null_ value.
 | =, ≠                                  | both operands of the same type (any type) <br> _unknown_ if at least one operand is _null_ <br> Exceptions for _float_: <br> (NaN = _null_) = _false_; (NaN ≠ _null_) = _true_
 | <, >, ≤, ≥                            | both operands of the same ordinal type: <br> _int_ / _float_ / _date_ / _datetime_ / _duration_ / _string_ / other ordinal <br> _unknown_ if at least one operand is _null_. <br> Exceptions for _string_: <br> ("" ≤ _null_) = (_null_ ≥ "") = _true_ <br> (""  > _null_) = (_null_ < "") = _false_ <br> (""  > _null_) = (_null_ < "") = _false_ <br> Exceptions for _float_: <br> (_null_ ≤ NaN) = (_null_ ≥ NaN) = (_null_ < NaN) = (_null_ > NaN) = _false_ <br> (NaN ≤ _null_) = (NaN ≥ _null_) = (NaN < _null_) = (NaN > _null_) = _false_ <br> Exceptions for bounded types with no NaN value: <br> (_lb_ ≤ _null_) = (_null_ ≥ _lb_) = (_ub_ ≥ _null_) = (_null_ ≤ _ub_) = _true_ <br> (_ub_ < _null_) = (_null_ > _ub_) = (_lb_ > _null_) = (_null_ < _lb_) = _false_ <br> where _lb_ is the lower bound (e.g., INT_MIN for _integer_) and _hb_ is the upper bound (e.g., INT_MAX for _integer_)
-| ∈, ∉ ([not] in)                       | left operand: any type _t_. right operand: _St_ / _Bt_ / _Lt_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ∈ {}/[]/()) = _false_; (_null_ ∉ {}/[]/()) = _true_ <br> <br> left operand: any ordinal type _t_. right operand : _It_ <br> _unknown_ if at least one operand is _null_. Exceptions:  <br> (_null_ ∈ _empty interval_) = false; (_null_ ∉ _empty interval_) = _true_ <br> _t_ is _int_: (_null_ ∈ [INT_MIN, INT_MAX]) = _true_; (_null_ ∉ [INT_MIN, INT_MAX]) = _false_
-| ∋, ∌ ([not] contains)                 | right operand: any type _t_. left operand: _St_ / _Bt_ / _Lt_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> ({}/[]/() ∋ _null_) = _false_; ({}/[]/() ∌ _null_) = _true_ <br> <br> right operand: any ordinal type _t_. left operand : _It_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_empty interval_ ∋ _null_) = _false_; (_empty interval_ ∌ _null_) = _true_ <br> _t_ is _int_: ([INT_MIN, INT_MAX] ∋ _null_) = _true_; ([INT_MIN, INT_MAX] ∌ _null_) = _false_
-| ⊆, ⊈ ([not] sub of) <br> ⊂, ⊄ ([not] proper sub of) | both operands: _string_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊂ "") = _false_; (_null_ ⊄ "") = _true_ <br> ("" ⊆ _null_) = _true_; ("" ⊈ _null_) = _false_ <br> <br> both operands of the same type: _St_ / _Bt_ / _Lt_ (t is any type) <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊂ {}/[]/()) = _false_; (_null_ ⊄ {}/[]/()) = _true_ <br> ({}/[]/() ⊆ _null_) = _true_; ({}/[]/() ⊈ _null_) = _false_ <br> <br> _t_ is ordinal, and both operands of the same type: _It_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊂ _empty interval_) = _false_; (_null_ ⊄ _empty interval_) = _true_ <br> (_empty interval_ ⊆ _null_) = _true_; (_empty interval_ ⊈ _null_) = _false_ <br> _t_ is _int_: (_null_ ⊂ [INT_MIN, INT_MAX]) = _true_; (_null_ ⊄ [INT_MIN, INT_MAX]) = _false_
-| ⊇, ⊉ ([not] super of) <br> ⊃, ⊅ ([not] proper super of) | both operands: _string_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊇ "") = _true_; (_null_ ⊉ "") = _false_ <br> ("" ⊃ _null_) = _false_; ("" ⊅ _null_) = _true_ <br> <br> both operands of the same type: _St_ / _Bt_ / _Lt_ (t is any type) <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊇ {}/[]/()) = _true_; (_null_ ⊉ {}/[]/()) = _false_ <br> ({}/[]/() ⊃ _null_) = _false_; ({}/[]/() ⊅ _null_) = _true_ <br> <br> _t_ is ordinal, and both operands of the same type: _It_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊇ _empty interval_) = _true_; (_null_ ⊉ _empty interval_) = _false_ <br> (_empty interval_ ⊃ _null_) = _false_; (_empty interval_ ⊅ _null_) = _true_ <br> _t_ is _int_: ([INT_MIN, INT_MAX] ⊃ _null_) = _true_; ([INT_MIN, INT_MAX] ⊅ _null_) = _false_
-| ⊳, ⋫ ([not] starts with)              | both operands: _string_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊳ "") = _true_; (_null_ ⋫ "") = _false_ <br> <br> left operand: _Lt_. right operand: _t_ (_t_ is any type) <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (() ⊳ _null_) = _false_; (() ⋫ _null_) = _true_ <br> <br> left operand: _Lt_. right operand: _Lt_ (_t_ is any type) <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊳ ()) = _true_; (_null_ ⋫ ()) = _false_
-| ⊲, ⋪ ([not] ends with)                | both operands: _string_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊲ "") = _true_; (_null_ ⋪ "") = _false_ <br> <br> left operand: _Lt_. right operand: _t_ (_t_ is any type) <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (() ⊲ _null_) = _false_; (() ⋪ _null_) = _true_ <br> <br> left operand: _Lt_. right operand: _Lt_ (_t_ is any type) <br> _unknown_ if at least one operand is _null_. exceptions: <br> (_null_ ⊲ ()) = _true_; (_null_ ⋪ ()) = _false_
+| ∈, ∉ ([not] in)                       | left operand: any type 𝑡. right operand: _St_ / _Bt_ / _Lt_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ∈ {}/[]/()) = _false_; (_null_ ∉ {}/[]/()) = _true_ <br> <br> left operand: any ordinal type 𝑡. right operand : _It_ <br> _unknown_ if at least one operand is _null_. Exceptions:  <br> (_null_ ∈ _empty interval_) = false; (_null_ ∉ _empty interval_) = _true_ <br> 𝑡 is _int_: (_null_ ∈ [INT_MIN, INT_MAX]) = _true_; (_null_ ∉ [INT_MIN, INT_MAX]) = _false_
+| ∋, ∌ ([not] contains)                 | right operand: any type 𝑡. left operand: _St_ / _Bt_ / _Lt_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> ({}/[]/() ∋ _null_) = _false_; ({}/[]/() ∌ _null_) = _true_ <br> <br> right operand: any ordinal type 𝑡. left operand : _It_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_empty interval_ ∋ _null_) = _false_; (_empty interval_ ∌ _null_) = _true_ <br> 𝑡 is _int_: ([INT_MIN, INT_MAX] ∋ _null_) = _true_; ([INT_MIN, INT_MAX] ∌ _null_) = _false_
+| ⊆, ⊈ ([not] sub of) <br> ⊂, ⊄ ([not] proper sub of) | both operands: _string_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊂ "") = _false_; (_null_ ⊄ "") = _true_ <br> ("" ⊆ _null_) = _true_; ("" ⊈ _null_) = _false_ <br> <br> both operands of the same type: _St_ / _Bt_ / _Lt_ (t is any type) <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊂ {}/[]/()) = _false_; (_null_ ⊄ {}/[]/()) = _true_ <br> ({}/[]/() ⊆ _null_) = _true_; ({}/[]/() ⊈ _null_) = _false_ <br> <br> 𝑡 is ordinal, and both operands of the same type: _It_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊂ _empty interval_) = _false_; (_null_ ⊄ _empty interval_) = _true_ <br> (_empty interval_ ⊆ _null_) = _true_; (_empty interval_ ⊈ _null_) = _false_ <br> 𝑡 is _int_: (_null_ ⊂ [INT_MIN, INT_MAX]) = _true_; (_null_ ⊄ [INT_MIN, INT_MAX]) = _false_
+| ⊇, ⊉ ([not] super of) <br> ⊃, ⊅ ([not] proper super of) | both operands: _string_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊇ "") = _true_; (_null_ ⊉ "") = _false_ <br> ("" ⊃ _null_) = _false_; ("" ⊅ _null_) = _true_ <br> <br> both operands of the same type: _St_ / _Bt_ / _Lt_ (t is any type) <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊇ {}/[]/()) = _true_; (_null_ ⊉ {}/[]/()) = _false_ <br> ({}/[]/() ⊃ _null_) = _false_; ({}/[]/() ⊅ _null_) = _true_ <br> <br> 𝑡 is ordinal, and both operands of the same type: _It_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊇ _empty interval_) = _true_; (_null_ ⊉ _empty interval_) = _false_ <br> (_empty interval_ ⊃ _null_) = _false_; (_empty interval_ ⊅ _null_) = _true_ <br> 𝑡 is _int_: ([INT_MIN, INT_MAX] ⊃ _null_) = _true_; ([INT_MIN, INT_MAX] ⊅ _null_) = _false_
+| ⊳, ⋫ ([not] starts with)              | both operands: _string_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊳ "") = _true_; (_null_ ⋫ "") = _false_ <br> <br> left operand: _Lt_. right operand: 𝑡 (𝑡 is any type) <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (() ⊳ _null_) = _false_; (() ⋫ _null_) = _true_ <br> <br> left operand: _Lt_. right operand: _Lt_ (𝑡 is any type) <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊳ ()) = _true_; (_null_ ⋫ ()) = _false_
+| ⊲, ⋪ ([not] ends with)                | both operands: _string_ <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (_null_ ⊲ "") = _true_; (_null_ ⋪ "") = _false_ <br> <br> left operand: _Lt_. right operand: 𝑡 (𝑡 is any type) <br> _unknown_ if at least one operand is _null_. Exceptions: <br> (() ⊲ _null_) = _false_; (() ⋪ _null_) = _true_ <br> <br> left operand: _Lt_. right operand: _Lt_ (𝑡 is any type) <br> _unknown_ if at least one operand is _null_. exceptions: <br> (_null_ ⊲ ()) = _true_; (_null_ ⋪ ()) = _false_
 | ≍, ≭ ([not] match)                    | both operands: _string_ (right operand is a regex string) <br> unknown if at least one operand is null. Exceptions: <br> (_null_ ≍ "") = _true_; (_null_ ≭ "") = _false_
 
 **Implicit Type Coercion**
@@ -772,15 +772,15 @@ Functions over _set_ expressions:
 | _count_(_St_) → _int_        | number of elements
 | _bag_(_St_) → _Bt_           | set to bag
 | _list_(_St_) → _Lt_          | set to list
-| _el_(_St_) ⇉ _t_             | (see [Multivalued Functions and Expressions](#multivalued-functions-and-expressions))
+| _el_(_St_) ⇉ 𝑡               | (see [Multivalued Functions and Expressions](#multivalued-functions-and-expressions))
 | _subset_(_St_) ⇉ _St_        | (see [Multivalued Functions and Expressions](#multivalued-functions-and-expressions))
-| _min_(_St_) → _t_ <br> _max_(_St_) → _t_ | _t_ is an ordinal type <br> _null_ when _St_ is _null_ or when it is empty
-| _avg_(_St_) → _t_ or _float_ | _t_ is an ordinal type <br> if _t_ is _int_ - the result is _float_ <br> _null_ when _St_ is _null_ or when it is empty 
-| _sum_(_St_) → _t_            | _t_ is _int_ / _float_ / _duration_ (not _date_ / _time_ / _datetime_) <br> _null_ when _St_ is _null_; zero when it is empty
-| _min_(_St, n: int_) → _St_ <br> _max_(_St, n: int_) → _St_ | Set of (up to) _max_(0, _n_) smallest/largest values <br> _t_ is an ordinal type <br> _null_ when _St_ is _null_, {} when it is empty 
-| _overlap_(_Sdateframe_) → _duration_ <br> _overlap_(_Sdatetimeframe_) → _duration_ | The duration of the overlap between all members of _S_ <br> Always non-negative (see Q371)
-| _union_(_SSt_) → _St_ <br> _union_(_SBt_) → _Bt_	| The union of all members of a set of sets/bags (_t_ is any type)
-| intersection(_SSt_) → _St_ <br> intersection(_SBt_) → _Bt_| The intersection of all members of a set of sets/bags (_t_ is any type)
+| _min_(_St_) → 𝑡 <br> _max_(_St_) → 𝑡 | 𝑡 is an ordinal type <br> _null_ when _St_ is _null_ or when it is empty
+| _avg_(_St_) → 𝑡 or _float_   | 𝑡 is an ordinal type <br> if 𝑡 is _int_ - the result is _float_ <br> _null_ when _St_ is _null_ or when it is empty 
+| _sum_(_St_) → 𝑡              | 𝑡 is _int_ / _float_ / _duration_ (not _date_ / _time_ / _datetime_) <br> _null_ when _St_ is _null_; zero when it is empty
+| _min_(_St, n: int_) → _St_ <br> _max_(_St, n: int_) → _St_ | Set of (up to) _max_(0, 𝑛) smallest/largest values <br> 𝑡 is an ordinal type <br> _null_ when _St_ is _null_, {} when it is empty 
+| _overlap_(_Sdateframe_) → _duration_ <br> _overlap_(_Sdatetimeframe_) → _duration_ | The duration of the overlap between all members of 𝑆 <br> Always non-negative (see Q371)
+| _union_(_SSt_) → _St_ <br> _union_(_SBt_) → _Bt_	| The union of all members of a set of sets/bags (𝑡 is any type)
+| intersection(_SSt_) → _St_ <br> intersection(_SBt_) → _Bt_| The intersection of all members of a set of sets/bags (𝑡 is any type)
 
 Functions over _bag_ expressions:
 
@@ -788,45 +788,45 @@ Functions over _bag_ expressions:
 |-----------------------------------|-----------------------------
 | _count_(_Bt_) → _int_             | number of elements
 | _distinct_(_Bt_) → _int_          | number of distinct elements
-| _multiplicity_(_Bt_, _t_) → _int_ | number of times _t_ occurs in _Bt_
+| _multiplicity_(_Bt_, 𝑡) → _int_   | number of times 𝑡 occurs in _Bt_
 | _set_(_Bt_) → _St_                | bag to set
 | _list_(_Bt_) → _Lt_               | bag to list
-| _el_(_Bt_) ⇉ _t_                  | (see [Multivalued Functions and Expressions](#multivalued-functions-and-expressions))
+| _el_(_Bt_) ⇉ 𝑡                    | (see [Multivalued Functions and Expressions](#multivalued-functions-and-expressions))
 | _subbag_(_Bt_) ⇉ _Bt_             | (see [Multivalued Functions and Expressions](#multivalued-functions-and-expressions))
-| _min_(_Bt_) → _t_ <br> _max_(_Bt_) → _t_ | _t_ is an ordinal type <br> _null_ when _Bt_ is _null_ or when it is empty
-| _avg_(_Bt_) → _t_ or _float_ | _t_ is an ordinal type <br> if _t_ is _int_ - the result is _float_ <br> _null_ when _Bt_ is _null_ or when it is empty 
-| _sum_(_Bt_) → _t_                 | _t_ is _int_ / _float_ / _duration_ (not _date_ / _time_ / _datetime_) <br> _null_ when _Bt_ is _null_; zero when it is empty
-| _min_(_Bt, n: int_) → _Bt_ <br> _max_(_Bt, n: int_) → _Bt_ | Bag of (up to) _max_(0, _n_) smallest/largest values (see Q377) <br> _t_ is an ordinal type <br> _null_ when _Bt_ is _null_, [] when it is empty
-| _overlap_(_Bdateframe_) → _duration_ <br> _overlap_(_Bdatetimeframe_) → _duration_ | The duration of the overlap between all members of _B_ <br> Always non-negative
-| _union_(_BSt_) → _St_ <br> _union_(_BBt_) → _Bt_ | The union of all members of a bag of sets/bags (_t_ is any type)
-| intersection(_BSt_) → _St_ <br> intersection(_BBt_) → _Bt_ | The intersection of all members of a bag of sets/bags (_t_ is any type)
+| _min_(_Bt_) → 𝑡 <br> _max_(_Bt_) → 𝑡 | 𝑡 is an ordinal type <br> _null_ when _Bt_ is _null_ or when it is empty
+| _avg_(_Bt_) → 𝑡 or _float_         | 𝑡 is an ordinal type <br> if 𝑡 is _int_ - the result is _float_ <br> _null_ when _Bt_ is _null_ or when it is empty 
+| _sum_(_Bt_) → 𝑡                    | 𝑡 is _int_ / _float_ / _duration_ (not _date_ / _time_ / _datetime_) <br> _null_ when _Bt_ is _null_; zero when it is empty
+| _min_(_Bt, n: int_) → _Bt_ <br> _max_(_Bt, n: int_) → _Bt_ | Bag of (up to) _max_(0, 𝑛) smallest/largest values (see Q377) <br> 𝑡 is an ordinal type <br> _null_ when _Bt_ is _null_, [] when it is empty
+| _overlap_(_Bdateframe_) → _duration_ <br> _overlap_(_Bdatetimeframe_) → _duration_ | The duration of the overlap between all members of 𝐵 <br> Always non-negative
+| _union_(_BSt_) → _St_ <br> _union_(_BBt_) → _Bt_ | The union of all members of a bag of sets/bags (𝑡 is any type)
+| intersection(_BSt_) → _St_ <br> intersection(_BBt_) → _Bt_ | The intersection of all members of a bag of sets/bags (𝑡 is any type)
 
-Functions over _list_ expressions (_t_):
+Functions over _list_ expressions (𝑡):
 
 |Function                           | Notes 
 |-----------------------------------|-----------------------------
 | _count_(_Lt_) → _int_             | number of elements
 | _distinct_(_Lt_) → _int_          | number of distinct _non-null_ elements
-| _multiplicity_(_Lt_, _t_) → _int_ | number of times _t_ occurs in _Lt_
-| _at_(_Lt, n: int_) → t            | _n_'th element (1-based) <br> _null_ if _n_ is out of range
+| _multiplicity_(_Lt_, 𝑡) → _int_   | number of times 𝑡 occurs in _Lt_
+| _at_(_Lt, n: int_) → t            | 𝑛'th element (1-based) <br> _null_ if 𝑛 is out of range
 | _set_(_Lt_) → _St_                | list to set
 | _bag_(_Lt_) → _Bt_                | list to bag
-| _min_(_Lt_) → _t_ <br> _max_(_Lt_) → _t_ | _t_ is an ordinal type <br> _null_ values are ignored <br> _null_ when _Lt_ is _null_ or when it contains no _non-null_ elements
-| _avg_(_Lt_) → _t_ or _float_ | _t_ is an ordinal type <br> if _t_ is _int_ - the result is _float_ <br> _null_ values are ignored <br> _null_ when _Lt_ is _null_ or when it contains no _non-null_ elements 
-| _sum_(_Lt_) → _t_                 | _t_ is _int_ / _float_ / _duration_ (not _date_ / _time_ / _datetime_) <br> _null_ values are ignored <br> zero when _Lt_ is _null_ or when it contains no _non-null_ elements
-| _min_(_Lt, n: int_) → _Lt_ <br> _max_(_Lt, n: int_) → _Lt_ | List of (up to) _max_(0, _n_) smallest/largest values <br> _t_ is an ordinal type <br> _null_ values are ignored <br> _null_ when _Lt_ is _null_, () when it contains no _non-null_ elements
-| _sort_(_Lt_) → _Lt_               | Sorted list <br> _t_ is an ordinal type
-| _invsort_(_Lt_) → _Lt_            | Inverse-sorted list <br> _t_ is an ordinal type
+| _min_(_Lt_) → 𝑡 <br> _max_(_Lt_) → 𝑡 | 𝑡 is an ordinal type <br> _null_ values are ignored <br> _null_ when _Lt_ is _null_ or when it contains no _non-null_ elements
+| _avg_(_Lt_) → 𝑡 or _float_ | 𝑡 is an ordinal type <br> if 𝑡 is _int_ - the result is _float_ <br> _null_ values are ignored <br> _null_ when _Lt_ is _null_ or when it contains no _non-null_ elements 
+| _sum_(_Lt_) → 𝑡                 | 𝑡 is _int_ / _float_ / _duration_ (not _date_ / _time_ / _datetime_) <br> _null_ values are ignored <br> zero when _Lt_ is _null_ or when it contains no _non-null_ elements
+| _min_(_Lt, n: int_) → _Lt_ <br> _max_(_Lt, n: int_) → _Lt_ | List of (up to) _max_(0, 𝑛) smallest/largest values <br> 𝑡 is an ordinal type <br> _null_ values are ignored <br> _null_ when _Lt_ is _null_, () when it contains no _non-null_ elements
+| _sort_(_Lt_) → _Lt_               | Sorted list <br> 𝑡 is an ordinal type
+| _invsort_(_Lt_) → _Lt_            | Inverse-sorted list <br> 𝑡 is an ordinal type
 
 Functions over _interval_ expressions:
 
 |Function                     | Notes 
 |-----------------------------|-----------------------------
-| _lb_(_It_) → _t_            | Lower bound <br> _null_ when _It_ is _null_
-| _up_(_It_) → _t_            | Upper bound <br> _null_ when _It_ is _null_
-| _set_(_It_) → _St_          | Interval to set <br> _t_ is discrete (_int_, _datetime_, or another ordinal type) <br> _null_ when _It_ is _null_
-| _bag_(_It_) → _Bt_          | Interval to bag <br> _t_ is discrete (_int_, _datetime_, or another ordinal type) <br> _null_ when _It_ is _null_
-| _list_(_It_) → _Lt_         | Interval to list <br> _t_ is discrete (_int_, _datetime_, or another ordinal type) <br> _null_ when _It_ is _null_
+| _lb_(_It_) → 𝑡              | Lower bound <br> _null_ when _It_ is _null_
+| _up_(_It_) → 𝑡              | Upper bound <br> _null_ when _It_ is _null_
+| _set_(_It_) → _St_          | Interval to set <br> 𝑡 is discrete (_int_, _datetime_, or another ordinal type) <br> _null_ when _It_ is _null_
+| _bag_(_It_) → _Bt_          | Interval to bag <br> 𝑡 is discrete (_int_, _datetime_, or another ordinal type) <br> _null_ when _It_ is _null_
+| _list_(_It_) → _Lt_         | Interval to list <br> 𝑡 is discrete (_int_, _datetime_, or another ordinal type) <br> _null_ when _It_ is _null_
 
 Other functions:
 
@@ -835,7 +835,7 @@ Other functions:
 | _now_ → _datetime_                                 | See Q8v2, G11
 | _today_ → _date_                                   | See Q328
 | _date_(year, month, day) → _date_                  | Construct date using three integers (see Q353) <br> _null_ when at least one value is _null_
-| _min_(_t_, _t_, ...) → _t_ <br> _max_(_t_, _t_, ...) → _t_ | One or more values of the same ordinal type <br> _null_ when at least one value is _null_ <br> _min_({_t_, _t_, …})and _max_({_t_, _t_, …}) ignore _null_ values (see Q317)
+| _min_(𝑡, 𝑡, ...) → 𝑡 <br> _max_(𝑡, 𝑡, ...) → 𝑡       | One or more values of the same ordinal type <br> _null_ when at least one value is _null_ <br> _min_({𝑡, 𝑡, …})and _max_({𝑡, 𝑡, …}) ignore _null_ values (see Q317)
 
 Implementations may support _[opaque data types](https://en.wikipedia.org/wiki/Opaque_data_type)_ - data types for which the internal data representation is not exposed. For each opaque data type - a set of functions and operators may be defined (see _location_ data type in [Application: Spatiotemporality](#application-spatiotemporality)).
 
@@ -886,7 +886,7 @@ The following branches do not affect the quantifier's evaluation:
 
 Each such branch is marked with a **white triangle**.
 
-All other branches affect the quantifier's evaluation. Let _b_ denote the number of such branches.
+All other branches affect the quantifier's evaluation. Let 𝑏 denote the number of such branches.
 
 We will name the left side of the quantifier _the left component_, and anything that follows a branch, up to the branch's end, _a right component_.
 
@@ -896,124 +896,124 @@ We will name the left side of the quantifier _the left component_, and anything 
 
 * **All** (denoted '&')
 
-  If _b_ is zero, an assignment matches the pattern if and only if it matches the left component.
+  If 𝑏 is zero, an assignment matches the pattern if and only if it matches the left component.
 Otherwise - An assignment matches the pattern if and only if it matches the whole pattern. 
 
 * **Some** (denoted '&#124;')
 
-  If _b_ is zero, no assignment matches the pattern. Otherwise - An assignment matches pattern _P_ if and only if it matches pattern _Q_ where
+  If 𝑏 is zero, no assignment matches the pattern. Otherwise - An assignment matches pattern 𝑃 if and only if it matches pattern 𝑄 where
   
-  * _Q's_ left component is identical to _P's_
-  * _Q_ has _i_ right components identical to _P's_, _1 ≤ i ≤ b_, and no other right components
+  * 𝑄's left component is identical to 𝑃's
+  * 𝑄 has 𝑖 right components identical to 𝑃's, _1 ≤ i ≤ b_, and no other right components
   * The quantifier is replaced with an _All_ quantifier
 
 * **Not all (but more than 0)** (denoted by an '&' with stroke)
 
-  If _b_ is zero, no assignment matches the pattern. Otherwise - An assignment _A_ matches pattern _P_ if and only if it matches pattern _Q_ where
+  If 𝑏 is zero, no assignment matches the pattern. Otherwise - An assignment 𝐴 matches pattern 𝑃 if and only if it matches pattern 𝑄 where
 
-  * _Q's_ left component is identical to _P's_
-  * _Q_ has _i_ right components identical to _P's_, _1 ≤ i < b_, and no other right components
+  * 𝑄's left component is identical to 𝑃's
+  * 𝑄 has 𝑖 right components identical to 𝑃's, _1 ≤ i < b_, and no other right components
   * The quantifier is replaced with an _All_ quantifier
 
-  and there is no assignment _B_ with a similar left component as _A's_ that matches pattern _R_ where
+  and there is no assignment 𝐵 with a similar left component as 𝐴's that matches pattern 𝑅 where
 
-  * _R's_ left component and all its right components are identical to _P's_
+  * 𝑅's left component and all its right components are identical to 𝑃's
   * The quantifier is replaced with an _All_ quantifier
 
 * **None** (denoted '0')
 
-  If _b_ is zero, an assignment matches the pattern if and only if it matches the left component. Otherwise - An assignment _A_ matches pattern _P_ if and only if it matches pattern _Q_ where
+  If 𝑏 is zero, an assignment matches the pattern if and only if it matches the left component. Otherwise - An assignment 𝐴 matches pattern 𝑃 if and only if it matches pattern 𝑄 where
 
-  * _Q's_ left component is identical to _P's_
+  * 𝑄's left component is identical to 𝑃's
   * The quantifier and the right components are removed
 
-  and there is no assignment _B_ with a similar left component as _A's_ that matches pattern _R_ where
+  and there is no assignment 𝐵 with a similar left component as 𝐴's that matches pattern 𝑅 where
 
-  * _R's_ left component is identical to _P's_
-  * _R_ has _i_ right components identical to _P's_, _1 ≤ i ≤ b_, and no other right components
+  * 𝑅's left component is identical to 𝑃's
+  * 𝑅 has 𝑖 right components identical to 𝑃's, _1 ≤ i ≤ b_, and no other right components
   * The quantifier is replaced with an _All_ quantifier
   
   The _None_ quantifier may not start a pattern.
 
-* **= n**; _b_ ≥ 1, _n_ ∈ [1, _b_]
+* **= 𝑛**; 𝑏 ≥ 1, 𝑛 ∈ [1,𝑏]
 
-  An assignment _A_ matches pattern _P_ if and only if it matches pattern _Q_ where
+  An assignment 𝐴 matches pattern 𝑃 if and only if it matches pattern 𝑄 where
 
-  * _Q's_ left component is identical to _P's_
-  * _Q_ has _n_ right components identical to _P's_, and no other right components
+  * 𝑄's left component is identical to 𝑃's
+  * 𝑄 has 𝑛 right components identical to 𝑃's, and no other right components
   * The quantifier is replaced with an _All_ quantifier
 
-  and, if _n ≠ b_, there is no assignment _B_ with a similar left component as _A's_ that matches pattern _R_ where
+  and, if _n ≠ b_, there is no assignment 𝐵 with a similar left component as 𝐴's that matches pattern 𝑅 where
 
-  * _R's_ left component is identical to _P's_
-  * _R_ has _i_ right components identical to _P's_, _i > n_, and no other right components
+  * 𝑅's left component is identical to 𝑃's
+  * 𝑅 has 𝑖 right components identical to 𝑃's, 𝑖 > 𝑛, and no other right components
   * The quantifier is replaced with an _All_ quantifier
 
-* **> n**; _b_ ≥ 2, _n_ ∈ [0, _b_-1]
+* **> 𝑛**; 𝑏 ≥ 2, 𝑛 ∈ [0, 𝑏-1]
 
-  An assignment _A_ matches pattern _P_ if and only if it matches pattern _Q_ where
+  An assignment 𝐴 matches pattern 𝑃 if and only if it matches pattern 𝑄 where
   
-  * _Q's_ left component is identical to _P's_
-  * _Q_ has _i_ right components identical to _P's_, _n < i ≤ b_, and no other right components
+  * 𝑄's left component is identical to 𝑃's
+  * 𝑄 has 𝑖 right components identical to 𝑃's, 𝑛 < 𝑖 ≤ 𝑏, and no other right components
   * The quantifier is replaced with an _All_ quantifier
 
-* **≥ n**; _b ≥ 2, n_ ∈ [1, _b_]
+* **≥ 𝑛**; _b ≥ 2, n_ ∈ [1, 𝑏]
 
-  An assignment _A_ matches pattern _P_ if and only if it matches pattern _Q_ where
+  An assignment 𝐴 matches pattern 𝑃 if and only if it matches pattern 𝑄 where
   
-  * _Q's_ left component is identical to _P's_
-  * _Q_ has _i_ right components identical to _P's_, _n ≤ i ≤ b_, and no other right components
+  * 𝑄's left component is identical to 𝑃's
+  * 𝑄 has 𝑖 right components identical to 𝑃's, 𝑛 ≤ 𝑖 ≤ 𝑏, and no other right components
   * The quantifier is replaced with an _All_ quantifier
 
-* **< n (but more than 0)**; _b_ ≥ 2, _n_ ∈ [2, _b_]
+* **< 𝑛 (but more than 0)**; 𝑏 ≥ 2, 𝑛 ∈ [2, 𝑏]
 
-  An assignment _A_ matches pattern _P_ if and only if it matches pattern _Q_ where
+  An assignment 𝐴 matches pattern 𝑃 if and only if it matches pattern 𝑄 where
   
-  * _Q's_ left component is identical to _P's_
-  * _Q_ has _i_ right components identical to _P's_, _1 ≤ i < n_, and no other right components
+  * 𝑄's left component is identical to 𝑃's
+  * 𝑄 has 𝑖 right components identical to 𝑃's, 1 ≤ 𝑖 < 𝑛, and no other right components
   * The quantifier is replaced with an _All_ quantifier
 
-  and there is no assignment _B_ with a similar left component as _A's_ that matches pattern _R_ where
+  and there is no assignment 𝐵 with a similar left component as 𝐴's that matches pattern 𝑅 where
 
-  * _R's_ left component is identical to _P's_
-  * _R_ has _i_ right components identical to _P's_, _i ≥ n_, and no other right components
+  * 𝑅's left component is identical to 𝑃's
+  * 𝑅 has 𝑖 right components identical to 𝑃's, 𝑖 ≥ 𝑛, and no other right components
   * The quantifier is replaced with an _All_ quantifier
 
-* **≤ n (but more than 0)**; _b_ ≥ 2, _n_ ∈ [1, _b_]
+* **≤ 𝑛 (but more than 0)**; 𝑏 ≥ 2, 𝑛 ∈ [1, 𝑏]
 
-  An assignment _A_ matches pattern _P_ if and only if it matches pattern _Q_ where
+  An assignment 𝐴 matches pattern 𝑃 if and only if it matches pattern 𝑄 where
    
-  * _Q's_ left component is identical to _P's_
-  * _Q_ has _i_ right components identical to _P's_, _1 ≤ i ≤ n_, and no other right components
+  * 𝑄's left component is identical to 𝑃's
+  * 𝑄 has 𝑖 right components identical to 𝑃's, 1 ≤ 𝑖 ≤ 𝑛, and no other right components
   * The quantifier is replaced with an _All_ quantifier
 
-  and there is no assignment _B_ with a similar left component as _A's_ that matches pattern _R_ where
+  and there is no assignment 𝐵 with a similar left component as 𝐴's that matches pattern 𝑅 where
 
-  * _R's_ left component is identical to _P's_
-  * _R_ has _i_ right components identical to _P's_, _i > n_, and no other right components
+  * 𝑅's left component is identical to 𝑃's
+  * 𝑅 has 𝑖 right components identical to 𝑃's, 𝑖 > 𝑛, and no other right components
   * The quantifier is replaced with an _All_ quantifier
 
-* **≠ n (but more than 0)**; _b_ ≥ 2, _n_ ∈ [1, _b_]
+* **≠ 𝑛 (but more than 0)**; 𝑏 ≥ 2, 𝑛 ∈ [1, 𝑏]
 
   ≡ (_< n_) ∨ (_> n_)
 
-* **n1..n2**; _b_ ≥ 2, _n1_ ∈ [1, _b_], _n2_ ∈ [2, _b_], _n1_ < _n2_
+* **𝑛1..𝑛2**; 𝑏 ≥ 2, 𝑛_1_ ∈ [1, 𝑏], 𝑛_2_ ∈ [2, 𝑏], 𝑛_1_ < 𝑛_2_
 
-  An assignment _A_ matches pattern _P_ if and only if it matches pattern _Q_ where
+  An assignment 𝐴 matches pattern 𝑃 if and only if it matches pattern 𝑄 where
   
-  * _Q's_ left component is identical to _P's_
-  * _Q_ has _i_ right components identical to _P's_, _n1 ≤ i ≤ n2_, and no other right components
+  * 𝑄's left component is identical to 𝑃's
+  * 𝑄 has 𝑖 right components identical to 𝑃's, 𝑛_1_ ≤ 𝑖 ≤ 𝑛_2_, and no other right components
   * The quantifier is replaced with an _All_ quantifier
 
-  and there is no assignment _B_ with a similar left component as _A's_ that matches pattern _R_ where
+  and there is no assignment 𝐵 with a similar left component as 𝐴's that matches pattern 𝑅 where
 
-  * _R's_ left component is identical to _P's_
-  * _R_ has _i_ right components identical to _P's_, _i > n2_, and no other right components
+  * 𝑅's left component is identical to 𝑃's
+  * 𝑅 has 𝑖 right components identical to 𝑃's, 𝑖 > 𝑛_2_, and no other right components
   * The quantifier is replaced with an _All_ quantifier
 
-* **∉ n1..n2 (but more than 0)**; _b_ ≥ 4, _n1_ ∈ [2, _b-1_], _n2_ ∈ [3, _b_], _n1_ < _n2_
+* **∉ 𝑛1..𝑛2 (but more than 0)**; 𝑏 ≥ 4, _n1_ ∈ [2, _b-1_], _n2_ ∈ [3, 𝑏], 𝑛_1_ < 𝑛_2_
 
-  ≡ (_< n1_) ∨ (_> n2_)
+  ≡ (< 𝑛_1_) ∨ (> 𝑛_2_)
 
 The order of the branches does not affect the evaluation result.
 
@@ -1581,9 +1581,9 @@ Relationship type-tags defined right of an 'O' cannot be used in relationship-ty
 
 Entity-tags, entity type-tags, and relationship type-tags defined right of an 'O' can be used in aggregators defined left of the 'O':
 
-- A/M/R aggregators: ___T___ may contain tags defined right of an 'O'
-- A1/A3/M aggregators: ___B___ may contain tags defined right of an 'O' (see Q295, Q320, Q321v1)
-- M1 aggregator: ___M___ may contain tags defined right of an 'O'
+- A/M/R aggregators: __𝑇__ may contain tags defined right of an 'O'
+- A1/A3/M aggregators: __𝐵__ may contain tags defined right of an 'O' (see Q295, Q320, Q321v1)
+- M1 aggregator: __𝑀__ may contain tags defined right of an 'O'
 
 ## Untyped Entities
 
@@ -1663,7 +1663,7 @@ Entity type-tags may be referenced:
 * in a type constraint of an untyped entity (see Q50, Q52)
 * in an extended aggregator _per_ clause (see Q218v2, Q350)
 * in an A3 aggregator "aggop ..." clause (see Q167v2)
-* in an extended M1/M2/M3 aggregator "[all but] _k_ ..." clause (see Q209, Q210)
+* in an extended M1/M2/M3 aggregator "[all but] 𝑘 ..." clause (see Q209, Q210)
 
 _**Q50:** Any person who owns (at least) two things of the same type_
 
@@ -1689,7 +1689,7 @@ An entity type-tag defined right of a negator can only be referenced right of th
 
 ![V1](Pictures/Illegal-Tag03.png)
 
-An entity type-tag defined right of an 'O' can only be referenced right of that 'O', except when used in an aggregator's ___T___ (any aggregator) or ___M___ (A3, M1, M2, M3 aggregators) definition.
+An entity type-tag defined right of an 'O' can only be referenced right of that 'O', except when used in an aggregator's __𝑇__ (any aggregator) or __𝑀__ (A3, M1, M2, M3 aggregators) definition.
 
 ## Untyped Relationships
 
@@ -1741,7 +1741,7 @@ Relationship type-tags may be referenced:
 * in a type constraint of an untyped relationship (see Q365)
 * in an extended aggregator _per_ clause (see Q369)
 * in an A3 aggregator "aggop ..." clause (see Q366v2)
-* in an extended M1/M2/M3 aggregator "[all but] _k_ ..." clause (see Q369)
+* in an extended M1/M2/M3 aggregator "[all but] 𝑘 ..." clause (see Q369)
 
 _**Q365:** Any pair of dragons that have relationships of at least two types_
 
@@ -1767,7 +1767,7 @@ For any quantifier except _All_ - a relationship type-tag defined in a branch ca
 
 A relationship type-tag defined right of a negator can only be referenced right of that negator.
 
-A relationship type-tag defined right of an 'O' can only be referenced right of that 'O', except when used in an aggregator's ___T___ (any aggregator) or ___M___ (A3, M1, M2, M3 aggregators) definition.
+A relationship type-tag defined right of an 'O' can only be referenced right of that 'O', except when used in an aggregator's __𝑇__ (any aggregator) or __𝑀__ (A3, M1, M2, M3 aggregators) definition.
 
 ## Null Entities
 
@@ -1924,7 +1924,7 @@ Expression-tags may be referenced:
 * in a path length constraint
 * in an extended aggregator _per_ clause (see Q114v3, Q270)
 * in an A3 aggregator "aggop ..." clause (see Q116)
-*	in an extended M1/M2/M3 aggregator "[all but] _k_ ..." clause (see Q220, Q262)
+*	in an extended M1/M2/M3 aggregator "[all but] 𝑘 ..." clause (see Q220, Q262)
 * in an M3 aggregator "with min/max ..." clause (see Q130)
 * in an A1/A2/A3 aggregator constraint (see Q120, Q255)
 
@@ -2064,39 +2064,39 @@ All assignments to the pattern, ignoring the aggregator, are found, and split in
 
 Next, we will define three aggregator types: A1, A2, and A3. Steps 1, 2, 4, and 5 are identical for all types. Step 3 is different, as sets are aggregated in different ways.
 
-Let ___S___ denote the set of all assignments to the pattern excluding this aggregator (subject to aggregators evaluation order) (that is step 1 above).
+Let __𝑆__ denote the set of all assignments to the pattern excluding this aggregator (subject to aggregators evaluation order) (that is step 1 above).
 
 ![V1](Pictures/BB06-2.png)
 
 **Upper part**
 
-Let ___T___ denote a Cartesian product of one or more entity-tags.
+Let __𝑇__ denote a Cartesian product of one or more entity-tags.
 
 For all aggregator types (A1, A2, A3, M1, M2, M3, and R1), the _per_ clause has one of the following formats:
 
 - '_et1 × et2 × ..._':
 
-  _T_ = _et1 × et2 × ..._
+  𝑇 = _et1 × et2 × ..._
     
 - '←':
 
-  _T_ = entity-tag directly left of the aggregator
+  𝑇 = entity-tag directly left of the aggregator
     
 - '→':
 
-  _T_ = entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier (valid only when there is exactly one such entity-tag (A1: see Q246)
+  𝑇 = entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier (valid only when there is exactly one such entity-tag (A1: see Q246)
     
 - '⟷':
 
-  _T_ = _et1 × et2_ where _et1_ is directly left of the aggregator, and there is a single entity directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier - _et2_ (A2: see Q75)
+  𝑇 = _et1 × et2_ where _et1_ is directly left of the aggregator, and there is a single entity directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier - _et2_ (A2: see Q75)
   
 Wherever possible, the notations '←', '→' and '⟷' are used instead of entity-tags.
 
-Next, let ___TA___ denote a of all unique assignments to _T_ in _S_. _TA[n]_ is the n'th unique assignment to _T_.
+Next, let ___TA___ denote a of all unique assignments to 𝑇 in 𝑆. _TA[n]_ is the n'th unique assignment to 𝑇.
 
-Let ___S(n)___ denote a subset of _S_: the set of all assignments composed of _TA[n]_ (that is step 2 above).
+Let ___S(n)___ denote a subset of 𝑆: the set of all assignments composed of _TA[n]_ (that is step 2 above).
 
-The upper part is optional. When there is no upper part - _S_ is not split.
+The upper part is optional. When there is no upper part - 𝑆 is not split.
 
 **Lower part**
 
@@ -2106,7 +2106,7 @@ The _aggregation-tag_ is on the top-left corner and is depicted by an index wrap
 
 For each entity/relationship/Cartesian product - if the same expression/aggregation is used more than once - only one EA-tag will be assigned (see Q64, Q73v2, Q82v2).
 
-_at_ is evaluated per each _TA[n]_. In the first example above, {1} is evaluated per each unique assignment to A in _S_. _at_ is a _calculated property_ of _TA[n]_. When there is no upper part - _at_ is a global property (see {1} in Q82v3, {1} in Q372, {2} in Q356).
+_at_ is evaluated per each _TA[n]_. In the first example above, {1} is evaluated per each unique assignment to A in 𝑆. _at_ is a _calculated property_ of _TA[n]_. When there is no upper part - _at_ is a global property (see {1} in Q82v3, {1} in Q372, {2} in Q356).
 
 Aggregation-tags may be referenced:
 
@@ -2114,16 +2114,16 @@ Aggregation-tags may be referenced:
 * in an entity, relationship, or Cartesian product's expression constraint (see Q337, Q338v2)
 * in a path length constraint
 * in an extended aggregator _per_ clause (see Q211)
-* in an A3 aggregator "[all but] _k_ ..." clause (see Q129)
+* in an A3 aggregator "[all but] 𝑘 ..." clause (see Q129)
 * in an M3 aggregator "with min/max ..." clause (see Q91)
-* in an extended M1/M2/M3 aggregator "[all but] _k_ ..." clause (see Q212)
+* in an extended M1/M2/M3 aggregator "[all but] 𝑘 ..." clause (see Q212)
 * in an A1/A2/A3 aggregator constraint (see Q125, Q127, Q332v2)
 
 ## A1 Aggregator
 
 ![V1](Pictures/Agg-A1.png)
   
-Let ___B___ denote a list of Cartesian products of entity-tags. _B_ must be nonempty and must not be composed of entity-tags composing _T_.
+Let __𝐵__ denote a list of Cartesian products of entity-tags. 𝐵 must be nonempty and must not be composed of entity-tags composing 𝑇.
 
 The lower part of an A1 aggregator contains the following elements:
 
@@ -2131,31 +2131,31 @@ The lower part of an A1 aggregator contains the following elements:
 
   - '_et11 × et12 × ..._ ∪ _et21 × et22 × ..._ ∪ _..._' (all products have the same arity):
   
-    _B_ = [_et11 × et12 × ..._ , _et21 × et22 × ..._ , _..._] ('∪' - see Q295)
+    𝐵 = [_et11 × et12 × ..._ , _et21 × et22 × ..._ , _..._] ('∪' - see Q295)
     
   - '←':
   
-    card(_B_) = 1; _B[1]_ = [_et_] where _et_ is directly left of the aggregator (see Q249, Q250)
+    card(𝐵) = 1; _B[1]_ = [_et_] where _et_ is directly left of the aggregator (see Q249, Q250)
     
   - '→':
   
-    _B_ = [_et1, et2, ..._] where _et1, et2, ..._ are directly right of the aggregator and not wrapped with a negator nor preceded by a _None_ quantifier (equivalent to '_et1_ ∪ _et2_ ∪ _..._') (see Q294, Q175, Q176 where card(B)>1)
+    𝐵 = [_et1, et2, ..._] where _et1, et2, ..._ are directly right of the aggregator and not wrapped with a negator nor preceded by a _None_ quantifier (equivalent to '_et1_ ∪ _et2_ ∪ _..._') (see Q294, Q175, Q176 where card(B)>1)
     
   - '⟷':
   
-    _B_ = [_et × et1, et × et2, ..._] where _et_ is directly left of the aggregator and _et1, et2, ..._ are directly right of the aggregator and not wrapped with a negator nor preceded by a _None_ quantifier (equivalent to '_et × et1_ ∪ _et × et2_ ∪ ...')
+    𝐵 = [_et × et1, et × et2, ..._] where _et_ is directly left of the aggregator and _et1, et2, ..._ are directly right of the aggregator and not wrapped with a negator nor preceded by a _None_ quantifier (equivalent to '_et × et1_ ∪ _et × et2_ ∪ ...')
     
   Let ___BA(n, o)___ denote the list of all assignments to _B[o]_ in _S(n)_
 
 - **aggregation-tag**: _at(n)_ = &#124;_BA(n, 1)_ ∪ _BA(n, 2)_ ∪ ..._&#124;
   
-  We are using _card(union(all assignments to all elements in B))_ instead of _sum(card(assignment to one element in B))_ since two elements in _B_ may have the same assignment (see Q175), and we are counting _distinct_ assignments to all elements in _B_ per _n_.
+  We are using _card(union(all assignments to all elements in B))_ instead of _sum(card(assignment to one element in B))_ since two elements in 𝐵 may have the same assignment (see Q175), and we are counting _distinct_ assignments to all elements in 𝐵 per 𝑛.
   
   When an optional part has no assignments, A1 aggregation-tags defined right of the 'O' are evaluated to zero (see Q125).
 
 - an optional **constraint** on _at(n)_
 
-  **For each _n_: _S(n)_ is reported only if _at(n)_ satisfies the constraint**
+  **For each 𝑛: _S(n)_ is reported only if _at(n)_ satisfies the constraint**
   
   Note that a '= 0' constraint cannot be satisfied unless the entities composing B are right of an 'O', as such constraint means that there are no assignments to the pattern excluding this aggregator. Similarly:
 
@@ -2177,14 +2177,14 @@ A1 location:
   See Q27, Q261, Q332.
  
   
-- If all entities in _T ∪ B_ are in a sequence: if all the entities in _T_ appear right of all the entities in _B_: left of the rightmost entity in _T_ (see Q247). Otherwise: right of the leftmost entity in _T_ (see Q243)
+- If all entities in _T ∪ B_ are in a sequence: if all the entities in 𝑇 appear right of all the entities in 𝐵: left of the rightmost entity in 𝑇 (see Q247). Otherwise: right of the leftmost entity in 𝑇 (see Q243)
 - If entities in _T ∪ B_ are in different branches of a quantifier: below the quantifier-input (see Q27)
 
 _**Q59:** Any person who owns at least 20 horses_
 
 ![V1](Pictures/Q059.png)
 
-{1} is a property of each unique assignment to A in _S_.
+{1} is a property of each unique assignment to A in 𝑆.
 
 _**Q60:** Any dragon that was frozen by exactly five dragons_
 
@@ -2265,7 +2265,7 @@ _**Q246:** Any dragon B that froze at least one dragon and was frozen by more th
 
 ![V1](Pictures/Q246.png)
 
-{1} is a property of each unique assignment to B in _S_.
+{1} is a property of each unique assignment to B in 𝑆.
 
 _**Q247:** Any dragon C that more than ten dragons froze dragons that froze it_
 
@@ -2426,7 +2426,7 @@ _**Q248:** Any pair of dragons (A, C) where A froze more than ten dragons that f
 
 ![V1](Pictures/Q248.png)
 
-{1} is a property of each unique assignment to A × C in _S_.
+{1} is a property of each unique assignment to A × C in 𝑆.
 
 _**Q243:** Any pair of people (A, D) where at least five of A's dragons froze one or more D's dragons_
 
@@ -2470,7 +2470,7 @@ _**Q207:** Any pair of dragons where the difference between the number of dragon
 
 ![V1](Pictures/Q207.png)
 
-{3} is a property of each unique assignment to A × C in _S_.
+{3} is a property of each unique assignment to A × C in 𝑆.
 
 _**Q279:** Any pair of people (A, E), each own dragons, where no A's dragon froze any of E's dragons_
 
@@ -2498,27 +2498,27 @@ _**Q375:** The difference between the number of white dragons and the number of 
 
 ![V1](Pictures/Agg-A2.png)
 
-Let ___R___ denote a list where each element is a pattern-relationship/pattern-path. _R_ must be nonempty.
+Let __𝑅__ denote a list where each element is a pattern-relationship/pattern-path. 𝑅 must be nonempty.
 
 The lower part of an A2 aggregator contains the following elements:
 
 - '↑' (an arrow pointing to the relationship/path on top of the aggregator):
 
-  When A2 appears below a relationship/path - card(_R_) = 1; _R[1]_ = the relationship/path.
+  When A2 appears below a relationship/path - card(𝑅) = 1; _R[1]_ = the relationship/path.
 
-  When A2 appears below a quantifier-input - each element in _R_ is the relationship/path that follows one branch of the quantifier, excluding relationships/paths wrapped with a negator or a relationship/path-negator (see Q123, Q358).
+  When A2 appears below a quantifier-input - each element in 𝑅 is the relationship/path that follows one branch of the quantifier, excluding relationships/paths wrapped with a negator or a relationship/path-negator (see Q123, Q358).
 
   Let ___RA(n, o)___ denote the list of all assignments to _R[o]_ in _S(n)_. 
 
 - **aggregation-tag**: _at(n) = &#124;RA(n, 1)_ ∪ _RA(n, 2)_ ∪ ... _&#124;_
 
-  We are using _card(union(all assignments to all elements in R))_ instead of _sum(card(assignment to one element in R))_ since two elements in _R_ may have the same assignment (see Q100), and we are counting _distinct_ assignments to all elements in _R_ per _n_.
+  We are using _card(union(all assignments to all elements in R))_ instead of _sum(card(assignment to one element in R))_ since two elements in 𝑅 may have the same assignment (see Q100), and we are counting _distinct_ assignments to all elements in 𝑅 per 𝑛.
 
   When an optional part has no assignments, A2 aggregation-tags defined right of the 'O' are evaluated to zero (see Q347).
 
 - an optional **constraint** on _at(n)_
 
-  **For each _n_: _S(n)_ is reported only if _at(n)_ satisfies the constraint**
+  **For each 𝑛: _S(n)_ is reported only if _at(n)_ satisfies the constraint**
   
   Note that a '= 0' constraint cannot be satisfied, as such constraint means that there are no assignments to the pattern excluding this aggregator. Similarly:
 
@@ -2652,7 +2652,7 @@ The lower part of an A3 aggregator contains the following elements:
 
     _aggop_ is _min/max/avg/sum_ - for aggregating values of a supported type, _union/intersection_ - for aggregating sets/bags of any type, or _distinct/set/bag_ - for aggregating values of any type. _distinct_ returns the number of distinct _non-null_ evaluation results; _set_ returns a set of all _non-null_ evaluation results (see Q332v2); _bag_ returns a bag of all _non-null_ evaluation results (see Q315).
 
-    _expr_ is an expression composed of constants, properties, and subproperties of _R_ (when A3 appears below a relationship _R_ with no relationship-negator) (see Q86, Q354), EA-tags defined on top of the aggregator (see Q277), and EA-tags defined right of the aggregator (see Q116, Q137, Q169)
+    _expr_ is an expression composed of constants, properties, and subproperties of 𝑅 (when A3 appears below a relationship 𝑅 with no relationship-negator) (see Q86, Q354), EA-tags defined on top of the aggregator (see Q277), and EA-tags defined right of the aggregator (see Q116, Q137, Q169)
   
   - _distinct_ ⟨ _ett_ ⟩
 
@@ -2674,7 +2674,7 @@ The lower part of an A3 aggregator contains the following elements:
 
 - an optional **constraint** on _at(n)_
 
-  **For each _n_: _S(n)_ is reported only if _at(n)_ satisfies the constraint**
+  **For each 𝑛: _S(n)_ is reported only if _at(n)_ satisfies the constraint**
 
   When aggop is distinct: a '= 0' constraint cannot be satisfied unless _ett_ / _rtt_ is right of an 'O', as such constraint means that there are no assignments to the pattern excluding this aggregator. Similarly:
   
@@ -2686,7 +2686,7 @@ A3 location:
 
 - Below a relationship/path
 
-  When A3 appears below a relationship _R_ and _expr_ is composed of at least one property or subproperty of _R_ - _R_ may be wrapped with an 'O'. Otherwise - a relationship/path with an A3 below it may have a relationship/path-negator and may be wrapped with an 'O'.
+  When A3 appears below a relationship 𝑅 and _expr_ is composed of at least one property or subproperty of 𝑅 - 𝑅 may be wrapped with an 'O'. Otherwise - a relationship/path with an A3 below it may have a relationship/path-negator and may be wrapped with an 'O'.
   
 - Below a quantifier-input (excluding quantifier at the start of the pattern)
 
@@ -2697,8 +2697,8 @@ A3 location:
   See Q263.
   
 
-- If all entities in _T_ are in a sequence: A3 appears directly right of the leftmost member of _T_
-- If entities in _T_ are in different branches of a quantifier: A3 appears directly left of the quantifier
+- If all entities in 𝑇 are in a sequence: A3 appears directly right of the leftmost member of 𝑇
+- If entities in 𝑇 are in different branches of a quantifier: A3 appears directly left of the quantifier
 
 When units of measure are defined for the expression (based on the aggregation operator, on the units of measures of the properties, and on the operators that compose the expression) - they are depicted as well (see Q86, Q117).
 
@@ -2805,7 +2805,7 @@ In the two patterns above, {2} - a property of B, is referencing an aggregation 
 
 ## Min/Max Aggregators
 
-Sometimes we need to limit assignments to a Cartesian product of entity-tags, based on some value, to [all but] the _k_ assignments for which the value is the lowest/highest. Here are some examples:
+Sometimes we need to limit assignments to a Cartesian product of entity-tags, based on some value, to [all but] the 𝑘 assignments for which the value is the lowest/highest. Here are some examples:
 
 - _Any person A and A's five oldest offspring_
 - _Any dragon and the three dragons it froze the largest number of times_
@@ -2823,23 +2823,23 @@ M1 and M2 are syntactic sugar, which, alternatively, can be implemented by chain
 
 ![V1](Pictures/Agg-M1.png)
 
-Let ___B___ denote a Cartesian product of one or more entity-tags. _B_ must be nonempty and must not be composed of entity-tags composing _T_.
+Let __𝐵__ denote a Cartesian product of one or more entity-tags. 𝐵 must be nonempty and must not be composed of entity-tags composing 𝑇.
 
-Let ___M___ denote a list of Cartesian products of entity-tags. _M_ must be nonempty and must not be composed of entity-tags composing _B_ or _T_.
+Let __𝑀__ denote a list of Cartesian products of entity-tags. 𝑀 must be nonempty and must not be composed of entity-tags composing 𝐵 or 𝑇.
 
 The lower part of an M1 aggregator contains the following elements:
 
 - optional: "all but"
 
-- _k_: positive integer
+- 𝑘: positive integer
 
 - One of the following:
-  - '_et1 × et2 × ..._': _B_ = _et1_ × _et2_ × ...
-  - '←': _B_ = entity-tag directly left of the aggregator
-  - '→': _B_ = entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier (valid only when there is exactly one such entity-tag)
+  - '_et1 × et2 × ..._': 𝐵 = _et1_ × _et2_ × ...
+  - '←': 𝐵 = entity-tag directly left of the aggregator
+  - '→': 𝐵 = entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier (valid only when there is exactly one such entity-tag)
   - '⟷': _B = et1 × et2_, where _et1_ is the entity-tag directly left of the aggregator, and there is a single entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier - _et2_
 
-  Let ___BA(n)___ denote the list of all unique assignments to _B_ in _S(n)_. _BA(n)[o]_ is the _o'th_ assignment.
+  Let ___BA(n)___ denote the list of all unique assignments to 𝐵 in _S(n)_. _BA(n)[o]_ is the _o'th_ assignment.
 
 - One of the following:
   - with min
@@ -2848,32 +2848,32 @@ The lower part of an M1 aggregator contains the following elements:
 - One of the following (_with min/max ..._):
   - '_et11 × et12 × ..._ ∪ _et21 × et22 × ..._ ∪ _..._' (all products have the same arity):
 
-    _M_ = [_et11 × et12 × ..._ , _et21 × et22 × ..._ , _..._]
+    𝑀 = [_et11 × et12 × ..._ , _et21 × et22 × ..._ , _..._]
     
   - '←':
 
-    card(_M_) = 1; _M_[1] = [_et_] where _et_ is directly left of the aggregator
+    card(𝑀) = 1; 𝑀[1] = [_et_] where _et_ is directly left of the aggregator
     
   - '→':
 
-    _M_ = [_et1, et2, ..._] where _et1, et2, ..._ are directly right of the aggregator and not wrapped with a negator nor preceded by a _None_ quantifier (equivalent to '_et1_ ∪ _et2_ ∪ ...')
+    𝑀 = [_et1, et2, ..._] where _et1, et2, ..._ are directly right of the aggregator and not wrapped with a negator nor preceded by a _None_ quantifier (equivalent to '_et1_ ∪ _et2_ ∪ ...')
     
   - '⟷':
 
-    _M_ = [_et × et1, et × et2, ..._] where _et_ is directly left of the aggregator and _et1, et2, ..._ are directly right of the aggregator and not wrapped with a negator nor preceded by a _None_ quantifier (equivalent to '_et × et1_ ∪ _et × et2_ ∪ ...')
+    𝑀 = [_et × et1, et × et2, ..._] where _et_ is directly left of the aggregator and _et1, et2, ..._ are directly right of the aggregator and not wrapped with a negator nor preceded by a _None_ quantifier (equivalent to '_et × et1_ ∪ _et × et2_ ∪ ...')
 
   Let ___MA(n, o, p)___ denote the list of all assignments to _M[p]_ in the subset of _S(n)_ that contains _BA(n)[o]_.
 
-  ___MC(n, o)___ = _MA(n, o, 1) ∪ MA(n, o, 2) ∪ ..._ - the set of unique assignments to elements in _M_ in the subset of _S(n)_ that contains _BA(n)[o]_.
+  ___MC(n, o)___ = _MA(n, o, 1) ∪ MA(n, o, 2) ∪ ..._ - the set of unique assignments to elements in 𝑀 in the subset of _S(n)_ that contains _BA(n)[o]_.
 
-**For each _n_: from the set of assignments in _S(n)_ - [all but] the _k_ assignments _BA(n)[k]_ with the minimal/maximal positive card(_MC(n, k)_) are reported.**
+**For each 𝑛: from the set of assignments in _S(n)_ - [all but] the 𝑘 assignments _BA(n)[k]_ with the minimal/maximal positive card(_MC(n, k)_) are reported.**
 
-If there are only _j<k_ assignments - all those _j_ are valid assignments. If there are _j>k_ assignments with equal extremum - all those _j_ are valid assignments.
+If there are only 𝑗<𝑘 assignments - all those 𝑗 are valid assignments. If there are 𝑗>𝑘 assignments with equal extremum - all those 𝑗 are valid assignments.
 
 M1 location:
 - Below a relationship/path
 
-  A relationship/path with an M1 below may have a relationship/path-negator, an may be wrapped with 'O'.
+  A relationship/path with an M1 below may have a relationship/path-negator, and may be wrapped with 'O'.
   
 - Below a quantifier-input (excluding quantifier at the start of the pattern)
 
@@ -2883,9 +2883,9 @@ M1 location:
 
   See Q299v1, Q299v2, Q262.
   
-- If _T_ is empty - M1 appears directly right of the leftmost entity in _B_
-- If _T_ is not empty and all the entities in _T_ appear right of all the entities in _B_: left of the rightmost entity in _T_. Otherwise: right of the leftmost entity in _T_
-- If entities in _T ∪ B_ are in different branches of a quantifier: directly left of the quantifier
+- If 𝑇 is empty - M1 appears directly right of the leftmost entity in 𝐵
+- If 𝑇 is not empty and all the entities in 𝑇 appear right of all the entities in 𝐵: left of the rightmost entity in 𝑇. Otherwise: right of the leftmost entity in 𝑇
+- If entities in 𝑇 ∪ 𝐵 are in different branches of a quantifier: directly left of the quantifier
 
 _**Q67:** The three people with the largest number of parents_
 
@@ -2939,39 +2939,39 @@ Note that the same graph-entity may be assigned to B, C, and D.
 
 ![V1](Pictures/Agg-M2.png)
 
-Let ___B___ denote a Cartesian product of one or more entity-tags. _B_ must be nonempty and must not be composed of entity-tags composing _T_.
+Let __𝐵__ denote a Cartesian product of one or more entity-tags. 𝐵 must be nonempty and must not be composed of entity-tags composing 𝑇.
 
 The lower part of an M2 aggregator contains the following elements:
 
 - optional: "all but"
 
-- _k_: positive integer
+- 𝑘: positive integer
 
 - One of the following:
-  - '_et1 × et2 × ..._': _B_ = _et1_ × _et2_ × ...
-  - '←': _B_ = entity-tag directly left of the aggregator (see Q78, Q171, Q172)
-  - '→': _B_ = entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier (valid only when there is exactly one such entity-tag) (see Q195, Q228)
-  - '⟷': _B = et1 × et2_, where _et1_ is the entity-tag directly left of the aggregator, and there is a single entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier - _et2_ (see Q77, Q80)
+  - '_et1 × et2 × ..._': 𝐵 = _et1_ × _et2_ × ...
+  - '←': 𝐵 = entity-tag directly left of the aggregator (see Q78, Q171, Q172)
+  - '→': 𝐵 = entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier (valid only when there is exactly one such entity-tag) (see Q195, Q228)
+  - '⟷': 𝐵 _= et1 × et2_, where _et1_ is the entity-tag directly left of the aggregator, and there is a single entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier - _et2_ (see Q77, Q80)
 
-  Let ___BA(n)___ denote the list of all unique assignments to _B_ in _S(n)_. _BA(n)[o]_ is the _o'th_ assignment.
+  Let ___BA(n)___ denote the list of all unique assignments to 𝐵 in _S(n)_. _BA(n)[o]_ is the _o'th_ assignment.
 
 - One of the following:
   - with min ↑
   - with max ↑
 
-  Let ___R___ denote a list where each element is a pattern-relationship/pattern-path. _R_ must be nonempty.
+  Let __𝑅__ denote a list where each element is a pattern-relationship/pattern-path. 𝑅 must be nonempty.
 
-  When M2 appears below a relationship/path - card(_R_) = 1; _R[1]_ = the relationship/path.
+  When M2 appears below a relationship/path - card(𝑅) = 1; _R[1]_ = the relationship/path.
 
-  When M2 appears below a quantifier-input - each element in _R_ is the relationship/path that follows one branch of the quantifier, excluding relationships/paths wrapped with a negator or a relationship/path-negator.
+  When M2 appears below a quantifier-input - each element in 𝑅 is the relationship/path that follows one branch of the quantifier, excluding relationships/paths wrapped with a negator or a relationship/path-negator.
 
   Let ___RA(n, o, p)___ denote the list of all assignments to _R[p]_ in the subset of _S(n)_ that contains _BA(n)[o]_.
 
-  ___RC(n, o)___ = _RA(n,o,1)_ ∪ _RA(n, o, 2)_ ∪ ... - the set of unique assignments to elements in _R_ in the subset of _S(n)_ that contains _BA(n)[o]_.
+  ___RC(n, o)___ = _RA(n,o,1)_ ∪ _RA(n, o, 2)_ ∪ ... - the set of unique assignments to elements in 𝑅 in the subset of _S(n)_ that contains _BA(n)[o]_.
 
-**For each _n_: from the set of assignments in _S(n)_ - [all but] the _k_ assignments _BA(n)[k]_ with the minimal/maximal positive card(_RC(n, o)_) are reported.**
+**For each 𝑛: from the set of assignments in _S(n)_ - [all but] the 𝑘 assignments _BA(n)[k]_ with the minimal/maximal positive card(_RC(n, o)_) are reported.**
 
-If there are only _j<k_ assignments - all those _j_ are valid assignments. If there are _j>k_ assignments with equal extremum - all those _j_ are valid assignments.
+If there are only _j<k_ assignments - all those 𝑗 are valid assignments. If there are _j>k_ assignments with equal extremum - all those 𝑗 are valid assignments.
 
 M2 location:
 - Below the relationship/path whose assignments are counted
@@ -3032,38 +3032,38 @@ _**Q239:** For any pair of people (A, D) where A's dragons froze D's dragons - t
 
 ![V1](Pictures/Agg-M3.png)
 
-Let ___B___ denote a Cartesian product of one or more entity-tags.
+Let __𝐵__ denote a Cartesian product of one or more entity-tags.
 
 The lower part of an M3 aggregator contains the following elements:
 
 - optional: "all but"
 
-- _k_: positive integer
+- 𝑘: positive integer
 
 - One of the following:
-  - '_et1 × et2 × ..._': _B_ = _et1_ × _et2_ × ...
-  - '←': _B_ = entity-tag directly left of the aggregator
-  - '→': _B_ = entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier (valid only when there is exactly one such entity-tag)
-  - '⟷': _B = et1 × et2_, where _et1_ is the entity-tag directly left of the aggregator, and there is a single entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier - _et2_
+  - '_et1 × et2 × ..._': 𝐵 = _et1_ × _et2_ × ...
+  - '←': 𝐵 = entity-tag directly left of the aggregator
+  - '→': 𝐵 = entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier (valid only when there is exactly one such entity-tag)
+  - '⟷': 𝐵 _= et1 × et2_, where _et1_ is the entity-tag directly left of the aggregator, and there is a single entity-tag directly right of the aggregator not wrapped with a negator nor preceded by a _None_ quantifier - _et2_
 
-  Let ___BA(n)___ denote the list of all unique assignments to _B_ in _S(n)_. _BA(n)[o]_ is the _o'th_ assignment.
+  Let ___BA(n)___ denote the list of all unique assignments to 𝐵 in _S(n)_. _BA(n)[o]_ is the _o'th_ assignment.
 
 - One of the following:
   - with min _expr_
   - with max _expr_
 
-  _expr_ is an expression composed of constants, properties, and subproperties of _R_ (when M3 appears below a relationship _R_ with no relationship-negator) (see Q74), EA-tags defined on top of the aggregator (see Q91, Q274, Q306), and EA-tags defined right of the aggregator (see Q130, Q128)
+  _expr_ is an expression composed of constants, properties, and subproperties of 𝑅 (when M3 appears below a relationship 𝑅 with no relationship-negator) (see Q74), EA-tags defined on top of the aggregator (see Q91, Q274, Q306), and EA-tags defined right of the aggregator (see Q130, Q128)
 
   Let ___RA(n, o)___ denote the minimal/maximal assignment to _expr_ in the subset of _S(n)_ that contains _BA(n)[o]_.
 
-**For each _n_: from the set of assignments in _S(n)_ - [all but] the _k_ assignments _BA(n)[k]_ with the minimal/maximal _RA(n, k)_ are reported.**
+**For each 𝑛: from the set of assignments in _S(n)_ - [all but] the 𝑘 assignments _BA(n)[k]_ with the minimal/maximal _RA(n, k)_ are reported.**
 
-If there are only _j<k_ assignments - all those _j_ are valid assignments. If there are _j>k_ assignments with equal extremum - all those _j_ are valid assignments.
+If there are only _j<k_ assignments - all those 𝑗 are valid assignments. If there are _j>k_ assignments with equal extremum - all those 𝑗 are valid assignments.
 
 M3 location:
 - Below a relationship/path
 
-  When M3 appears below a relationship _R_, and _expr_ is composed of at least one property or subproperty of _R_, _R_ may be wrapped with an 'O'. Otherwise - a relationship or path with an M3 below it may have a relationship/path-negator and may be wrapped with an 'O'.
+  When M3 appears below a relationship 𝑅, and _expr_ is composed of at least one property or subproperty of 𝑅, 𝑅 may be wrapped with an 'O'. Otherwise - a relationship or path with an M3 below it may have a relationship/path-negator and may be wrapped with an 'O'.
 
 - Below a quantifier-input (excluding quantifier at the start of the pattern)
 
@@ -3073,9 +3073,9 @@ M3 location:
 
   See Q130, Q216, Q264.
   
-- If _T_ is empty - M3 appears directly right of the leftmost entity in _B_
-- If _T_ is not empty and all the entities in _T_ appear right of all the entities in _B_: left of the rightmost entity in _T_. Otherwise: right of the leftmost entity in _T_
-- If entities in _T ∪ B_ are in different branches of a quantifier: directly left of the quantifier
+- If 𝑇 is empty - M3 appears directly right of the leftmost entity in 𝐵
+- If 𝑇 is not empty and all the entities in 𝑇 appear right of all the entities in 𝐵: left of the rightmost entity in 𝑇. Otherwise: right of the leftmost entity in 𝑇
+- If entities in 𝑇 ∪ 𝐵 are in different branches of a quantifier: directly left of the quantifier
 
 _**Q130:** The four oldest people_
 
@@ -3109,24 +3109,24 @@ _**Q232:** Any person A and the three heaviest horses owned by people A is a fri
 
 ![V1](Pictures/Agg-R1.png)
 
-Let ___R___ denote the relationship R1 appears below it.
+Let __𝑅__ denote the relationship R1 appears below it.
 
 The lower part of an R1 aggregator contains the following elements:
 
 - optional: "all but"
-- _k_: positive integer
+- 𝑘: positive integer
 - '↑' (an arrow pointing to the relationship on top of the aggregator):
 - One of the following:
   - with min _relExpr_
   - with max _relExpr_
 
-  _relExpr_ is an expression containing at least one property or subproperty of _R_
+  _relExpr_ is an expression containing at least one property or subproperty of 𝑅
 
-  Let ___RA(n)___ denote the list of all unique assignments to _R_ in _S(n)_. _RA(n)[o]_ is the _o'th_ assignment.
+  Let ___RA(n)___ denote the list of all unique assignments to 𝑅 in _S(n)_. _RA(n)[o]_ is the _o'th_ assignment.
 
-**For each _n_: from the set of assignments in _S(n)_ - [all but] the _k_ assignments _RA(n)[k]_ with the minimal/maximal _relExpr_ are reported.**
+**For each 𝑛: from the set of assignments in _S(n)_ - [all but] the 𝑘 assignments _RA(n)[k]_ with the minimal/maximal _relExpr_ are reported.**
 
-If there are only _j<k_ assignments - all those _j_ are valid assignments. If there are _j>k_ assignments with equal extremum - all those _j_ are valid assignments.
+If there are only _j<k_ assignments - all those 𝑗 are valid assignments. If there are _j>k_ assignments with equal extremum - all those 𝑗 are valid assignments.
 
 R1 location:
 - Below the relationship whose property is referenced
@@ -3467,7 +3467,7 @@ _**Q100:** Any dragon Balerion froze more than ten times for less than ten minut
 
 ![V1](Pictures/Agg-Extended.png)
 
-For extended aggregators, _T_ denotes an _extended Cartesian product_ - a Cartesian product not just of entity-tags but of
+For extended aggregators, 𝑇 denotes an _extended Cartesian product_ - a Cartesian product not just of entity-tags but of
 
 * Zero or more entity-tags
 * Zero or more expressions, each can be either
@@ -3480,11 +3480,11 @@ Hence, for all extended aggregator types (A1, A2, A3, M1, M2, M3, and R1), the _
 
 - '_et1 × et2 × ... × expr1 × expr2 × ... ×_ ⟨ _ett1_ ⟩ _×_ ⟨ _ett2_ ⟩ _× ... ×_ ⟪ _rtt1_ ⟫ _×_ ⟪ _rtt2_ ⟫ _× ..._:
 
-  _T_ = _et1 × et2 × ... × expr1 × expr2 × ... ×_ ⟨ _ett1_ ⟩ _×_ ⟨ _ett2_ ⟩ _× ... ×_ ⟪ _rtt1_ ⟫ _×_ ⟪ _rtt2_ ⟫ _× ..._
+  𝑇 = _et1 × et2 × ... × expr1 × expr2 × ... ×_ ⟨ _ett1_ ⟩ _×_ ⟨ _ett2_ ⟩ _× ... ×_ ⟪ _rtt1_ ⟫ _×_ ⟪ _rtt2_ ⟫ _× ..._
     
 Wherever possible, the notations '←', '→' and '⟷' are used instead of entity-tags.
 
-For all extended M aggregators (M1, M2, and M3), the same is true also for _B_.
+For all extended M aggregators (M1, M2, and M3), the same is true also for 𝐵.
 
 Here are two examples:
 
@@ -3492,7 +3492,7 @@ First example: _Any person who at a certain date became an owner of more than fi
  
 ![V1](Pictures/Q115-2.png)
 
-{1} is evaluated per each unique assignment to A × _df_._since_ in _S_.  In other words, {1} is a property of each unique assignment to A × _df_._since_ in _S_.
+{1} is evaluated per each unique assignment to A × _df_._since_ in 𝑆.  In other words, {1} is a property of each unique assignment to A × _df_._since_ in 𝑆.
 
 Second example: _For each color of dragons that Balerion froze - the three dragons it froze the largest number of times_ (Q215)
  
@@ -3506,7 +3506,7 @@ _**Q261:** Any color of which there are at least ten horses_
 
 ![V1](Pictures/Q261.png)
 
-{2} is a property of each unique assignment to {1} in _S_.
+{2} is a property of each unique assignment to {1} in 𝑆.
 
 _**Q115:** Any person who at a certain date became an owner of more than five horses_ (two versions)
 
@@ -3514,13 +3514,13 @@ _**Q115:** Any person who at a certain date became an owner of more than five ho
 
 ![V1](Pictures/Q115-2.png)
 
-{1} is a property of each unique assignment to A × _df_._since_ in _S_.
+{1} is a property of each unique assignment to A × _df_._since_ in 𝑆.
 
 _**Q289:** Any person who at a certain three-day interval became an owner of more than five horses_
 
 ![V1](Pictures/Q289.png)
 
-When _n_ intervals overlap, the intersection contains the start-time of at least one of the intervals (it also contains the end-time of at least one of the intervals).
+When 𝑛 intervals overlap, the intersection contains the start-time of at least one of the intervals (it also contains the end-time of at least one of the intervals).
 
 _**Q283:** Any person who at a certain day owned at least five horses_
 
@@ -3850,8 +3850,8 @@ A _multivalued function_ is a function that may associate zero or more values to
 
 V1 supports the following multivalued functions:
 
-* _el_: _St_ ⇉ _t_ - associates a set with each of its elements
-* _el_: _Bt_ ⇉ _t_ - associates a bag with each of its elements
+* _el_: _St_ ⇉ 𝑡 - associates a set with each of its elements
+* _el_: _Bt_ ⇉ 𝑡 - associates a bag with each of its elements
 * _subset_: _St_ ⇉ _St_ - associates a set with each of its nonempty subsets
 * _subbag_: _Bt_ ⇉ _Bt_ - associates a bag with each of its nonempty subbags
 
@@ -3963,7 +3963,7 @@ _**Q318:** Any dragon Balerion froze/fired at during the three 30-day timeframes
 
 ![V1](Pictures/Q318.png)
 
-Note that {1} and {2} are defined right of an 'O', hence evaluated to empty sets when the optional parts have no assignments. Since _S_ ∪ ∅ = _S_, the pattern is valid even if Balerion froze no dragon or if it fired at no dragon.
+Note that {1} and {2} are defined right of an 'O', hence evaluated to empty sets when the optional parts have no assignments. Since 𝑆 ∪ ∅ = 𝑆, the pattern is valid even if Balerion froze no dragon or if it fired at no dragon.
 
 {3} is a property of A, but, being an aggregated multivalued expression, must be defined right of the aggregator.
 
@@ -3993,8 +3993,8 @@ Functions over _location_ expressions:
   
 Constraint operators over _location_ expressions:
 
-* ⊃ _l_, ⊇ _l_, ⊅ _l_, ⊉ _l_   - [not] [proper] superspace of _l_
-* ⊂ _l_, ⊆ _l_, ⊄ _l_, ⊈ _l_   - [not] [proper] subspace of _l_
+* ⊃ 𝑙, ⊇ 𝑙, ⊅ 𝑙, ⊉ 𝑙   - [not] [proper] superspace of 𝑙
+* ⊂ 𝑙, ⊆ 𝑙, ⊄ 𝑙, ⊈ 𝑙   - [not] [proper] subspace of 𝑙
 
 Two entity-types are defined as well:
 
