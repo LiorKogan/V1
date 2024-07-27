@@ -111,27 +111,26 @@ The _[mixed] property graph data model_ comprises the following **concepts**:
 
 -	An _entity_ is a physical, conceptual, virtual, or fictional _particular_ (e.g., a certain person, guild, or dragon).
 
-- Each entity has a single _type_ (e.g., _Person_)
+- Each entity has a single, immutable _type_ (e.g., _Person_)
 
 -	A (_binary_) _relationship_ is an _association_ or an _interaction_ between a pair of entities or between an entity and itself. Each relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity, an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _friend of_ relationship between two _Person_ entities). Bidirectional relationships are supported only in the mixed property graph data model.
 
-- Each relationship has a single _type_ (e.g., _owns_)
+- Each relationship has a single, immutable _type_ (e.g., _owns_)
 
 -	An _action_ is an _action of_ an entity (e.g., _erupts_ for a _Volcano_ entity) or an _action on_ an entity (e.g., _accused_ for a _Person_ entity), when no other [known or relevant] entities are concerned. An action may also represent a state of an entity (e.g., _sleeps_ action for a _Person_ entity) or a state-change (e.g., _falls asleep_ for a _Person_ entity). Like relationships, actions are either directional or bidirectional. Bidirectional actions are supported only in the mixed property graph data model.
 
-- Each action has a single _type_ (e.g., _erupts_)
+- Each action has a single, immutable _type_ (e.g., _erupts_)
 
 - Each entity, relationship, or action has a set of _features_ (_characteristics_). Each feature has a name (e.g., _birth date_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each entity, relationship, or action, the feature names are pairwise distinct.
 
 A property graph is hence a _heterogeneous graph_; it may contain entities of multiple types (_multi-modal graph_), relationships of multiple types (_multi-relational graph_), and, optionally, actions of multiple types. In addition, each entity, relationship, or action  may have multiple features (_multifeatured graph_).
 
-Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Usually, entities of the same type are _semantically homogeneous_. The same is true also for relationships and for actions. For property graphs, _semantic homogeneity_ means:
+Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Usually, entities of the same type are _semantically homogeneous_. The same is true also for relationships and actions. For property graphs, _semantic homogeneity_ means:
 
   - _Repetition of existence_: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
-  - _Repetition of features_: entities of the same type have features of the same types. The same is true also for relationships and for actions.
+  - _Repetition of features_: entities of the same type have features of the same types. The same is true also for relationships and actions.
   - _Repetitions of actions_: entities of the same type 'have' actions of the same types.
   - _Repetition of relationships_: pairs of entities of the same pair of entity-types have relationships of the same types.
-  - _Type constancy_: an entity's type, a relationship's type, and an action's type do not change over time.
 
 The property graph data model is a _metamodel_, as it does not specify types of entities, relationships, and actions, nor does it specify sets of features. It is domain-agnostic. Instead, domain-specific concepts may be specified and enforced using a _property graph schema_ (see next section).
 
@@ -326,7 +325,7 @@ Pattern languages differ in many aspects, including:
 * _Aesthetics_ - the quality of patterns being visually appealing
 * _Declarative / Imperative_ - _[Declarative](https://en.wikipedia.org/wiki/Declarative_programming)_ languages describe patterns but do not specify how to match them. _[Imperative](https://en.wikipedia.org/wiki/Imperative_programming)_ languages describe patterns in terms of the steps required to match them on a given computational machine model (e.g., the [Gremlin Traversal Machine](https://arxiv.org/abs/1508.03843)). Languages may provide both declarative and imperative constructs.
 * _[Expressive power](https://en.wikipedia.org/wiki/Expressive_power_(computer_science))_ - the breadth of patterns that can be expressed. 
-  Unless a pattern language (declarative or imperative) is Turing-complete, there would always be computable patterns that cannot be expressed. 
+  Unless a pattern language (declarative or imperative) is Turing-complete, there will always be computable patterns that cannot be expressed. 
   
 There are always tradeoffs, especially between _receptivity and productivity_ and _expressive power_. Quoting Perlis' 54th and 55th [epigrams of programming](https://en.wikipedia.org/wiki/Epigrams_on_Programming): _"Beware of the Turing tar-pit in which everything is possible but nothing of interest is easy."_ and _"A LISP programmer knows the value of everything, but the cost of nothing."_ Perlis' 93rd and 26th epigrams are also worth quoting here: _"When someone says, 'I want a programming language in which I need only say what I wish done,' give him a lollipop."_ and _"There will always be things we wish to say in our programs that in all known languages can only be said poorly."_ Though these epigrams refer to programming languages, they are equally valid for property graph query languages.
 
@@ -334,7 +333,7 @@ There are always tradeoffs, especially between _receptivity and productivity_ an
 
 The following scenario, loosely based on [George R. R. Martin's _A Song of Ice and Fire_](http://www.georgerrmartin.com/bibliography/) will serve us to demonstrate the language's expressive power.
 
-The subjects of [Sarnor](http://awoiaf.westeros.org/index.php/Kingdom_of_Sarnor), [Omber](http://awoiaf.westeros.org/index.php/Kingdom_of_Omber), and the other kingdoms of the [known world](http://awoiaf.westeros.org/index.php/Known_world) love their [horses](http://awoiaf.westeros.org/index.php/Horse). There is one thing they adore even more - that is their [dragons](http://awoiaf.westeros.org/index.php/Dragon). They own dragons of ice and fire. Like all well-behaved dragons, their dragons love to play. Dragons always play in couples. When playing, dragons often get furious, fire at each other (fire breath), and freeze one another (cold breath). Dragons usually freeze one another for periods of several minutes. However, on occasion, when they are furious, they can freeze one another for periods of several hours. The subjects enjoy watching their dragons play. Fascinated by these magnificent creatures, they have composed myriads of scrolls detailing each fire breath and cold breath over the last thousand years. The kings of Sarnor and Omber regularly pose queries about their history. More than often, it takes the royal historians and royal analysts several days to come up with answers, during which the kings tend to get pretty impatient. Lately, the [high king of Sarnor](http://awoiaf.westeros.org/index.php/High_King_of_Sarnor) posed a very complex query. After waiting for results for more than two moons, he ordered the chief analyst to be executed. He then summoned his chief mechanics and ordered them to develop an apparatus that he could use to pose queries and get results quickly. 
+The subjects of [Sarnor](http://awoiaf.westeros.org/index.php/Kingdom_of_Sarnor), [Omber](http://awoiaf.westeros.org/index.php/Kingdom_of_Omber), and the other kingdoms of the [known world](http://awoiaf.westeros.org/index.php/Known_world) love their [horses](http://awoiaf.westeros.org/index.php/Horse). There is one thing they adore even more - that is their [dragons](http://awoiaf.westeros.org/index.php/Dragon). They own dragons of ice and fire. Like all well-behaved dragons, their dragons love to play. Dragons always play in couples. When playing, dragons often get furious, fire at each other (fire breath), and freeze one another (cold breath). Dragons usually freeze one another for periods of several minutes. However, on occasion, when they are furious, they can freeze one another for periods of several hours. The subjects enjoy watching their dragons play. Fascinated by these magnificent creatures, they have composed myriads of scrolls detailing each fire breath and cold breath over the last thousand years. The kings of Sarnor and Omber regularly pose queries about their history. More than often, it takes the royal historians and analysts several days to come up with answers, during which the kings tend to get pretty impatient. Lately, the [high king of Sarnor](http://awoiaf.westeros.org/index.php/High_King_of_Sarnor) posed a very complex query. After waiting for results for more than two moons, he ordered the chief analyst to be executed. He then summoned his chief mechanics and ordered them to develop an apparatus that he could use to pose queries and get results quickly. 
 
 The engineers started by collecting all queries posed by their master over the last few years. Then they constructed a property graph schema over which these queries can be expressed.
 
