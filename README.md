@@ -121,11 +121,9 @@ The _[mixed] property graph data model_ comprises the following **concepts**:
 
 - Each action has a single, immutable _type_ (e.g., _erupts_)
 
-- Each entity, relationship, or action has a set of _features_ (_characteristics_). Each feature has a name (e.g., _birth date_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each entity, relationship, or action, the feature names are pairwise distinct.
+- Each entity, relationship, or action has a set of _features_ (_characteristics_). Each feature has an immutable name (e.g., _birth date_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each entity, relationship, or action, the feature names are pairwise distinct.
 
 A property graph is hence a _heterogeneous graph_; it may contain multiple types of entities (_multi-modal graph_), of relationships (_multi-relational graph_), and of actions. In addition, each entity, relationship, or action  may have multiple features (_multifeatured graph_).
-
-Types and feature names are _atemporal_ – they cannot change over time for an individual entity, relationship, or action. Features' values may change.
 
 Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Usually, entities of the same type are _semantically homogeneous_. The same is true also for relationships and actions. For property graphs, _semantic homogeneity_ means:
 
