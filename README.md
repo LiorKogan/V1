@@ -123,11 +123,13 @@ The _[mixed] property graph data model_ comprises the following **concepts**:
 
 - Each entity, relationship, or action has a set of _features_ (_characteristics_). Each feature has a name (e.g., _birth date_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each entity, relationship, or action, the feature names are pairwise distinct.
 
-A property graph is hence a _heterogeneous graph_; it may contain entities of multiple types (_multi-modal graph_), relationships of multiple types (_multi-relational graph_), and, optionally, actions of multiple types. In addition, each entity, relationship, or action  may have multiple features (_multifeatured graph_).
+A property graph is hence a _heterogeneous graph_; it may contain multiple types of entities (_multi-modal graph_), of relationships (_multi-relational graph_), and of actions. In addition, each entity, relationship, or action  may have multiple features (_multifeatured graph_).
+
+Types and feature names are _atemporal_ – they cannot change over time for an individual entity, relationship, or action. Features' values may change.
 
 Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Usually, entities of the same type are _semantically homogeneous_. The same is true also for relationships and actions. For property graphs, _semantic homogeneity_ means:
 
-  - _Repetition of existence_: there are multiple entities of the same type, multiple relationships of the same type,  and multiple actions of the same type.
+  - _Repetition of existence_: there are multiple entities of the same type, multiple relationships of the same type, and multiple actions of the same type.
   - _Repetition of features_: entities of the same type have features of the same types. The same is true also for relationships and actions.
   - _Repetitions of actions_: entities of the same type 'have' actions of the same types.
   - _Repetition of relationships_: pairs of entities of the same pair of entity-types have relationships of the same types.
