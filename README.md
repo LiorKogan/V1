@@ -250,7 +250,7 @@ V1 can be utilized with most definitions with minimal changes.
 
 A _pattern_ defines a set of topological and property value constraints on property graphs. Each property (sub)graph either _matches_ the pattern or not. For some patterns, a given (sub)graph may match a pattern in more than one way.
 
-When patterns are described in a natural language, they may be ambiguous, and the description may miss some nuances expressed in formal languages. Nevertheless, all the patterns below are described in English so that the reader may gain an intuitive understanding of their meaning. 
+When a pattern is described in a natural language, it may be ambiguous or inaccurate. Nevertheless, all the patterns below are described in English so that the reader may gain an intuitive understanding of their meaning. After all, to explain a formal language, one needs to use a natural language.
 
 Here are two examples:
 
