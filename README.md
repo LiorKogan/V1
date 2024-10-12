@@ -123,7 +123,7 @@ Types can be assigned based on many universals (qualities), e.g., _person_ entit
 
   - _Repetition of existence_: there are multiple entities of the same type, multiple relationships of the same type, and multiple actions of the same type.
   - _Repetition of features_: entities of the same type have features of the same types. The same is true also for relationships and actions.
-  - _Repetitions of actions_: entities of the same type 'have' actions of the same types.
+  - _Repetition of actions_: entities of the same type 'have' actions of the same types.
   - _Repetition of relationships_: pairs of entities of the same pair of entity-types have relationships of the same types.
 
 A property graph is hence a _heterogeneous graph_; it may contain multiple types of entities (_multi-modal graph_), of relationships (_multi-relational graph_), and of actions. In addition, each entity, relationship, or action  may have multiple features (_multifeatured graph_).
