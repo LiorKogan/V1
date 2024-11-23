@@ -1094,7 +1094,7 @@ _**Q31:** Any pair of dragons (A, B) where A froze B, A fired at B, B froze A, a
 
 Without the order constraint, any reported pair of dragons would be reported twice: (D1, D2), (D2, D1).
 
-Property graph data models usually require that each entity and relationship be *uniquely identifiable*. To support order constraints between pattern-entities of the same type, V1 further requires that graph-entities should also be _ordered_. To support order constraints between pattern-entities of possibly different types (See Q51), V1 further requires that graph-entities should also be _ordered_. 
+Property graph data models usually require that each entity and relationship be *uniquely identifiable*. To support order constraints between pattern-entities of the same type, V1 further requires that graph-entities should also be _ordered_. To support order constraints between pattern-entities of possibly different types (See Q51), V1 requires that all graph-entities should be _ordered_. 
 
 Order constraints are depicted in red ('<X' or '≤X'), where X is another entity-tag. Several nonidenticality or order constraints may be defined for the same pattern-entity, e.g., '<A,<B', '≠A,<C' (see Q83).
 
