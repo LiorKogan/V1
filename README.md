@@ -101,7 +101,7 @@ A _mixed property graph_ is mixed instead of directed.
 
 ### Data Model:
 
-_Data_ is a representation of _information_. A _data element_ (i.e., _datum_) is an atomic unit of data, hence, an atomic unit of representation of information about the [domain of discourse](https://en.wikipedia.org/wiki/Domain_of_discourse). A _[data model](https://en.wikipedia.org/wiki/Data_model)_ specifies the semantics and defines the structure of data elements and the relations between data elements. A data model consists of:
+_Data_ is a representation of _information_. A _data element_ (_datum_) is an atomic unit of data, hence, an atomic unit of representation of information about the [domain of discourse](https://en.wikipedia.org/wiki/Domain_of_discourse). A _[data model](https://en.wikipedia.org/wiki/Data_model)_ specifies the semantics and defines the structure of data elements and the relations between data elements. A data model consists of:
 
 - An _[upper ontology](https://en.wikipedia.org/wiki/Upper_ontology)_ (_top-level ontology_, _foundation ontology_) is an [ontology](https://en.wikipedia.org/wiki/Ontology_(information_science)) that consists of general, domain-agnostic concepts describing data elements and their relations (e.g., entity, relationship, type, feature).
 
@@ -111,7 +111,7 @@ The _[mixed] property graph data model_ comprises the following **concepts**:
 
 -	An _entity_ represents information about a physical, conceptual, virtual, or fictional _particular_ (e.g., a certain person, guild, or dragon).
 
--	A (_binary_) _relationship_ represents information about an _association_ or an _interaction_ between a pair of entities or between an entity and itself. Each relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity, an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _friend of_ relationship between two _Person_ entities). Bidirectional relationships are supported only in the mixed property graph data model.
+-	A _relationship_ (_binary relationship_) represents information about an _association_ or an _interaction_ between a pair of entities or between an entity and itself. Each relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity, an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _friend of_ relationship between two _Person_ entities). Bidirectional relationships are supported only in the mixed property graph data model.
 
 -	An _action_ represents information about an _action of_ an entity (e.g., _erupts_ for a _Volcano_ entity) or an _action on_ an entity (e.g., _accused_ for a _Person_ entity), where no other [known or relevant] entities are concerned. An action may also represent a state of an entity (e.g., _sleeps_ action for a _Person_ entity) or a state-change (e.g., _falls asleep_ for a _Person_ entity). Like relationships, actions are either directional or bidirectional. Bidirectional actions are supported only in the mixed property graph data model.
 
