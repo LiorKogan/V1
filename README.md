@@ -105,7 +105,7 @@ _Data_ is a representation of _information_. A _data element_ (_datum_) is an at
 
 - An _[upper ontology](https://en.wikipedia.org/wiki/Upper_ontology)_ (_top-level ontology_, _foundation ontology_) is an [ontology](https://en.wikipedia.org/wiki/Ontology_(information_science)) that consists of general, domain-agnostic concepts describing data elements and their relations (e.g., entity, relationship, type, feature).
 
-- A _structure_ (e.g., mathematical, lexical, diagrammatic) for organizing these data elements.
+- A _structure_ (e.g., [mathematical](https://en.wikipedia.org/wiki/Mathematical_structure), [lexical](https://en.wikipedia.org/wiki/Lexical_grammar), [diagrammatic](https://en.wikipedia.org/wiki/Data_structure_diagram)) for organizing these data elements.
 
 The _[mixed] property graph data model_ comprises the following **concepts**:
 
