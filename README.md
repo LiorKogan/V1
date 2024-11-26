@@ -101,11 +101,11 @@ A _mixed property graph_ is mixed instead of directed.
 
 ### Data Model:
 
-_Data_ is a representation of _information_. A _data element_ (i.e., _datum_) is an atomic unit of data, hence, an atomic unit of representation of information about the domain of discourse. A _data model_ specifies the semantics and defines the structure of data elements and the relations between data elements. A data model consists of:
+_Data_ is a representation of _information_. A _data element_ (i.e., _datum_) is an atomic unit of data, hence, an atomic unit of representation of information about the domain of discourse. A _[data model](https://en.wikipedia.org/wiki/Data_model)_ specifies the semantics and defines the structure of data elements and the relations between data elements. A data model consists of:
 
-- A set of ontological _concepts_ (e.g., _entity_, _relationship_, _type_, _feature_). The concepts are used for defining data elements and their relations. Usually, they are general, domain-agnostic, and are explained rather than defined.
+- An _[upper ontology](https://en.wikipedia.org/wiki/Upper_ontology)_ (_top-level ontology_, _foundation ontology_) is an [ontology](https://en.wikipedia.org/wiki/Ontology_(information_science)) that consists of general, domain-agnostic concepts describing data elements and their relations (e.g., entity, relationship, type, feature).
 
-- A _structure_ (e.g., mathematical, diagrammatic) for organizing data elements.
+- A _structure_ (e.g., mathematical, lexical, diagrammatic) for organizing these data elements.
 
 The _[mixed] property graph data model_ comprises the following **concepts**:
 
