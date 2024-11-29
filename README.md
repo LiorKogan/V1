@@ -94,13 +94,13 @@ An _attributed graph_ is a generic term referring to graphs in which an attribut
 
 A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a vertex-multi-attributed edge-multi-attributed pseudograph in which:
 
-- Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex labels and the set of edge labels are disjoint.
+- Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex labels, the set of undirected edge labels, and the set of directed edge labels are pairwise disjoint.
 
 - Each vertex, as well as each edge, has a set of attributes called _properties_. Each property is an ordered pair: the property's name and the property's value. For each vertex, as well as for each edge, the property names are pairwise distinct.
 
 Assume that 𝐿 is a set of possible labels, 𝑃ₙ is a set of possible property names, and 𝑃ᵥ is a set of possible property values. Extending the _graph_ definition, a _property graph_ is a septet 𝐺 = (𝑉, 𝐸, 𝐴, _ψₑ_, _ψₐ_, _λ_, _σ_) where _λ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → 𝐿 is a total function mapping each node and edge to a label, and _σ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → (𝑃ₙ, 𝑃ᵥ)⁺ is a total function mapping each node and edge to a set of properties. 𝐿 and 𝑃ₙ are often defined as the set of all strings over a given alphabet, while 𝑃ᵥ is defined based on the supported value types (e.g., string, integer, date).
 
-As for graphs, an _undirected property graph_ is a property graph in which 𝐴 ≔ _∅_, a _directed property graph_ is a property graph in which 𝐸 ≔ _∅_, and a _mixed property graph_ is a property graph where both directed and undirected edges may exist.
+An _undirected property graph_ is a property graph in which 𝐴 ≔ _∅_, a _directed property graph_ is a property graph in which 𝐸 ≔ _∅_, and a _mixed property graph_ is a property graph where both directed and undirected edges may exist.
 
 ## The Property Graph Data Model
 
@@ -1413,7 +1413,7 @@ _**Q10:** Any person whose first name is Brandon, who owns some dragon B which f
 
 A **horizontal purple rectangle** represents a _horizontal quantifier_. The text inside the rectangle denotes the quantifier type.
 
-Eleven horizontal quantifier types are defined (as for vertical quantifiers, except the _All_ quantifier). Their semantics are similar to those of vertical quantifiers. _All_ can be implemented by chaining relationship's expressions or by using vertical quantifiers (see Q100).
+Eleven horizontal quantifier types are defined (same as for vertical quantifiers, except the _All_ quantifier). Their semantics are like those of vertical quantifiers. _All_ can be implemented by chaining relationship's expressions or by using vertical quantifiers (see Q100).
 
 On the top of a horizontal quantifier, there can be
 
@@ -1968,7 +1968,7 @@ A relationship's expression defined below a relationship-negator can only be ref
 
 ![V1](Pictures/Q353-2.png)
 
-Composite properties and subproperties are tagged and can be referenced similar to ordinary properties:
+Composite properties and subproperties are tagged and can be referenced like ordinary properties:
 
 _**Q109:** Any person A whose parent owned a horse or a dragon before A's birth_ (two versions)
 
