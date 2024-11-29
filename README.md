@@ -79,13 +79,13 @@ Since the pattern perception capabilities of the human visual cortex are remarka
 
 V1 is a declarative visual pattern query language for schema-based property graphs. V1 supports property graphs with mixed (both directed and undirected) edges, multivalued and composite properties, and _null_ property values. V1 supports temporal data types, operators, and functions and can be extended to support additional data types, operators, and functions (one spatiotemporal model is presented). V1 is generic, concise, has rich expressive power, and is highly receptive and productive.
 
-## The Property Graph Data Model
+---
 
 The term _property graph_ refers to both a mathematical structure and a data model; both are described below.
 
-### Mathematical Structure:
+## The Property Graph Mathematical Structure
 
-A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is an ordered quintet 𝐺 = (𝑉, 𝐸, 𝐴, _ψₑ_, _ψₐ_) consisting of three pairwise disjoint sets and two functions. 𝑉 is a nonempty set whose elements are called [_vertices_](https://en.wikipedia.org/wiki/Vertex_(graph_theory)) (_nodes_, _dots_, _points_), 𝐸 is a set whose elements are called _undirected edges_ (_undirected links_, _undirected lines_), 𝐴 is a set whose elements are called _directed edges_ (_directed links_, _directed lines_, _arcs_, _arrows_), _ψₑ: E → { {u,v}: u,v ∈ V }_ is a total function mapping each undirected edge to an unordered pair of vertices, and _ψₐ: A → { (u,v): u,v ∈ V }_ is a total function mapping each directed edge to an ordered pair of vertices. An [_undirected graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)#Graph) is a graph in which 𝐴 ≔ _∅_. A [_directed graph_](https://en.wikipedia.org/wiki/Directed_graph) (_digraph_, _oriented graph_) is a graph in which 𝐸 ≔ _∅_. A [_mixed graph_](https://en.wikipedia.org/wiki/Mixed_graph) is a graph where both directed and undirected edges may exist.
+A [_graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) is an ordered quintet 𝐺 = (𝑉, 𝐸, 𝐴, _ψₑ_, _ψₐ_) consisting of three pairwise disjoint sets and two functions. 𝑉 is a nonempty set whose elements are called [_vertices_](https://en.wikipedia.org/wiki/Vertex_(graph_theory)) (_nodes_, _dots_, _points_), 𝐸 is a set whose elements are called _undirected edges_ (_undirected links_, _undirected lines_), 𝐴 is a set whose elements are called _directed edges_ (_directed links_, _directed lines_, _arcs_, _arrows_), _ψₑ: E → { {u,v}: u,v ∈ V }_ is a total function mapping each undirected edge to an unordered pair of vertices, and _ψₐ: A → { (u,v): u,v ∈ V }_ is a total function mapping each directed edge to an ordered pair of vertices. An [_undirected graph_](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)#Graph) is a graph in which 𝐴 ≔ _∅_, a [_directed graph_](https://en.wikipedia.org/wiki/Directed_graph) (_digraph_, _oriented graph_) is a graph in which 𝐸 ≔ _∅_, and a [_mixed graph_](https://en.wikipedia.org/wiki/Mixed_graph) is a graph where both directed and undirected edges may exist.
 
 Given undirected edge 𝑒: _ψₑ_(𝑒) = {𝑢,𝑣}, we say that 𝑒 is an edge _between_ 𝑢 and 𝑣, 𝑒 _connects_ (_joins_) 𝑢 and 𝑣, and 𝑢 and 𝑣 are _adjacent_. Likewise, given directed edge 𝑎: _ψₐ_(𝑎) = (𝑢,𝑣), we say that 𝑎 is an edge _from_ 𝑢 _to_ 𝑣, 𝑎 _connects_ (_joins_) 𝑢 to 𝑣, 𝑣 is _adjacent from_ (_out-adjacent to_) 𝑢, 𝑢 is _adjacent to_ (_in-adjacent to_) 𝑣, 𝑢 is the _tail_ (_source vertex_, _initial vertex_) of 𝑎, and 𝑣 is the _head_ (_target vertex_, _terminal vertex_) of 𝑎. A [_loop_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (_self-edge_, _self-loop_, _buckle_) is an undirected edge 𝑒: _ψₑ_(𝑒) = {𝑢,𝑢} or a directed edge 𝑎: _ψₐ_(𝑎) = (𝑢,𝑢) connecting a vertex _with_ itself. [_Multiple edges_](https://en.wikipedia.org/wiki/Multiple_edges) (_parallel edges_) are two or more undirected edges connecting the same unordered pair of vertices or directed edges connecting the same ordered pair of vertices. A _simple graph_ is a graph in which loops and multiple edges are not allowed. A [_pseudograph_](http://mathworld.wolfram.com/Pseudograph.html) is a graph in which loops and multiple edges are allowed.
 
@@ -101,7 +101,7 @@ Assume that 𝐿 is a set of labels, 𝑃ₙ is a set of property names, and �
 
 As for graphs, an _undirected property graph_ is a property graph in which 𝐴 ≔ _∅_, a _directed property graph_ is a property graph in which 𝐸 ≔ _∅_, and a _mixed property graph_ is a property graph where both directed and undirected edges may exist.
 
-### Data Model:
+## The Property Graph Data Model
 
 _Data_ is a representation of _information_. A _data element_ (_datum_) is an atomic unit of data, hence, an atomic unit of representation of information. A _[data model](https://en.wikipedia.org/wiki/Data_model)_ specifies the semantics and defines the structure of data elements and the relations between data elements. A data model consists of:
 
