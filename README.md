@@ -98,9 +98,9 @@ A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a vertex-multi-att
 
 - Each vertex, as well as each edge, has a set of attributes called _properties_. Each property is an ordered pair: the property's name and the property's value. For each vertex, as well as for each edge, the property names are pairwise distinct.
 
-Assume that 𝐿 is a set of possible labels, 𝑃ₙ is a set of possible property names, and 𝑃ᵥ is a set of possible property values. Extending the _graph_ definition, a _property graph_ is a septet 𝐺 = (𝑉, 𝐸, 𝐴, _ψₑ_, _ψₐ_, _λ_, _σ_) where _λ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → 𝐿 is a total function mapping each node and edge to a label, and _σ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → (𝑃ₙ, 𝑃ᵥ)⁺ is a total function mapping each node and edge to a set of properties. 𝐿 and 𝑃ₙ are often defined as the set of all strings over a given alphabet, while 𝑃ᵥ is defined based on the supported value types (e.g., string, integer, date).
+Let 𝐿 denote the set of possible labels, 𝑃ₙ – the set of possible property names, and 𝑃ᵥ – the set of possible property values. 𝐿 and 𝑃ₙ are often defined as the set of all strings over a given alphabet, while 𝑃ᵥ is defined based on the supported value types (e.g., string, integer, date).
 
-An _undirected property graph_ is a property graph in which 𝐴 ≔ _∅_, a _directed property graph_ is a property graph in which 𝐸 ≔ _∅_, and a _mixed property graph_ is a property graph where both directed and undirected edges may exist.
+Extending the _graph_ definition, a _property graph_ is a septet 𝐺 = (𝑉, 𝐸, 𝐴, _ψₑ_, _ψₐ_, _λ_, _σ_) where _λ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → 𝐿 is a total function mapping each node and edge to a label, and _σ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → (𝑃ₙ, 𝑃ᵥ)⁺ is a total function mapping each node and edge to a set of properties.
 
 ## The Property Graph Data Model
 
@@ -114,9 +114,9 @@ The _property graph data model_ comprises the following **concepts**:
 
 -	An _entity_ represents information about a physical, conceptual, virtual, or fictional _particular_ (e.g., a certain person, guild, or dragon).
 
--	A _relationship_ (_binary relationship_) represents information about an _association_ or an _interaction_ between a pair of entities or between an entity and itself. Each relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity, an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _friend of_ relationship between two _Person_ entities). Bidirectional relationships are supported only in the mixed property graph data model.
+-	A _relationship_ (_binary relationship_) represents information about an _association_ or an _interaction_ between a pair of entities or between an entity and itself. Each relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity, an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _friend of_ relationship between two _Person_ entities).
 
--	An _action_ represents information about an _action of_ an entity (e.g., _erupts_ for a _Volcano_ entity) or an _action on_ an entity (e.g., _accused_ for a _Person_ entity), where no other [known or relevant] entities are concerned. An action may also represent a state of an entity (e.g., _sleeps_ action for a _Person_ entity) or a state-change (e.g., _falls asleep_ for a _Person_ entity). Like relationships, actions are either directional or bidirectional. Bidirectional actions are supported only in the mixed property graph data model.
+-	An _action_ represents information about an _action of_ an entity (e.g., _erupts_ for a _Volcano_ entity) or an _action on_ an entity (e.g., _accused_ for a _Person_ entity), where no other [known or relevant] entities are concerned. An action may also represent a state of an entity (e.g., _sleeps_ action for a _Person_ entity) or a state-change (e.g., _falls asleep_ for a _Person_ entity). Like relationships, actions are either directional or bidirectional.
 
 - Each entity, relationship, and action has a set of _features_ (_characteristics_). Each feature has an immutable name (e.g., _birth date_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each entity, relationship, or action, the feature names are pairwise distinct.
 
