@@ -23,6 +23,7 @@ Feedback, questions, corrections, and suggestions are welcome.
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [The Property Graph Mathematical Structure](#the-property-graph-mathematical-structure)
 - [The Property Graph Data Model](#the-property-graph-data-model)
 - [The Property Graph Schema](#the-property-graph-schema)
 - [Patterns and Pattern Languages](#patterns-and-pattern-languages)
