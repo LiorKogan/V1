@@ -106,7 +106,7 @@ As for graphs, an _undirected property graph_ is a property graph in which 𝐴 
 
 _Data_ is a representation of _information_. A _data element_ (_datum_) is an atomic unit of data, hence, an atomic unit of representation of information. A _[data model](https://en.wikipedia.org/wiki/Data_model)_ specifies the semantics and defines the structure of data elements and the relations between data elements. A data model consists of:
 
-- An _[upper ontology](https://en.wikipedia.org/wiki/Upper_ontology)_ (_top-level ontology_, _foundation ontology_) is an [ontology](https://en.wikipedia.org/wiki/Ontology_(information_science)) that consists of general, domain-agnostic concepts describing data elements and their relations (e.g., entity, relationship, type, feature).
+- An _[upper ontology](https://en.wikipedia.org/wiki/Upper_ontology)_ (_top-level ontology_, _foundation ontology_) is an [ontology](https://en.wikipedia.org/wiki/Ontology_(information_science)) that consists of general, domain-agnostic concepts describing data elements and their relations (e.g., _entity_, _relationship_, _type_, _feature_).
 
 - A _structure_ (e.g., [mathematical](https://en.wikipedia.org/wiki/Mathematical_structure), [lexical](https://en.wikipedia.org/wiki/Lexical_grammar), [diagrammatic](https://en.wikipedia.org/wiki/Data_structure_diagram)) for organizing these data elements.
 
