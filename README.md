@@ -97,7 +97,9 @@ A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a vertex-multi-att
 
 - Each vertex, as well as each edge, has a set of attributes called _properties_. Each property is an ordered pair: the property's name and the property's value. For each vertex, as well as for each edge, the property names are pairwise distinct.
 
-A _mixed property graph_ is mixed instead of directed.
+Assume that 𝐿 is a set of labels, 𝑃ₙ is a set of property names, and 𝑃ᵥ is a set of property values. As an extension of the graph definition above, a _property graph_ is a septet 𝐺 = (𝑉, 𝐸, 𝐴, _ψₑ_, _ψₐ_, _λ_, _σ_) where _λ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → 𝐿 is a total function mapping each node and edge with a label, and _σ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → (𝑃ₙ, 𝑃ᵥ)⁺ is a total function mapping each node and edge with a set of properties. 𝐿 and 𝑃ₙ are often defined as a set of strings over a given alphabet, while 𝑃ᵥ is defined based on the supported data types.
+
+As for graphs, an _undirected property graph_ is a property graph in which 𝐴 ≔ _∅_, a _directed property graph_ is a property graph in which 𝐸 ≔ _∅_, and a _mixed property graph_ is a property graph where both directed and undirected edges may exist.
 
 ### Data Model:
 
@@ -107,7 +109,7 @@ _Data_ is a representation of _information_. A _data element_ (_datum_) is an at
 
 - A _structure_ (e.g., [mathematical](https://en.wikipedia.org/wiki/Mathematical_structure), [lexical](https://en.wikipedia.org/wiki/Lexical_grammar), [diagrammatic](https://en.wikipedia.org/wiki/Data_structure_diagram)) for organizing these data elements.
 
-The _[mixed] property graph data model_ comprises the following **concepts**:
+The _property graph data model_ comprises the following **concepts**:
 
 -	An _entity_ represents information about a physical, conceptual, virtual, or fictional _particular_ (e.g., a certain person, guild, or dragon).
 
@@ -130,9 +132,9 @@ The property graph data model can hence represent _heterogeneous graphs_ - graph
 
 The property graph data model is a _metamodel_, as it does not specify types of entities, relationships, and actions, nor does it specify sets of features. It is domain-agnostic. Instead, domain-specific concepts may be specified and enforced using a _property graph schema_ (see next section).
 
-The _[mixed] property graph data model_ comprises the following **structure**:
+The property graph data model_ comprises the following **structure**:
 
-  - All data elements are organized in a single [mixed] property graph mathematical structure.
+  - All data elements are organized in a single property graph mathematical structure.
   - A _null vertex_ is a propertyless vertex with a null label. Each null vertex is connected to exactly one edge. An edge connecting two null vertices is not allowed.
   - Any vertex, except null vertices, represents an entity. The vertex's label is an integer or a nonempty string identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_).
   - An undirected edge {𝑢, 𝑣}, where both 𝑢 and 𝑣 are not null vertices, represents a bidirectional relationship between the entity represented by 𝑢 and the entity represented by 𝑣.
