@@ -92,7 +92,7 @@ Given undirected edge 𝑒: _ψₑ_(𝑒) = {𝑢,𝑣}, we say that 𝑒 is an 
 
 An _attributed graph_ is a generic term referring to graphs in which an attribute (_single-attributed graph_) or a set, a bag, or a list of attributes (_multi-attributed graph_) may be associated with each vertex (_vertex-attributed graph_), edge (_edge-attributed graph_), or the graph itself. An _attribute_ may be a nominal value, an ordinal value, a key-value pair, or other annotation. (The term _attributes_ is sometimes used to refer only to key-value pairs, while _labels_ is used to refer to nominal attributes).
 
-A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a vertex-multi-attributed edge-multi-attributed directed pseudograph in which:
+A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a vertex-multi-attributed edge-multi-attributed pseudograph in which:
 
 - Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex labels and the set of edge labels are disjoint.
 
@@ -170,7 +170,7 @@ The _property graph data model_ comprises the following **structure**:
   
     Codd, Zaniolo, and many others proposed using two or more types of _null_ instead of a 'generic' _null_, but this approach remains mainly theoretical. In practice, _null_ values often have no consistent semantics. For a _birth date_ property, a _null_ value would likely represent an unknown birth date, but for a _death date_ property, a _null_ value may represent that the date on which the person died is unknown (_applicable missing_), that the person is still alive (_inapplicable_), or that it is unknown if the person is still alive (_no information_).
 
-    Though the semantic of _null_ values is not always defined as part of the data model, nor as part of the _data schema_, it still must be well-defined for query languages' operators and functions. E.g., what is the result of (yesterday's date < person's death date) when the _death date_ is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable values_. In addition, a _sorting comparison operator_ is usually well-defined for _null_ values and may differ from the standard comparison operator (e.g., should _The five persons with the earliest birth date_ returns persons with a _null_ birth date?)
+    Though the semantic of _null_ values is not always defined as part of the data model, nor as part of the _data schema_, it still must be well-defined for query languages' operators and functions. E.g., what is the result of (yesterday's date < person's death date) when the _death date_ is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable values_. In addition, a _sorting comparison operator_ is usually well-defined for _null_ values and may differ from the standard comparison operator (e.g., should _The five persons with the earliest birth date_ return persons with a _null_ birth date?)
 
 - Should new information prove that two or more vertices represent the same entity, these vertices should be merged. Similarly, should new information prove that two or more edges represent the same relationship or action, these edges should be merged.
 
