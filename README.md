@@ -133,7 +133,7 @@ The property graph data model can hence represent _heterogeneous graphs_ - graph
 
 The property graph data model is a _metamodel_, as it does not specify types of entities, relationships, and actions, nor does it specify sets of features. It is domain-agnostic. Instead, domain-specific concepts may be specified and enforced using a _property graph schema_ (see next section).
 
-The property graph data model_ comprises the following **structure**:
+The _property graph data model_ comprises the following **structure**:
 
   - All data elements are organized in a single property graph mathematical structure.
   - A _null vertex_ is a propertyless vertex with a null label. Each null vertex is connected to exactly one edge. An edge connecting two null vertices is not allowed.
