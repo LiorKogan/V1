@@ -100,7 +100,7 @@ A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a vertex-multi-att
 
 Let 𝐿 denote the set of possible labels, 𝑃ₙ – the set of possible property names, and 𝑃ᵥ – the set of possible property values. 𝐿 and 𝑃ₙ are often defined as the set of all strings over a given alphabet, while 𝑃ᵥ is defined based on the supported value types (e.g., string, integer, date).
 
-Extending the _graph_ definition, a _property graph_ is a septet 𝐺 = (𝑉, 𝐸, 𝐴, _ψₑ_, _ψₐ_, _λ_, _σ_) where _λ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → 𝐿 is a total function mapping each node and edge to a label, and _σ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → {(𝑃ₙ, 𝑃ᵥ)} is a total function mapping each node and edge to a set of properties.
+Extending the _graph_ definition, a _property graph_ is a septet 𝐺 = (𝑉, 𝐸, 𝐴, _ψₑ_, _ψₐ_, _λ_, _σ_) where _λ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → 𝐿 is a total function mapping each node and edge to a label, and _σ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → 2^(𝑃ₙ × 𝑃ᵥ) is a total function mapping each node and edge to a set of properties.
 
 ## The Property Graph Data Model
 
