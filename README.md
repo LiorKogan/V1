@@ -12,7 +12,7 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareA
 
 This page contains the description and the specifications of the V1 language. This content is periodically released in [arXiv](https://arxiv.org/abs/1710.04470).
 
-V1 is named after the primary visual cortex in our brain, which is also known as visual area one (V1).
+V1 is named after the primary visual cortex in our brain, also known as visual area one (V1).
 
 V1 is dedicated to my ancestors all the way back and their descendants all the way forth.
 
