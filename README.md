@@ -148,9 +148,9 @@ The _property graph data model_ comprises the following **structure**:
   - The edge's label is an integer or a nonempty string identifying the _relationship's type_ (e.g., _owns_, _member of_) or the _action's type_ (e.g., _sleeps_).
   - A directed graph edge represents a directional relationship or action, while an undirected edge represents a bidirectional relationship or action.
   - Properties and subproperties represent features and subfeatures of entities (e.g., _name_ property and _first name_ subproperty for a _Person_ entity), relationships (e.g., _timeframe_ property for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). For each entity, relationship, and action, property names are pairwise distinct strings or integers, each identifying the feature's name, and each property value represents the feature's value.
-  - Each feature value is represented using one of the _property data types_ supported by the model. There is, however, no standard definition of which data types the model should support. In this paper, we will use the following:
+  - •	Each feature value is of a data type corresponding to a value type supported by the model. In this paper, we will use the following dada types:
 
-    - The model defines a set of _basic data types_ (e.g., _string_, _integer_, _float_).
+    - _basic data types_: _int_, _float_, _date_, _datetime_, _duration_, and _string_.
     - A _multivalue_ is a set, a bag, or a list of values. All values are of the same basic data type (e.g., each value is a _string_), the same multivalue type (e.g., each value is a set(_string_)), or the same composite type (e.g., each value is a {_first_: _string_, _last_: _string_} composite).
     - A _multivalue type_ is defined by the collection type (set, bag, or list) and the data type of its elements. The definition must be nonrecursive.
     - A _map_ is a set of (name, value) pairs in which the names are pairwise distinct strings or integers identifying the subfeatures names, and the values are the respective subfeature values.
