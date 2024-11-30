@@ -96,7 +96,7 @@ A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a vertex-multi-att
 
 - Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex labels, the set of undirected edge labels, and the set of directed edge labels are pairwise disjoint.
 
-- Each vertex, as well as each edge, has a set of attributes called _properties_. Each property is an ordered pair: the property's name and the property's value. For each vertex, as well as for each edge, the property names are pairwise distinct.
+- Each vertex, as well as each edge, has a set of attributes called _properties_. Each property is an ordered pair (𝑛,𝑣) - the _property name_ and the _property value_. For each vertex, as well as for each edge, the property names are pairwise distinct.
 
 Let 𝐿 denote the set of possible labels, 𝑃ₙ – the set of possible property names, and 𝑃ᵥ – the set of possible property values. 𝐿 and 𝑃ₙ are often defined as the set of all strings over a given alphabet, while 𝑃ᵥ is defined based on the supported value types (e.g., string, integer, date).
 
