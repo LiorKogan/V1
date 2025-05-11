@@ -104,7 +104,7 @@ Extending the _graph_ definition, a _property graph_ is a septet 𝐺 = (𝑉, �
 
 ## The Property Graph Data Model
 
-_Data_ is a representation of _information_. A _data element_ (_datum_) is an atomic unit of data, hence, an atomic unit of representation of information. A _[data model](https://en.wikipedia.org/wiki/Data_model)_ specifies the semantics and defines the structure of data elements and the relationships between them.
+_Data_ is a representation of _information_. A _data element_ (_datum_) is an atomic unit of data, hence corresponds to a basic unit of information. A _[data model](https://en.wikipedia.org/wiki/Data_model)_ specifies the semantics, defines the structure of data elements, and delineates the interrelationships among them.
 
 A data model consists of:
 
