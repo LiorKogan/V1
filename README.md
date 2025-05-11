@@ -92,7 +92,7 @@ Given undirected edge 𝑒: _ψₑ_(𝑒) = {𝑢,𝑣}, we say that 𝑒 is an 
 
 An _attributed graph_ is a generic term referring to graphs in which an attribute (_single-attributed graph_) or a collection (e.g., a set, a bag, or a list) of attributes (_multi-attributed graph_) may be associated with each vertex (_vertex-attributed graph_), edge (_edge-attributed graph_), or the graph itself. An _attribute_ may be a nominal value, an ordinal value, a key-value pair, or any other annotation.
 
-A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a vertex-multi-attributed edge-multi-attributed pseudograph in which:
+A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a vertex-multi-attributed edge-multi-attributed mixed pseudograph extension, in which:
 
 - Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex labels, the set of undirected edge labels, and the set of directed edge labels are pairwise disjoint.
 
@@ -161,8 +161,8 @@ The _property graph data model_ comprises the following **structure**:
   - _null_ is a valid value for each _nullable_ property and subproperty, regardless of its data type. _Null-valued_ [sub]property indicates that a [sub]feature value is not specified.
 
     Several different interpretations can be associated with a _null_ value. Following the terminology introduced by [Codd](https://dl.acm.org/doi/10.1145/16301.16303) and adopted by many authors, a _null_ value is either
-    - _Applicable missing_ – at present, a value is applicable (applies to the particular entity, relationship, or action) but unknown (whatever the reason, the graph does not have the value). E.g., the temperature 1000 years ago today; the phone number of a person who owns a phone, but the number is unknown; an answer to a question – when the questionee refused to answer.
-    - _Inapplicable_ - at present, no value is applicable. E.g., the temperature tomorrow, previous citizenship when there is none, direct manager of the CEO, new hire's not-yet-assigned employee ID, a phone number of a person who does not own a phone, an answer to a question – when the question was not posed to the questionee.
+    - _Applicable missing_ – at present, a value is applicable (applies to the particular entity, relationship, or action) but unknown (whatever the reason, the graph does not have the value). E.g., the temperature 1000 years ago today; the phone number of a person who owns a phone, but the number is unknown; an answer to a question, where the questionee refused to answer.
+    - _Inapplicable_ - at present, no value is applicable. E.g., the temperature tomorrow, previous citizenship when there is none, direct manager of the CEO, a new hire's not-yet-assigned employee ID, a phone number of a person who does not own a phone, an answer to a question, where the question was not posed to the questionee.
 
     [Zaniolo](https://www.sciencedirect.com/science/article/pii/0022000084900801) proposed a third basic interpretation of _null_ values:
 
@@ -193,10 +193,10 @@ Various extensions were proposed, including:
 
 ## The Property Graph Schema
 
-A _schema_ is a model for describing the structure of information in a certain domain using a certain data model. A _property graph schema_ defines the entity-types, the relationship-types, and the properties of thereof.
+A _schema_ is a model for describing the structure of information in a certain domain using a certain data model. A _property graph schema_ defines the entity-types, the relationship-types, and the properties thereof.
 
 The property graph data model is _schema-optional_. Each property graph may be:
-* _Schema-free_ (_schemaless_, _schema-independent_). A schema-free property graph neither defines nor enforces entity-types or relationships-types; each vertex and edge, regardless of its label, may have properties with any name and of any data type.
+* _Schema-free_ (_schemaless_, _schema-independent_). A schema-free property graph neither defines nor enforces entity or relationship types. Each vertex and edge, regardless of its label, may have properties with any name and of any data type.
 * _Schema-based_ (_schema-strict_, _schema-driven_, _schema-full_, _schema-dependent_). A schema-based property graph is a property graph conforming to a given schema.
 * _Schema-mixed_ (_schema-hybrid_), where a schema is defined, but additional elements (e.g., additional properties) may be used.
 
@@ -262,7 +262,7 @@ Here are two examples:
 
   Note that the pattern's description ignores temporal aspects. Maybe a person has owned a horse, owns it, or will own it. Assuming that the owns relationship has a timeframe property, a more accurate description would be _Any person who has 'owns' relationships with at least five white horses_. Maybe we are looking for _Any person who currently owns at least five white horses_ or for _Any person who at some timepoint owned at least five white horses_. If, for example, a horse's color may change over time, or if a horse may turn into a unicorn, we might want to rephrase the pattern.
 
-* _P2: Any person whose date of birth is between January 1, 970 and January 1, 980, who owns a white Horse, who owns a dragon whose name starts with 'M' and over the last month froze at least three dragons belonging to members of the Masons Guild_
+* _P2: Any person whose date of birth is between January 1, 970 and January 1, 980, who owns a white Horse, who owns a dragon whose name starts with 'M', that over the last month froze at least three dragons belonging to members of the Masons Guild_
 
   _P2_ defines the set of (sub)graphs in which 
 
@@ -309,7 +309,7 @@ A query may be:
 * A reporting query:
   * Report [all / up to 𝑘] subgraphs of 𝐺, each is an assignment
   * Report subgraphs of 𝐺, each is a union of assignments, e.g., the union of all assignments with identical assignments to all entities (and different assignments to relationships)
-  * Report a single subgraph of 𝐺, composed of the union of all assignments. This is sometimes preferred since it avoids combinatorial explosion for many queries (e.g., if a person owns ten white horses, any subset of five of the person's horses compose an assignment to _P1'''_). However, for some patterns, individual assignments cannot be deduced from their union.
+  * Report a single subgraph of 𝐺, composed of the union of all assignments. This is sometimes preferred since it avoids a combinatorial explosion for many queries (e.g., if a person owns ten white horses, any subset of five of the person's horses compose an assignment to _P1'''_). However, for some patterns, individual assignments cannot be deduced from their union.
 
 Implementations may support one or more of the above.
 
@@ -330,9 +330,9 @@ There are always tradeoffs, especially between _receptivity and productivity_ an
 
 ## A Song of Ice and Fire
 
-The following scenario, loosely based on [George R. R. Martin's _A Song of Ice and Fire_](http://www.georgerrmartin.com/bibliography/) will serve us to demonstrate the language's expressive power.
+We will use the following scenario, loosely based on [George R. R. Martin's _A Song of Ice and Fire_](http://www.georgerrmartin.com/bibliography/), to demonstrate the language's expressive power:
 
-The subjects of [Sarnor](http://awoiaf.westeros.org/index.php/Kingdom_of_Sarnor), [Omber](http://awoiaf.westeros.org/index.php/Kingdom_of_Omber), and the other kingdoms of the [known world](http://awoiaf.westeros.org/index.php/Known_world) love their [horses](http://awoiaf.westeros.org/index.php/Horse). There is one thing they adore even more - that is their [dragons](http://awoiaf.westeros.org/index.php/Dragon). They own dragons of ice and fire. Like all well-behaved dragons, their dragons love to play. Dragons always play in couples. When playing, dragons often get furious, fire at each other (fire breath), and freeze one another (cold breath). Dragons usually freeze one another for periods of several minutes. However, on occasion, when they are furious, they can freeze one another for periods of several hours. The subjects enjoy watching their dragons play. Fascinated by these magnificent creatures, they have composed myriads of scrolls detailing each fire breath and cold breath over the last thousand years. The kings of Sarnor and Omber regularly pose queries about their history. More than often, it takes the royal historians and analysts several days to come up with answers, during which the kings tend to get pretty impatient. Lately, the [high king of Sarnor](http://awoiaf.westeros.org/index.php/High_King_of_Sarnor) posed a very complex query. After waiting for results for more than two moons, he ordered the chief analyst to be executed. He then summoned his chief mechanics and ordered them to develop an apparatus that he could use to pose queries and get results quickly. 
+The subjects of [Sarnor](http://awoiaf.westeros.org/index.php/Kingdom_of_Sarnor), [Omber](http://awoiaf.westeros.org/index.php/Kingdom_of_Omber), and the other kingdoms of the [known world](http://awoiaf.westeros.org/index.php/Known_world) love their [horses](http://awoiaf.westeros.org/index.php/Horse). There is one thing they adore even more - that is their [dragons](http://awoiaf.westeros.org/index.php/Dragon). They own dragons of ice and fire. Like all well-behaved dragons, their dragons love to play. Dragons always play in pairs. When playing, dragons often get furious, fire at each other (fire breath), and freeze one another (cold breath). Dragons usually freeze one another for several minutes. However, on occasion, when they are furious, they can freeze one another for several hours. The subjects enjoy watching their dragons play. Fascinated by these magnificent creatures, they have composed myriads of scrolls detailing each fire and cold breath over the last thousand years. The kings of Sarnor and Omber regularly pose queries about their history. Often, it takes the royal historians and analysts several days to come up with answers, during which the kings tend to get impatient. Lately, the [high king of Sarnor](http://awoiaf.westeros.org/index.php/High_King_of_Sarnor) posed a very complex query. After waiting for results for more than two moons, he ordered the chief analyst to be executed. He then summoned his chief mechanics and ordered them to develop an apparatus that he could use to pose queries and get results quickly. 
 
 The engineers started by collecting all queries posed by their master over the last few years. Then they constructed a property graph schema over which these queries can be expressed.
 
