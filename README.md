@@ -104,13 +104,11 @@ Extending the _graph_ definition, a _property graph_ is a septet 𝐺 = (𝑉, �
 
 ## The Property Graph Data Model
 
-_Data_ is a representation of _information_. A _data element_ (_datum_) is an atomic unit of data, hence corresponds to a basic unit of information. A _[data model](https://en.wikipedia.org/wiki/Data_model)_ specifies the semantics, defines the structure of data elements, and delineates the interrelationships among them.
+At its core, _data_ is a representation of _information_, where each _data element_ (_datum_) is an atomic unit of data, corresponding to a basic unit of information. A _[data model](https://en.wikipedia.org/wiki/Data_model)_ provides a comprehensive specification for data elements, defining their meaning (semantics), their organization (structure), and how they relate to one another. This specification typically encompasses the following components:
 
-A data model consists of:
+- An _[upper ontology](https://en.wikipedia.org/wiki/Upper_ontology)_ (_top-level ontology_, _foundation ontology_): this is an [ontology](https://en.wikipedia.org/wiki/Ontology_(information_science)) composed of general, foundational, domain-independent concepts that describe data elements (e.g., entity, relationship, type, feature) and their interconnections.
 
-- An _[upper ontology](https://en.wikipedia.org/wiki/Upper_ontology)_ (_top-level ontology_, _foundation ontology_) is an [ontology](https://en.wikipedia.org/wiki/Ontology_(information_science)) that consists of general, foundational, domain-independent concepts that describe data elements (e.g., _entity_, _relationship_, _type_, _feature_) and their interrelations.
-
-- A _structure_ (e.g., [mathematical](https://en.wikipedia.org/wiki/Mathematical_structure), [lexical](https://en.wikipedia.org/wiki/Lexical_grammar), [diagrammatic](https://en.wikipedia.org/wiki/Data_structure_diagram)) for organizing these data elements.
+- A _structure_: this is a framework (e.g., [mathematical](https://en.wikipedia.org/wiki/Mathematical_structure), [lexical](https://en.wikipedia.org/wiki/Lexical_grammar), [diagrammatic](https://en.wikipedia.org/wiki/Data_structure_diagram)) used for organizing these data elements.
 
 The _property graph data model_ comprises the following **concepts**:
 
