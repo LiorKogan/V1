@@ -146,7 +146,7 @@ The _property graph data model_ comprises the following **structure**:
     - a relationship between an entity and a nonspecific entity. Sometimes, an entity is unknown or unimportant, but the existence of a relationship and the values of the relationship's properties - are important. For example, we may know that a given horse had different owners at different timeframes, but we do not know or care who owned it. Still, we want to be able to model such data.
 
   - The edge's label is an integer or a nonempty string identifying the _relationship's type_ (e.g., _owns_, _member of_) or the _action's type_ (e.g., _sleeps_).
-  - A directed graph edge represents a directional relationship or action, while an undirected edge represents a bidirectional relationship or action.
+  - A directed edge represents a directional relationship or action, while an undirected edge represents a bidirectional relationship or action.
   - Properties and subproperties represent features and subfeatures of entities (e.g., _name_ property and _first name_ subproperty for a _Person_ entity), relationships (e.g., _timeframe_ property for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). For each entity, relationship, and action, property names are pairwise distinct strings or integers, each identifying the feature's name, and each property value represents the feature's value.
   - Each feature value is of a data type corresponding to a value type supported by the model. In this paper, we will use the following data types:
 
