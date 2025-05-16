@@ -94,17 +94,13 @@ A [_loop_](https://en.wikipedia.org/wiki/Loop_(graph_theory)) (_self-edge_, _sel
 
 An _attributed graph_ is a generic term referring to graphs in which an attribute (_single-attributed graph_) or a collection (e.g., a set, a bag, or a list) of attributes (_multi-attributed graph_) may be associated with each vertex (_vertex-attributed graph_), edge (_edge-attributed graph_), or the graph itself. An _attribute_ may be a nominal value, an ordinal value, a key-value pair, or any other annotation.
 
-A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a vertex-multi-attributed edge-multi-attributed extension of a mixed pseudograph, in which:
+A _property graph_ (_PG_, _labeled property graph_, _LPG_) is a vertex-multi-attributed and edge-multi-attributed extension of a mixed pseudograph. It supports the following features:
 
-- Each vertex has an attribute called _label_ (_vertex-labeled graph_). Similarly, each edge has an attribute called _label_ (_edge-labeled graph_). The set of vertex labels, the set of undirected edge labels, and the set of directed edge labels are pairwise disjoint.
+- Vertex and edge labels: Each vertex and each edge is associated with an attribute called _label_ (i.e., _vertex-labeled graph_ and _edge-labeled graph_). The sets of labels assigned to vertices, undirected edges, and directed edges are required to be pairwise disjoint.
 
-- Each vertex, as well as each edge, has a set of attributes called _properties_. Each property is an ordered pair (𝑛,𝑣), where 𝑛 is the _property name_ and 𝑣 is the _property value_. For each vertex, as well as for each edge, the property names are pairwise distinct.
+- Vertex and edge properties: Each vertex and each edge is associated with a finite set of attributes called  _properties_. Each property is an ordered pair (𝑛,𝑣), where 𝑛 is a _property name_ and 𝑣 is a _property value_. For each vertex or edge, property names are required to be pairwise distinct.
 
-Let 𝐿 denote the set of possible labels, 𝑃ₙ the set of possible property names, and 𝑃ᵥ the set of possible property values. Typically, 𝐿 and 𝑃ₙ are defined as the set of all strings over a given alphabet, while 𝑃ᵥ is defined according to the supported value types (e.g., strings, integers, dates).
-
-Extending the _mixed graph_ definition, a _property graph_ is a septuple 𝐺 = (𝑉, 𝐸, 𝐴, _ψₑ_, _ψₐ_, _λ_, _σ_) where _λ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → 𝐿 is a total function mapping each vertex and edge to a label, and _σ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → 2^(𝑃ₙ × 𝑃ᵥ) is a total function mapping each vertex and edge to a set of properties.
-
-The sets ⋃(v∈𝑉) λ(v), ⋃(e∈𝐸) λ(e), and ⋃(a∈𝐴) λ(A) are pairwise disjoint. For each x ∈ 𝑉∪𝐸∪𝐴, denoting σ(x) = {(𝑛₁,𝑣₁), (𝑛₂,𝑣₂), ..., (𝑛ₖ,𝑣ₖ)}: the property names 𝑛₁, 𝑛₂, ... , 𝑛ₖ are pairwise distinct.
+Formally, extending the definition of a mixed graph, a _property graph_ is an ordered septuple 𝐺 = (𝑉, 𝐸, 𝐴, _ψₑ_, _ψₐ_, _λ_, _σ_), where _λ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → 𝐿 is a total function mapping each vertex and edge to a label, and _σ_: 𝑉 ∪ 𝐸 ∪ 𝐴 → 2^(𝑃ₙ × 𝑃ᵥ) is a total function mapping each vertex and edge to a set of properties. _λ_ and _σ_ are called _labeling function_ and _property function_ respectively. Let 𝐿, 𝑃ₙ, and 𝑃ᵥ be the global domains over which a property graph is defined: 𝐿 denotes the set of possible labels, 𝑃ₙ the set of possible property names, and 𝑃ᵥ the set of possible property values. Typically, 𝐿 and 𝑃ₙ are subsets of Σ*, the set of finite strings over a given alphabet Σ, while 𝑃ᵥ includes supported value types (e.g., strings, integers, dates). The sets ⋃(v∈𝑉) λ(v), ⋃(e∈𝐸) λ(e), and ⋃(a∈𝐴) λ(A) are pairwise disjoint. For each x ∈ 𝑉∪𝐸∪𝐴, let σ(x) = {(𝑛₁,𝑣₁), (𝑛₂,𝑣₂), ..., (𝑛ₖ,𝑣ₖ)}, then the property names 𝑛₁, 𝑛₂, ... , 𝑛ₖ are pairwise distinct.
 
 ## The Property Graph Data Model
 
