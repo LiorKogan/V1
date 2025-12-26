@@ -114,20 +114,21 @@ The _property graph data model_ comprises the following **concepts**:
 
 -	An _entity_ represents information about a physical, conceptual, virtual, or fictional _particular_ (e.g., a certain person, guild, or dragon).
 
--	A _relationship_ (_binary relationship_) represents information about an _association_ or an _interaction_ between a pair of entities or between an entity and itself. Each relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity, an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _friend of_ relationship between two _Person_ entities).
+-	A _relationship_ (_binary relationship_) represents information about an _association_ or _interaction_ between a pair of entities, or between an entity and itself. Each relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity, an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _friend of_ relationship between two _Person_ entities).
 
--	An _action_ represents information about an _action of_ an entity (e.g., _erupts_ for a _Volcano_ entity) or an _action on_ an entity (e.g., _accused_ for a _Person_ entity), where no other [known or relevant] entities are concerned. An action may also represent a state of an entity (e.g., _sleeps_ action for a _Person_ entity) or a state-change (e.g., _falls asleep_ for a _Person_ entity). Like relationships, actions are either directional or bidirectional.
+-	An _action_ represents information about an _action of_ an entity (e.g., _erupts_ for a _Volcano_ entity) or an _action on_ an entity (e.g., _accused_ for a _Person_ entity), where no other known or relevant entities are concerned. An action may also represent a state of an entity (e.g., _sleeps_ action for a _Person_ entity) or a state change (e.g., _falls asleep_ for a _Person_ entity). Like relationships, actions are either directional or bidirectional.
 
-- Each entity, relationship, and action has a set of _features_ (_characteristics_). Each feature has an immutable name (e.g., _birth date_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value, for example, _weight_= 450. For each entity, relationship, or action, the feature names are pairwise distinct.
+- Each entity, relationship, and action is associated with a set of _features_ (_characteristics_). Each feature is defined by an immutable name (e.g., _birthdate_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value (e.g., _weight_= 450). For any given entity, relationship, or action, feature names are pairwise distinct.
 
 - Each entity, relationship, and action has a single, immutable _type_ (e.g., _Person_, _owns_, _erupts_).
  
-  Types can be assigned based on many universals (qualities), e.g., _person_ entities, _red_ entities, _owner_ entities. Usually, entities of the same type are _semantically homogeneous_. The same is true also for relationships and actions. For property graphs, _semantic homogeneity_ means:
+  Types may be assigned according to different universals (i.e., shared qualities), such as _person_ entities, _red_ entities, or _owner_ entities. In general, entities of the same type are assumed to be _semantically homogeneous; this assumption applies equally to entities, relationships, and actions. In the context of property graphs, _semantic homogeneity_ entails the following regularities:
 
-  - _Repetition of existence_: there are multiple entities of the same type, multiple relationships of the same type, and multiple actions of the same type.
-  - _Repetition of features_: entities of the same type have features of the same types. The same is true also for relationships and actions.
-  - _Repetition of actions_: entities of the same type 'have' actions of the same types.
-  - _Repetition of relationships_: pairs of entities of the same pair of entity-types have relationships of the same types.
+  - _Repetition of existence_: each entity type, relationship type, and action type generally classifies multiple instances. That is, a type represents a set of entities, relationships, or actions rather than a single instance.
+  - _Repetition of features_: entities of the same entity type are characterized by features of the same feature types. The same holds for relationships and actions.
+  - _Repetition of feature domains_: for a given feature type, the type of its value is consistent across all instances of the same entity, relationship, or action type (e.g., if _weight_ is an integer for one _Person_, it is an integer for all _Person_ entities).
+  - _Repetition of actions_: entities of the same entity type participate in actions of the same action types.
+  - _Repetition of relationships_: For directional relationships, pairs of entities of the same ordered pair of entity types are connected by relationships of the same relationship types. For bidirectional relationships, pairs of entities of the same (unordered) pair of entity types are connected by relationships of the same relationship types.
 
 The property graph data model can hence represent _heterogeneous graphs_ - graphs that may contain multiple types of entities (_multi-modal graph_), of relationships (_multi-relational graph_), and of actions. In addition, each entity, relationship, or action  may have multiple features (_multifeatured graph_).
 
