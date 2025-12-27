@@ -122,29 +122,34 @@ The _property graph data model_ comprises the following **concepts**:
 
 - Each entity, relationship, and action has a single, immutable _type_ (e.g., _Person_, _owns_, _erupts_).
  
-  Types may be assigned according to different universals (i.e., shared qualities), such as _person_ entities, _red_ entities, or _owner_ entities. In general, entities of the same type are assumed to be _semantically homogeneous; this assumption applies equally to entities, relationships, and actions. In the context of property graphs, _semantic homogeneity_ entails the following regularities:
+  Types may be assigned according to different universals (i.e., shared qualities), such as _person_ entities, _red_ entities, or _owner_ entities. In general, entities of the same type are assumed to be _semantically homogeneous; this assumption applies equally to entities, relationships, and actions. 
+  In the context of property graphs, _semantic homogeneity_ entails the following regularities, which describe typical patterns rather than strict constraints:
 
-  - _Repetition of existence_: each entity type, relationship type, and action type generally classifies multiple instances. That is, a type represents a set of entities, relationships, or actions rather than a single instance.
-  - _Repetition of features_: entities of the same entity type are characterized by features of the same feature types. The same holds for relationships and actions.
-  - _Repetition of feature domains_: for a given feature type, the type of its value is consistent across all instances of the same entity, relationship, or action type (e.g., if _weight_ is an integer for one _Person_, it is an integer for all _Person_ entities).
+  - _Repetition of existence_: each entity type, relationship type, and action type classifies multiple instances. That is, a type represents a set of entities, relationships, or actions rather than a single instance.
+  - _Repetition of features_: entities of the same entity type are associated with features of the same names; the same holds for relationships and actions.
+  - _Repetition of feature domains_: for a given feature name, the type of its value is consistent across instances of the same entity, relationship, or action type (e.g., if _weight_ is an integer for one _Person_, it is an integer for all _Person_ entities).
   - _Repetition of actions_: entities of the same entity type participate in actions of the same action types.
-  - _Repetition of relationships_: For directional relationships, pairs of entities of the same ordered pair of entity types are connected by relationships of the same relationship types. For bidirectional relationships, pairs of entities of the same (unordered) pair of entity types are connected by relationships of the same relationship types.
+  - _Repetition of relationships_:
+    - for directional relationships, pairs of entities of the same ordered pair of entity types are connected by relationships of the same relationship types.
+    - for bidirectional relationships, pairs of entities of the same unordered pair of entity types are connected by relationships of the same relationship types.
 
-The property graph data model can hence represent _heterogeneous graphs_ - graphs that may contain multiple types of entities (_multi-modal graph_), of relationships (_multi-relational graph_), and of actions. In addition, each entity, relationship, or action  may have multiple features (_multifeatured graph_).
+The property graph data model can thus represent _heterogeneous graphs_, that is, graphs that may contain multiple types of entities (_multi-modal graphs_), multiple types of relationships (_multi-relational graphs_), and multiple types of actions. In addition, entities, relationships, and actions may each be associated with multiple features (_multifeatured graphs_).
 
-The property graph data model is a _metamodel_, as it does not specify types of entities, relationships, and actions, nor does it specify sets of features. It is domain-agnostic. Instead, domain-specific concepts may be specified and enforced using a _property graph schema_ (see next section).
+The property graph data model is a _metamodel_, as it does not specify types of entities, relationships, or actions, nor does it define particular sets of features. It is therefore _domain-agnostic_. Instead, domain-specific concepts may be specified and enforced by means of a _property graph schema_ (see next section), which in turn constrains the structure and interpretation of concrete property graph instances.
 
 The _property graph data model_ comprises the following **structure**:
 
-  - All data elements are organized in a single property graph mathematical structure.
+  - All data elements are organized within a single property graph mathematical structure.
   - A _null vertex_ is a propertyless vertex with a null label. Each null vertex is connected to exactly one edge. An edge connecting two null vertices is not allowed.
-  - Any vertex, except null vertices, represents an entity. The vertex's label is an integer or a nonempty string identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_).
-  - An undirected edge {𝑢, 𝑣}, where both 𝑢 and 𝑣 are not null vertices, represents a bidirectional relationship between the entity represented by 𝑢 and the entity represented by 𝑣.
-  - A directed edge (𝑢, 𝑣), where both 𝑢 and 𝑣 are not null vertices, represents a directional relationship between the entity represented by 𝑢 and the entity represented by 𝑣.
-  - An edge, where one vertex is a null vertex, represents either
+  - •	Any vertex other than a null vertex represents an entity. The vertex's label is an integer or a nonempty string identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_).
+  - An undirected edge {𝑢, 𝑣}, where neither 𝑢 nor 𝑣 is a null vertex, represents a bidirectional relationship between the entities represented by 𝑢 and 𝑣.
+  - A directed edge (𝑢, 𝑣), where neither 𝑢 nor 𝑣 is a null vertex, represents a directional relationship from the entity represented by 𝑢 to the entity represented by 𝑣.
+  - An edge incident to exactly one null vertex represents either
 
-    - an entity's action (e.g., _sleeps_ action for a _Person_ entity), or
-    - a relationship between an entity and a nonspecific entity. Sometimes, an entity is unknown or unimportant, but the existence of a relationship and the values of the relationship's properties - are important. For example, we may know that a given horse had different owners at different timeframes, but we do not know or care who owned it. Still, we want to be able to model such data.
+    - an action of an entity (e.g., _sleeps_ action for a _Person_ entity) or on an entity, or
+    - a relationship between an entity and a nonspecific entity.
+
+    This second case supports situations in which an entity participating in a relationship is unknown or irrelevant, while the existence of the relationship and the values of its features are known. For example, a certain horse may be known to have been owned during certain timeframes, even if the owners are unknown or unimportant.
 
   - The edge's label is an integer or a nonempty string identifying the _relationship's type_ (e.g., _owns_, _member of_) or the _action's type_ (e.g., _sleeps_).
   - A directed edge represents a directional relationship or action, while an undirected edge represents a bidirectional relationship or action.
