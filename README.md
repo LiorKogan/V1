@@ -116,26 +116,23 @@ The _property graph data model_ comprises the following **concepts**:
 
 -	A _relationship_ (_binary relationship_) represents information about an _association_ or _interaction_ between a pair of entities, or between an entity and itself. Each relationship is either _directional_ (_unidirectional_, _asymmetric_) (e.g., an _owns_ relationship between a _Person_ entity and a _Horse_ entity, an _offspring_ relationship between two _Person_ entities) or bidirectional (_non-directional_, _symmetric_, _reciprocal_) (e.g., a _friend of_ relationship between two _Person_ entities).
 
--	An _action_ represents information about an _action of_ an entity (e.g., _erupts_ for a _Volcano_ entity) or an _action on_ an entity (e.g., _accused_ for a _Person_ entity), where no other known or relevant entities are concerned. An action may also represent a state of an entity (e.g., _sleeps_ action for a _Person_ entity) or a state change (e.g., _falls asleep_ for a _Person_ entity). Like relationships, actions are either directional or bidirectional.
+- Each entity and relationship is associated with a set of _features_ (_characteristics_). Each feature is defined by an immutable name (e.g., _birthdate_ for a _Person_ entity, _timeframe_ for an _owns_ association) and a value (e.g., _weight_= 450). For any given entity or relationship, feature names are pairwise distinct.
 
-- Each entity, relationship, and action is associated with a set of _features_ (_characteristics_). Each feature is defined by an immutable name (e.g., _birthdate_ for a _Person_ entity, _timeframe_ for an _owns_ association, _timeframe_ for a _sleeps_ action) and a value (e.g., _weight_= 450). For any given entity, relationship, or action, feature names are pairwise distinct.
-
-- Each entity, relationship, and action has a single, immutable _type_ (e.g., _Person_, _owns_, _erupts_).
+- Each entity and relationship has a single, immutable _type_ (e.g., _Person_, _owns_, _erupts_).
  
-  Types may be assigned according to different universals (i.e., shared qualities), such as _person_ entities, _red_ entities, or _owner_ entities. In general, entities of the same type are assumed to be _semantically homogeneous; this assumption applies equally to entities, relationships, and actions. 
+  Types may be assigned according to different universals (i.e., shared qualities), such as _person_ entities, _red_ entities, or _owner_ entities. In general, entities of the same type are assumed to be _semantically homogeneous; this assumption applies equally to entities and relationships. 
   In the context of property graphs, _semantic homogeneity_ entails the following regularities, which describe typical patterns rather than strict constraints:
 
-  - _Repetition of existence_: each entity type, relationship type, and action type classifies multiple instances. That is, a type represents a set of entities, relationships, or actions rather than a single instance.
-  - _Repetition of features_: entities of the same entity type are associated with features of the same names; the same holds for relationships and actions.
-  - _Repetition of feature domains_: for a given feature name, the type of its value is consistent across instances of the same entity, relationship, or action type (e.g., if _weight_ is an integer for one _Person_, it is an integer for all _Person_ entities).
-  - _Repetition of actions_: entities of the same entity type participate in actions of the same action types.
+  - _Repetition of existence_: each entity type and relationship type classifies multiple instances. That is, a type represents a set of entities or relationships rather than a single instance.
+  - _Repetition of features_: entities of the same entity type are associated with features of the same names; the same holds for relationships.
+  - _Repetition of feature domains_: for a given feature name, the type of its value is consistent across instances of the same entity or relationship type (e.g., if _weight_ is an integer for one _Person_, it is an integer for all _Person_ entities).
   - _Repetition of relationships_:
     - for directional relationships, pairs of entities of the same ordered pair of entity types are connected by relationships of the same relationship types.
     - for bidirectional relationships, pairs of entities of the same unordered pair of entity types are connected by relationships of the same relationship types.
 
-The property graph data model can thus represent _heterogeneous graphs_, that is, graphs that may contain multiple types of entities (_multi-modal graphs_), multiple types of relationships (_multi-relational graphs_), and multiple types of actions. In addition, entities, relationships, and actions may each be associated with multiple features (_multifeatured graphs_).
+The property graph data model can thus represent _heterogeneous graphs_, that is, graphs that may contain multiple types of entities (_multi-modal graphs_) and multiple types of relationships (_multi-relational graphs_). In addition, entities and relationships may each be associated with multiple features (_multifeatured graphs_).
 
-The property graph data model is a _metamodel_, as it does not specify types of entities, relationships, or actions, nor does it define particular sets of features. It is therefore _domain-agnostic_. Instead, domain-specific concepts may be specified and enforced by means of a _property graph schema_ (see next section), which in turn constrains the structure and interpretation of concrete property graph instances.
+The property graph data model is a _metamodel_, as it does not specify types of entities or relationships, nor does it define particular sets of features. It is therefore _domain-agnostic_. Instead, domain-specific concepts may be specified and enforced by means of a _property graph schema_ (see next section), which in turn constrains the structure and interpretation of concrete property graph instances.
 
 The _property graph data model_ comprises the following **structure**:
 
@@ -144,16 +141,10 @@ The _property graph data model_ comprises the following **structure**:
   - •	Any vertex other than a null vertex represents an entity. The vertex's label is an integer or a nonempty string identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_).
   - An undirected edge {𝑢, 𝑣}, where neither 𝑢 nor 𝑣 is a null vertex, represents a bidirectional relationship between the entities represented by 𝑢 and 𝑣.
   - A directed edge (𝑢, 𝑣), where neither 𝑢 nor 𝑣 is a null vertex, represents a directional relationship from the entity represented by 𝑢 to the entity represented by 𝑣.
-  - An edge incident to exactly one null vertex represents either
-
-    - an action of an entity (e.g., _sleeps_ action for a _Person_ entity) or on an entity, or
-    - a relationship between an entity and a nonspecific entity.
-
-    This second case supports situations in which an entity participating in a relationship is unknown or irrelevant, while the existence of the relationship and the values of its features are known. For example, a certain horse may be known to have been owned during certain timeframes, even if the owners are unknown or unimportant.
-
-  - The label of an edge is an integer or a nonempty string identifying either the _relationship type_ (e.g., _owns_, _member of_) or the _action type_ (e.g., _sleeps_).
-  - A directed edge represents a directional relationship or action, whereas an undirected edge represents a bidirectional relationship or action.
-  - Properties and subproperties represent features and subfeatures of entities (e.g., _name_ property and _first name_ subproperty for a _Person_ entity), relationships (e.g., _timeframe_ property for an _owns_ association), and actions (e.g., _timeframe_ for a _sleeps_ action). For any entity, relationship, and action, property names are pairwise distinct strings or integers, identifying feature names, and property values represent the corresponding feature values.
+  - An edge incident to exactly one null vertex represents a relationship between an entity and a nonspecific entity. This case supports situations in which an entity participating in a relationship is unknown or irrelevant, while the existence of the relationship and the values of its features are known. For example, a certain horse may be known to have been owned during certain timeframes, even if the owners are unknown or unimportant.
+  - The label of an edge is an integer or a nonempty string identifying either the _relationship type_ (e.g., _owns_, _member of_).
+  - A directed edge represents a directional relationship, whereas an undirected edge represents a bidirectional relationship.
+  - Properties and subproperties represent features and subfeatures of entities (e.g., _name_ property and _first name_ subproperty for a _Person_ entity) and relationships (e.g., _timeframe_ property for an _owns_ association). For any entity and relationship, property names are pairwise distinct strings or integers, identifying feature names, and property values represent the corresponding feature values.
   - Each feature value is of a data type corresponding to a value type supported by the model. In this paper, we will use the following data types:
 
     - _basic data types_: _int_, _float_, _date_, _datetime_, _duration_, and _string_.
@@ -167,7 +158,7 @@ The _property graph data model_ comprises the following **structure**:
   - _null_ is a valid value for each _nullable_ property and subproperty, regardless of its data type. _Null-valued_ [sub]property indicates that a [sub]feature value is not specified.
 
     Several different interpretations can be associated with a _null_ value. Following the terminology introduced by [Codd](https://dl.acm.org/doi/10.1145/16301.16303) and adopted by many authors, a _null_ value is either
-    - _Applicable missing_ – at present, a value is applicable (applies to the particular entity, relationship, or action) but unknown (whatever the reason, the graph does not have the value). E.g., the temperature 1000 years ago today; the phone number of a person who owns a phone, but the number is unknown; an answer to a question, where the questionee refused to answer.
+    - _Applicable missing_ – at present, a value is applicable (applies to the particular entity or relationship) but unknown (whatever the reason, the graph does not have the value). E.g., the temperature 1000 years ago today; the phone number of a person who owns a phone, but the number is unknown; an answer to a question, where the questionee refused to answer.
     - _Inapplicable_ - at present, no value is applicable. E.g., the temperature tomorrow, previous citizenship when there is none, direct manager of the CEO, a new hire's not-yet-assigned employee ID, a phone number of a person who does not own a phone, an answer to a question, where the question was not posed to the questionee.
 
     [Zaniolo](https://www.sciencedirect.com/science/article/pii/0022000084900801) proposed a third basic interpretation of _null_ values:
@@ -178,9 +169,9 @@ The _property graph data model_ comprises the following **structure**:
 
     Though the semantic of _null_ values is not always defined as part of the data model, nor as part of the _data schema_, it still must be well-defined for query languages' operators and functions. E.g., what is the result of (yesterday's date < person's death date) when the _death date_ is _null_? Often, _null_ values represent _applicable missing_ and _no information_, while _magic values_ (e.g., "9999-12-31" for dates) represent _inapplicable values_. In addition, a _sorting comparison operator_ is usually well-defined for _null_ values and may differ from the standard comparison operator (e.g., should _The five persons with the earliest birth date_ return persons with a _null_ birth date?)
 
-- Should new information prove that two or more vertices represent the same entity, these vertices should be merged. Similarly, should new information prove that two or more edges represent the same relationship or action, these edges should be merged.
+- Should new information prove that two or more vertices represent the same entity, these vertices should be merged. Similarly, should new information prove that two or more edges represent the same relationship, these edges should be merged.
 
-- Should new information prove that a vertex represents two or more entities, this vertex should be split. Similarly, should new information prove that an edge represents two or more relationships or actions, this edge should be split.
+- Should new information prove that a vertex represents two or more entities, this vertex should be split. Similarly, should new information prove that an edge represents two or more relationships, this edge should be split.
 
 - Any pair of vertices, except null vertices, must be _distinguishable_, which means that vertices' _identifiers_ must be pairwise distinct, or there should be no pair of vertices with identical type, property values, and relationships. Similarly, any pair of edges must be _distinguishable_, which means that edges' _identifiers_ must be pairwise distinct, or there should be no pair of edges with identical type and property values that connect the same pair of vertices or the same vertex and a null vertex. An _identifier_ is a set of properties (often just an automatically generated index) that collectively uniquely identifies the element.
 
@@ -235,9 +226,7 @@ A _property graph schema_ is defined by:
   * A set of pairs of entity-types for which the relationship-type is applicable (e.g., _owns_: {(_Person_, _Horse_), (_Person_, _Dragon_)}. When a pair is of the same type (e.g., (_Dragon_, _Dragon_)), loops can be allowed or disallowed
   * A set of properties - similar to entity-types' properties
   
-A predefined property-less entity-type _Null_ serves two purposes:
-* Realizing actions: an action-type can be realized as a relationship-type that is applicable between some entity-type and the _Null_ entity-type. For example, a _sleeps_: {(_Dragon_, _Null_)} relationship-type realizes a _sleeps_ action-type for the _Dragon_ entity-type.
-* Realizing relationships to unknown or unimportant entities: sometimes, a real entity is unknown or unimportant, but the existence of a relationship and the values of the relationship's properties - are important. For example, we may know that a certain dragon was owned in a given timeframe, but we do not know or do not care who owned it. Still - we want to be able to store and query such information. _owns_: {(_Person_, _Dragon_), (_Guild_, _Dragon_), (_Null_, _Dragon_)} allows us to realize this.
+A predefined property-less entity-type _Null_ serves the purpose of realizing relationships to unknown or unimportant entities: sometimes, a real entity is unknown or unimportant, but the existence of a relationship and the values of the relationship's properties - are important. For example, we may know that a certain dragon was owned in a given timeframe, but we do not know or do not care who owned it. Still - we want to be able to store and query such information. _owns_: {(_Person_, _Dragon_), (_Guild_, _Dragon_), (_Null_, _Dragon_)} allows us to realize this.
 
 Property graph schema definitions may vary in many aspects, including:
 
@@ -1775,7 +1764,7 @@ A relationship type-tag defined right of an 'O' can only be referenced right of 
 
 ## Null Entities
 
-As described above, graph-entities of type _Null_ realize action-types and relationships to unknown/unimportant entities.
+As described above, graph-entities of type _Null_ realize relationships with unknown/unimportant entities.
 
 Since each graph-entity of type _Null_ is connected by exactly one relationship, there are additional implicit constraints on each typed entity of type _Null_ and on each untyped entity that explicitly allows type _Null_:
 * There is no relationship/path on its right (it is a terminal node), or there is no relationship/path on its left (it starts the pattern)
