@@ -137,14 +137,15 @@ The property graph data model is a _metamodel_, as it does not specify types of 
 The _property graph data model_ comprises the following **structure**:
 
   - All data elements are organized within a single property graph mathematical structure.
-  - A _null vertex_ is a propertyless vertex with a null label. Each null vertex is connected to exactly one edge. An edge connecting two null vertices is not allowed.
-  - •	Any vertex other than a null vertex represents an entity. The vertex's label is an integer or a nonempty string identifying the _entity's type_ (e.g., _Person_, _Guild_, _Dragon_).
+  - A _null vertex_ is a vertex with no properties and a null label. Each null vertex is connected to exactly one edge. Edges connecting two null vertices is not allowed.
+  - Any vertex other than a null vertex represents an entity. The vertex label is an integer or a nonempty string identifying the _entity type_ (e.g., _Person_, _Guild_, _Dragon_).
   - An undirected edge {𝑢, 𝑣}, where neither 𝑢 nor 𝑣 is a null vertex, represents a bidirectional relationship between the entities represented by 𝑢 and 𝑣.
   - A directed edge (𝑢, 𝑣), where neither 𝑢 nor 𝑣 is a null vertex, represents a directional relationship from the entity represented by 𝑢 to the entity represented by 𝑣.
-  - An edge incident to exactly one null vertex represents a relationship between an entity and a nonspecific entity. This case supports situations in which an entity participating in a relationship is unknown or irrelevant, while the existence of the relationship and the values of its features are known. For example, a certain horse may be known to have been owned during certain timeframes, even if the owners are unknown or unimportant.
-  - The label of an edge is an integer or a nonempty string identifying either the _relationship type_ (e.g., _owns_, _member of_).
+  - An edge incident to exactly one null vertex represents a relationship between an entity and a nonspecific entity. This allows modeling cases where one participant is unknown or irrelevant, while the existence of the relationship and the values of its features are known. For example, a horse may be known to have been owned during certain timeframes, even if the owners are unknown or unimportant.
+  - Each edge has a label that is an integer or a nonempty string identifying its _relationship type_ (e.g., _owns_, _member of_).
   - A directed edge represents a directional relationship, whereas an undirected edge represents a bidirectional relationship.
-  - Properties and subproperties represent features and subfeatures of entities (e.g., _name_ property and _first name_ subproperty for a _Person_ entity) and relationships (e.g., _timeframe_ property for an _owns_ association). For any entity and relationship, property names are pairwise distinct strings or integers, identifying feature names, and property values represent the corresponding feature values.
+  - Properties and subproperties represent features and subfeatures of entities and relationships. For any entity or relationship, property names are pairwise distinct strings or integers, identifying feature names. Property values represent the corresponding feature values. For example, a _Person_ entity may have a _name_ property and _firs_ and _last_ subproperties; an _owns_ relationship may have a _timeframe_ property.
+
   - Each feature value is of a data type corresponding to a value type supported by the model. In this paper, we will use the following data types:
 
     - _basic data types_: _int_, _float_, _date_, _datetime_, _duration_, and _string_.
