@@ -123,12 +123,12 @@ The _property graph data model_ comprises the following **concepts**:
   Types may be assigned according to different universals (i.e., shared qualities), such as _person_ entities, _red_ entities, or _owner_ entities. In general, entities of the same type are assumed to be _semantically homogeneous; this assumption applies equally to entities and relationships. 
   In the context of property graphs, _semantic homogeneity_ entails the following regularities, which describe typical patterns rather than strict constraints:
 
-  - _Repetition of existence_: each entity type and relationship type classifies multiple instances. That is, a type represents a set of entities or relationships rather than a single instance.
-  - _Repetition of features_: entities of the same entity type are associated with features of the same names; the same holds for relationships.
-  - _Repetition of feature domains_: for a given feature name, the type of its value is consistent across instances of the same entity or relationship type (e.g., if _weight_ is an integer for one _Person_, it is an integer for all _Person_ entities).
+  - _Repetition of existence_: each entity type and relationship type typically classifies multiple instances. That is, a type represents a set of entities or relationships rather than a single instance.
+  - _Repetition of features_: entities of the same entity type are typically associated with features of the same names; the same holds for relationships.
+  - _Repetition of feature domains_: for a given feature name, the type of its value is typically consistent across instances of the same entity or relationship type (e.g., if _weight_ is an integer for one _Horse_, it is an integer for _Horse_ entities).
   - _Repetition of relationships_:
-    - for directional relationships, pairs of entities of the same ordered pair of entity types are connected by relationships of the same relationship types.
-    - for bidirectional relationships, pairs of entities of the same unordered pair of entity types are connected by relationships of the same relationship types.
+    - for directional relationships, instances of the same relationship type typically connect entities whose types form the same ordered pair of entity types.
+    - for bidirectional relationships, instances of the same relationship type typically connect entities whose types form the same unordered pair of entity types.
 
 The property graph data model can thus represent _heterogeneous graphs_, that is, graphs that may contain multiple types of entities (_multi-modal graphs_) and multiple types of relationships (_multi-relational graphs_). In addition, entities and relationships may each be associated with multiple features (_multifeatured graphs_).
 
